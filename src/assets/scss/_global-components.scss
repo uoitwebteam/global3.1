@@ -1,0 +1,68 @@
+// GLOBAL BUILD COMPONENTS
+// -----------------------
+
+// Controls
+@import 'components/controls/button';
+// @import 'components/controls/button-sidebar';
+// @import 'components/controls/button-sticky';
+
+// General
+@import 'components/general/header-footer-common';
+@import 'components/general/footer';
+@import 'components/general/header/header';
+@import 'components/general/header/header-banner';
+@import 'components/general/header/logo';
+@import 'components/general/header/quick-links';
+@import 'components/general/header/search';
+@import 'components/general/header/site-title-bar';
+@import 'components/general/header/toggle-button';
+@import 'components/general/page-content';
+@import 'components/general/page-sidebar';
+
+// Navigation
+@import 'components/navigation/breadcrumbs';
+@import 'components/navigation/magellan';
+@import 'components/navigation/main';
+@import 'components/navigation/mobile';
+@import 'components/navigation/sidebar';
+
+// Containers
+@import 'components/containers/feature-module'; // import before other feature module containers (events, news, social links, spotlight)
+@import 'components/containers/accordion';
+@import 'components/containers/banner';
+@import 'components/containers/blockquote';
+@import 'components/containers/callout';
+@import 'components/containers/callout-stat';
+@import 'components/containers/card-grid';
+@import 'components/containers/clive';
+@import 'components/containers/content-sidebar';
+@import 'components/containers/cta-thumbnails';
+@import 'components/containers/emergency-feed';
+@import 'components/containers/events-feed';
+@import 'components/containers/filter-list';
+@import 'components/containers/google-search';
+@import 'components/containers/iframe';
+@import 'components/containers/modal';
+@import 'components/containers/news';
+@import 'components/containers/news-feed';
+@import 'components/containers/notification';
+@import 'components/containers/off-canvas';
+// @import 'components/containers/profile';
+@import 'components/containers/quick-links-bar';
+@import 'components/containers/social-links';
+@import 'components/containers/spotlight';
+@import 'components/containers/table';
+@import 'components/containers/tabs';
+
+// Media
+@import 'components/media/images';
+@import 'swiper';
+@import 'justifiedGallery';
+@import 'components/media/lightgallery-settings'; // import before lightgallery-bundle
+@import 'lightgallery-bundle';
+@import 'components/media/photogallery';
+// @import 'components/media/slider';
+@import 'components/media/svg';
+
+// Embedded libraries
+@import 'lib/awesomplete';

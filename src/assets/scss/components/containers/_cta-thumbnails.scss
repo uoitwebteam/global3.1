@@ -1,0 +1,401 @@
+$cta-text-styles: (
+	xxsmall: (
+		'font-size':rem-calc(24)
+	),
+	xsmall: (
+		'font-size':rem-calc(19),
+		'font-weight': bold
+	),
+	small: (
+		'font-size':rem-calc(19),
+		'font-weight': bold
+	),
+	large: (
+		'font-size':rem-calc(19),
+		'font-weight': bold
+	),
+	xlarge: (
+		'font-size':rem-calc(20),
+		'font-weight': bold
+	)
+);
+
+.cta-thumbnails {
+	z-index: 1;
+	width: 100%; // Edge fix
+}
+
+.cta-thumbnail {
+	position: relative;
+	margin-bottom: use_gutter();
+	overflow: hidden;
+	font-family: $heading-font;
+	min-width: 280px;
+	
+	// full link around entire cta
+	.link {
+		@include hidden-link;
+
+		// &:hover+img,
+		// &:active+img,
+		// &:focus+img {
+		// 	transform: scale(1.1);
+		// }
+	}
+
+	img {
+		width: 100%;
+		// transition: transform 300ms ease-out;
+	}
+
+	.teaser,
+	.contents {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-flow: column;
+	}
+
+	.teaser {
+		justify-content: flex-start;
+		transition: transform 100ms ease-out;
+		@include gradient-overlay($relative-parent: false, $colors: (transparent, rgba(0,0,0,0.4), rgba(0,0,0,.8)));
+	}
+
+	.header {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		min-height: rem-calc(84);
+		width: 80%;
+		padding: 1rem;
+		font-weight: 900;
+		font-size: rem-calc(28);
+		color: #fff;
+		line-height: 1.1;
+		z-index: 2;
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(26);
+			text-shadow: 1px 1px rgba(0, 0, 0, .8);
+		}
+
+		// specified background colour
+		@each $color,
+		$value in $foundation-palette {
+			&.#{$color} {
+				background: rgba($value, .85);
+			}
+		}
+
+		
+	}
+
+	.contents {
+		padding: 1rem;
+		background: rgba($orange, .9);
+		// justify-content: space-between;
+		transform: translateY(-100%);
+		color: #fff;
+		line-height: 1.4;
+		transition: transform 250ms ease-out;
+	}
+
+	.description {
+		@each $breakpoint, $styles in $cta-text-styles {
+			@include breakpoint($breakpoint) { 
+				@each $key, $value in $styles {
+					#{$key}: $value;
+				}
+			}
+		}
+
+		a {
+			@include link-style(#fff, #fff);
+			font-weight: 700;
+		}
+	}
+
+	// Brand arrow
+	&::after {
+		@include absolute-brand-arrow($top: auto, $right: 10px, $bottom: 7px, $size: 1.4rem, $color: $white, $transform: translateX(-2000%));
+		opacity: 0;
+	}
+	// .arrow {
+	// 	display: block;
+	// 	position: absolute;
+	// 	right: 15px;
+	// 	bottom: 15px;
+	// 	width: 16px;
+	// 	height: 16px;
+	// 	border-top: 8px solid #fff;
+  //   border-right: 8px solid #fff;
+	// 	opacity: 0;
+	// 	transform: translateX(-2000%) rotate(45deg);
+	// }
+	
+
+	.button {
+		align-self: flex-end;
+	}
+
+	.button.hollow.white {
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-color: #fff;
+			color: #fff;
+			background: rgba(#fff, .2);
+		}
+	}
+}
+.cta-thumbnails .cta-thumbnail {
+	&:hover,
+	&.hover {
+		.teaser {
+			transform: translateY(-100%);
+		}
+
+		.contents {
+			transform: translateY(0);
+		}
+
+		&::after,
+		.arrow {
+			animation: 600ms ease-out 200ms forwards arrow-slide-in;
+		}
+	}
+}
+
+
+/**
+ * Banner/CTA margins
+ */
+
+.banner.banner-fade + .cta-thumbnails {
+	@include breakpoint(small down) {
+		// margin-top: use_gutter();
+	}
+	
+	@include breakpoint(1300px) {
+		> .column:first-child {
+			padding-left: 0;
+		}
+		> .column:last-child {
+			padding-right: 0;
+		}
+	}
+}
+
+
+/**
+ * CTA thumbnails + Banner (e.g. for faculty sites)
+ *
+ * Banner image + a column of CTA thumbnails next to it
+ */
+
+.cta-thumbnails.banner-thumbs {
+	display: flex;
+	flex-flow: row wrap;
+
+	@include breakpoint(1100px) {
+		@include flex-grid-column($columns: 3, $gutters: 0);
+		flex-flow: column wrap;
+		justify-content: stretch;
+
+		.column {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.cta-thumbnail {
+			margin-bottom: 0;
+			// Images as background images
+			background-size: cover;
+			background-position: center center;
+			height: 100%;
+		}		
+		// Images as background images
+		img {
+			display: none;
+		}
+	}
+	@include breakpoint(1099px down) {
+		.cta-thumbnail {
+			background-image: none;
+		}
+	}
+}
+
+
+
+
+
+// Layout - below full-width banner
+.page-row>.cta-thumbnails {
+	@include flex-grid-layout(1);
+
+	@include breakpoint(small) {
+		@include flex-grid-layout(2);
+	}
+
+	@include breakpoint(large) {
+		@include flex-grid-layout(4);
+	}
+
+	z-index: 2;
+}
+
+// Layout - next to small banner
+.banner-small+.cta-thumbnails {
+	display: flex;
+	flex-flow: row wrap;
+	@include breakpoint(xsmall down) {
+		@include flex-grid-layout(1);
+	}
+	@include breakpoint(small only) {
+		@include flex-grid-layout(2);
+	}
+	@include breakpoint(medium) {
+		@include flex-grid-column('expand', 0);
+		flex-flow: column;
+		justify-content: stretch;
+		margin-top: use_gutter();
+
+		.column,
+		.columns {
+			display: flex;
+			flex-flow: column;
+			justify-content: stretch;
+		}
+
+		img {
+			display: none;
+		}
+
+		.cta-thumbnail {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100%;
+		}
+	}
+}
+
+
+
+// CTA buttons
+// -----------
+
+.home-ctas,
+.cta-buttons {
+
+	// heading
+	h2 {
+		@include breakpoint(xxsmall up) {
+			margin-top: 0;
+			margin-bottom: use_gutter();
+		}
+
+		@include breakpoint(small up) {
+			margin-bottom: 0;
+		}
+	}
+
+	.btn_cta,
+	// deprecated 
+	.btn_home_cta,
+	// deprecated
+	.button {
+		@include button-icon-right($icon-size: 40px, $left-button-padding: 15px, $right-button-padding: 15px);
+
+		display: flex !important;
+		align-items: center;
+		z-index: 1;
+		margin-bottom: 0;
+		font-size: rem-calc(22);
+		text-align: left;
+
+		@include breakpoint(small down) {
+			font-size: rem-calc(20);
+			@include button-icon-right($icon-size: 30px, $left-button-padding: 15px, $right-button-padding: 15px);
+		}
+	}
+
+	@include breakpoint(xsmall down) {
+		.column {
+			@include flex-grid-column(12);
+		}
+
+		br {
+			display: none;
+		}
+
+		span {
+			display: inline !important;
+		}
+	}
+
+	@include breakpoint(small) {
+
+		.btn_cta,
+		// deprecated 
+		.btn_home_cta,
+		// deprecated 
+		.button {
+			height: rem-calc(70);
+
+			// deprecated
+			span span {
+				display: block;
+			}
+		}
+	}
+}
+
+// Layout - next to small banner
+.banner-small+.cta-buttons {
+
+	@include breakpoint(medium) {
+		@include flex-grid-column('expand', 0);
+		display: flex;
+		flex-flow: column;
+		justify-content: stretch;
+		margin-top: use_gutter();
+
+		.column,
+		.columns {
+			display: flex;
+			flex-flow: column;
+			justify-content: stretch;
+		}
+
+		h2,
+		.button {
+			height: 100%;
+		}
+	}
+
+	@include breakpoint(small down) {
+		@include flex-grid-row();
+		width: 100%;
+	}
+
+	h2 {
+		margin-bottom: use_gutter();
+	}
+}
+
+// (v2.1) Layout - below full-width banner
+.home-ctas {
+	@include flex-grid-row();
+
+	@include breakpoint(small up) {
+		@include row_gutter();
+	}
+}
+

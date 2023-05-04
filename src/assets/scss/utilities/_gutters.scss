@@ -1,0 +1,147 @@
+/* Margins and padding */
+
+
+@mixin row_gutter {
+  margin-bottom: use_gutter(1);
+}
+
+@function use_gutter($multiplier:1,$size:xxsmall) {
+  $gutter: $grid-column-gutter;
+  @if type-of($gutter) == 'map' {
+  	@if map-has-key($grid-column-gutter, $size) {
+  		$value: map-get($grid-column-gutter, $size);
+	    @return rem-calc(strip-unit($value)) * $multiplier; 
+	  }
+  }
+  @else if type-of($gutter) == 'number' and strip-unit($gutter) > 0 {
+    @return rem-calc($value) * $multiplier;
+  }
+}
+
+.margin {
+	margin: 1rem;
+	&-medium {
+		margin: use_gutter();
+	}
+	&-large {
+		margin: use_gutter(1.5);
+	}
+
+	&-top {
+		margin-top: 1rem;
+		&-medium {
+			margin-top: use_gutter();
+		}
+		&-large {
+			margin-top: use_gutter(1.5);
+		}
+	}
+
+	&-right {
+		margin-right: 1rem;
+		&-medium {
+			margin-right: use_gutter();
+		}
+		&-large {
+			margin-right: use_gutter(1.5);
+		}
+	}
+
+	&-bottom {
+		margin-bottom: 1rem;
+		&-medium {
+			margin-bottom: use_gutter();
+		}
+		&-large {
+			margin-bottom: use_gutter(1.5);
+		}
+	}
+
+	&-left {
+		margin-left: 1rem;
+		&-medium {
+			margin-left: use_gutter();
+		}
+		&-large {
+			margin-left: use_gutter(1.5);
+		}
+	}
+}
+
+.padding {
+	padding: 1rem;
+	&-medium {
+		padding: use_gutter();
+	}
+	&-large {
+		padding: use_gutter(1.5);
+	}
+
+	&-top {
+		padding-top: 1rem;
+		&-medium {
+			padding-top: use_gutter();
+		}
+		&-large {
+			padding-top: use_gutter(1.5);
+		}
+	}
+
+	&-right {
+		padding-right: 1rem;
+		&-medium {
+			padding-right: use_gutter();
+		}
+		&-large {
+			padding-right: use_gutter(1.5);
+		}
+	}
+
+	&-bottom {
+		padding-bottom: 1rem;
+		&-medium {
+			padding-bottom: use_gutter();
+		}
+		&-large {
+			padding-bottom: use_gutter(1.5);
+		}
+	}
+
+	&-left {
+		padding-left: 1rem;
+		&-medium {
+			padding-left: use_gutter();
+		}
+		&-large {
+			padding-left: use_gutter(1.5);
+		}
+	}
+}
+
+
+// Deprecated classes
+.top-margin {
+	margin-top: 1rem;
+}
+.right-margin {
+	margin-right: 1rem;
+}
+.bottom-margin {
+	margin-bottom: 1rem;
+}
+.left-margin {
+	margin-left: 1rem;
+}
+
+.top-padding {
+	padding-top: 1rem;
+}
+.right-padding {
+	padding-right: 1rem;
+}
+.bottom-padding {
+	padding-bottom: 1rem;
+}
+.left-padding {
+	padding-left: 1rem;
+}

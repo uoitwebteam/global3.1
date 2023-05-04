@@ -1,0 +1,117 @@
+/**
+ * Base styles for all feature module components:
+ * - Events
+ * - News
+ * - Social links
+ * - Spotlight
+ */
+
+
+// Set top/bottom margins for spotlight sections
+@mixin feature-section-margins($edge: top, $margin: (30px, 30px)) {	
+	margin-#{$edge}: nth($margin, 1);
+
+	@include breakpoint(medium) {
+		margin-#{$edge}: nth($margin, 2);
+	}
+}
+
+// Set associated text colours for specified background colours
+@mixin feature-module-colors() {
+	// Default colours
+	.heading h2 {
+		color: $orange;
+	}
+
+	.see_all {
+		@include feature-text-link-style($lightblue, $orange);
+	}
+
+	// Specified background colour and associated text colours
+	@each $color,
+	$value in $official-palette {
+
+		// Full-width background colour
+		&.#{$color}:not([class*=column]),
+		// Background colour on .feature-module child (within the grid)
+		&.#{$color}[class*=column] .feature-module {
+			background-color: $value;
+		}
+		&.#{$color} .feature-subheading {
+			border-bottom-color: color-pick-contrast($value, (rgba($white, .3), $darkblue));
+		}
+
+		// Heading text colours
+		&.#{$color} .heading h2,
+		&.#{$color} .feature-subheading {
+			color: color-pick-contrast($value, ($white, $orange));
+		}
+
+		&.#{$color} .see_all,
+		&.#{$color} a.feature-link {
+			@include feature-text-link-style(color-pick-contrast($value, ($white, $darkblue)), $orange);
+		}
+	}
+}
+
+.feature-module {
+	max-width: $global-width;
+	margin-right: auto;
+	margin-left: auto;
+
+	padding: rem-calc(30);
+	@include breakpoint(medium) {
+		padding: rem-calc(50);
+	}
+	@include breakpoint($global-width) {
+		padding: rem-calc(50) rem-calc(30); 
+	}
+
+	// Module heading
+	.heading {
+		flex: 1 0 auto;
+		flex-flow: row wrap;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: rem-calc(30);
+		@include breakpoint(large) {
+			margin-bottom: rem-calc(50); 
+		}	
+
+		&.text-center {
+			justify-content: center;
+		}
+
+		h2 {
+			margin-bottom: 0;
+			font-family: $heading-font;
+			font-size: rem-calc(30);
+			line-height: 1;
+
+			@include breakpoint(xsmall down) {
+				font-size: rem-calc(28);
+				margin-bottom: 1rem;
+				width: 100%;
+			}
+
+			@include breakpoint(medium) {
+				font-size: rem-calc(32);
+			}
+		}
+	}
+}
+
+// Internal page layout 
+.page-content.has-sidebar .feature-module {
+	padding: 50px;
+}
+
+// Sidebar layout
+.page-sidebar .feature-module {
+	padding: 20px;
+	
+	.button {
+		@extend .expanded;
+	}
+}

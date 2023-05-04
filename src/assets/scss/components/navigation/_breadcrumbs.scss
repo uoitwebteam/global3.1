@@ -1,0 +1,71 @@
+// Breadcrumbs next to banner
+.banner {
+	&+.breadcrumbs {
+		z-index: 1;
+		max-width: none;
+		margin-top: -(use_gutter()); // banner margin-bottom size
+
+		&.expanded {
+			ul {
+				max-width: none;
+			}
+		}
+	}
+
+	// Colored background bar when over top of banner
+	&.banner-fade ~ .breadcrumbs,
+	&.content-overlay ~ .breadcrumbs {
+		z-index: 1;
+		@include breakpoint(medium) {
+			max-width: $global-width;
+			background: rgba($darkblue, .9);
+		}
+		* { 
+			color: $white;
+		}
+	}
+}
+
+.breadcrumbs {
+	position: relative;
+	@include grid-row();
+	flex: 0 0 auto; // for flex container; width capped at $global-width by grid-row()
+	width: 100%;
+	font-family: $heading-font;
+	line-height: 1.5;
+
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+		max-width: $global-width;
+		margin: 0 auto;
+		padding: .5rem use_gutter();
+		list-style: none;
+	}
+
+	li {
+		font-weight: 400;
+
+		&.current {
+			font-weight: 700;
+		}
+	}
+
+	a {
+		@include remove-link-style(!important);
+		&:hover,
+		&:active,
+		&:focus {
+			text-decoration: none;
+			border-bottom: 1px dotted $darkblue !important;
+		}
+	}
+}
+
+// Transition fix for v2.1 breadcrumbs layout to v3.0
+ul.breadcrumbs {
+	background: rgba($darkblue, .9);
+	padding: 0.5rem 1.875rem;
+	max-width: 78.125rem;
+	list-style: none;
+}

@@ -1,0 +1,43 @@
+.content-sidebar {
+	background: $lightgrey;
+
+	.addthis-text {
+		// margin-right: 1rem;
+		margin-bottom: 5px;
+		font-family: $heading-font;
+		font-size: 80%;
+	}
+
+	.article-list {
+		padding: 0 1rem 1rem;
+
+		a {
+			display: block;
+
+			&:not(:last-child) div {
+				border-bottom: 1px solid $mediumgrey;
+			}
+		}
+
+		div {
+			display: flex;
+			align-items: flex-start;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+
+		img {
+			flex: 0 0 30%;
+			max-width: 30%;
+			height: auto;
+			margin-right: 1rem;
+		}
+
+		p {
+			margin-bottom: 0;
+			font-family: $heading-font;
+			font-size: rem-calc(15);
+			color: $darkblue;
+		}
+	}
+}

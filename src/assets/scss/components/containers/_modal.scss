@@ -1,0 +1,90 @@
+.reveal {
+	&.video {
+		padding: 0;
+		border: 0;
+		background: transparent;
+	}
+}
+
+// Event promo modal:
+// large header image, heading text overlay, body copy below image 
+.promo {
+	&.reveal {
+		border: 0;
+		padding: 0;
+		
+		@include breakpoint(medium) {
+			width: 700px;
+		}
+
+		&::after {
+			@include brand-chevron($size: 50px, $color: $orange, $thickness: 25px);
+			position: absolute;
+			top: 0;
+			right: 0;
+			transform-origin: right top;
+		}
+	}
+
+	&-image {
+		position: relative;
+		background-size: cover;
+
+		.text-overlay {
+			background: rgba(65,65,65,.4);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			padding: 50px 1rem 1rem;
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+		.header,
+		.subheader {
+			font-family: $heading-font;
+			font-weight: 900;
+			color: $white;
+			text-shadow: 1px 1px rgba($black, .4);
+		}
+		.header {
+			font-size: rem-calc(32px);
+			@include breakpoint(xsmall) {
+				font-size: rem-calc(36px);
+			}
+			@include breakpoint(large) {
+				font-size: rem-calc(40px);
+			}
+		}
+		.subheader {
+			font-size: rem-calc(20px);
+			@include breakpoint(xsmall) {
+				font-size: rem-calc(28px);
+			}
+			@include breakpoint(large) {
+				font-size: rem-calc(30px);
+			}
+		}
+	}
+
+	&-body {
+		padding: 1.5rem;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		font-family: $heading-font;
+		text-align: center;
+	}
+
+	button[data-close] {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 20px;
+		font-size: rem-calc(20px);
+		color: $mediumgrey;
+	}
+}

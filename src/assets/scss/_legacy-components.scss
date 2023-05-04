@@ -1,0 +1,64 @@
+// v2.1 LEGACY BUILD COMPONENTS
+// ----------------------------
+
+// Controls
+@import 'components/controls/button';
+// @import 'components/containers/button-sidebar';
+// @import 'components/containers/button-sticky';
+
+// Legacy components
+@import 'components/legacy/grid-layout';
+@import 'components/legacy/button-landing-page';
+@import 'components/legacy/common';
+@import 'components/legacy/ctas';
+@import 'components/legacy/events';
+@import 'components/legacy/news';
+@import 'components/legacy/slider';
+@import 'components/legacy/socialfeeds';
+@import 'components/legacy/spotlight';
+@import 'components/legacy/blog';
+
+// Navigation
+@import 'components/navigation/breadcrumbs';
+@import 'components/navigation/magellan';
+@import 'components/navigation/main';
+@import 'components/navigation/mobile';
+@import 'components/navigation/sidebar';
+
+// Containers
+@import 'components/containers/accordion';
+@import 'components/containers/banners';
+@import 'components/containers/blockquote';
+@import 'components/containers/callout';
+@import 'components/containers/callout-stat';
+@import 'components/containers/card-grid';
+@import 'components/containers/clive';
+@import 'components/containers/content-sidebar';
+@import 'components/containers/emergency-feed';
+@import 'components/containers/google-search';
+@import 'components/containers/filter-list';
+// @import 'components/containers/form';
+@import 'components/containers/iframe';
+@import 'components/containers/modal';
+@import 'components/containers/news';
+@import 'components/containers/notification';
+// @import 'components/containers/profile';
+@import 'components/containers/sidebar-widgets';
+// @import 'components/containers/slider';
+@import 'components/containers/table';
+@import 'components/containers/tabs';
+
+
+// Media
+@import 'components/media/images';
+@import 'swiper';
+@import 'justifiedGallery';
+@import 'components/media/lightgallery-settings'; // import before lightgallery-bundle
+@import 'lightgallery-bundle';
+@import 'components/media/photogallery';
+// @import 'components/media/slider';
+@import 'components/media/svg';
+
+
+// Embedded libraries
+@import 'lib/awesomplete';

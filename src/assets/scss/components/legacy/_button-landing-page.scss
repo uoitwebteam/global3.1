@@ -1,0 +1,62 @@
+// Related files: components/controls/button
+
+
+.page-content {
+  // Standard buttons
+  ul.index-ctas {
+    list-style: none;
+    margin-left: 0;
+    @extend .row;
+
+    li {
+      @extend .column;
+    }
+
+    @include flex-grid-layout(1, 'li'); 
+    @include breakpoint(small) {
+      @include flex-grid-layout(2, 'li'); 
+    }
+  }
+  
+ 
+  // Icon buttons
+  div.index-ctas {
+    @extend .row;
+    .column {
+      display: flex;
+      margin-bottom: 1rem;
+    }  
+    
+    .btn_cta, // deprecated
+    .button {
+      color: $darkblue;
+      border: 1px solid $darkblue;
+
+      // text
+      font-size: rem-calc(20);
+    }
+      
+    .btn_cta[class*="icon"], // deprecated
+    .button[class*="icon"] {
+      @include button-icon-left($icon-size: 35px, $left-button-padding: 1.25em, $right-button-padding: 3.25em);
+      text-align: left;
+
+      // icon
+      &::before {
+        color: $lightblue;
+        font-weight: normal; 
+        right: auto;
+        left: use_gutter();
+      }
+    }
+  } 
+
+  // description/subtitle
+  span.description {
+    display: block; 
+    font-size: rem-calc(14); 
+    font-weight: normal;
+    text-transform: none;
+    line-height: 1.2;
+  } 
+}

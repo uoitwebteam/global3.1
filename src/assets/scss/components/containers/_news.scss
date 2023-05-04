@@ -1,0 +1,230 @@
+/**
+ * News site components
+ * (News feature module is in containers/news-module)
+ */
+
+
+// Common elements
+// ---------------
+
+#news-grid,
+#news-list {
+	.article-date {
+		@include typography-primary-link($darkblue);
+		margin-bottom: .25rem;
+	}
+
+	.article-thumb {
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: .5rem;
+		}
+	}
+}
+
+
+// News grid (e.g. news.ontariotechu.ca home page)
+// ---------
+
+#news-grid {
+	@include clear;
+
+	// Flex grid
+ /* 	@include flex-grid-row();
+	.article-preview {   	
+		@include flex-grid-column(12); 
+		@include breakpoint(xsmall) {
+			@include flex-grid-column(6);
+		}
+		@include breakpoint(medium) { 
+			@include flex-grid-column(3);
+			
+			&:first-child { 
+				@include flex-grid-column(6);]
+			}
+			&:nth-child(2),
+			&:nth-child(3) { 
+				@include flex-grid-column(6); 
+
+				.article-thumb {
+					@include grid-column(6); 
+				}
+			}
+		} 
+	}  
+ */
+ 		
+
+	// Grid
+	.article-preview {		
+		@include breakpoint(xsmall) { 
+			@include grid-column(6);
+
+			&:nth-child(2n+1) {
+				clear: both;
+			}
+			&:last-child:not(:first-child) {
+				float: left;
+			}
+		}  
+		@include breakpoint(medium) { 
+			@include grid-column(3, rem-calc(20px));
+			
+			// First 3 articles
+			&:first-child {
+				@include grid-column(6, rem-calc(20px));
+			} 
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				@include grid-column(6, rem-calc(20px));  
+
+				.article-thumb {
+					@include grid-column(6);
+					padding-left: 0 !important; 
+				}
+				.article-summary {
+					display: table;
+				}
+			}
+			&:nth-child(2n+1) {
+				clear: none;
+			}
+			&:nth-child(4n) {
+				clear: both;
+			}
+			&:last-child:not(:first-child) {
+				float: left;
+			} 
+		} 
+	} 
+	
+	h2 {
+		// @include serif(italic);
+		font-size: 1.25rem;
+		line-height: 1.1;
+		margin-bottom: .5rem;
+	} 
+}
+
+
+// News list
+// ---------
+
+#news-list {
+	h2, h3 {
+		@include serif;		
+		line-height: 1.1;
+		margin-bottom: .5rem; 
+	} 
+
+	.article-preview {
+		@include grid-row();  
+		@include breakpoint(xsmall) { 
+			margin: 0 (-(use_gutter(.5))) (use_gutter()); 
+		}
+		margin-bottom: use_gutter();
+
+		h3 {
+			// @include serif(italic);
+			font-size: 1.25rem;
+		}
+	}
+	
+	.article-thumb {
+		@include breakpoint(xsmall) {
+			@include grid-column(4);
+			margin-right: use_gutter(.5);
+		}
+		@include breakpoint(medium) {
+			@include grid-column(3); 
+		} 
+	}
+
+	.article-summary {
+		display: table;
+	}
+	
+}
+
+
+// News article
+// ------------
+
+// for narrower article content
+.news-article {
+	figure img {
+		width: 1000px;
+	}
+}
+
+#news-article {
+	h1 {
+		@include serif;
+		line-height: 1.1;
+		margin-bottom: 1.2rem;
+	}
+	.subheader {
+		font-size: 1.2rem;
+		font-weight: 900;
+		text-transform: uppercase;
+		line-height: normal;
+	}
+	.article-date { 
+		font-weight: 900;
+		color: get-color(grey);
+	}
+	
+	figure {
+		margin-bottom: 1rem;
+	}
+	
+	// for old articles with small floated thumbnail
+	figure.float-left {
+		@include breakpoint(xsmall) {
+			max-width: 400px;
+		}
+	}
+	/* figure:not(.video):not(.article-thumbnail):not(.video-thumbnail) {
+		@include breakpoint(xsmall) {
+			max-width: 400px;
+		}	
+	}
+
+	figure.article-thumbnail {
+		@include breakpoint(xsmall) {
+			max-width: 300px;
+		}	
+		@include breakpoint(medium) {
+			max-width: 400px;
+		}		
+		@include breakpoint(large) {
+			max-width: 600px;
+		}	
+	} 
+
+	.video-thumbnail {
+		@include breakpoint(xsmall) {
+			width: 300px;
+		}	
+		@include breakpoint(medium) {
+			width: 400px;
+		}		
+		@include breakpoint(large) {
+			width: 600px;
+		}
+	} */
+}
+
+
+// Google search (Home page search field)
+// -------------
+
+.page-content .google-search {
+	@include breakpoint(small down) {
+		padding-left: 0;
+		padding-right: 0;
+		margin-bottom: 1.5rem;
+	}
+}

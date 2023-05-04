@@ -1,0 +1,67 @@
+// Related files: layout/body/page_sidebar
+
+
+.page-sidebar nav {
+	margin-bottom: 1rem;
+	
+	// hide menu until drilldown is initialized
+	.is-sidebar-menu {
+		opacity: 0; 
+	} 
+
+	.is-drilldown-submenu {
+		&.no-transition {
+			transition: none;
+		}
+		&.is-active {
+			box-shadow: 0 40px 0 #fff; // workaround for height calculation errors
+		}
+	}
+
+	ul {	
+		display: block;
+		margin-left: 0;
+	}
+	
+	:not(.is-drilldown-submenu-parent) > a {
+		&[data-symlink]:after {
+			@include icon;
+			content: get-icon('icon_mouse_window');
+			vertical-align: super;
+			font-size: 0.6875rem;
+			margin-left: 0.5rem;
+		}
+	}
+
+	a {
+		outline: none;
+		color: $grey;
+
+		&[data-login]:after {
+			@include icon;
+			content: get-icon('icon_lock');
+			vertical-align: super;
+			font-size: 0.6875rem;
+			margin-left: 0.5rem;
+			border: 0;
+		}
+	}
+
+	// active link; separate page link and submenu-arrow link
+	li:hover {
+		background: $mediumgrey;
+	}
+	
+	li > a:first-child {
+		&:hover, &:active, &:focus {
+			background: $darkblue; //$menu-item-background-active;
+			color: $white;
+		}
+	}
+	li > a.more {
+		&:hover, &:active, &:focus {
+			background: $darkblue; //$menu-item-background-active;
+			color: $white;
+		}
+	}
+} 

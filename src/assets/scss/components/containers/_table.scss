@@ -1,0 +1,163 @@
+// Responsive table (x scrolling)
+.tbl_wrapper {
+	width: 100%;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;	
+} 
+table.scroll {
+	width: 100% !important;
+}
+
+
+table {
+	border-collapse: collapse;
+	width: auto;
+	line-height: $paragraph-lineheight;
+	thead th,
+	thead td {
+		border: 1px solid darken($coolgrey80, 20%); 
+		h1,h2,h3,h4,h5,h6 {
+			color: $white;
+		}
+	}
+	tbody th {
+		background-color: $coolgrey60; 
+		h1,h2,h3,h4,h5,h6 {
+			color: darken($bluegrey, 10%);
+		}
+	}
+	tbody, tfoot {
+		th, td {
+			border: $table-border;  
+		}
+	}
+
+	img {
+		max-width: none;
+	}
+}
+
+table thead th,
+table thead td,
+table tfoot th,
+table tfoot td,
+table th {
+	font-family: $body-font;
+	font-weight: bold;
+}
+
+table tbody th {
+	text-align: left;
+}
+
+
+
+// Table styles
+// ------------
+
+table {
+	&.tbl-full-width,
+	&.tblFullWidth {
+		width: 100%;
+	}
+
+	&.tbl-fixed {
+		table-layout: fixed;
+	}
+	
+	&.tbl-white,
+	&.tblWhite {
+		tbody tr:nth-child(even) {
+			background-color: $table-background;
+		}
+	}
+	
+	&.tbl-all-white,
+	&.tblAllWhite {
+		thead {
+			color: $black;
+		}
+		thead, tbody, tfoot {
+			th, td, tr:nth-child(even) {
+				border: $table-border;
+				background-color: $table-background;
+			}
+		}
+		&.hover tr:hover {
+			th, td {
+				background-color: $table-row-hover;
+			}
+		}
+	}
+
+	&.tbl-no-borders,
+	&.tblNoBorders {
+		thead,
+		tbody,
+		tfoot {
+			border: 0;
+			th, td {
+				border: 0;
+			}
+		}
+	}
+
+	&.tbl-cell-borders,
+	&.tblCellBorders {
+		th, td {
+			border: $table-border; 
+		}
+	}
+	
+
+	&.tbl-row-borders,
+	&.tblRowBorders {
+		td {
+			border: 0;
+		}
+		tr {
+			border-top: $table-border;
+			border-bottom: $table-border !important; 
+		}
+	}
+
+	&.tbl-align-top th,
+	&.tbl-align-top td,
+	.tbl-align-top,
+	&.tblAlignTop th, 
+	&.tblAlignTop td,
+	th.tblAlignTop,
+	td.tblAlignTop {
+		vertical-align: top;
+	}
+
+	&.hover {
+		tr, th, td {
+			transition: background-color .15s ease-in;
+		}
+		tbody tr:hover * {
+			background-color: $table-row-hover;
+		}
+	}
+
+	&.tbl-blue {
+		thead {
+			background-color: $darkblue;
+			color: $white; 
+		}
+		tbody th {
+			background-color: rgba($darkblue, .1);
+			color: $darkerblue; 
+		}
+		tfoot th, tfoot td {
+			background-color: rgba($darkblue, .2);
+			color: $darkerblue; 
+		}
+	}
+
+	.tbl-divider {
+		border-top: 3px solid smart-scale($table-background, $table-color-scale + 15) !important;
+		border-bottom: 3px solid smart-scale($table-background, $table-color-scale + 15) !important;
+	}
+}

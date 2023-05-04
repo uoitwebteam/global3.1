@@ -1,0 +1,120 @@
+/* Display helpers */
+
+
+// Clear
+@mixin clear {
+	clear: both;
+
+	&:after {
+		content: ' ';
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}	
+}
+%clear {
+	@include clear;
+}
+.clear {
+	@extend %clear;
+}
+
+
+// Display
+.flex {
+	display: flex;
+}
+.row-wrap {
+	flex-flow: row wrap;
+}
+.inline {
+	display: inline;
+}
+.inline-block {
+	display: inline-block;
+}
+.align-evenly {
+	justify-content: space-evenly;
+}
+// Flex align-self
+@each $size in $breakpoint-classes {
+	@include breakpoint($size) {
+		@each $align in (start, end, center) {
+			@if $size != $-zf-zero-breakpoint {
+				.#{$size}-align-self-#{$align} {
+					align-self: $align;
+				}
+			}
+			@else {
+				.align-self-#{$align} {
+					align-self: $align;
+				}
+			}
+		}
+	}
+}
+
+
+.fill-height {
+	height: 100%;
+}
+
+
+// Float
+@each $breakpoint in $breakpoint-classes {
+	.#{$breakpoint}-float-left {
+		@include breakpoint(#{$breakpoint}) {
+			float: left;
+			margin-right: 1.75rem;
+		}
+	}
+	.#{$breakpoint}-float-right {
+		@include breakpoint(#{$breakpoint}) {
+			float: right;
+			margin-left: 1.75rem;
+		}
+	}
+}
+
+
+// SVG scaling fix for IE
+@mixin svg-container($viewportWidth, $viewportHeight, $svgWidth: 100%) {
+  width: $svgWidth;
+  height: 1px;
+  padding-top: ($viewportHeight / $viewportWidth) * $svgWidth;
+  position: relative;
+  > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+// Deprecated classes 
+.align_center {
+	@extend .text-center; 
+}
+img.align_center {
+	display: block; 
+	margin: 0 auto;
+}
+.align_left {
+	@extend .text-left;
+}
+.align_right {
+	@extend .text-right;
+}
+.align_justify {
+	@extend .text-justify;
+}
+
+.float_left {
+	@extend .float-left;
+}
+.float_right {
+  @extend .float-right;
+}
+

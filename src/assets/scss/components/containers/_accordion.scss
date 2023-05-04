@@ -1,0 +1,94 @@
+.accordion .accordion-item {
+	margin-bottom: 0;
+	clear: both; 
+}
+
+.accordion-title {
+	box-shadow: inset 3px 0 0 $darkblue;
+	border-left: 0;
+	border-right: 0;
+	font-family: $heading-font;
+	font-weight: bold;
+
+	// chevron icon
+	&::after
+	{
+		position: absolute; 
+		top: 50%;
+		right: 20px;
+		transform: translateY(-50%) rotate(-90deg);
+		content: '\e800';
+		font-family: $icon-font;
+		color: $orange;
+		transition: .2s ease;
+	}
+}
+
+.is-active > .accordion-title,
+.accordion-title:hover,
+// .accordion-title:active,
+.accordion-title:focus {
+	background: $mediumblue;
+	color: $white;
+	
+	&::after {	
+		color: $white;
+	}
+}
+.is-active > .accordion-title::after {
+	transform: translateY(-50%) rotate(-270deg);
+}
+
+.accordion-content {
+	border-left-color: rgba($mediumgrey, .45);
+	border-left-width: 3px;
+	border-right: 0; 
+	
+	@include clear;
+
+	// Nested accordion
+	.accordion {
+		margin-bottom: 0;
+	}
+	.accordion-title {
+		box-shadow: inset 3px 0 0 $bluegrey60;
+		background: $bluegrey10;
+	}
+	.is-active > .accordion-title,
+	.accordion-title:hover,
+	.accordion-title:focus {
+		background: $bluegrey50;
+		color: $darkblue;
+	}
+}
+
+
+// Callout accordion
+// -----------------
+
+.callout-accordion {
+	.accordion-title {
+		padding: 30px;
+		font-size: 1.5rem;
+	}
+	.accordion-content {
+		padding: 30px;
+	}
+
+	@each $color, $value in $official-palette {
+		&.#{$color}  {
+			.accordion-title {
+				box-shadow: none;
+				background-color: $value;
+				color: color-pick-contrast($value, ($white, $darkblue));
+
+				&:hover {
+					background-color: smart-scale($value, 10%);
+
+					// Chevron colour!!!!!!!!!!
+				}
+			}
+			
+		}
+	}
+}

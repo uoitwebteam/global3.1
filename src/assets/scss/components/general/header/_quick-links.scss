@@ -1,0 +1,91 @@
+/**
+ * Quick links
+ * Related files: components/general/header-footer-common (link styles)
+ */
+
+
+.top-nav-links {
+	position: relative;
+	max-height: 0px;
+	background: $header-background;
+	overflow: hidden;
+	transition: max-height .75s ease;
+
+	&.open {
+		max-height: 950px;
+
+		@include breakpoint(small) {
+			max-height: 500px;
+		}
+	}
+}
+
+.top_nav {
+	padding-top: rem-calc(20);
+	padding-bottom: rem-calc(20);
+}
+
+.emergency-info+.top_nav {
+	padding-top: rem-calc(25);
+}
+
+.top_links {
+	@include header-footer-links($header-link-color, $header-link-hover-color);
+	
+	@include breakpoint(small) {
+		.column {
+			max-width: 300px;
+		}
+	}
+}
+
+
+// eSSENTIAL accessibility link
+// ----------------------------
+
+#essential-accessibility,
+.essential-accessibility {
+	margin-left: 1rem;
+	border-bottom: none !important;
+
+	img {
+		height: 20px;
+		width: auto;
+		transition: transform $transition-duration ease-out;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+
+		img {
+			transform: scale(1.05);
+		}
+	}
+}
+
+
+// Emergency info button
+// ---------------------
+
+.emergency-info {
+	@include grid-row();
+
+	a.button {
+		@include breakpoint(xsmall up) {
+			margin-right: use_gutter(0.5);
+			float: right;
+		}
+
+		// icon
+		@include button-icon($position: left);
+
+		&::before {
+			color: $emergency;
+		}
+
+		@include breakpoint(xsmall down) {
+			display: block;
+		}
+	}
+}

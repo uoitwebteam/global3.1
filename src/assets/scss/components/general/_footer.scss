@@ -1,0 +1,151 @@
+footer.footer {
+	background: $footer-background;
+	padding: rem-calc(30) 0 rem-calc(20); 
+	
+	@media print {
+		display: none;
+	}
+	
+	@include breakpoint(medium) {
+    align-self: flex-end;
+    width: 100%; 
+  }
+}
+
+
+// Footer links section
+// --------------------
+
+.footer_links {
+	border-bottom: 1px solid $border-color;
+	margin-bottom: rem-calc(30);
+	padding-bottom: rem-calc(15);
+
+	@include header-footer-links($footer-link-color, $footer-link-hover-color);
+}
+
+
+// Footer logo/address section
+// ---------------------------
+
+.footer_sec_bottom {
+	background: $footer-bottom-background;	
+	padding: rem-calc(30) 0;
+
+	@include breakpoint(large) {
+	  padding: rem-calc(40) 0;
+	}
+} 
+
+// Logo
+.logo_footer {
+	@include flex-grid-column(shrink);
+
+	@include breakpoint(xsmall down) {
+		@include flex-grid-column(12);
+		text-align: center;
+	}
+
+	img {
+		width: 200px;
+	}
+}
+
+// Address/copyright
+.footer_address {
+	@include flex-grid-column;
+	
+	@include breakpoint(small) {
+		margin-left: 8.3333%;
+	}
+
+	@include breakpoint(large) {
+		@include flex-grid-column(7);
+	}
+
+	font-size: .88rem;
+	line-height: normal;
+	color: $white;
+
+}
+
+// Social media icons
+.footer_social_icons {
+	width: 200px;
+	margin: 2rem auto;
+
+  ul {
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+    font-size: 1.5rem;
+		list-style: none;
+	}
+	
+	a {
+		display: block;
+		color: $white;
+	}
+}
+
+// Sticky footer
+.footer_sticky { 
+  position: fixed;
+  bottom: -1px; 
+  right: 0; 
+  width: 100%;
+  z-index: 5; 
+}
+.btn-to-top {
+  margin-right: use_gutter(); 
+  background: $orange;// scale-color($orange, $lightness: $button-background-hover-lightness);  
+  transition: 0.375s ease-out;
+  transform: translateY(100%);
+	@include typography-primary-link($white);
+
+  // text 
+  span {
+    display: inline-block;
+    padding: .15rem .45rem;
+    background: $darkorange; 
+    transition: background .375s ease;
+  }
+  &:hover, &:active, &:focus {
+    span { 
+      background: scale-color($darkorange, $lightness: $button-background-hover-lightness);
+    }
+  }
+
+  // icon
+  &::before {
+    @include icon;
+    transform: rotate(90deg);
+    content: get-icon(icon_arrow);
+    margin-right: .25rem;
+    margin-left: .4rem;  
+  } 
+  
+  // show button
+  &.active {
+    transform: translateY(0);
+  }
+} 
+
+
+// (deprecated) Site feedback form button
+.btn-site-feedback {
+  display: inline-block; 
+  margin-right: use_gutter(); 
+  background: $darkblue; 
+  @include typography-primary-link(#fff);  
+  transition: background .375s ease;
+
+  span {
+    display: inline-block;
+    padding: .15rem .45rem;
+  }
+
+  &:hover, &:active, &:focus {
+    background: scale-color($darkblue, $lightness: $button-background-hover-lightness);
+  }
+}

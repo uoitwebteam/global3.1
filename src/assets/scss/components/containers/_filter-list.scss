@@ -1,0 +1,30 @@
+.menu.filter-list {
+	flex-wrap: wrap;
+  margin: 0 0 1.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+	@media only screen and (min-width: 50.06em) and (orientation: landscape) {
+		margin: -0.25rem 0 0.5rem;
+	}
+	li {
+		color: $lightblue;
+		font-size: 0.88rem;
+		margin-bottom: 0.25rem;
+		a:hover, a:focus {
+			background-color: rgba($darkblue, 0.1);
+		}
+		&.active a {
+			background: $darkblue;
+			color: #fff;
+			cursor: default;
+		}
+		&:not(:first-of-type) {
+			margin-left: 0.5rem;
+		}
+	}
+	&-title {
+		margin-left: 0;
+		text-transform: uppercase;
+		font-weight: 900;
+	}
+}

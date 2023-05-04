@@ -1,0 +1,94 @@
+.quick-links-bar {
+	padding: 30px 15px;
+	text-align: center;
+
+	@include breakpoint(xsmall down) {
+		.column, .columns {
+			margin-top: 1.25rem;
+			margin-bottom: 1.25rem;
+		}
+	}
+
+	[class*="icon_"] {
+		margin-bottom: 15px;
+		font-size: 2rem;
+	}
+
+	.header {
+		font-family: $heading-font;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	.description {
+		&::before {
+			display: block;
+			content: '';
+			width: 30px;
+			border-top-width: 2px;
+			border-top-style: solid;
+			margin: 15px auto;
+		}
+	}
+
+	// Specified background colour and associated text colours
+	@each $color,
+	$value in $official-palette {
+		@at-root {
+			$temp-color: color-pick-contrast($value, ($white, $darkblue));
+			
+			.spotlight.#{$color} .quick-links-bar {
+				[class*="icon_"] {
+					color: rgba($temp-color, .7);
+				}
+
+				.description::before {
+					border-color: $temp-color;
+				}
+
+				a:not([class]) {
+					@include remove-link-style();
+					color: $temp-color;
+
+					&:hover,
+					&:active,
+					&:focus {
+						color: smart-scale($temp-color, 20%);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Quick links module
+// ------------------
+
+.module_home_quickLinks,
+.module-quick-links {
+	margin-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+
+	li {
+		margin-bottom: .25rem;
+	}
+
+	a {
+		@extend .button;
+		display: block;
+		margin-bottom: 0;
+		border-left: 5px solid scale-color($button-background, $lightness: -20%);
+		text-align: left;
+	}
+
+	// Social links 
+	.social-quick-links {
+		margin-top: -.25rem;
+
+		a.button {
+			margin-top: .25rem;
+		}
+	}
+}

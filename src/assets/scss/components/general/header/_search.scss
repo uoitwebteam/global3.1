@@ -1,0 +1,220 @@
+/**
+ * Quick links fixed bar (search and buttons), and sticky search bar
+ * Related files: components/containers/google-search
+ */
+
+// Common settings
+.quick-links-fixed-bar,
+.search-bar {
+	background: $orange;
+	padding: 1rem 0;
+
+	.button {
+		height: $quick-links-button-height;
+		line-height: $quick-links-button-height;
+		padding: 0 1rem;
+		margin-bottom: 0;
+		border: 1px solid $white;
+		@include button-style($white, rgba($white, .5), $bluegrey);
+
+		@include breakpoint(xsmall down) {
+			padding: 0 .75rem;
+			margin-bottom: 5px;
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $bluegrey;
+		}
+	}
+
+	>.row {
+		justify-content: space-between;
+		max-width: rem-calc(1400);
+	}
+
+	// Search fields
+	.search-fields-container {
+		@include breakpoint(small) {
+			min-width: rem-calc(700);
+			max-width: rem-calc(850);
+		}
+
+		@include breakpoint(medium down) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	@include breakpoint(xsmall down) {
+		.search-type {
+			margin-bottom: .5rem;
+		}
+
+		#search-type-google,
+		#search-type-directory {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	// Toggle search type (active = directory)
+	.search-type {
+		padding-right: 0;
+	}
+
+	.input-group {
+		margin-bottom: 0;
+		@include breakpoint(xsmall down) {
+			flex-wrap: wrap;
+		}
+	}
+
+	.input-group-label {
+		background: transparent;
+		border-color: $white;
+		color: $white;
+		font-size: rem-calc(19); //rem-calc(16);
+		font-weight: 700;
+
+		@include breakpoint(xsmall down) {
+			border-color: transparent;
+			padding-left: 0;
+		}
+	}
+
+	.switch-paddle {
+		height: $quick-links-button-height;
+		width: rem-calc(250);
+		background: rgba($white, .5);
+		border: 1px solid $white;
+		font-family: $heading-font;
+		text-transform: uppercase;
+
+		@include breakpoint(small) {
+			border-right: 0;
+		}
+
+		&::after {
+			width: 50%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: $bluegrey;
+		}
+	}
+
+	.switch-active,
+	.switch-inactive {
+		display: block;
+		width: 50%;
+		height: 100%;
+		right: auto;
+		text-align: center;
+		color: scale-color($bluegrey, $lightness: -25%);//rgba($bluegrey, .8);
+		font-weight: 700;
+		line-height: rem-calc(33);
+		z-index: 2;
+		transition: all .3s ease;
+	}
+	.switch-active {
+		left: 50%;
+	}
+	.switch-inactive {
+		left: 0;
+		color: $white;
+	}
+
+	input:checked {
+		&~ .switch-paddle {
+			background: rgba($white, .5);
+
+			&::after {
+				left: 50%;
+			}
+		}
+
+		&+label>.switch-active {
+			color: $white;
+		}
+
+		&+label>.switch-inactive {
+			display: block;
+			background: transparent;
+			color: scale-color($bluegrey, $lightness: -25%);//rgba($bluegrey, .8);
+		}
+	}
+	input:not(:checked)+label>.switch-active:hover, 
+	input:checked+label>.switch-inactive:hover {
+		background: rgba($bluegrey, .8);
+		color: $white;
+	}
+
+	// Search fields
+	input {
+		float: left;
+		height: $quick-links-button-height;
+		margin-bottom: 0;
+		box-shadow: none;
+		vertical-align: middle;
+		@include breakpoint(xsmall down) {
+			margin-right: 5px;
+		}
+	}
+
+	#search-type-directory {
+		input {
+			width: 40%;
+		}
+		
+		.button {
+			background-color: transparent;
+			color: $white;
+			
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: rgba(255,255,255,0.5);
+				color: $bluegrey;
+			}
+			@include breakpoint(xsmall down) {			
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// Quick links search bar
+// ----------------------
+
+.quick-links-fixed-bar {
+	.search-fields-container {
+		@include breakpoint(medium down) {
+			padding-bottom: 1rem;
+			margin-bottom: 1rem;
+			border-bottom: 1px solid rgba($white, .2);
+		}
+	}
+}
+
+// Sticky search bar
+// -----------------
+
+.sticky-search {
+  background: $orange;
+	max-height: 0px; 
+  overflow: hidden;
+  transition: max-height .5s ease;
+
+  &.open {
+    max-height: 130px; 
+		border-bottom: 1px solid rgba($white, .2);
+  }
+}
+
+.search-bar { 
+	@include flex-grid-row;
+	justify-content: center;
+	padding: 1rem;
+} 

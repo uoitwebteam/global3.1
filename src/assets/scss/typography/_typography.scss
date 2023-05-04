@@ -1,0 +1,82 @@
+/* Typography importer and general helpers */
+
+
+// General helpers
+// ---------------
+
+@mixin lowercase() {
+  text-transform: none;
+}
+@mixin uppercase() {
+  text-transform: uppercase;
+}
+.lowercase {
+  @include lowercase;
+}
+.uppercase {
+  @include uppercase;
+}
+
+@mixin text-larger() {
+  font-size: 120%;
+}
+@mixin text-smaller() {
+  font-size: 80%;
+}
+.text-larger,
+.text_larger {
+  @include text-larger;
+} 
+.text-smaller,
+.text_smaller {
+  @include text-smaller;
+}
+
+@mixin serif($font-style: normal, $text-transform: none) {
+  font-family: $heading-font !important;
+
+  @if ($font-style) {
+    font-style: $font-style;
+  }
+
+  @if ($text-transform) {
+    text-transform: $text-transform;
+  } @else {
+    text-transform: none;
+  }
+}
+
+// @mixin italic() {
+//   font-style: italic;
+// }
+// .italic {
+//   @include italic;
+// }
+
+.light {
+	font-weight: 400;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+@mixin text-indent() {
+  margin-left: 2rem;
+}
+.text-indent,
+.text_indent {
+  @include text-indent;
+}
+
+// Typography imports
+// ------------------
+
+@import 'font-faces';
+@import 'icons';
+
+@import 'code';
+@import 'headings';
+@import 'links';
+@import 'lists';
+@import 'tooltip';

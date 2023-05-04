@@ -1,0 +1,966 @@
+---
+title: Home page test
+description: Full page layout test (PHP components are hard-coded for v3.1 Phase 1 development)
+---
+
+<div class="off-canvas-wrapper">
+
+	{{> nav-mobile}}
+
+	<!-- Page content -->
+	<div class="off-canvas-content" data-off-canvas-content>
+
+		<a href="#main-content" id="btn_skip_to_content" class="show-for-sr" tabindex="1">Skip to main content</a>
+
+		<header>
+			<!-- Additional header banner -->
+			<!-- <div class="header-banner bgcolor coolgrey40">
+				<a href="" class="hidden-link"></a>
+				<div class="header-banner-inner">
+					<div class="padding">
+						<span class="header-banner-title">Mandatory COVID-19 screening </span>
+						<small>Faculty, staff, students and visitors must complete a screening questionnaire before coming to
+							campus. Visit the Ready for You website for screening and other COVID-19-related information.
+						</small>
+					</div>
+				</div>
+			</div> -->
+
+
+			<div class="header-banner" data-accordion>
+				<div class="header-banner-inner" data-accordion-item>
+					<a href="#" class="header-banner-title padding">
+						Ontario Tech acknowledges the lands and people of the Mississaugas of Scugog Island First Nation.
+					</a>
+
+					<div class="header-banner-content padding" data-tab-content>
+						<p class="animated fadeIn">We are thankful to be welcome on these lands in friendship. The lands we are
+							situated on are covered by the Williams Treaties and are the traditional territory of the Mississaugas,
+							a branch of the greater Anishinaabeg Nation, including Algonquin, Ojibway, Odawa and Pottawatomi. These
+							lands remain home to many Indigenous nations and peoples.</p>
+						<p class="animated fadeIn">We acknowledge this land out of respect for the Indigenous nations who have
+							cared for Turtle Island, also called North America, from before the arrival of settler peoples until
+							this day. Most importantly, we acknowledge that the history of these lands has been tainted by poor
+							treatment and a lack of friendship with the First Nations who call them home.</p>
+						<p class="animated fadeIn">This history is something we are all affected by because we are all treaty
+							people in Canada. We all have a shared history to reflect on, and each of us is affected by this history
+							in different ways. Our past defines our present, but if we move forward as friends and allies, then it
+							does not have to define our future.</p>
+						<p class="animated fadeInLeft">
+							<strong>
+								<a class="button hollow"
+									href="https://studentlife.ontariotechu.ca/services/community/indigenous/land-acknowledgement/?utm_source=land-acknowledgement&utm_medium=web&utm_campaign=land-acknowledgement">
+									Learn more<span class="show-for-sr"> about Indigenous Education and Cultural Services</span>
+								</a>
+							</strong>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="top-nav">
+				<section aria-expanded="false" aria-label="Quick links" class="top-nav-links" data-toggler=".open"
+					id="top-nav-links">
+
+					<div class="quick-links-fixed-bar" id="quick-links-fixed-bar" data-toggler=".open">
+						<div class="row">
+
+							<!-- Search -->
+							<div class="column search-fields-container">
+								<div class="row collapse">
+									<div class="column shrink search-type">
+										<div class="input-group">
+											<span class="input-group-label">Search the:</span>
+											<input type="checkbox" id="searchType" class="switch-input"
+												data-toggle="search-type-directory search-type-google st-page st-google">
+											<label for="searchType" class="switch-paddle">
+												<span class="show-for-sr">Search the directory</span>
+												<span class="switch-inactive" aria-hidden="true">Website</span>
+												<span class="switch-active" aria-hidden="true">Directory</span>
+											</label>
+										</div>
+									</div>
+									<!-- Google -->
+									<div class="column" id="search-type-google" data-toggler=".hide">
+										<script>
+											(function () {
+												var cx = '000418773383549209527:e7fgbeqaz14'; // webteam@uoit.net
+												// var cx = '014606610870375204038:yi3t0njf5c8'; // uoitweb@gmail.com
+												var gcse = document.createElement('script');
+												gcse.type = 'text/javascript';
+												gcse.async = true;
+												gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+												var s = document.getElementsByTagName('script')[0];
+												s.parentNode.insertBefore(gcse, s);
+											})();
+										</script>
+										<div class="google-search">
+											<gcse:searchbox-only resultsUrl="https://uoit.ca/search-results.php"></gcse:searchbox-only>
+										</div>
+									</div>
+									<!-- Directory -->
+									<div class="column hide" id="search-type-directory" data-toggler=".hide">
+										<form method="get" action="https://uoit.ca/directory">
+											<input class="" type="text" name="firstname" id="ds-firstname" placeholder="First name">
+											<input class="" type="text" name="lastname" id="ds-lastname" placeholder="Last name">
+											<button class="  button icon_search small icon-center" type="submit"><span
+													class="show-for-sr">Search
+													directory</span></button>
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<!-- Buttons -->
+							<div class="column shrink">
+								<a class="button" href="http://admissions.ontariotechu.ca">Apply</a>
+								<a class="button" href="https://giving.ontariotechu.ca/donate">Donations</a>
+								<a class="button" href="https://uoit.ca/crisis-centre"><span class="icon_emergency"></span> Crisis
+									Centre</a>
+							</div>
+						</div>
+					</div>
+
+					<nav aria-label="Quick links" class="top_nav" role="navigation">
+						<div class="top_links row">
+							<!-- <div class="row"> -->
+							<div class="column">
+								<p class="header">Contact us</p>
+								<ul>
+									<li> <a href="https://uoit.ca/maps">Campus map</a>
+									</li>
+									<li> <a
+											href="https://uoit.ca/future-students/undergraduate/campus-tours-and-events/index.php">Campus
+											tours</a>
+									</li>
+									<li> <a href="https://uoit.ca/virtualtour">Campus virtual tour</a>
+									</li>
+									<li> <a href="https://hr.ontariotechu.ca/working_at_uoit/careers/index.php">Career opportunities</a>
+									</li>
+									<li> <a href="https://uoit.ca/contact-us.php">Contact information</a>
+									</li>
+									<li> <a href="https://uoit.ca/directory/">UOIT Directory</a>
+									</li>
+								</ul>
+							</div>
+							<div class="column">
+								<p class="header">Services and information</p>
+								<ul>
+									<li> <a href="http://accessibility.ontariotechu.ca">Accessibility</a> <a href=""
+											id="essential-accessibility"><img alt="eSSENTIAL ACCESSIBILITY"
+												src="https://shared.ontariotechu.ca/shared/ontario-tech/images/ea_app_icon.png" height="20" /></a>
+									</li>
+									<li> <a href="https://uoit.bookware3000.ca/">Bookstore</a>
+									</li>
+									<li> <a href="https://www.ontariotechu.ca/faculty_staff/index.php">Faculty and staff</a>
+									</li>
+									<li> <a href="http://itsc.ontariotechu.ca/">IT services</a>
+									</li>
+									<li> <a href="https://uoit.ca/sites/library/">Library</a>
+									</li>
+									<li> <a href="https://news.ontariotechu.ca/topic/service_disruptions.php">Service disruptions</a>
+									</li>
+								</ul>
+							</div>
+							<div class="column">
+								<p class="header">Safety and security</p>
+								<ul>
+									<li> <a href="https://uoit.ca/emergency">Campus emergencies</a>
+									</li>
+									<li> <a href="https://uoit.ca/current-students/campus-services/safety-security/index.php">Campus
+											safety</a>
+									</li>
+									<li> <a href="https://studentlife.ontariotechu.ca/mentalhealth/">Mental health</a>
+									</li>
+									<li> <a href="https://studentlife.ontariotechu.ca/sexualviolence/">Sexual violence support and education</a>
+									</li>
+								</ul>
+							</div>
+							<div class="column">
+								<p class="header">Students</p>
+								<ul>
+									<li> <a href="https://uoit.ca/current-students/academics/academic-calendars/index.php">Academic
+											Calendar</a>
+									</li>
+									<li> <a href="https://uoit.blackboard.com">Blackboard</a>
+									</li>
+									<li> <a href="https://uoit.ca/mycampus/">MyCampus</a>
+									</li>
+									<li> <a href="http://mail.uoit.net/">UOITnet</a>
+									</li>
+									<li> <a href="http://www.uoitridgebacks.com/">Ridgebacks</a>
+									</li>
+								</ul>
+							</div>
+							<!-- </div> -->
+						</div>
+					</nav>
+
+				</section>
+			</div>
+
+			<div class="logo-bar">
+				<div class="toggle_top_nav top-nav-button-arrow">
+					<button aria-controls="top-nav-links" class="top-nav-button" data-toggle="top-nav-links"
+						onclick="ga('send','event','button','click','topNav_quickLinks')"><span class="desc"><span
+								class="icon_search"></span> Quick links</span></button>
+				</div>
+
+				<div class="row align-justify">
+					<div class="column shrink logo-container signature-logo">
+						<div class="logo  no-sticky-logo">
+							<a href="/index.php" title="Ontario Tech University home page">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px" y="0px" viewBox="0 0 274.3325 86.1196" style="enable-background:new 0 0 274.3325 86.1196;"
+									xml:space="preserve" class="logo-main">
+									<g id="logo-otu">
+										<g class="logo-text">
+											<g id="university">
+												<path class="st2" d="M69.3769,73.2568c-0.7609,0.0181-1.5183-0.1092-2.2315-0.3749c-0.5886-0.2276-1.1172-0.5873-1.545-1.0514
+				c-0.4127-0.4592-0.7214-1.0021-0.905-1.5915c-0.2016-0.651-0.3006-1.3294-0.2934-2.0108v-7.9177h2.3225v7.698
+				c-0.0101,0.4974,0.0546,0.9936,0.1919,1.4718c0.1065,0.3691,0.294,0.7098,0.549,0.9971
+				c0.2317,0.2522,0.5195,0.4463,0.8402,0.5668c0.3486,0.1264,0.7173,0.1884,1.0881,0.183c0.374,0.0049,0.7458-0.0571,1.098-0.183
+				c0.3243-0.1186,0.6155-0.3129,0.8495-0.5668c0.2558-0.2868,0.4435-0.6276,0.549-0.9971c0.1373-0.4782,0.202-0.9743,0.1919-1.4718
+				v-7.698h2.3225v7.9177c0.0079,0.6821-0.094,1.361-0.3017,2.0108c-0.1889,0.5893-0.5008,1.1318-0.915,1.5915
+				c-0.432,0.4673-0.9671,0.8273-1.5627,1.0514c-0.7196,0.2646-1.4826,0.3917-2.2491,0.3749" />
+												<path class="st2" d="M88.9065,72.9826c-0.4148-0.6943-0.8781-1.4411-1.3897-2.2404c-0.5117-0.7994-1.0418-1.604-1.5903-2.4138
+				c-0.549-0.8096-1.1069-1.5956-1.6737-2.3579s-1.1062-1.4483-1.6182-2.0579v9.07h-2.268V60.3105h1.8832
+				c0.488,0.5124,1.0126,1.119,1.5736,1.82s1.1248,1.4292,1.6913,2.1848c0.5667,0.7563,1.1153,1.5153,1.6459,2.2768
+				c0.5306,0.7616,1.0031,1.4714,1.4175,2.1295v-8.4111h2.2858v12.6724h-1.9573L88.9065,72.9826L88.9065,72.9826z" />
+												<rect x="96.916" y="60.3104" class="st2" width="2.3035" height="12.6724" />
+												<path class="st2" d="M108.8959,72.9826c-0.915-1.9752-1.7964-4.0415-2.6441-6.1987c-0.8477-2.1572-1.6374-4.315-2.369-6.4734
+				h2.542c0.2939,0.854,0.5934,1.7258,0.8983,2.6152c0.305,0.8894,0.6107,1.7641,0.9172,2.6241
+				c0.305,0.8595,0.6103,1.6914,0.916,2.4954c0.3057,0.8041,0.6052,1.5416,0.8983,2.2127c0.2817-0.6699,0.5748-1.4045,0.8795-2.2038
+				c0.3061-0.7975,0.6152-1.6293,0.9272-2.4954c0.3105-0.8652,0.6189-1.7428,0.925-2.6329
+				c0.3061-0.8901,0.5993-1.7619,0.8795-2.6153h2.4699c-0.7468,2.1583-1.542,4.3162-2.3857,6.4737s-1.7246,4.2236-2.6429,6.1984
+				C111.1071,72.9826,108.8959,72.9826,108.8959,72.9826z" />
+												<polygon class="st2"
+													points="120.7798,72.9823 120.7798,60.3105 128.9174,60.3105 128.9174,62.2669 123.0829,62.2669 
+				123.0829,65.3942 128.2773,65.3942 128.2773,67.3146 123.0829,67.3146 123.0829,71.026 129.3562,71.026 129.3562,72.9823 			" />
+												<path class="st2" d="M138.006,60.1825c1.4681-0.0927,2.9302,0.2578,4.1967,1.0059c1.6486,1.291,1.9384,3.674,0.6474,5.3226
+				c-0.4476,0.5716-1.05,1.0027-1.7355,1.242c0.2318,0.2806,0.494,0.6218,0.7868,1.0237c0.2928,0.4019,0.5915,0.8375,0.8962,1.3069
+				c0.3039,0.4692,0.5979,0.9505,0.8772,1.444s0.5301,0.9782,0.7498,1.4536h-2.5786c-0.2307-0.438-0.4802-0.8798-0.7486-1.3253
+				c-0.2683-0.4455-0.54-0.8784-0.8151-1.2987c-0.2739-0.4203-0.5451-0.8167-0.8135-1.1889s-0.5183-0.7042-0.7498-0.9959
+				c-0.1708,0.0121-0.3173,0.0177-0.4391,0.0177h-1.463v4.7921h-2.3047V60.4931c0.5906-0.126,1.1897-0.2086,1.7924-0.2474
+				c0.6344-0.0421,1.2014-0.0632,1.7013-0.0632 M138.17,62.1755c-0.4869,0-0.938,0.0181-1.3531,0.0544v4.0969h1.0059
+				c0.495,0.0041,0.9896-0.0267,1.4803-0.092c0.3737-0.0439,0.7363-0.1551,1.0703-0.3283c0.2739-0.1458,0.4994-0.3682,0.6488-0.6401
+				c0.1576-0.3179,0.2331-0.6702,0.2197-1.0247c0.0108-0.3422-0.0647-0.6816-0.2197-0.9869
+				c-0.1455-0.2688-0.3643-0.4908-0.631-0.6401c-0.3037-0.1693-0.6348-0.2838-0.9782-0.3383
+				c-0.4106-0.0702-0.8266-0.104-1.2432-0.101" />
+												<path class="st2" d="M152.3056,71.2636c0.6326,0.0498,1.2652-0.097,1.8112-0.4204c0.3756-0.2768,0.5883-0.7228,0.5668-1.1889
+				c0.0075-0.2747-0.0588-0.5464-0.1919-0.7868c-0.1406-0.2335-0.3274-0.4358-0.549-0.5945
+				c-0.271-0.1951-0.5621-0.3605-0.8683-0.4934c-0.3417-0.1519-0.7317-0.3009-1.1701-0.4469
+				c-0.4392-0.1586-0.8629-0.3324-1.2711-0.5213c-0.3932-0.1789-0.757-0.4164-1.0791-0.7043
+				c-0.3131-0.2833-0.5678-0.625-0.7498-1.0059c-0.2003-0.4419-0.2974-0.9236-0.2839-1.4085
+				c-0.0487-1.0358,0.3915-2.0345,1.1889-2.6973c0.9305-0.6958,2.0761-1.0421,3.2362-0.9782
+				c0.7132-0.0101,1.4243,0.0791,2.1128,0.2651c0.5059,0.1332,0.994,0.3268,1.4536,0.5766l-0.7143,1.8644
+				c-0.4278-0.2364-0.8853-0.4147-1.3603-0.5301c-0.4998-0.1226-1.0126-0.1841-1.5272-0.183
+				c-0.5132-0.0302-1.0226,0.1047-1.4536,0.3849c-0.3438,0.2489-0.5396,0.6539-0.5212,1.0779
+				c-0.0072,0.2522,0.0529,0.5018,0.1742,0.7231c0.125,0.2122,0.2931,0.3958,0.4934,0.539
+				c0.2344,0.1713,0.4856,0.3185,0.7497,0.4392c0.285,0.1342,0.6001,0.2628,0.9417,0.3838
+				c0.5966,0.2196,1.1297,0.4421,1.5992,0.6676c0.4366,0.2029,0.838,0.4744,1.1889,0.804c0.3219,0.309,0.5745,0.6829,0.741,1.0969
+				c0.182,0.4881,0.269,1.0065,0.2562,1.5272c0.0523,1.0319-0.4013,2.0246-1.2156,2.6607
+				c-1.0503,0.6963-2.3007,1.0272-3.5579,0.9417c-0.4803,0.0033-0.9601-0.0304-1.4352-0.1009
+				c-0.3887-0.0571-0.7733-0.1393-1.1513-0.2462c-0.2954-0.0836-0.5858-0.1844-0.8695-0.3017
+				c-0.2008-0.0826-0.3963-0.1775-0.5856-0.2839l0.6777-1.8832c0.4273,0.2236,0.8743,0.4074,1.3353,0.549
+				c0.6578,0.1961,1.3422,0.2885,2.0285,0.2739" />
+												<rect x="162.1254" y="60.3104" class="st2" width="2.3047" height="12.6724" />
+												<polygon class="st2" points="179.3154,60.3105 179.3154,62.3029 175.4199,62.3029 175.4199,72.9823 173.0981,72.9823 
+				173.0981,62.3029 169.2027,62.3029 169.2027,60.3105 			" />
+												<path class="st2" d="M188.8239,65.9249c0.549-0.9139,1.0854-1.8407,1.6092-2.7804c0.5245-0.9383,1.0002-1.8829,1.427-2.8336
+				h2.5597c-0.6821,1.2931-1.3923,2.5763-2.1306,3.8496s-1.5276,2.5561-2.3679,3.8485v4.9743h-2.3035v-4.9379
+				c-0.8419-1.3032-1.6341-2.5953-2.3767-3.8762c-0.7442-1.2803-1.4577-2.5664-2.1405-3.8585h2.7072
+				c0.4259,0.9505,0.895,1.895,1.4073,2.8336S188.2637,65.0097,188.8239,65.9249" />
+											</g>
+											<g id="tech">
+												<polygon class="st4" points="216.9774,22.1497 194.7651,22.1497 194.7651,27.296 202.8533,27.296 202.8533,48.9683 
+				208.8892,48.9683 208.8892,27.296 216.9774,27.296 			" />
+												<path class="st4" d="M224.7579,28.0704c-1.2394,0.0002-2.4673,0.2366-3.6182,0.6967c-1.1692,0.461-2.2301,1.1593-3.116,2.0508
+				c-0.9476,0.9718-1.6908,2.1236-2.1859,3.3873c-0.5835,1.5104-0.8664,3.1203-0.8328,4.7392
+				c-0.0114,1.4184,0.2041,2.8296,0.6385,4.1799c0.4014,1.2489,1.076,2.3927,1.9749,3.3481c0.9453,0.9794,2.0944,1.739,3.3659,2.225
+				c1.5274,0.5716,3.1497,0.8468,4.7801,0.811c0.7238,0.0001,1.4472-0.0383,2.1669-0.115c0.7223-0.077,1.3996-0.1738,2.0319-0.2903
+				c0.5812-0.1038,1.1563-0.2395,1.7226-0.4063c0.4249-0.1202,0.839-0.2755,1.2381-0.4645l-0.7735-4.6823
+				c-0.8032,0.3298-1.6404,0.5698-2.4964,0.7156c-1.0269,0.1941-2.0697,0.2913-3.1147,0.2903
+				c-1.3923,0.0718-2.7722-0.2935-3.9465-1.045c-0.9504-0.6443-1.5618-1.681-1.6656-2.8246h13.0808
+				c0.0257-0.3103,0.0513-0.6643,0.077-1.065c0.0256-0.4007,0.0391-0.767,0.0391-1.103c0.2045-2.8274-0.6978-5.6235-2.5164-7.7981
+				c-1.8016-1.8183-4.2929-2.7824-6.8492-2.6504 M220.9271,36.7383c0.0782-0.4939,0.2011-0.9797,0.3673-1.4514
+				c0.159-0.4601,0.402-0.8867,0.7167-1.2581c0.3207-0.3695,0.7166-0.6664,1.1611-0.8708c0.5234-0.231,1.0915-0.3431,1.6634-0.3282
+				c0.5807-0.0194,1.1577,0.0995,1.6835,0.3467c0.4316,0.2165,0.814,0.5198,1.123,0.8908c0.2985,0.3655,0.5219,0.7862,0.6576,1.2381
+				c0.1419,0.4654,0.2263,0.9464,0.2513,1.4323h-7.6239V36.7383z" />
+												<path class="st4" d="M250.4546,44.363c-0.7416,0.1243-1.4921,0.1889-2.244,0.1931c-1.5342,0.1681-3.0589-0.3903-4.1217-1.5094
+				c-0.8588-1.2468-1.2744-2.7458-1.1801-4.2568c-0.0725-1.4958,0.3713-2.9711,1.257-4.1787
+				c0.9453-1.1064,2.3615-1.6959,3.8126-1.587c0.7289-0.008,1.4563,0.0699,2.1669,0.2322c0.6047,0.1423,1.1995,0.3235,1.7807,0.5425
+				l1.199-4.6062c-0.8489-0.3598-1.7299-0.6383-2.6313-0.8318c-0.9803-0.2011-1.979-0.2984-2.9797-0.2903
+				c-1.514-0.0274-3.017,0.2628-4.4121,0.8518c-2.5073,1.0675-4.4514,3.1382-5.3588,5.7078
+				c-0.4836,1.3331-0.7263,2.7416-0.7167,4.1598c-0.0124,1.4347,0.1898,2.8631,0.6001,4.2379
+				c0.3727,1.2556,1.0207,2.4124,1.8968,3.386c0.9187,0.9931,2.0491,1.7669,3.3073,2.264c1.53,0.5887,3.1606,0.8713,4.7995,0.8318
+				c1.1169,0.0093,2.2319-0.0943,3.328-0.3093c0.8604-0.1628,1.7028-0.4092,2.5153-0.7357l-0.8128-4.7209
+				c-0.7077,0.2945-1.4484,0.5025-2.2059,0.6196" />
+												<path class="st4" d="M273.9259,33.6818c-0.2401-1.0713-0.7157-2.0758-1.3922-2.9406c-0.6979-0.8549-1.6047-1.5151-2.6325-1.9169
+				c-1.3174-0.4891-2.7171-0.7189-4.1218-0.6765c-0.591,0.0023-1.1804,0.0606-1.7603,0.1742
+				c-0.5037,0.0907-1.0011,0.2134-1.4892,0.3673v-8.9904h-5.7674v29.2699h5.7674v-15.48c0.3617-0.1039,0.767-0.2,1.219-0.2903
+				c0.4781-0.0933,0.9643-0.1389,1.4514-0.1362c1.0281-0.1211,2.0414,0.323,2.6492,1.161c0.5727,1.2328,0.8195,2.592,0.7168,3.9474
+				v10.7979h5.7662V37.4741c0.0131-1.2757-0.1233-2.5485-0.4064-3.7925" />
+											</g>
+											<g id="ontario">
+												<path class="st2" d="M108.0377,30.7408c-0.7272-0.8655-1.6677-1.5262-2.7285-1.9169c-1.3844-0.4891-2.8472-0.7181-4.3148-0.6755
+				c-1.6326-0.0057-3.2631,0.1171-4.8764,0.3673c-1.279,0.1876-2.5454,0.4523-3.7925,0.7927v19.6599h5.7662V33.2561
+				c0.3618-0.0513,0.7735-0.0971,1.2393-0.1351c0.4633-0.0391,0.9013-0.0589,1.314-0.0592c1.0575-0.1275,2.1035,0.3142,2.7496,1.161
+				c0.5858,1.229,0.8391,2.59,0.7347,3.9474v10.7979h5.7662V37.4739c0.0128-1.2768-0.1305-2.5504-0.4268-3.7925
+				c-0.2546-1.0737-0.7433-2.0778-1.4312-2.9406" />
+												<path class="st2" d="M124.6806,44.3819c-0.6323,0.1138-1.2733,0.1721-1.9157,0.1742c-0.9913,0.1357-1.9777-0.2793-2.5738-1.0829
+				c-0.4655-0.8941-0.6855-1.8957-0.6375-2.9026v-7.1595h6.9262v-4.7995h-6.9258v-5.8818h-5.7673v17.9178
+				c-0.0116,1.2097,0.112,2.417,0.3685,3.5992c0.2101,1.011,0.654,1.9588,1.2961,2.7675c0.6624,0.7923,1.5141,1.4044,2.4762,1.7796
+				c1.2494,0.4631,2.5767,0.6799,3.9085,0.6385c1.0534,0.0189,2.1055-0.0849,3.1349-0.3093
+				c0.7911-0.1878,1.5673-0.4337,2.3222-0.7357l-0.8127-4.489c-0.5833,0.2176-1.1859,0.3794-1.7997,0.4834" />
+												<path class="st2" d="M145.011,30.3151c-0.7601-0.7691-1.6968-1.3406-2.7284-1.6646c-1.3787-0.4222-2.8167-0.6183-4.258-0.5805
+				c-0.6709,0-1.3351,0.0324-1.9928,0.0971s-1.2832,0.1421-1.8768,0.2322c-0.5939,0.0904-1.142,0.1935-1.6445,0.3093
+				c-0.5024,0.1158-0.9217,0.2255-1.258,0.3291l0.7357,4.6443c0.8027-0.2841,1.6325-0.4852,2.4762-0.6001
+				c0.961-0.1415,1.9312-0.2124,2.9026-0.2122c1.1081-0.1145,2.2176,0.2044,3.0958,0.8898c0.609,0.6308,0.9313,1.4846,0.891,2.3605
+				v0.542c-0.4633-0.1216-0.9355-0.206-1.4123-0.2523c-0.6624-0.0679-1.328-0.0999-1.9939-0.096
+				c-1.0788-0.0026-2.1548,0.1074-3.2108,0.3282c-0.9704,0.1953-1.9001,0.5555-2.7487,1.065
+				c-0.7956,0.4849-1.4548,1.1641-1.9157,1.9737c-0.5017,0.9247-0.7491,1.9661-0.7167,3.0177
+				c-0.0322,1.0783,0.1796,2.1499,0.6196,3.1349c0.3993,0.8361,1.0138,1.5508,1.7806,2.0709
+				c0.8397,0.5564,1.7797,0.944,2.7676,1.141c1.1772,0.2439,2.3771,0.361,3.5792,0.3494c1.7873,0.0213,3.5734-0.1018,5.3409-0.3683
+				c1.4693-0.2445,2.6173-0.4573,3.4442-0.6385V36.3906c0.0124-1.1619-0.1307-2.3202-0.4253-3.4441
+				c-0.2585-0.9837-0.7572-1.8879-1.4514-2.6313 M141.3541,44.7882c-0.4106,0.0619-0.8244,0.1007-1.2393,0.1162
+				c-0.5157,0.0267-1.0575,0.0397-1.6255,0.0391c-0.8628,0.0436-1.7223-0.1364-2.4952-0.5225
+				c-0.636-0.4013-0.9891-1.1287-0.911-1.8766c-0.0149-0.4093,0.0932-0.8137,0.3103-1.161
+				c0.2137-0.3161,0.5077-0.5696,0.8518-0.7345c0.3963-0.1913,0.8214-0.3161,1.2582-0.3695
+				c0.5069-0.0652,1.0174-0.0973,1.5284-0.096c0.4265,0.0029,0.8524,0.0286,1.2761,0.0771
+				c0.4655,0.0525,0.8142,0.1043,1.0461,0.1552v4.373v-0.0005H141.3541z" />
+												<path class="st2" d="M161.4254,28.3993c-0.4376-0.0634-0.8759-0.1151-1.3151-0.1552c-0.4388-0.038-0.8127-0.058-1.1219-0.058
+				c-1.5806-0.0153-3.1579,0.1469-4.7023,0.4834c-1.2368,0.2757-2.4577,0.6182-3.6574,1.0259v19.2725h5.7662V33.4108
+				c0.3746-0.1004,0.7565-0.1718,1.1421-0.2134c0.4296-0.0589,0.8625-0.0914,1.2961-0.0971
+				c0.7536-0.0036,1.5057,0.0679,2.2451,0.2134c0.3953,0.0815,0.7536,0.1586,1.0918,0.2355v-5.0183
+				c-0.2479-0.0447-0.4957-0.0948-0.7447-0.1318" />
+												<rect x="166.0567" y="28.6115" class="st2" width="5.7662" height="20.3565" />
+												<path class="st2"
+													d="M168.9204,19.3243c-0.892-0.0137-1.7561,0.311-2.4182,0.9088c-1.368,1.3831-1.368,3.6095,0,4.9926
+				c1.3843,1.2132,3.4531,1.2132,4.8373,0c1.3665-1.3837,1.3665-3.6089,0-4.9926c-0.6628-0.5975-1.527-0.9222-2.4193-0.9088" />
+												<path class="st2" d="M75.0031,49.5093c-7.7377-0.0002-14.0102-6.2731-14.01-14.0108s6.2731-14.0102,14.0108-14.01
+				s14.0102,6.2731,14.01,14.0108v0.0001C89.0049,43.2336,82.7371,49.5009,75.0031,49.5093 M74.4056,27.0149
+				c-4.6777,0-7.8872,3.8058-7.8872,8.4847c0.0187,4.686,3.8325,8.4695,8.5185,8.4509c4.6596-0.0186,8.4323-3.7913,8.4509-8.4509
+				c-0.0001-4.6789-4.4046-8.4849-9.0823-8.4849L74.4056,27.0149z" />
+												<path class="st2" d="M186.0188,49.5084c-5.9197,0.0001-10.7187-4.7988-10.7188-10.7185s4.7988-10.7187,10.7185-10.7188
+				c5.9197-0.0001,10.7187,4.7988,10.7188,10.7185c0,0.0004,0,0.0009,0,0.0013C196.7305,44.7076,191.9355,49.5021,186.0188,49.5084
+				M186.0188,33.201c-3.0869-0.0003-5.5895,2.5019-5.5898,5.5887s2.5019,5.5895,5.5887,5.5898
+				c3.0868,0.0003,5.5894-2.5018,5.5898-5.5886c-0.0034-3.0853-2.5034-5.5857-5.5887-5.5896V33.201z" />
+											</g>
+										</g>
+										<g id="shield" class="logo-shield">
+											<path class="background" id="inner-bg" d="M44.7364,16.1562l0.002,33.8907C44.716,61.0266,35.4224,69.91,23.9806,69.8885
+		C12.5705,69.8672,3.3263,60.9963,3.304,50.047V16.1562H44.7364" />
+											<path class="arc outline-stroke" id="circle-full"
+												d="M-0.0587,31.5468c22.8301-0.875,36.8305,14.4776,34.8269,35.2377
+		c-1.9249,19.9452-15.2277,36.2818-35.2455,36.2818s-36.2455-16.2439-36.2455-36.2818S-20.0618,32.3134-0.0587,31.5468z" />
+											<path class="background" id="outer-bg" d="M0,0v87.3891h55.0677V0H0z M44.8706,33.4319v15.0906c0,11.8002-9.305,21.3662-20.7833,21.3662
+		S3.304,60.3226,3.304,48.5224V16.1562h41.5666V33.4319z" />
+											<path class="shield outline-stroke" id="shield-full"
+												d="M28.5887,16.1563H3.4362v33.1405c0,27.4557,41.4344,27.4557,41.4344,0V16.1563H28.5887z" />
+											<path class="shield outline-stroke" id="shield-notched"
+												d="M28.5887,16.1562H3.4362v33.1405c0,27.4558,41.4344,27.4558,41.4344,0V32.3634" />
+											<path class="arrow outline-stroke" id="triangle" d="M44.8706,25.5542v-9.3979h-9.6472" />
+										</g>
+									</g>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sticky-container" data-sticky-container="">
+				<div id="sticky-nav-bar" class="sticky" data-sticky="" data-sticky-on="xxsmall" data-top-anchor="147"
+					data-margin-top="0">
+					<!-- data-top-anchor="site-title-bar" -->
+					<section aria-label="Search Bar" class="sticky-search" data-toggler=".open" id="sticky-search">
+						<div class="search-bar">
+						</div>
+					</section>
+					<div class="site-title-bar hide-at-top" id="site-title-bar">
+						<!-- legacy -->
+						<!-- <div class="btn-sticky-shield">
+						<a href="https://ontariotechu.ca" title="Ontario Tech home page"><span class="show-for-sr">Ontario Tech home page</span></a>
+					</div> -->
+						<!-- new -->
+						<a class="btn-sticky-shield" href="https://ontariotechu.ca" title="Ontario Tech home page"><span
+								class="show-for-sr">Ontario Tech home page</span></a>
+
+						<div class="title">
+							<a href="#" title="Ontario Tech University home page">Ontario Tech University</a>
+						</div>
+
+						<!-- legacy -->
+						<!-- <div class="btn-sticky-search">
+						<button data-toggle="sticky-search"><span class="show-for-sr">Search</span></button>
+					</div> -->
+						<!-- new -->
+						<button class="btn-sticky-search" data-toggle="sticky-search"><span
+								class="show-for-sr">Search</span></button>
+					</div>
+
+					{{> nav-main}}
+				</div>
+			</div>
+
+		</header>
+
+		<section id="main-content">
+
+			<!-- Banner -->
+			<div class="banner">
+				<figure>
+					<img data-interchange="[https://picsum.photos/1000/667?random, xxsmall], [https://picsum.photos/1920/600?random, medium]" src="https://picsum.photos/1920/600">
+					<figcaption class="darkblue">
+						<div class="contents">
+							<div class="header">
+								Default banner (caption box)
+							</div>
+							<div class="description">
+								Description here
+							</div>
+							<div class="cta">
+								<a href="">CTA link</a>
+							</div>
+						</div>
+					</figcaption>
+				</figure>
+			</div>
+
+			<!-- CTA thumbnails -->
+			<div class="cta-thumbnails row xxsmall-up-1 small-up-2 large-up-4">
+				<div class="column">
+					<div class="cta-thumbnail" ontouchstart="this.classList.toggle('hover');">
+						<a class="link" href=""><span class="show-for-sr">Link text</span></a>
+						<img src="https://picsum.photos/1000/667">
+						<div class="teaser">
+							<div class="header">Develop, discover and train</div>
+						</div>
+						<div class="contents">
+							<div class="description">From cycling and skiing, to wind surfing and sailing, our one-of-a-kind
+								facility aims to make athletes perform better.</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="cta-thumbnail" ontouchstart="this.classList.toggle('hover');">
+						<a class="link" href=""><span class="show-for-sr">Link text</span></a>
+						<img
+							src="https://shared.ontariotechu.ca/shared/department/registrar/program-images/FSSH-Program-Images/Legal-Studies.jpg">
+						<div class="teaser">
+							<div class="header">Download viewbooks</div>
+						</div>
+						<div class="contents">
+							<div class="description">View undergraduate and graduate viewbooks
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="cta-thumbnail" ontouchstart="this.classList.toggle('hover');">
+						<a class="link" href=""><span class="show-for-sr">Link text</span></a>
+						<img src="https://picsum.photos/1000/667?random">
+						<div class="teaser">
+							<div class="header">Register now for Summer Camp programs</div>
+						</div>
+						<div class="contents">
+							<div class="description">The Faculty of Education offers a variety of unique summer camp programs in
+								July and August.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="cta-thumbnail" ontouchstart="this.classList.toggle('hover');">
+						<a class="link" href=""><span class="show-for-sr">Link text</span></a>
+						<img src="https://picsum.photos/1000/667?random">
+						<div class="teaser">
+							<div class="header">Virtual tour</div>
+						</div>
+						<div class="contents">
+							<div class="description">Explore OntarioTech's two campus locations from home with our virtual tour!
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="landing-page-content">
+
+				<!-- CTA cards -->
+				<div class="row card-grid  card-grid-bgcolor card-grid-center">
+					<section class="columns">
+
+						<div class="block darkerblue">
+							<a href="design/index.php"
+								onclick="ga('send','event','button','click','lp_Brand Central - Design')"><span
+									class="show-for-sr">Design</span></a>
+							<span class="icon_uoitshield"></span>
+							<div class="contents">
+								<h2 class="header">Apply</h2>
+								<p class="description">Find information on how to apply, important dates, academic requirements and
+									more</p>
+							</div>
+							<div class="bgcolor darkerblue"></div>
+						</div>
+
+					</section>
+					<section class="columns">
+						<a href="guidelines/index.php"
+							onclick="ga('send','event','button','click','lp_Brand Central - Guidelines')">
+							<div class="block blue">
+								<span class="icon_bookuoit"></span>
+								<div class="contents">
+									<h2 class="header">Download viewbooks</h2>
+									<p class="description">View undergraduate and graduate viewbooks</p>
+								</div>
+								<div class="bgcolor blue"></div>
+							</div>
+						</a>
+					</section>
+					<section class="columns">
+						<a href="templates/index.php"
+							onclick="ga('send','event','button','click','lp_Brand Central - Templates')">
+							<div class="block lightblue">
+								<span class="icon_map"></span>
+								<div class="contents">
+									<h2 class="header">Virtual tour</h2>
+									<p class="description">Explore ONTechU from anywhere in the world</p>
+								</div>
+								<div class="bgcolor lightblue"></div>
+							</div>
+						</a>
+					</section>
+				</div>
+
+				<!-- CTA buttons (legacy) -->
+				<div class="row cta-buttons margin-bottom">
+					<div class="column">
+						<h2> <a class="button icon_compass teal" href="https://uoit.ca/explore"
+								onclick="ga('send','event','button','click','uoit_home_exploreUOIT');"><span><span>Explore the</span>
+									<span>university</span></span></a> </h2>
+					</div>
+					<div class="column">
+						<h2> <a class="button icon_bookuoit teal" href="https://uoit.ca/future-students/viewbooks.php"
+								onclick="ga('send','event','button','click','uoit_home_downloadViewbooks');"><span><span>Download</span>
+									<span>viewbooks</span></span></a> </h2>
+					</div>
+					<div class="column">
+						<h2> <a class="button teal icon_map" href="https://uoit.ca/virtualtour"
+								onclick="ga('send','event','button','click','uoit_home_virtualTour');"><span><span>Virtual</span>
+									<span>tour</span></span></a> </h2>
+					</div>
+				</div>
+
+				<!-- Program finder -->
+				<div id="program-search" data-fields="program_type,category,faculty,delivery,location,keywords"
+					data-heading="Find a program"></div>
+				<script src="https://ontariotechu.ca/global/files/js/programs.js"></script>
+
+				<!-- Spotlight: feature image -->
+				<section class="spotlight feature-image"> <!-- optional classes: .columns .{color} .{edge}-margin .image -->
+					<div class="feature-image" style="background-image: url(https://picsum.photos/1920/600?random); background-position: center center">
+						<img src="https://picsum.photos/1000/667?random" alt="">
+					</div>
+					<div class="feature-module">
+						<div class="content">
+							<div class="feature-float-box lightblue small-5 large-4 align-left"> <!-- custom classes: .{column-sizing} .align-{left/right} -->
+								<h2 class="feature-subheading">Feature image spotlight</h2>
+								<div class="content">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat obcaecati, possimus placeat consequatur fugit perferendis facilis quasi corporis modi reiciendis, accusantium beatae animi velit iure aliquam, harum culpa sint?</p>
+									<a href="" class="feature-link">Learn more</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Quick links bar -->
+				<div class="spotlight lightgrey margin-bottom">
+					<div class="quick-links-bar row xxsmall-up-1 xsmall-up-2 medium-up-4">
+						<div class="columns">
+							<div class="icon icon_map-signs"></div>				
+							<p class="header"><a href="#">MyCampus</a></p>
+							<p class="description">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							</p>
+						</div>
+						<div class="columns">
+							<span class="icon icon_calendar"></span>
+							<p class="header"><a href="">Academic Calendar</a></p>
+							<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						</div>								
+						<div class="columns">
+							<span class="icon icon_gradcap"></span>
+							<p class="header"><a>Blackboard</a></p>
+							<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						</div>
+						<div class="columns">
+							<span class="icon icon_calendardate"></span>
+							<p class="header"><a>Important Dates</a></p>
+							<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- News -->
+				<section class="news news-grid darkblue"> <!-- optional classes: .news-feed .{color} .{top/bottom}-margin -->
+					<div class="feature-module">
+						<div class="heading">
+							<h2>Latest news</h2>
+							<a class="see_all" href="http://news.ontariotechu.ca/index.php" title="See all news">All news<span></span></a>
+						</div>
+						<div class="content articles">
+							<article>
+								<div>
+									<a class="link"
+										href="https://news.ontariotechu.ca/archives/2023/04/ontario-tech-researcher-to-lead-international-study-that-promotes-gender-inclusion-in-scientific-pursuits.php"
+										onclick="ga('send', 'event', 'link', 'click', 'newsFeed_https://news.ontariotechu.ca/archives/2023/04/ontario-tech-researcher-to-lead-international-study-that-promotes-gender-inclusion-in-scientific-pursuits.php');"><span
+											class="show-for-sr">Ontario Tech researcher to lead international study that promotes gender
+											inclusion in scientific pursuits</span></a>
+									<div class="news_img">
+										<img
+											src="https://news.ontariotechu.ca/archives/2023/04/images/fed-robyn-ruttenberg-rozen-sshrc-funding-thumbnail.jpg"
+											alt="Dr. Robyn Ruttenberg-Rozen, Assistant Professor, Faculty of Education, Ontario Tech University  " />
+									</div>
+									<div class="news_text">
+										<p class="news_date">April 26, 2023</p>
+										<p class="news_title">Ontario Tech researcher to lead international study that promotes gender
+											inclusion in scientific pursuits</p>
+									</div>
+								</div>
+							</article>
+							<article>
+								<div>
+									<a class="link"
+										href="https://news.ontariotechu.ca/archives/2023/04/ontario-tech-masters-degree-thesis-wins-north-american-award.php"
+										onclick="ga('send', 'event', 'link', 'click', 'newsFeed_https://news.ontariotechu.ca/archives/2023/04/ontario-tech-masters-degree-thesis-wins-north-american-award.php');"><span
+											class="show-for-sr">Ontario Tech master’s degree thesis wins North American award</span></a>
+									<div class="news_img">
+										<img
+											src="https://news.ontariotechu.ca/archives/2023/04/images/sgps-jennifer-robb-masters-thesis-thumbnail.jpg"
+											alt="Jennifer Robb, Ontario Tech University 2022 Master of Arts in Education graduate won the 2023 Northeastern Association of Graduate Schools and ProQuest Dissertations Master’s Thesis Award. The award was presented to her in a ceremony in Portsmouth, New Hampshire." />
+									</div>
+									<div class="news_text">
+										<p class="news_date">April 25, 2023</p>
+										<p class="news_title">Ontario Tech master’s degree thesis wins North American award</p>
+									</div>
+								</div>
+							</article>
+							<article>
+								<div>
+									<a class="link"
+										href="https://news.ontariotechu.ca/archives/2023/04/two-ontario-tech-researchers-leading-study-to-improve-reliability-of-bloodstain-analyses-at-crime-scenes.php"
+										onclick="ga('send', 'event', 'link', 'click', 'newsFeed_https://news.ontariotechu.ca/archives/2023/04/two-ontario-tech-researchers-leading-study-to-improve-reliability-of-bloodstain-analyses-at-crime-scenes.php');"><span
+											class="show-for-sr">Two Ontario Tech researchers leading study to improve reliability of
+											bloodstain analyses at crime scenes </span></a>
+									<div class="news_img">
+										<img
+											src="https://news.ontariotechu.ca/archives/2023/04/images/vpri-nfrf-stotesbury-lewis-thumbnail.jpg"
+											alt="From left: Dr. Peter Lewis, Associate Professor (Computer Science), Faculty of Business and Information Technology, Co-Principal Investigator; and Dr. Theresa Stotesbury, Assistant Professor (Forensic Science), Faculty of Science. Principal Investigator." />
+									</div>
+									<div class="news_text">
+										<p class="news_date">April 25, 2023</p>
+										<p class="news_title">Two Ontario Tech researchers leading study to improve reliability of
+											bloodstain analyses at crime scenes </p>
+									</div>
+								</div>
+							</article>
+							<article>
+								<div>
+									<a class="link"
+										href="https://news.ontariotechu.ca/archives/2023/04/how-will-ai-chatbots-impact-education-at-universities-and-in-our-workplaces.php"
+										onclick="ga('send', 'event', 'link', 'click', 'newsFeed_https://news.ontariotechu.ca/archives/2023/04/how-will-ai-chatbots-impact-education-at-universities-and-in-our-workplaces.php');"><span
+											class="show-for-sr">How will AI chatbots impact education at universities and in our workplaces?
+										</span></a>
+									<div class="news_img">
+										<img
+											src="https://news.ontariotechu.ca/archives/2023/04/images/fssh-ai-chatbot-symposium-thumbnail.jpg"
+											alt="From left: Dr. Isabel Pedersen, Professor, FSSH, and Director of the Digital Life Institute, Alyson King, Associate Professor, FSSH, and Chelsie Lalonde, MLIS, Librarian for FSSH. " />
+									</div>
+									<div class="news_text">
+										<p class="news_date">April 20, 2023</p>
+										<p class="news_title">How will AI chatbots impact education at universities and in our workplaces?
+										</p>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<!-- Events -->
+				<section class="events   grey">
+					<div class="feature-module home-module">
+						<div class="heading">
+							<h2>Events</h2>
+							<a class="see_all" href="https://events.ontariotechu.ca"
+								onclick="ga('send', 'event', 'button', 'click', 'allEvents');" title="See all events">All
+								events<span></span></a>
+						</div>
+						<div class="content">
+							<div class="swiper-container swiper-container-horizontal swiper-container-free-mode" id="events-slider"
+								style="cursor: grab;">
+								<div class="swiper-wrapper"
+									style="width: 8220px; transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+			
+			
+									<div class="swiper-slide swiper-slide-active" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6489" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Wellness Walks &quot;);">
+											<p class="event_date">May <span>1</span></p>
+											<p class="event_info"><span class="event_title">Wellness Walks </span><span class="event_time">North
+													Oshawa Location, Front Desk <br>Noon</span></p>
+										</a></div>
+									<div class="swiper-slide swiper-slide-next" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6487" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;CPR Recertification&quot;);">
+											<p class="event_date">May <span>9</span></p>
+											<p class="event_info"><span class="event_title">CPR Recertification</span><span class="event_time">North
+													Oshawa Location, SHA038<br>1 p.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6488" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;CPR Recertification&quot;);">
+											<p class="event_date">May <span>11</span></p>
+											<p class="event_info"><span class="event_title">CPR Recertification</span><span class="event_time">North
+													Oshawa Location, SHA038<br>6 p.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6484" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Healthcare Providers CPR Recertification&quot;);">
+											<p class="event_date">May <span>16</span></p>
+											<p class="event_info"><span class="event_title">Healthcare Providers CPR Recertification</span><span
+													class="event_time">North Oshawa Location, 038<br>1 p.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6485" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Healthcare Providers CPR Recertification &quot;);">
+											<p class="event_date">May <span>18</span></p>
+											<p class="event_info"><span class="event_title">Healthcare Providers CPR Recertification </span><span
+													class="event_time">North Oshawa Location, 038<br>6 p.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6486" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Healthcare Providers CPR Recertification &quot;);">
+											<p class="event_date">May <span>23</span></p>
+											<p class="event_info"><span class="event_title">Healthcare Providers CPR Recertification </span><span
+													class="event_time">North Oshawa Location, 038<br>1 p.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6490" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Wellness Walks &quot;);">
+											<p class="event_date">Jun <span>6</span></p>
+											<p class="event_info"><span class="event_title">Wellness Walks </span><span class="event_time">North
+													Oshawa Location, Front desk <br>Noon</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6473" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Convocation - Education&quot;);">
+											<p class="event_date">Jun <span>7</span></p>
+											<p class="event_info"><span class="event_title">Convocation - Education</span><span
+													class="event_time">Polonsky Commons<br>9:30 a.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6475" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Convocation - Science&quot;);">
+											<p class="event_date">Jun <span>8</span></p>
+											<p class="event_info"><span class="event_title">Convocation - Science</span><span
+													class="event_time">Polonsky Commons<br>9:30 a.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6476" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Convocation - Engineering and Applied Science&quot;);">
+											<p class="event_date">Jun <span>8</span></p>
+											<p class="event_info"><span class="event_title">Convocation - Engineering and Applied
+													Science</span><span class="event_time">Polonsky Commons<br>2 p.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6477" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Convocation - Business and Information Technology&quot;);">
+											<p class="event_date">Jun <span>9</span></p>
+											<p class="event_info"><span class="event_title">Convocation - Business and Information
+													Technology</span><span class="event_time">Polonsky Commons<br>9:30 a.m.</span></p>
+										</a></div>
+									<div class="swiper-slide" style="width: 655px; margin-right: 30px;"><a
+											href="https://events.ontariotechu.ca/event/6478" target="_blank"
+											onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;eventfeed&quot;, &quot;click&quot;, &quot;Convocation - Social Science and Humanities&quot;);">
+											<p class="event_date">Jun <span>9</span></p>
+											<p class="event_info"><span class="event_title">Convocation - Social Science and Humanities</span><span
+													class="event_time">Polonsky Commons<br>2 p.m.</span></p>
+										</a></div>
+								</div>
+								<div class="swiper-scrollbar">
+									<div class="swiper-scrollbar-drag"
+										style="width: 219.243px; transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);"></div>
+								</div>
+								<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Featured expert, in spotlight -->
+				<section class="spotlight blue repeated-brand-arrow-pattern">
+					<!-- optional classes: .columns .{color} .{top/bottom}-margin .image -->
+					<div class="feature-module">
+						<div class="heading">
+							<h2>Featured expert (in CMS spotlight)</h2>
+						</div>
+						<div class="content">
+							<div class="featured-expert clear" data-id="random"
+								data-display="designation,expertise,fields,firstname,id,image,lastname,link,faculty,position,summary">
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Featured expert component -->
+				<div class="featured-expert spotlight blue" 
+					data-id="b75f17a8cdd3b4e41bf732dffec61c30"
+					data-display="firstname,lastname,position,faculty,summary,link,image,featureimage"
+					data-heading="Featured expert component block"></div>
+				<script src="https://shared.ontariotechu.ca/global/files/js/featured-expert.js" type="text/javascript"></script>
+
+				<!-- Social links -->
+				<section class="spotlight white column">
+					<div class="feature-module">
+						<div class="heading text-center">
+							<h2><span class="orange">Connect with us</span></h2>
+						</div>
+						<div class="content">
+							<div class="row align-center align-middle social-links">
+								<a href="https://www.facebook.com/OTGradStudies" target="_blank" title="OTGradStudies"><span
+										class="icon_social_facebook"></span>
+									<span class="show-for-sr">facebook: OTGradStudies</span>
+								</a>
+								<a href="https://twitter.com/ot_gradstudies" target="_blank" title="ot_gradstudies"><span
+										class="icon_social_twitter"></span>
+									<span class="show-for-sr">twitter: ot_gradstudies</span>
+								</a>
+								<a href="https://www.instagram.com/ot_gradstudies/" target="_blank" title="ot_gradstudies"><span
+										class="icon_social_instagram"></span>
+									<span class="show-for-sr">instagram: ot_gradstudies</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</section>
+
+
+
+			<!-- <section class="spotlight columns">
+<div class="feature-module">
+	<div class="content">
+		<script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
+		<link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
+		<ul class="juicer-feed" data-feed-id="uoit" data-per="8" data-columns="4" data-pages="1">
+		</ul>
+	</div>
+</div>
+</section> -->
+
+
+
+
+
+		</section> <!-- #main-content -->
+		<footer class="footer">
+
+			<div class="row footer_links">
+				<div class="column ">
+					<p class="header">Help</p>
+					<ul>
+						<li><a href="http://uoit.ca/contact-us.php">Contact us</a></li>
+						<li><a href="http://uoit.ca/terms-of-use.php">Terms of use</a></li>
+						<li><a href="https://uoit.ca/forms/online/view.php?id=441283">Website feedback</a></li>
+					</ul>
+				</div>
+				<div class="column ">
+					<p class="header">Connect</p>
+					<ul>
+						<li><a href="https://hr.ontariotechu.ca/working_at_uoit/careers/index.php">Career opportunities</a></li>
+						<li><a href="http://uoit.ca/expertcentre">Faculty experts</a></li>
+						<li><a href="http://news.ontariotechu.ca/media-inquiries/index.php">Media inquiries</a></li>
+						<li><a href="https://studentlifeportal.ontariotechu.ca/careerServices/servicesForEmployers.htm">Services for
+								employers</a></li>
+					</ul>
+				</div>
+				<div class="column ">
+					<p class="header">Visit</p>
+					<ul>
+						<li><a href="http://uoit.ca/about/campus-buildings/index.php">Campus buildings</a></li>
+						<li><a href="http://uoit.ca/maps">Campus map</a></li>
+						<li><a href="https://uoit.ca/future-students/undergraduate/campus-tours-and-events/index.php">Campus
+								tours</a></li>
+						<li><a href="https://uoit.ca/virtualtour">Campus virtual tour</a></li>
+					</ul>
+				</div>
+				<div class="column ">
+					<p class="header">Info</p>
+					<ul>
+						<li><a href="http://uoit.ca/about">About</a></li>
+						<li><a href="https://usgc.ontariotechu.ca/governance/index.php">Governance</a></li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="logo_footer">
+					<img alt="University of Ontario Institute of Technology logo" height="44"
+						src="https://shared.ontariotechu.ca/global/files/img/logos/rgb-logo-small-reverse.png" width="200" />
+
+					<div class="footer_social_icons">
+						<ul>
+							<li><a class="icon icon_social_facebook" href="https://www.facebook.com/myuoit"
+									onclick="ga('send','event','link','click','socialMediaPage_facbook');"><span
+										class="show-for-sr">Facebook</span></a></li>
+							<li><a class="icon icon_social_twitter" href="https://twitter.com/uoit"
+									onclick="ga('send','event','link','click','socialMediaPage_twitter');"><span
+										class="show-for-sr">Twitter</span></a></li>
+							<li><a class="icon icon_social_instagram" href="https://www.instagram.com/uoit"
+									onclick="ga('send','event','link','click','socialMediaPage_instagram');"><span
+										class="show-for-sr">Instagram</span></a></li>
+							<li><a class="icon icon_social_linkedin" href="http://www.linkedin.com/company/uoit"
+									onclick="ga('send','event','link','click','socialMediaPage_linkedin');"><span
+										class="show-for-sr">LinkedIn</span></a></li>
+							<li><a class="icon icon_social_youtube" href="http://youtube.com/uoit"
+									onclick="ga('send','event','link','click','socialMediaPage_youtube');"><span
+										class="show-for-sr">YouTube</span></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer_address">
+					<p>2000 Simcoe Street North<br />Oshawa, Ontario L1G 0C5<br />Canada</p>
+					<p>905.721.8668</p>
+					<p>The university is proud to acknowledge the lands and people of the Mississaugas of Scugog Island First
+						Nation which is covered under the Williams Treaties. We are situated on the Traditional Territory of the
+						Mississaugas, a branch of the greater Anishinaabeg Nation which includes Algonquin, Ojibway, Odawa and
+						Pottawatomi.</p>
+					<p>&#169; University of Ontario Institute of Technology
+						<script type="text/javascript"> document.write(new Date().getFullYear()) </script>
+					</p>
+				</div>
+
+
+			</div>
+
+			<div class="footer_sticky">
+				<div class="row align-right">
+					<a class="btn-to-top" href="javascript:void(0)" title="Scroll to top of page">
+						<span>Top</span>
+					</a>
+				</div>
+			</div> <!-- /.footer_sticky -->
+
+		</footer>
+
+		<div class="menu-page-overlay"></div>
+
+	</div> <!-- off-canvas-content -->
+</div> <!-- off-canvas-wrapper -->

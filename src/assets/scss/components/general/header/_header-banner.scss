@@ -1,0 +1,51 @@
+.header-banner {
+  font-family: $heading-font;
+  background-color: $lightgrey;
+  position: relative;
+  z-index: 10;
+	font-size: rem-calc(15);
+	line-height: 1.2;
+
+  &-inner {
+    max-width: $global-width;
+    margin: 0 auto;
+    
+		@include breakpoint(small) {
+      padding-right: use_gutter(.5);
+      padding-left: use_gutter(.5);
+    }
+  }
+
+  &-title {
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    color: $primary-color;
+
+    &::after {
+      @include inline-brand-arrow($orange, $size: rem-calc(15));
+			margin-left: 5px;
+    }
+  }
+
+  &-content {
+    display: none;
+
+    @for $i from 0 through 5 {
+      p:nth-child(#{$i + 1}) { animation-delay: #{($i * 0.6) + 0.2}s; }
+    }
+  }
+
+  .padding {
+    padding: 0.5rem 1rem;
+  }
+
+	p,
+	small {
+		font-size: rem-calc(15);
+		margin-bottom: .5rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

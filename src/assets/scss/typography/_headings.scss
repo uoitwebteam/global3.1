@@ -1,0 +1,96 @@
+h1.lowercase, h2.lowercase, h3.lowercase {
+  @include lowercase;
+}
+
+h3.lowercase, h4, h5, h6 {
+	&:not(.serif) {
+		font-weight: 700;
+	}	
+}
+
+// Body text as headings
+.heading,
+.serif {
+  @include serif;
+}
+.heading-font,
+.header-font {
+	font-family: $heading-font;
+}
+
+// Heading sizes
+@each $size, $headers in $header-styles {
+  @include breakpoint($size) { 
+    @each $header, $header-defs in $headers {
+			$font-size-temp: 1rem;
+			
+			// Body text as heading
+			.#{$header} {
+				font-family: $header-font-family;
+				@if map-has-key($header-defs, font-size) {
+					font-size: rem-calc(map-get($header-defs, font-size));
+				}
+				font-weight: $header-font-weight;
+				font-style: $header-font-style;
+				color: $header-color;
+			}
+
+      #{$header}.text_smaller,
+      #{$header}.text-smaller {
+        @if map-has-key($header-defs, font-size) {
+          $font-size-temp: map-get($header-defs, font-size);
+          @if ($size == 'xxsmall' or $size == 'xsmall' or $size == 'small') { 
+            font-size: rem-calc($font-size-temp);
+          } @else {
+            font-size: rem-calc(($font-size-temp - 5)); 
+          }
+        } 
+      }
+      #{$header}.text-larger,
+      #{$header}.text_larger {
+        @if map-has-key($header-defs, font-size) {
+          $font-size-temp: map-get($header-defs, font-size);
+          font-size: rem-calc(($font-size-temp + 5)); 
+        } 
+      }
+    }
+  }
+}
+
+// Headings in tables
+table h1, table h2, table h3 {
+  text-transform: none;
+  margin-bottom: 0;
+}
+
+// Subheader
+.subheader {
+  @include lowercase;
+}
+.subheading {
+	@extend .subheader;
+}
+
+// Context-specific heading styles
+.page-content h1 {
+  margin-bottom: 1.5rem;
+} 
+
+.page-sidebar {
+  h2 {
+    font-family: $body-font;
+    font-weight: 900;
+    font-size: rem-calc(24);
+    // @include uppercase;
+    a {
+      color: $grey;
+      &:hover, &:active, &:focus {
+        color: $lightblue;
+      }
+    }
+  }
+}
+
+h2.page-section-header {
+	margin-top: 0.75rem;
+}

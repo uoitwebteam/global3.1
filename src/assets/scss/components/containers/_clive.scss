@@ -1,0 +1,134 @@
+/* Clive content personalization snippets and forms */
+
+
+$clive-field-height: 2rem;
+
+// Clive snippets
+// --------------
+
+// Clive snippets are automatically wrapped in 2 parent divs
+// This adjusts the div heights to match/fill the parent
+.clive-fill-height > div,
+.clive-fill-height > div > div {
+	@extend .fill-height;
+}
+// Clive snippets are automatically wrapped in 2 parent divs
+// This adjusts the divs to display as inline elements
+.has-clive-inline > div, 
+.has-clive-inline > div > div {
+	display: inline;
+}
+
+// Capitalizes the first letter when outputting the name attribute 
+// at the beginning of a sentence (default content should be lowercase)
+// {{Firstname}}, [t]his letter is lowercase
+// [T]his letter is uppercase
+.has-clive-name::first-letter,
+.banner .header::first-letter,
+.banner .description::first-letter {
+	text-transform: uppercase;
+}
+
+// Clive forms
+// -----------
+
+// (Optional) Wrapper container
+.clive-form-wrapper {
+	// Reset gutters
+	[class*="clive"] {
+		margin: 0;
+		padding: 0;
+	}
+
+	.clive-field-wrapper,
+	.clive-submit-wrapper {
+		margin-top: $form-spacing;
+	}
+
+	// Horizontal/inline form fields
+	&.horizontal  {
+		@include breakpoint(medium) {
+			form {
+				display: flex;
+				flex-direction: row;
+				align-items: flex-end;
+				margin-bottom: 1rem;
+			}
+
+			.clive-field-wrapper,
+			.clive-submit-wrapper {
+				margin-left: $form-spacing/2;
+				margin-right: $form-spacing/2;
+			}	
+
+			.clive-submit {
+				height: $clive-field-height !important;
+				padding-top: 0 !important;
+				padding-bottom: 0 !important;
+			}
+		}
+	}
+}
+
+// Override native styles
+// ----------------------
+
+.clive-form {
+	font-family: $body-font !important;
+
+	label {
+		margin: 5pt 0 0 !important;
+	}
+
+	input, select {
+		margin: 0;
+	}
+}
+
+// Form fields
+.clive-field select, 
+.clive-field input {
+	font-family: $body-font !important;
+	height: $clive-field-height !important;
+}
+.clive-dropdown-wrapper {
+	select {
+		background-color: $input-background !important;
+	}
+	// Hide Clive dropdown arrow
+	&:after {
+		display: none;
+	}
+}
+
+// Error message
+.clive-validation-error-text {
+	font-size: .8rem;
+	line-height: normal;
+}
+
+// Form submit button
+.clive-submit {
+	@extend .button;
+	font-family: $heading-font !important;
+	font-size: rem-calc(15) !important;
+	background-color: $button-background !important;
+	border: 0 !important;
+	padding: $button-padding !important;
+
+	&:hover, &:focus {
+		background-color: $button-background-hover !important;
+	}
+}
+@each $name, $color in $foundation-palette { 
+	&.#{$name} {
+		.clive-submit {
+			background-color: color-pick-contrast($color, ($primary-color, $secondary-color)) !important;
+
+			&:hover, &:focus {
+				// border: 0;
+				background-color: smart-scale(color-pick-contrast($color, ($primary-color, $secondary-color)), 10%) !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,152 @@
+// Alert message bar (top banner)
+#alert-message-bar,
+.emergencyMessageBar,
+#emergencyMessageBar {
+	position: relative; 
+	background: $mediumgrey;
+	z-index: 10;
+
+	> a {
+		display: block;
+	}
+	
+	// Heading
+	.alert-heading,
+	.emergencyAlert {
+		font-family: $heading-font;
+		font-weight: bold;
+		font-size: 1.5rem;
+		line-height: 1.2;
+		color: $emergency;
+		margin-bottom: .75rem;
+
+  	// icon
+		&::before {
+      @include icon;
+			// @include animation(emergency-icon-pulse 2s infinite);
+			content: get-icon(icon_emergency);
+			color: $emergency;
+			margin-right: 1rem;
+		} 
+	} 
+
+	// Subheading
+	.alert-subheading,
+	.emergencyTitle {
+		font-family: $heading-font;
+		font-weight: bold;
+		font-size: 1rem;
+		color: $black;
+	}
+
+	// Main content
+	.alert-message,
+	.emergencyMessage {
+		color: $black;
+		line-height: 1.2;
+
+		// * {
+		// 	margin-bottom: .5rem;
+		// 	line-height: 1.2;
+		// }
+
+		@include breakpoint (small down) {
+			border-top: 1px solid $emergency;
+			padding-top: 1rem;
+		}
+	}
+	
+	.alert-date,
+	.emergencyDate {
+		font-size: .75rem;
+	}
+
+	// Severity - information (standard header-banner styles)
+	&.information {
+		background: $coolgrey40;
+
+		.alert-heading {
+			font-size: rem-calc(15);
+			margin-bottom: 0;
+			&::before {
+				display: none;
+			}
+		}
+		
+		.alert-subheading {
+			font-size: rem-calc(15);
+			margin-bottom: 0.25rem;
+		}
+
+		.alert-message {
+			margin-top: 0.25rem;
+		}
+	}
+}
+
+@keyframes emergency-icon-pulse {
+  0% { color: scale-color($white, $alpha: -50%);}
+  50% { color: $white;}
+  100% {color: scale-color($white, $alpha: -50%);}
+}
+
+
+// Emergency page message box
+#emergency-page-message,
+#emergencyFeedMessage {
+	background: $lightgrey;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+
+  p {
+  	font-size: 1.25rem;
+  	text-align: center;
+  }
+
+	&.emergency-active,
+  &.emergencyPresent {
+  	background: $emergency;
+
+  	p {
+  		text-align: left;
+  		color: #fff;
+  	}
+
+		.alert-heading,
+  	.emergencyTitle {
+	  	font-weight: 900;
+	  	font-size: 1.5rem;
+	  	text-align: center;
+	  	text-transform: uppercase;
+		}
+  }
+}
+
+
+// Emergency page - Service disruptions feed
+.emergency-page-news-item {
+	@include flex-grid-column();
+  clear: both;
+  margin: 20px 0;
+
+	img {
+		@extend .float_left;
+		width: 100px;
+		height: 67px; 
+	}
+
+	.date {
+		font-size: .85em;
+	}
+}
+
+
+// Emergency page sidebar (contact info)
+.sidebar_uoit_emergency { 
+	> a.button {
+		display: block;
+	}
+
+	background: $lightgrey;
+	padding: use_gutter(0.5);
+}

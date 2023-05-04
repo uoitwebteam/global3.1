@@ -1,0 +1,27 @@
+// @import 'themes/prism-okaidia';
+@import 'themes/prism';
+@import 'plugins/toolbar/prism-toolbar';
+
+// Code block
+pre[class*="language-"],
+code[class*="language-"] {
+	tab-size: 2;
+}
+
+// Code block without `language-xxxx` class
+:not([class*="language-"]) pre:not([class*="language-"]) > code:not([class*="language-"]) {
+	background: $code-background;
+	display: block;
+	padding: $code-block-padding;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	tab-size: 2;
+}
+
+// Inline code
+:not(pre) > code[class*="language-"] {
+	border-radius: 0;
+	padding: $code-padding;
+}

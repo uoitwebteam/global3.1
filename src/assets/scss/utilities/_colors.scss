@@ -1,0 +1,21 @@
+// Text colours
+span {
+	@each $name, $color in $foundation-palette {
+	  &.#{$name} {
+	    color: $color;
+			&.important {
+				color: $color !important;
+			}
+	  }
+	}
+}
+
+// Background colours
+.bgcolor {
+	@each $name, $color in $foundation-palette {
+	  &.#{$name} {
+	    background-color: $color;
+	    color: color-pick-contrast($color, ($button-color, $button-color-alt));
+	  }
+	}
+}

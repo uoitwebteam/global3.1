@@ -1,0 +1,547 @@
+---
+title: Table
+---
+
+<div class="page-content">
+	
+	<div class="row column">
+		<h2>Table</h2>
+		<br>
+
+		<h3>Table headings</h3>
+		<div class="row">
+			<div class="column shrink">
+				Table with semantic table cell headings<br>
+				<code>&lt;thead>&lt;th></code> <code>&lt;tbody>&lt;th></code>
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column">
+				Table with heading tags (not recommended) <br>
+				<code>&lt;td>&lt;h3></code> 
+				<table>
+					<tbody>
+						<tr>
+							<td></td>
+							<td><h3 class="text-smaller">Heading</h3></td>
+							<td><h3 class="text-smaller">Heading</h3></td>
+						</tr>
+						<tr>
+							<td><h4 class="text-smaller">Heading</h4></td>
+							<td>R2, C1</td>
+							<td>R2, C2</td>
+						</tr>
+						<tr>
+							<td><h4 class="text-smaller">Heading</h4></td>
+							<td>R3, C1</td>
+							<td>R3, C2</td>
+						</tr>
+						<tr>
+							<td><h4 class="text-smaller">Heading</h4></td>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br>
+
+		<h3>Table width/mobile layout</h3>
+		<div class="row">
+			<div class="column xxsmall-12">
+				<code>.tbl-full-width</code>
+				<table class="tbl-full-width">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+							<td>R2, C4</td>
+							<td>R2, C5</td>
+							<td>R2, C6</td>
+							<td>R2, C7</td>
+							<td>R2, C8</td>
+							<td>R2, C9</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+							<td>R3, C4</td>
+							<td>R3, C5</td>
+							<td>R3, C6</td>
+							<td>R3, C7</td>
+							<td>R3, C8</td>
+							<td>R3, C9</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+							<td>R4, C4</td>
+							<td>R4, C5</td>
+							<td>R4, C6</td>
+							<td>R4, C7</td>
+							<td>R4, C8</td>
+							<td>R4, C9</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column medium-6">
+				<code>.scroll</code> (Horizontal scrolling; shown inside a <code>.medium-6</code> column)
+				<table class="scroll">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+							<td>R2, C4</td>
+							<td>R2, C5</td>
+							<td>R2, C6</td>
+							<td>R2, C7</td>
+							<td>R2, C8</td>
+							<td>R2, C9</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+							<td>R3, C4</td>
+							<td>R3, C5</td>
+							<td>R3, C6</td>
+							<td>R3, C7</td>
+							<td>R3, C8</td>
+							<td>R3, C9</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+							<td>R4, C4</td>
+							<td>R4, C5</td>
+							<td>R4, C6</td>
+							<td>R4, C7</td>
+							<td>R4, C8</td>
+							<td>R4, C9</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column xxsmall-12">
+				<code>.stack</code> (Stack on small screens)
+				<table class="stack">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+							<td>R2, C4</td>
+							<td>R2, C5</td>
+							<td>R2, C6</td>
+							<td>R2, C7</td>
+							<td>R2, C8</td>
+							<td>R2, C9</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+							<td>R3, C4</td>
+							<td>R3, C5</td>
+							<td>R3, C6</td>
+							<td>R3, C7</td>
+							<td>R3, C8</td>
+							<td>R3, C9</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+							<td>R4, C4</td>
+							<td>R4, C5</td>
+							<td>R4, C6</td>
+							<td>R4, C7</td>
+							<td>R4, C8</td>
+							<td>R4, C9</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br>
+
+		<h3>Table borders</h3>
+		<div class="row align-bottom">
+			<div class="column shrink">
+				Default borders <br>(shown with <code>.tbl-white</code>)
+				<table class="tbl-white">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column shrink">
+				Row and outside borders<br>
+				<code>.tbl-row-borders</code>
+				<table class="tbl-white tbl-row-borders">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column shrink">
+				Row borders only, no outside borders<br>
+				<code>.tbl-row-borders</code> <code>.tbl-no-borders</code>
+				<table class="tbl-white tbl-row-borders tbl-no-borders">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column shrink">
+				No cell or row borders<br>
+				<code>.tbl-no-borders</code>
+				<table class="tbl-white tbl-no-borders">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br>
+
+		<h3>Text vertical alignment</h3>
+		<div class="row">
+			<div class="column shrink">
+				Default (middle)
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2<br/>Multi-line text</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2<br/>Multi-line text</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2<br/>Multi-line text</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column">
+				<code>.tbl-align-top</code>
+				<table class="tbl-align-top">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2<br/>Multi-line text</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2<br/>Multi-line text</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2<br/>Multi-line text</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br>
+		
+		<h3>Table colours</h3>
+		<div class="row">
+			<div class="column shrink">
+				<code>.tbl-blue</code>
+				<table class="tbl-blue">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column shrink">
+				<code>.tbl-white</code> (No alternating row colours)
+				<table class="tbl-white">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column shrink">
+				<code>.tbl-all-white</code> (<code>&lt;th></code> cells are also white)
+				<table class="tbl-all-white">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="column">
+				<code>.hover</code> (Row hover state)
+				<table class="hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+</div>

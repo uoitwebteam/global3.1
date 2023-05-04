@@ -1,0 +1,60 @@
+/// Quick links and footer links
+/// @param {Keyword} $color - link color
+/// @param {Keyword} $hover-color - hover link/underline color
+@mixin header-footer-links($color, $hover-color) {
+	@include breakpoint(xsmall down) {
+		@include flex-grid-layout(2);
+		.column {
+			margin: .5rem 0;
+		}
+	}
+
+  @include breakpoint(small) {
+		justify-content: space-between;
+
+  	.column {
+      @include flex-grid-column(shrink);
+    }
+	}
+
+	font-family: $heading-font;
+
+  p.header { 
+		margin-bottom: 20px;
+		font-size: 1.25rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $color;
+		
+		&::after {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 2px;
+			margin-top: 1rem;
+			background: $orange;
+		}
+  }
+    
+  ul {
+    margin-left: 0;
+  }
+
+  li {
+    margin: 10px 0;
+    list-style: none;
+
+    &:first-child {
+      margin-top: 0; 
+    }
+    
+    a {
+			color: $hover-color;
+			border-bottom: 1px dotted transparent;
+			
+			&:hover, &:active, &:focus {
+				border-bottom: 1px dotted $hover-color; 
+			}
+    } 
+  }
+}

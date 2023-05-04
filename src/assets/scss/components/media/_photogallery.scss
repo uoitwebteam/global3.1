@@ -1,0 +1,70 @@
+/* lightGallery photo galleries */
+
+
+.lg-sub-html,
+.lg-sub-html p {
+	font-size: rem-calc(14);
+}
+.lg-outer .lg-thumb-item {
+	border-radius: $lg-border-radius-base;
+}
+
+// Inline gallery
+// --------------
+
+.gallery-inline,
+.gallery_row, .gallery-row, // legacy
+.gallery-row-container .swiper-wrapper // legacy Swiper HTML 
+{
+	height: 500px;
+	max-width: 100%;
+	overflow: hidden;
+
+	@include breakpoint(medium) {
+		min-width: 500px;
+	}
+}
+.gallery-inline,
+.gallery_row, .gallery-row // legacy
+{
+	// Background colour
+	.lg-backdrop,
+	.lg-outer .lg-thumb-outer {
+		background-color: $lightgrey;
+	}
+
+	// Prev/next icons
+	.lg-next,
+	.lg-prev {
+		background-color: rgba(0,0,0,.15);
+		&::before, &::after {
+			color: $grey;
+			transition: color $transition-duration ease;
+		}
+		&:hover, &:active {
+			&::before, &::after {
+				color: $lightblue;
+			}
+		}
+	}
+
+	// Counter, zoom icons
+	.lg-zoomed {
+		.lg-zoom-out,
+		.lg-counter {
+			color: $white;
+			
+		}
+	}
+	.lg-zoom-out,
+	.lg-zoom-in {
+		&:hover, &:active {
+			color: $lightblue;
+		}
+	}
+
+	// Legacy Swiper elements
+	.swiper-prev, .swiper-next {
+		display: none;
+	}
+}

@@ -1,0 +1,135 @@
+.page-content,
+.page_content_news,
+.landing-page-content {
+  // proper margins for lists next to floated element
+  > .float_left ~ ul:not(.tabs):not(.accordion):not(.clearing-thumbs):not(.light-gallery),
+  > .float_left ~ ol {
+    display: table;
+    padding-left: 1rem
+  }
+  
+  ul li, ol li {
+    margin-bottom: .25rem;
+  }
+
+  ul.tabs, ul.accordion {
+		ul:not(.tabs):not(.accordion),
+		ol {
+			margin-bottom: 1.25rem;
+
+			ul {
+				margin-bottom: 0;
+			}
+		}
+  }
+}
+
+.list-columns {
+	@include breakpoint(medium) {
+		column-gap: rem-calc(30);
+		// default
+		columns: 3;
+		// specified # columns
+		@for $i from 0 through 12 {
+			&-#{$i} {
+				columns: $i;
+			}
+		}
+	}
+}
+
+.list-brand-arrows {
+	li {
+		position: relative;
+		margin-bottom: 3px;
+		list-style: none;
+
+		&::before {
+			content: '\203A';
+			position: absolute;
+			right: 100%;
+			margin-right: 6px;
+			font-family: $heading-font;
+			font-size: 1.5rem;
+			font-weight: bold;
+			line-height: .8;
+			color: $orange;
+		}
+
+		li:before {
+			font-weight: normal;
+		}
+	}
+
+	&.animate {
+		@for $i from 1 through 20 {
+			li:nth-child(#{$i}) {
+				animation: .5s ease #{$i * .1 + .5}s backwards slide-in-down;
+			}
+		}
+	}
+}
+
+.list-headings {
+  > li {
+    @extend h5;
+    @include lowercase;
+    padding-left: .5rem;
+
+    > ul {
+      margin-left: 0;
+      list-style: none;
+    }
+
+    li, p {
+      font-family: $body-font;
+      font-size: 1rem;
+      color: $body-font-color;
+      margin-bottom: $paragraph-margin-bottom;
+    }
+
+    > :last-child {
+      margin-bottom: 1.75rem;
+    }
+  }
+  p {
+    font-family: $body-font;
+    font-size: 1rem;
+    color: $body-font-color;
+    margin-bottom: $paragraph-margin-bottom;
+  }
+}
+
+.list-icons {
+	margin-left: 0;
+
+	li {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: flex-start;
+		list-style: none;
+	}
+
+	span[class*="icon_"] {
+		width: 1.1em;
+		margin-right: 5px;
+		font-size: 1.25em;
+		line-height: 1.25em;
+	}
+
+	// Icon colours
+	@each $color, $value in $official-palette {
+		&.#{$color} li span[class*="icon_"] {
+			color: $value
+		}
+	}
+
+	// Animate
+	&.animate {
+		@for $i from 1 through 20 {
+			li:nth-child(#{$i}) {
+				animation: .5s ease #{$i * .1 + .5}s backwards slide-in-down;
+			}
+		}
+	}
+}

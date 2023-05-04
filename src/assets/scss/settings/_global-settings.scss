@@ -1,0 +1,248 @@
+//  Global settings
+//  ---------------
+//
+//  Table of contents:
+//
+//  1. Colours
+//     a. Hex values
+//     b. Scaled shades
+//     c. Alternate variable names
+//     d. Official palette (Sass use)
+//     e. Deprecated/legacy colours
+//
+//  2. Feature module
+//  3. Fonts
+//  4. Footer
+//  5. Header
+//  6. Quick links
+//  7. Transition/animations
+
+// 1. Colours
+// ----------
+
+// 1.a. Hex values
+
+/// Primary palette
+$lightblue:  #0077ca; 
+$darkblue:   #003c71;
+$orange:     #e75d2a;
+$darkorange: #CF4817; // AA compliant for regular text size
+
+/// Secondary palette
+$coolgrey:   #A7A8AA; // Pantone cool grey 6
+$warmgrey:   #ACA39A; // Pantone warm grey 5
+$bluegrey:       #5B6770; // Pantone 431 C
+$spiritblue: #00283C;
+
+/// Misc UI colours
+$black:      #151515;
+$white:      #ffffff;
+$red:        #D00606;
+$emergency:  #A40B0B;
+$success:    #4E8200;
+$warning:    #FFAE00;
+$alert:      #D00606;
+
+/// UOIT-DC / DC
+$uoitdcgrey: #414042;
+$dcgreen:    #037C5A;
+
+// 1.b. Scaled shades
+// ------------------
+
+/// $tints of blue
+$lighterblue: scale-color($lightblue, $lightness: 18%, $saturation: -30%);
+$blue:        scale-color($lightblue, $lightness: -27%);
+$darkerblue:  scale-color($darkblue, $lightness: -30%, $saturation: -10%);
+
+/// % tints of cool grey
+$coolgrey10:  scale-color($coolgrey, $lightness: 90%);
+$coolgrey20:  scale-color($coolgrey, $lightness: 80%);
+$coolgrey30:  scale-color($coolgrey, $lightness: 70%);
+$coolgrey40:  scale-color($coolgrey, $lightness: 60%);
+$coolgrey50:  scale-color($coolgrey, $lightness: 50%);
+$coolgrey60:  scale-color($coolgrey, $lightness: 40%);
+$coolgrey70:  scale-color($coolgrey, $lightness: 30%);
+$coolgrey80:  scale-color($coolgrey, $lightness: 20%);
+$coolgrey90:  scale-color($coolgrey, $lightness: 10%);
+
+/// % tints of warm grey
+$warmgrey10:  scale-color($warmgrey, $lightness: 90%);
+$warmgrey20:  scale-color($warmgrey, $lightness: 80%);
+$warmgrey30:  scale-color($warmgrey, $lightness: 70%);
+$warmgrey40:  scale-color($warmgrey, $lightness: 60%);
+$warmgrey50:  scale-color($warmgrey, $lightness: 50%);
+$warmgrey60:  scale-color($warmgrey, $lightness: 40%);
+$warmgrey70:  scale-color($warmgrey, $lightness: 30%);
+$warmgrey80:  scale-color($warmgrey, $lightness: 20%);
+$warmgrey90:  scale-color($warmgrey, $lightness: 10%);
+
+/// % tints of blue grey
+$bluegrey10:  scale-color($bluegrey, $lightness: 90%);
+$bluegrey20:  scale-color($bluegrey, $lightness: 80%);
+$bluegrey30:  scale-color($bluegrey, $lightness: 70%);
+$bluegrey40:  scale-color($bluegrey, $lightness: 60%);
+$bluegrey50:  scale-color($bluegrey, $lightness: 50%);
+$bluegrey60:  scale-color($bluegrey, $lightness: 40%);
+$bluegrey70:  scale-color($bluegrey, $lightness: 30%);
+$bluegrey80:  scale-color($bluegrey, $lightness: 20%);
+$bluegrey90:  scale-color($bluegrey, $lightness: 10%);
+
+// 1.c. Alternate variable names
+// -----------------------------
+
+$mediumblue:     $blue;
+$grey:           $bluegrey;
+$lightgrey:      $coolgrey20;
+$mediumgrey:     $coolgrey70;
+$darkgrey:       $bluegrey;
+$lightcoolgrey:  $coolgrey20;
+$mediumcoolgrey: $coolgrey70;
+$lightwarmgrey:  $warmgrey30;
+$mediumwarmgrey: $warmgrey70;
+$lightbluegrey:  $bluegrey40;
+$mediumbluegrey: $bluegrey80;
+
+// Legacy variable names
+$uoitlightblue:  $lightblue;
+$uoitdarkblue:   $darkblue;
+$uoitgrey:       $bluegrey;
+$uoitgreylight:  $lightgrey;
+$uoitgreymedium: $mediumgrey;
+$uoitgreydark:   $bluegrey;
+$greylight:      $lightgrey;
+$greymedium:     $mediumgrey;
+
+// 1.d. Official palette (Sass use)
+// --------------------------------
+/// Primary palette and select web shades for specific components (retire?)
+$official-palette: (
+	lightblue: $lightblue,
+	darkblue: $darkblue,
+	lighterblue: $lighterblue,
+	blue: $blue,
+	mediumblue: $blue,
+	darkerblue: $darkerblue,
+	spiritblue: $spiritblue,
+	orange: $orange,
+	darkorange: $darkorange,
+	accent: $orange,
+	darkaccent: $darkorange,
+	grey: $bluegrey,
+	lightgrey: $lightgrey,
+	mediumgrey: $mediumgrey,
+	coolgrey: $coolgrey,
+	lightcoolgrey: $lightgrey,
+	mediumcoolgrey: $mediumgrey,
+	warmgrey: $warmgrey,
+	bluegrey: $bluegrey,
+	white: #ffffff,
+);
+
+// 1.e. Deprecated/legacy colours
+// ------------------------------
+
+// Brave the Future campaign
+$btfgreen:   #84BD00;
+$btfpink:    #C71566;
+$btfyellow:  #FFCD3A;
+$btfpurple:  #804693;
+$btfindigo:  #211551;
+$btflightblue:#41B6E6;
+$btfgrey:    #333F48;
+
+// Faculty
+$fbit:       #00558C;
+$fed:        #4F758B;
+$fesns:      #6F263D;
+$feas:       #5F259F;
+$fhs:        #AF272F;
+$fsci:       #007749;
+$fssh:       #BE4D00;
+$grad:       #000000;
+
+// Deprecated colours, legacy variables
+$teal:           $lightblue; //#009a88;//#1B8376;
+$darkteal:       $lightblue; //#135D53;
+$tealdark:       $lightblue; //$darkteal;
+$green:          $lightblue; // #4E8200;
+$greenlightest:  $lightblue; // #d4eb8e;//#AEE55C;
+$greenlighter:   $lightblue; // #b1c58c;//#82C223;
+$greendarker:    $lightblue; // #3A6100;
+$greendarkest:   $lightblue; // #233B00;//#233B00;
+$pink:           $lightblue; // #C71566;
+$pinklightest:   $lightblue; // #FFA8CF;
+$pinklighter:    $lightblue; // #FF70B0;
+$pinkdarker:     $lightblue; // #A31253;
+$pinkdarkest:    $lightblue; // #630B33;
+$yellow:         $lightblue; // #FFC717;//#D98900; 
+$yellowlightest: $lightblue; // #ffe570;//#FFB83D;
+$yellowlighter:  $lightblue; // #FDDA3C;//#FFA817;
+$yellowdarker:   $lightblue; // #A66800;
+$yellowdarkest:  $lightblue; // #7F4E28;//#7F5000;
+$purple:         $lightblue; // #804693;//#814794;
+$purplelightest: $lightblue; // #D0ADD6;//#E6B3F5;
+$purplelighter:  $lightblue; // #BE86CF;
+$purpledarker:   $lightblue; // #61326D;//#683A78;
+$purpledarkest:  $lightblue; // #521C4E;//#573063;
+$uoitpink:       $pink;
+$uoitgreen:      $green;
+$uoitorange:     $orange;
+
+
+// 2. Feature module
+// -----------------
+
+$module_bg_light: $lightgrey;
+$module_bg_medium: $mediumgrey;
+$module_bg_dark: $darkgrey;
+
+// 3. Fonts
+// --------
+
+$font-file-path: 'https://shared.ontariotechu.ca/global/files/fonts/' !default;
+$body-font: 'Franklin Gothic', Arial, Helvetica, sans-serif !default; 
+$heading-font: 'Ubuntu', Arial, Helvetica, sans-serif !default;
+$icon-font: 'UOIT Icons';
+
+// !!! Change instances of these to 'body-font', 'heading-font', 'icon-font'
+$body-font: $body-font;
+$heading-font: $heading-font;
+$uoit-icon-font: 'UOIT Icons';
+// !!! UOIT/DC - change these to font-body/heading overrides in DC build
+$uoitdcfont: 'Roboto', Arial, Helvetica, sans-serif;
+$uoitdcfont_secondary: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+// !!! Legacy - remove
+$ubuntu: 'Ubuntu', Arial, Helvetica, sans-serif;
+$franklinGothic: 'Franklin Gothic', Arial, Helvetica, sans-serif;
+$franklinGothicCondensed: 'Franklin Gothic', Arial, Helvetica, sans-serif; 
+
+
+// 4. Footer
+// ---------
+
+$footer-background: $bluegrey !default;
+$footer-top-background: $footer-background !default;
+$footer-bottom-background: $footer-background !default;
+$footer-link-color: $white !default;
+$footer-link-hover-color: $white !default;
+
+// 5. Header
+// ---------
+
+$site-title-bar: $orange !default;
+$header-background: $bluegrey !default;
+$header-link-color: $white !default;
+$header-link-hover-color: $white !default;
+$quick-links-button-height: rem-calc(35);
+$main-menu-item-color: $white;
+$main-menu-item-color-active: $darkblue;
+$main-menu-item-color-active-secondary: $orange;
+$main-menu-background-color: $darkblue;
+$main-menu-item-background-hover: $white;
+$scroll-margin-top: rem-calc(75);
+
+// 7. Transition/animations
+// ------------------------
+
+$transition-duration: .3s;

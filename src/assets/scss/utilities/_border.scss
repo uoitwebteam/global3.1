@@ -1,0 +1,38 @@
+// Default settings
+$border-style: solid !default;
+$border-color: $mediumgrey !default;
+
+@mixin border-base() {
+	border-style: $border-style;
+	border-color: $border-color;
+}
+
+// Add a 1px border to an element 
+.border {
+  @include border-base();
+  border-width: 1px;
+
+  @each $name, $color in $foundation-palette {
+    &.#{$name} {
+      border-color: $color;
+    }
+  }
+
+  &.dotted {
+  	border-style: dotted;
+	}
+
+	&-top {
+		border-top: 1px solid $border-color;
+	}
+	&-right {
+		border-right: 1px solid $border-color;
+	}
+	&-bottom {
+		border-bottom: 1px solid $border-color;
+	}
+	&-left {
+		border-left: 1px solid $border-color;
+	}
+}
+

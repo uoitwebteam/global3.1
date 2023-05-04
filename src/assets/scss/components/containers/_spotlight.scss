@@ -1,0 +1,298 @@
+/**
+ * Spotlight feature module
+ * Related files: components/containers/feature-module 
+ */
+
+
+// Spotlight
+// ---------
+
+.spotlight.top-margin,
+.spotlight.margin-top {
+	@include feature-section-margins(top);
+}
+.spotlight.bottom-margin,
+.spotlight.margin-bottom {
+	@include feature-section-margins(bottom);
+}
+
+.spotlight {
+	z-index: 1;
+	
+	// Specified background colour and associated heading text colours
+	@include feature-module-colors;
+
+	// Content text colours
+	@each $color,
+	$value in $official-palette {
+		@if ($color != white) {
+			&.#{$color} .feature-module .content {
+				*:not(a):not(code) {
+					color: color-pick-contrast($value, ($white, $darkblue));
+				}
+				
+				a:not([class]) { 
+					@include link-style(
+						$color: color-pick-contrast($value, ($white, $anchor-color)),
+						$important: !important
+					);
+				}
+			}
+		}
+	}
+	
+
+	// Remove top margin if immediately after .cta-thumbnails
+	@at-root {
+		.cta-thumbnails + .spotlight {
+			margin-top: 0;
+		}
+	}
+
+	&.column .feature-module {
+		@include breakpoint(large) {
+			padding: rem-calc(50) rem-calc(80); 
+		}
+	}
+}
+
+
+// Spotlight - feature image
+// -------------------------
+
+.spotlight.feature-image {
+	position: relative;
+	min-height: 500px;
+
+	@include breakpoint(xsmall down) {
+		// Default margins
+		&:not([class*='margin-top']) {
+			@include feature-section-margins(top);
+		}
+		&:not([class*='margin-bottom']) {
+			@include feature-section-margins(bottom);
+		}
+	}
+	
+	.feature-module {
+		@extend .clear;
+
+		@include breakpoint(xsmall down) {
+			margin-top: -8px;
+			position: relative;
+		}
+	}
+
+	.feature-float-box {
+		@include breakpoint(small) {
+			&.align-left {
+				float: left;
+			}
+			&.align-right {
+				float: right;
+			}
+		}
+		
+		
+		// Default colours
+		background-color: $orange;
+		@include breakpoint(small) {
+			background: linear-gradient(-45deg,transparent 50px,rgba($orange, 0.9) 50px);
+		}
+		* {
+			color: #fff;
+		}
+		
+		// Specified background colour and associated text colours
+		@each $color, $value in $official-palette {
+			&.#{$color} {
+				background-color: $value;
+				@include breakpoint(xsmall down) {
+					box-shadow: 0 -8px 0 rgba($value, .7);
+				}
+				@include breakpoint(small) {
+					background: linear-gradient(-45deg,transparent 50px,rgba($value, 0.9) 50px);
+				}
+
+				* {
+					color: color-pick-contrast($value, ($white, $darkblue));
+				}
+
+				.feature-subheading {
+					border-bottom-color: rgba(color-pick-contrast($value, ($white, $darkblue)), .3);
+				}
+
+				.feature-link {
+					@include feature-text-link-style(color-pick-contrast($value, ($white, $darkblue)), $orange);
+				}
+				// Override colors on orange box
+				&.accent .feature-link,
+				&.orange .feature-link {
+					@include feature-text-link-style($white, $darkblue);
+				}
+
+			}
+		}
+
+    padding: 30px;
+    font-family: $heading-font;
+    font-size: 1.25rem;
+
+
+		.feature-subheading {
+			padding-bottom: 1rem;
+			border-bottom: 1px solid rgba(#fff, .3);
+			font-size: 1rem;
+			text-transform: uppercase;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+
+		.feature-link {
+			@include feature-text-link-style($white, $darkblue);
+		}
+	}
+
+	// Background image
+	@include breakpoint(small) {
+		.feature-image {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+
+			img {
+				display: none;
+			}
+		}
+	}
+
+	// Static image element
+	@include breakpoint(xsmall down) {
+		.feature-image img {
+			display: block;
+		}
+		
+		.feature-module {
+			padding: 0;
+		}
+	}
+}
+
+
+// Spotlight - figure/figcaption
+// -----------------------------
+
+// Image/video in <figure>
+@mixin figure-columns() {
+	@include flex-grid-row;
+	
+	> * {
+		@include flex-grid-column;
+	}
+	> :first-child {
+		padding-left: 0;
+	}
+	> :last-child {
+		padding-right: 0;
+	}
+}
+
+// Image in <figure>
+@mixin figure-columns-image() {
+	img[class*='float-'],
+	img[class*='float_'] {
+		float: none !important;
+	}
+
+	@include breakpoint(small down) {
+		img {
+			width: 100%;
+		}
+	}
+	
+	@include breakpoint(medium) {
+		@include figure-columns;
+
+		img {
+			flex: 0 0 auto; // shrink to image width
+			align-self: flex-start; // align to top by default
+		}
+	}
+}
+
+.landing-page-content,
+.page-content {
+	.spotlight.image,
+	.spotlight.video,
+	.spotlight.figure {
+		@include breakpoint(small down) {
+			[class*=column] {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		
+		@include breakpoint(medium) {
+			figure {
+				@include figure-columns;
+			}
+		}
+	}
+
+	.spotlight:not(.figure),
+	.spotlight:not(.video) {
+		// Content flow around any floated images
+		.content img~* {
+			display: flow-root;
+		}
+	}
+
+	// Image in <figure>
+	.spotlight:not(.figure),
+	.spotlight:not(.video),
+	.spotlight.image {
+		@extend .clear;
+		
+		figure.image, // CMS-generated .image class
+		figure {
+			@include figure-columns-image;
+		}
+	}
+
+	// Video in <figure>
+	.spotlight.video,
+	.spotlight.figure {
+		@include breakpoint(medium) {
+			figcaption {
+				max-width: 42%;
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+
+				&.text-left {
+					align-items: flex-start;
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+
+.page-sidebar .spotlight.figure {
+	figure {
+		[class*=column] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}

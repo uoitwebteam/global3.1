@@ -1,0 +1,194 @@
+/* Header logo */
+
+
+.logo-bar {
+	background: #fff;
+	position: relative;
+	z-index: 10;
+
+	> .row {
+		@include breakpoint(xsmall) {
+			padding-left: 1rem;
+		}
+	}
+}
+
+.logo-container {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	height: 110px;
+	perspective: 200px;
+
+	@include breakpoint(xsmall down) {
+		width: 100%;
+		justify-content: center;
+	}
+
+	// Signature logo/site title hidden at top
+	&.signature-logo {
+		height: 80px;
+		margin-top: rem-calc(30);
+
+		// @include breakpoint(xsmall down) {
+		// 	.logo {
+		// 		height: auto;
+		// 	}
+		// 	.logo .logo-main {
+		// 		width: auto;
+		// 		height: 65px;
+		// 	}
+		// } 
+		// @include breakpoint(380px down) {
+		// 	.logo .logo-main {
+		// 		height: 55px;
+		// 	}
+		// }
+		@include breakpoint(380px down) {
+			.logo .logo-main {
+				height: 65px;
+			}
+		}
+	}
+	 
+	.logo {
+		height: rem-calc(80);
+
+		a {
+			display: block;
+			line-height: 1;
+		}
+
+		.logo-main {
+			width: auto;
+			height: rem-calc(80);
+			max-width: none;
+			transition: 0.6s ease;
+		}
+
+		.logo-text {
+			#university > *,
+			#ontario > * {
+				fill: $darkblue;
+			}
+			#tech > * {
+				fill: $orange;
+			}
+		}
+
+		.logo-shield {
+			@include shield-stroke($background: $white, $shield: $darkblue, $arc: $lightblue, $arrow: $orange);
+
+			.outline-stroke {
+				stroke-miterlimit: 7;
+				stroke-width: 6.5px;
+			}
+		}
+	
+		&:hover {			
+			.logo-shield {
+				@include shield-stroke-animation;
+				#circle-full {
+					animation-name: circle-dash-thin;
+					stroke-dasharray: 60,80;
+					stroke-dashoffset: -80;
+				}
+			}
+		}
+
+		// LEGACY while in transition to full rebrand styles
+    img.logo-sticky {
+			display: none;
+		}
+	
+		// border settings for second logo
+		&.border {	
+			border: 0; // override default (global) .border style  
+			@include breakpoint(xsmall down) {
+				margin-top: rem-calc(15);
+				padding-top: rem-calc(15);
+				border-top: 1px solid $darkblue;
+	 		}		 
+			@include breakpoint(small) {
+				margin-left: rem-calc(35);
+				padding-left: rem-calc(35);
+				border-left: 1px solid $darkblue;
+			} 
+		}
+	}
+
+	// Title (legacy)
+	// -----
+	.title {
+		display: flex;		 
+
+		@include breakpoint(xsmall down) { 
+			margin-top: rem-calc(15);
+			padding-top: rem-calc(15);
+			border-top: 1px solid $darkblue;
+		}
+
+		@include breakpoint(small) {
+			min-height: 60px;
+			margin-left: rem-calc(35);
+			padding-left: rem-calc(35); 
+			border-left: 1px solid $darkblue;
+			text-align: left;
+		} 
+
+		a { 
+			display: flex;
+			align-items: flex-end; 
+ 
+			// Arrow  
+			@include breakpoint(small) {
+				&:after {
+					content: '\203A';
+					font-size: 2rem;
+					color: $orange;
+					margin-left: 0.4375rem;
+					margin-bottom: 0.4375rem; 
+					line-height: 1;
+					transition: 0.6s ease;
+					opacity: 0;
+					transform: translateX(-150%);
+				}
+			}
+
+			// Text
+			span {
+				transition: 0.3s;
+			}
+			
+			&:hover, &:focus {
+				span {
+					color: #0077CA;
+				}
+				@include breakpoint(small) {
+					&:after {
+						opacity: 1;
+						transform: translateX(0);
+					}
+				}
+			}
+		}
+		
+		h1, span {
+		font-family: $heading-font;
+		font-size: 1rem;
+		text-transform: uppercase;
+		line-height: 1;
+		color: $darkblue;
+
+			@include breakpoint(small) {
+				margin-bottom: rem-calc(14);
+				line-height: 1;
+			
+				&.multiline {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}  
+	
+}

@@ -1,0 +1,77 @@
+// Opacify colour on specified background
+@mixin callout-opacity($color: $callout-background, $background: $white, $opacity: 10%) {
+	$background: mix($color, $background, $opacity);
+	
+  background-color: $background;
+	color: color-pick-contrast($background, ($callout-font-color, $callout-font-color-alt));	
+}
+
+// Full saturation colour
+@mixin callout-bold($color) {
+	background-color: $color;
+	color: color-pick-contrast($color, ($callout-font-color, $callout-font-color-alt));
+}
+
+.callout {
+	&.shrink {
+		display: inline-block;
+	}
+
+	&.large {
+    @include callout-size(2.5rem);
+	}
+	
+	&.borderless {
+		border: 0;
+	}
+	
+	
+  @each $name, $color in $foundation-palette { 
+		&.#{$name} {
+			// Override Foundation callout-style
+			&.opacity {
+				@include callout-opacity($color);
+			}
+
+			// Accessible anchor link color
+      a:not([class*="button"]) {
+      	color: color-pick-contrast(scale-color($color, $lightness: $callout-background-fade), ($anchor-color, scale-color($anchor-color, $lightness: -20%)));
+			}
+			
+			// Remove default border
+			border: none;
+    }
+  }
+
+	&.bold {
+		@each $name, $color in $foundation-palette {
+      &.#{$name} {
+				// Full strength background color
+        @include callout-bold($color);
+				
+				// Accessible anchor link color
+	      a:not([class*="button"]) {
+	      	color: color-pick-contrast($color, ($callout-font-color, $callout-font-color-alt)) !important;
+	      }
+      }
+      h1,h2,h3,h4,h5,h6,
+			label {
+      	color: color-pick-contrast($color, ($callout-font-color, $callout-font-color-alt));
+      } 
+    }
+	}
+}
+
+// Legacy classes
+.alert-box {
+	@extend .callout; 
+	@extend .alert;
+
+	p:last-child {
+		margin-bottom: 0; 
+	}
+}
+
+.panel {
+	@extend .callout;
+}

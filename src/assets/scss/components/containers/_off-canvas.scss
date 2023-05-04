@@ -1,0 +1,55 @@
+.js-off-canvas-overlay.is-visible{
+	z-index: $offcanvas-overlay-zindex;
+}
+
+.off-canvas {
+	.drilldown {
+		.menu.nested {
+			margin-left: 0;
+		}
+
+		a {
+			font-family: $heading-font;
+		}
+
+		.is-submenu-parent-item>a{
+			font-weight: bold;
+		}
+	} 
+
+	// Dark background
+	&.dark, 
+	&.dark .menu {
+		background: $main-menu-background-color; //$offcanvas-background;
+
+		a {
+			color: $main-menu-item-color;
+		}
+
+		.is-submenu-parent-item>a {
+			// border-bottom: 1px solid $main-menu-item-color;
+		}
+
+		// Active link; separate page link and submenu-arrow link
+		li>a:first-child {
+			&:hover,
+			&:active,
+			&:focus {
+				background: $main-menu-item-background-hover;
+				color: $main-menu-item-color-active;
+
+				& + a.more {
+					color: $main-menu-item-color-active-secondary;
+				}
+			}
+		}
+		li>a.more {
+			&:hover,
+			&:active,
+			&:focus {
+				background: $main-menu-item-background-hover;
+				color: $main-menu-item-color-active-secondary;
+			}
+		}
+	}
+}

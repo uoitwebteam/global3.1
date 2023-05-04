@@ -1,0 +1,31 @@
+header {
+	.sticky-container {
+		z-index: 10;
+		transition: .3s ease;
+	}
+
+	.sticky {
+		width: 100%;
+
+		.show-on-sticky {
+			display: none;
+		}
+	}
+
+	// Is sticky
+	.sticky.is-stuck {
+		box-shadow: inset 0 1px 0 #e2e3df, 0 1px 6px rgba(0, 0, 0, 0.1);
+
+		.show-on-sticky {
+			display: block;
+		}
+
+		.nav-bar {
+			position: relative;
+		}
+
+		.logo-bar {
+			display: none;
+		}
+	}
+}

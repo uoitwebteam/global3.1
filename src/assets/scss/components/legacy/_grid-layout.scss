@@ -1,0 +1,52 @@
+// Landing page - icon grid layout
+a.iconBlock,
+p.iconBlock > a {
+	&:hover, &:active, &:focus {
+		img {
+			transform: scale(1.05);
+			opacity: .8;
+		}
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+		padding: 20px;
+    //margin: -20px;
+    
+		transition: all .375s ease;
+	}
+}
+a.iconBlock + h2,
+a.iconBlock + h3,
+p.iconBlock + h2,
+p.iconBlock + h3 {
+  @include breakpoint(medium) {
+		font-size: 1.5rem;
+	}
+}
+
+
+// Masonry content
+.masonry_content_3, //deprecated
+.masonry-content-3 {
+  clear: both;
+
+  .grid-sizer,  
+  .grid-item {  
+    margin-bottom: 40px; 
+	 
+    width: 100%;  
+    // calculation: (100% - (gutter size * number of items-1)) / number of items)
+    @include breakpoint(xsmall) {
+      width: calc((100% - (30px*1))/2); // 2 per row 
+    } 
+    @include breakpoint(medium) {
+      width: calc((100% - (30px*2))/3); // 3 per row
+    } 
+  }
+
+  .grid-item img {
+  	width: 100%;
+  }
+} 

@@ -1,0 +1,440 @@
+/** 
+ * Button
+ * 
+ *  Base button (standard button)
+ *  Button with icon
+ *  CTA buttons - context-specific styles
+ *   - Home page 
+ *   - Sidebar
+ *   - In page content
+ *   - Landing/index page
+ *  Floating tab/button (persistent button)
+ *
+ *  Deprecated: 
+ *  Legacy button colour classes
+ *  Individual button styles 
+ *   - Home page
+ *   - Sidebar
+ */
+
+
+// Base button (standard button)
+// -----------------------------
+
+@mixin button-font() {
+	font-family: $heading-font;
+	font-weight: 900;
+	text-transform: uppercase;
+	line-height: normal;
+}
+
+.button {
+	@include button-font;
+
+	&.text-left {
+		text-align: left;
+	}
+	&.text-right {
+		text-align: right;
+	}
+
+	// Override orange button
+	&.accent:not(.hollow):not(.white),
+	&.orange:not(.hollow):not(.white) {
+		@include button-style(
+			$background: $darkorange,
+			$background-hover: auto,
+			$color: $white,
+			$background-hover-lightness: -10%
+		);
+	}
+	// Hollow orange button
+	&.accent.hollow,
+	&.orange.hollow {
+		@include button-hollow-style(
+			$color: $darkorange,
+			$hover-lightness: -20%
+		)
+	}
+
+	// Override black text on white button
+	// (set text color to specified color class)
+	// 2 color classes set on element: white + text-color class
+	@each $color, $value in $foundation-palette { 
+		@if $color != white {
+			&.white.#{$color}:not(.hollow) {
+				@include button-style(
+					$background: $white,
+					$background-hover: rgba($white, .9),
+					$color: $value
+				);
+				// @include button-style($white, rgba($white, .9), $value);
+			}
+			// Override orange button
+			&.white.accent:not(.hollow),
+			&.white.orange:not(.hollow) {
+				@include button-style(
+					$background: $white,
+					$background-hover: rgba($white, .9),
+					$color: $darkorange
+				);
+			}
+		}
+	}
+
+	// Incorrect .button class placement on parent element
+	a {
+		@include remove-link-style(!important);
+	}
+
+}
+
+// Hollow button on coloured background
+// (set background hover to transparency of specified color)
+@mixin hollow-button-on-color($background-hover: $white) {
+	& {
+		background-color: transparent;
+	}
+	&:hover, &:focus {
+		background-color: transparentize($background-hover, .8);
+	}
+}
+
+
+// Button with icon
+// ----------------
+
+$icon-position: right !default;
+$icon-default-size: map-get($button-sizes, default) * 1.5 !default;
+
+@mixin button-icon-size() {
+  @each $size, $value in map-remove($button-sizes, default) {
+    &.#{$size} {
+      &::before {
+        font-size: $value * 1.5;
+      }
+    }
+  }
+} 
+
+// $icon-size: null,
+@mixin button-icon(
+  $size: null,
+  $position: $icon-position
+  ) {
+  display: inline-block;
+  position: relative;
+  line-height: normal;   
+ 
+  // Icon
+  &::before {
+    @include icon;
+    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  } 
+
+  // Icon positioning
+  @if $position == left {
+    @if $size == null {
+      @include button-icon-left;
+    }
+    @else {
+      @include button-icon-left($icon-size: $size);
+    } 
+  }
+  @else {
+    @if $size == null {
+      @include button-icon-right;
+    }
+    @else {
+      @include button-icon-right($icon-size: $size);    
+    }
+  } 
+}
+
+// Position icon on left
+@mixin button-icon-left(
+  $icon-size: null, 
+  $left-button-padding: get-side($button-padding, left), 
+  $right-button-padding: get-side($button-padding, right)
+  ) { 
+
+  // Icon size 
+  // Default (medium) icon size
+  &::before {
+    font-size: map-get($button-sizes, default) * 1.5;
+  }
+  // Icon size based on button size
+  @if $icon-size == null { 
+    @include button-icon-size;
+  }
+  // Specified icon size
+  @else {
+    &::before {
+      font-size: $icon-size;
+    }
+  } 
+
+  // Icon position
+  &::before {
+    right: auto;
+    left: $left-button-padding * .5; // .5 to account for 1.5x icon font size
+  }
+
+  // Button padding 
+  padding-right: $right-button-padding;
+  // Padding based on button size
+  @if $icon-size == null {   
+    padding-left: $left-button-padding * 3; 
+  }
+  // Padding based on specified icon size
+  @else {
+    padding-left: -zf-bp-to-em($left-button-padding) + -zf-bp-to-em(rem-calc($icon-size) * 1.25);  
+  }
+}
+
+// Position icon on right
+@mixin button-icon-right(
+  $icon-size: null, 
+  $left-button-padding: get-side($button-padding, left), 
+  $right-button-padding: get-side($button-padding, right)
+  ) { 
+
+  // Icon size
+  // Default (medium) icon size
+  &::before {
+    font-size: map-get($button-sizes, default) * 1.5;
+  }
+  // Icon size based on button size
+  @if $icon-size == null { 
+    @include button-icon-size;
+  }
+  // Specified icon size
+  @else {
+    &::before {
+      font-size: $icon-size;
+    }
+  } 
+
+  // Icon position
+  &::before {
+    right: $right-button-padding * .5; // .5 to account for 1.5x icon font size
+    left: auto;  
+  }
+
+  // Button padding 
+  padding-left: $left-button-padding;
+  // Padding based on button size
+  @if $icon-size == null {   
+    padding-right: $right-button-padding * 3; 
+  }
+  // Padding based on specified icon size
+  @else {
+    padding-right: -zf-bp-to-em($right-button-padding) + -zf-bp-to-em(rem-calc($icon-size) * 1.25);  
+  } 
+}
+
+// Position icon in center (icon only)
+@mixin button-icon-center(
+  $icon-size: null, 
+  $left-button-padding: get-side($button-padding, left), 
+  $right-button-padding: get-side($button-padding, right)
+  ) {
+
+  // Icon size
+  // Default (medium) icon size
+  &::before {
+    font-size: map-get($button-sizes, default) * 1.5;
+  }
+  // Icon size based on button size
+  @if $icon-size == null { 
+    @include button-icon-size;
+  }
+  // Specified icon size
+  @else {
+    &::before {
+      font-size: $icon-size;
+    }
+  }
+
+  // Icon position
+  &::before {
+    position: static;
+    right: auto; 
+    left: auto;  
+    transform: none;
+    display: block;
+  }
+
+  // Button padding
+  // Padding based on button size
+  @if $icon-size == null {   
+    padding-left: $left-button-padding;
+    padding-right: $right-button-padding; 
+  }
+  // Padding based on specified icon size
+  @else {
+    padding-left: -zf-bp-to-em($left-button-padding) + -zf-bp-to-em(rem-calc($icon-size));  
+    padding-right: -zf-bp-to-em($right-button-padding) + -zf-bp-to-em(rem-calc($icon-size));  
+  } 
+}
+
+.button[class*="icon_"] {
+  @include button-icon;
+  
+  // Base font size
+  // Default font size
+  font-size: map-get($button-sizes, default);
+  // Font size based on button size
+  @each $size, $value in map-remove($button-sizes, default) {
+    &.#{$size} {
+      font-size: $value;
+    }
+  }
+
+  // Icon positioning
+  &.icon-right { 
+    @include button-icon-right;
+  }
+  &.icon-left { 
+    @include button-icon-left;
+  }  
+  &.icon-center {
+    @include button-icon-center;
+  }
+}
+
+
+// CTA buttons - context-specific styles
+// -------------------------------------
+
+// Deprecated legacy classes
+.btn_cta, 
+.btn_home_cta,
+.btn_sidebar_cta {
+  @include button;
+  @include button-font;
+  @include button-icon;
+}
+
+
+// Floating tab/button
+// -------------------
+
+.btn_floatingTab {
+  display: block;
+  position: fixed;
+  left: 0;
+  bottom: 80px;
+  width: 40px;
+  height: 85px;
+  background: $lightblue;
+  border: 1px solid scale-color($lightblue, $lightness: -10%);
+  //border-radius: 0 $global-radius $global-radius 0; 
+  outline: none;
+  z-index: 10;
+
+  a {
+    transform: rotate(270deg);
+    transform-origin: left top 0; 
+    @include link_primary(#fff, $darkblue);
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    width: 85px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+
+
+
+// DEPRECATED: Legacy button colour classes
+// ----------------------------------------
+
+.btn_lightblue,
+.btn_pink,
+.btn_orange,
+.btn_green {
+  @include button-style($background: $lightblue, $background-hover: auto, $color: #fff);
+}
+.btn_darkblue {
+  @include button-style($background: $darkblue, $background-hover: auto, $color: #fff);
+}
+
+.btn_grey {
+  @include button-style($background: $grey, $background-hover: auto, $color: #fff);
+}
+.btn_greylight {
+  @include button-style($background: $lightgrey, $background-hover: auto, $color: $darkblue);
+  border: 1px solid $darkblue;
+}
+.btn_white {
+  border: 1px solid $lightblue !important;
+  color: $lightblue;
+  &:hover, &:active, &:focus {
+    background-color: scale-color($lightblue, $lightness: $button-background-hover-lightness);
+    color: #fff;
+  }
+}
+.buttonWhite {
+  @extend .button;
+  @extend .hollow;
+}
+.button.uoitgrey {
+  background: $mediumgrey;
+  color: $grey;
+  &:hover, &:active, &:focus {
+    background: scale-color($mediumgrey, $lightness: $button-background-hover-lightness);
+  }
+}
+
+
+
+// DEPRECATED: Individual button styles
+// ------------------------------------
+
+// Sidebar
+// -------
+
+// RO
+.btn_sidebar_cta.btn_ask_question {
+  background: $lightblue;
+  color: #fff;
+  &::before { content: get-icon(icon_askaquestion); }
+
+  &:hover, &:active, &:focus {
+    background-color: scale-color($lightblue, $lightness: -20%);
+  }
+} 
+.btn_sidebar_cta.btn_download_viewbook {
+  background: $lightblue;
+  color: #fff;
+  &::before { content: get-icon(icon_downloadviewbooks); }
+
+  &:hover, &:active, &:focus {
+    background-color: scale-color($lightblue, $lightness: -20%);
+  }
+}
+.btn_sidebar_cta.btn_virtual_tour {
+  background: $lightblue;
+  color: #fff;
+  &::before { content: get-icon(icon_launchtour); }
+
+  &:hover, &:active, &:focus {
+    background-color: scale-color($lightblue, $lightness: -20%);
+  }
+}
+.btn_sidebar_cta.btn_chat {
+  min-height: 2.38rem;
+  background: $lightblue;
+  color: #fff;
+  &::before { content: get-icon(icon_chat); }
+
+  &:hover, &:active, &:focus {
+    background-color: scale-color($lightblue, $lightness: -20%);
+  }
+}

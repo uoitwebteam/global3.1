@@ -1,0 +1,91 @@
+$callout-notification-border-left-width: 5px;
+$callout-notification-radius: 0.6rem;
+$callout-notification-large-font-scale: 150%;
+$callout-notification-small-font-scale: 80%;
+
+.notification-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  
+  width: 100%;
+  padding: 1rem;
+
+  @include breakpoint(xsmall) {
+    width: 70%;
+  }
+
+  @include breakpoint(small) {
+    width: 50%;
+  }
+
+  @include breakpoint(medium) {
+    width: 40%;
+  }
+
+  @include breakpoint(large) {
+    width: 30%;
+  }
+
+  &.notification-left {
+    left: 0;
+  }
+  &.notification-right {
+    right: 0;
+  }
+  &.notification-top {
+    justify-content: flex-start;
+  }
+  &.notification-bottom {
+    justify-content: flex-end;
+  }
+}
+
+.callout.notification {
+  padding-right: 3rem;
+  background: $lightgrey;
+  color: $grey;
+  border: 0;
+  border-left: $callout-notification-border-left-width solid $grey;
+  box-shadow: 0 5px 8px -6px rgba(0,0,0, 0.2);
+  animation-duration: 0.4s;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+	@each $name, $color in $foundation-palette {
+	  &.#{$name} {
+      background: $lightgrey;
+      color: $grey;
+      border-left: $callout-notification-border-left-width solid $color;
+	  }
+	}
+
+  &.small {
+    font-size: $callout-notification-small-font-scale;
+
+    .close-button {
+      font-size: 1.5rem;
+    }
+  }
+
+  &.large {
+    font-size: $callout-notification-large-font-scale;
+
+    .close-button {
+      font-size: 3rem;
+    }
+  }
+
+  .close-button {
+    font-size: 2rem;
+  }
+
+  &.radius {
+    border-radius: $callout-notification-radius;
+  }
+}
