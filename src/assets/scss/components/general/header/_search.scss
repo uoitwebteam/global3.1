@@ -17,7 +17,7 @@
 		border: 1px solid $white;
 		@include button-style($white, rgba($white, .5), $bluegrey);
 
-		@include breakpoint(xsmall down) {
+		@include breakpoint(xxsmall only) {
 			padding: 0 .75rem;
 			margin-bottom: 5px;
 		}
@@ -47,7 +47,7 @@
 		}
 	}
 
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		.search-type {
 			margin-bottom: .5rem;
 		}
@@ -66,7 +66,7 @@
 
 	.input-group {
 		margin-bottom: 0;
-		@include breakpoint(xsmall down) {
+		@include breakpoint(xxsmall only) {
 			flex-wrap: wrap;
 		}
 	}
@@ -78,7 +78,7 @@
 		font-size: rem-calc(19); //rem-calc(16);
 		font-weight: 700;
 
-		@include breakpoint(xsmall down) {
+		@include breakpoint(xxsmall only) {
 			border-color: transparent;
 			padding-left: 0;
 		}
@@ -158,7 +158,7 @@
 		margin-bottom: 0;
 		box-shadow: none;
 		vertical-align: middle;
-		@include breakpoint(xsmall down) {
+		@include breakpoint(xxsmall only) {
 			margin-right: 5px;
 		}
 	}
@@ -178,7 +178,7 @@
 				background-color: rgba(255,255,255,0.5);
 				color: $bluegrey;
 			}
-			@include breakpoint(xsmall down) {			
+			@include breakpoint(xxsmall only) {			
 				margin-bottom: 0;
 			}
 		}

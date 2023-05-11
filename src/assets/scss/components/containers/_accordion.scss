@@ -26,10 +26,9 @@
 
 .is-active > .accordion-title,
 .accordion-title:hover,
-// .accordion-title:active,
 .accordion-title:focus {
-	background: $mediumblue;
-	color: $white;
+	background: $accordion-item-background-hover;
+	color: $accordion-item-hover-color;
 	
 	&::after {	
 		color: $white;
@@ -75,7 +74,7 @@
 		padding: 30px;
 	}
 
-	@each $color, $value in $official-palette {
+	@each $color, $value in $basic-palette {
 		&.#{$color}  {
 			.accordion-title {
 				box-shadow: none;

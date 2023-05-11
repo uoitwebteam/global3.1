@@ -24,7 +24,7 @@
 
 	// Content text colours
 	@each $color,
-	$value in $official-palette {
+	$value in $main-palette {
 		@if ($color != white) {
 			&.#{$color} .feature-module .content {
 				*:not(a):not(code) {
@@ -64,7 +64,7 @@
 	position: relative;
 	min-height: 500px;
 
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		// Default margins
 		&:not([class*='margin-top']) {
 			@include feature-section-margins(top);
@@ -77,7 +77,7 @@
 	.feature-module {
 		@extend .clear;
 
-		@include breakpoint(xsmall down) {
+		@include breakpoint(xxsmall only) {
 			margin-top: -8px;
 			position: relative;
 		}
@@ -104,10 +104,10 @@
 		}
 		
 		// Specified background colour and associated text colours
-		@each $color, $value in $official-palette {
+		@each $color, $value in $main-palette {
 			&.#{$color} {
 				background-color: $value;
-				@include breakpoint(xsmall down) {
+				@include breakpoint(xxsmall only) {
 					box-shadow: 0 -8px 0 rgba($value, .7);
 				}
 				@include breakpoint(small) {
@@ -175,7 +175,7 @@
 	}
 
 	// Static image element
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		.feature-image img {
 			display: block;
 		}

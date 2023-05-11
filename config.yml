@@ -26,6 +26,9 @@ PATHS:
     - "node_modules/motion-ui/src"
     - "node_modules/prismjs"
     - "node_modules/swiper/dist/css"
+  sassbuilds:
+    - "src/assets/scss/"
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:
     - "src/assets/js/global3.1.js"
+    - "src/assets/js/map.js"

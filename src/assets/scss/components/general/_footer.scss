@@ -41,7 +41,7 @@ footer.footer {
 .logo_footer {
 	@include flex-grid-column(shrink);
 
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		@include flex-grid-column(12);
 		text-align: center;
 	}

@@ -2,7 +2,7 @@
 /// @param {Keyword} $color - link color
 /// @param {Keyword} $hover-color - hover link/underline color
 @mixin header-footer-links($color, $hover-color) {
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		@include flex-grid-layout(2);
 		.column {
 			margin: .5rem 0;

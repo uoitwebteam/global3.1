@@ -29,7 +29,7 @@
 
 	// Specified background colour and associated text colours
 	@each $color,
-	$value in $official-palette {
+	$value in $main-palette {
 
 		// Full-width background colour
 		&.#{$color}:not([class*=column]),
@@ -89,7 +89,7 @@
 			font-size: rem-calc(30);
 			line-height: 1;
 
-			@include breakpoint(xsmall down) {
+			@include breakpoint(xxsmall only) {
 				font-size: rem-calc(28);
 				margin-bottom: 1rem;
 				width: 100%;

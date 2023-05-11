@@ -12,7 +12,7 @@ $border-color: $mediumgrey !default;
   @include border-base();
   border-width: 1px;
 
-  @each $name, $color in $foundation-palette {
+  @each $name, $color in $main-palette {
     &.#{$name} {
       border-color: $color;
     }

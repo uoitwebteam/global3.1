@@ -33,7 +33,7 @@
 			padding-left: use_gutter();
 			padding-right: use_gutter();
 
-			@include breakpoint(xsmall down) {
+			@include breakpoint(xxsmall only) {
 				padding-left: use_gutter();
 				padding-right: use_gutter();
 			}
@@ -60,7 +60,7 @@
 	padding-top: use_gutter(.5);
 	padding-bottom: use_gutter(.5);
 
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -75,7 +75,7 @@
 
 	>.row>.columns,
 	>.row>.column {
-		@include breakpoint(xxsmall down) {
+		@include breakpoint(xxsmall only) {
 			min-width: 100%;
 			flex: 1 1 auto;
 		}
@@ -99,7 +99,7 @@
 
 
 .card-grid>.columns {
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		min-width: 100%;
 		flex: 1 1 auto;
 	}

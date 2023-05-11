@@ -7,7 +7,7 @@
 //     a. Hex values
 //     b. Scaled shades
 //     c. Alternate variable names
-//     d. Official palette (Sass use)
+//     d. Basic/Main palette
 //     e. Deprecated/legacy colours
 //
 //  2. Feature module
@@ -31,7 +31,7 @@ $darkorange: #CF4817; // AA compliant for regular text size
 /// Secondary palette
 $coolgrey:   #A7A8AA; // Pantone cool grey 6
 $warmgrey:   #ACA39A; // Pantone warm grey 5
-$bluegrey:       #5B6770; // Pantone 431 C
+$bluegrey:   #5B6770; // Pantone 431 C
 $spiritblue: #00283C;
 
 /// Misc UI colours
@@ -55,7 +55,7 @@ $lighterblue: scale-color($lightblue, $lightness: 18%, $saturation: -30%);
 $blue:        scale-color($lightblue, $lightness: -27%);
 $darkerblue:  scale-color($darkblue, $lightness: -30%, $saturation: -10%);
 
-/// % tints of cool grey
+/// % tints of cool grey (direct $variable usage only)
 $coolgrey10:  scale-color($coolgrey, $lightness: 90%);
 $coolgrey20:  scale-color($coolgrey, $lightness: 80%);
 $coolgrey30:  scale-color($coolgrey, $lightness: 70%);
@@ -66,7 +66,7 @@ $coolgrey70:  scale-color($coolgrey, $lightness: 30%);
 $coolgrey80:  scale-color($coolgrey, $lightness: 20%);
 $coolgrey90:  scale-color($coolgrey, $lightness: 10%);
 
-/// % tints of warm grey
+/// % tints of warm grey (direct $variable usage only)
 $warmgrey10:  scale-color($warmgrey, $lightness: 90%);
 $warmgrey20:  scale-color($warmgrey, $lightness: 80%);
 $warmgrey30:  scale-color($warmgrey, $lightness: 70%);
@@ -77,7 +77,7 @@ $warmgrey70:  scale-color($warmgrey, $lightness: 30%);
 $warmgrey80:  scale-color($warmgrey, $lightness: 20%);
 $warmgrey90:  scale-color($warmgrey, $lightness: 10%);
 
-/// % tints of blue grey
+/// % tints of blue grey (direct $variable usage only)
 $bluegrey10:  scale-color($bluegrey, $lightness: 90%);
 $bluegrey20:  scale-color($bluegrey, $lightness: 80%);
 $bluegrey30:  scale-color($bluegrey, $lightness: 70%);
@@ -94,50 +94,52 @@ $bluegrey90:  scale-color($bluegrey, $lightness: 10%);
 $mediumblue:     $blue;
 $grey:           $bluegrey;
 $lightgrey:      $coolgrey20;
-$mediumgrey:     $coolgrey70;
+$mediumgrey:     $coolgrey60;
 $darkgrey:       $bluegrey;
 $lightcoolgrey:  $coolgrey20;
-$mediumcoolgrey: $coolgrey70;
+$mediumcoolgrey: $coolgrey50;
 $lightwarmgrey:  $warmgrey30;
-$mediumwarmgrey: $warmgrey70;
-$lightbluegrey:  $bluegrey40;
+$mediumwarmgrey: $warmgrey60;
+$lightbluegrey:  $bluegrey50;
 $mediumbluegrey: $bluegrey80;
 
-// Legacy variable names
-$uoitlightblue:  $lightblue;
-$uoitdarkblue:   $darkblue;
-$uoitgrey:       $bluegrey;
-$uoitgreylight:  $lightgrey;
-$uoitgreymedium: $mediumgrey;
-$uoitgreydark:   $bluegrey;
-$greylight:      $lightgrey;
-$greymedium:     $mediumgrey;
-
-// 1.d. Official palette (Sass use)
-// --------------------------------
-/// Primary palette and select web shades for specific components (retire?)
-$official-palette: (
+// 1.d. Main palette
+// -----------------
+/// Primary palette and basic web shades
+/// (for HTML class name usage, output via @each function)
+$basic-palette: (
 	lightblue: $lightblue,
 	darkblue: $darkblue,
-	lighterblue: $lighterblue,
+	blue: $blue,
+	mediumblue: $blue,
+	orange: $orange,
+	accent: $orange,
+	grey: $bluegrey,
+);
+/// Primary, secondary palettes and web shades
+/// (for HTML class name usage, output via @each function)
+$main-palette: (
+	// lighterblue: $lighterblue,
+	lightblue: $lightblue,
+	darkblue: $darkblue,
 	blue: $blue,
 	mediumblue: $blue,
 	darkerblue: $darkerblue,
 	spiritblue: $spiritblue,
 	orange: $orange,
-	darkorange: $darkorange,
 	accent: $orange,
-	darkaccent: $darkorange,
 	grey: $bluegrey,
 	lightgrey: $lightgrey,
 	mediumgrey: $mediumgrey,
 	coolgrey: $coolgrey,
-	lightcoolgrey: $lightgrey,
-	mediumcoolgrey: $mediumgrey,
 	warmgrey: $warmgrey,
 	bluegrey: $bluegrey,
 	white: #ffffff,
 );
+// darkorange: $darkorange,
+// darkaccent: $darkorange,
+// lightcoolgrey: $lightgrey,
+// mediumcoolgrey: $mediumgrey,
 
 // 1.e. Deprecated/legacy colours
 // ------------------------------
@@ -161,35 +163,6 @@ $fsci:       #007749;
 $fssh:       #BE4D00;
 $grad:       #000000;
 
-// Deprecated colours, legacy variables
-$teal:           $lightblue; //#009a88;//#1B8376;
-$darkteal:       $lightblue; //#135D53;
-$tealdark:       $lightblue; //$darkteal;
-$green:          $lightblue; // #4E8200;
-$greenlightest:  $lightblue; // #d4eb8e;//#AEE55C;
-$greenlighter:   $lightblue; // #b1c58c;//#82C223;
-$greendarker:    $lightblue; // #3A6100;
-$greendarkest:   $lightblue; // #233B00;//#233B00;
-$pink:           $lightblue; // #C71566;
-$pinklightest:   $lightblue; // #FFA8CF;
-$pinklighter:    $lightblue; // #FF70B0;
-$pinkdarker:     $lightblue; // #A31253;
-$pinkdarkest:    $lightblue; // #630B33;
-$yellow:         $lightblue; // #FFC717;//#D98900; 
-$yellowlightest: $lightblue; // #ffe570;//#FFB83D;
-$yellowlighter:  $lightblue; // #FDDA3C;//#FFA817;
-$yellowdarker:   $lightblue; // #A66800;
-$yellowdarkest:  $lightblue; // #7F4E28;//#7F5000;
-$purple:         $lightblue; // #804693;//#814794;
-$purplelightest: $lightblue; // #D0ADD6;//#E6B3F5;
-$purplelighter:  $lightblue; // #BE86CF;
-$purpledarker:   $lightblue; // #61326D;//#683A78;
-$purpledarkest:  $lightblue; // #521C4E;//#573063;
-$uoitpink:       $pink;
-$uoitgreen:      $green;
-$uoitorange:     $orange;
-
-
 // 2. Feature module
 // -----------------
 
@@ -204,19 +177,6 @@ $font-file-path: 'https://shared.ontariotechu.ca/global/files/fonts/' !default;
 $body-font: 'Franklin Gothic', Arial, Helvetica, sans-serif !default; 
 $heading-font: 'Ubuntu', Arial, Helvetica, sans-serif !default;
 $icon-font: 'UOIT Icons';
-
-// !!! Change instances of these to 'body-font', 'heading-font', 'icon-font'
-$body-font: $body-font;
-$heading-font: $heading-font;
-$uoit-icon-font: 'UOIT Icons';
-// !!! UOIT/DC - change these to font-body/heading overrides in DC build
-$uoitdcfont: 'Roboto', Arial, Helvetica, sans-serif;
-$uoitdcfont_secondary: 'Roboto Condensed', Arial, Helvetica, sans-serif;
-// !!! Legacy - remove
-$ubuntu: 'Ubuntu', Arial, Helvetica, sans-serif;
-$franklinGothic: 'Franklin Gothic', Arial, Helvetica, sans-serif;
-$franklinGothicCondensed: 'Franklin Gothic', Arial, Helvetica, sans-serif; 
-
 
 // 4. Footer
 // ---------

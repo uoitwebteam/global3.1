@@ -51,7 +51,7 @@
 		}
 		.header {
 			font-size: rem-calc(32px);
-			@include breakpoint(xsmall) {
+			@include breakpoint(small) {
 				font-size: rem-calc(36px);
 			}
 			@include breakpoint(large) {
@@ -60,7 +60,7 @@
 		}
 		.subheader {
 			font-size: rem-calc(20px);
-			@include breakpoint(xsmall) {
+			@include breakpoint(small) {
 				font-size: rem-calc(28px);
 			}
 			@include breakpoint(large) {

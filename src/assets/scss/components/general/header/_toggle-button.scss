@@ -50,7 +50,7 @@ header .sticky.is-stuck {
       right: 165px;
     }
 
-    @include breakpoint(xsmall down) {
+    @include breakpoint(xxsmall only) {
       right: 155px;
     }
   }
@@ -133,7 +133,7 @@ header .sticky.is-stuck {
           right: 60px;
         }
       }
-      @include breakpoint(xsmall down) {
+      @include breakpoint(xxsmall only) {
         // &::before {
         // 	top: 20px;
         // 	right: 20px;
@@ -196,7 +196,7 @@ header .sticky.is-stuck {
 	top: 0;
 	right: 0;
 
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		width: 100%;
 		text-align: center;
 

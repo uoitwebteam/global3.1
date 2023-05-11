@@ -1,0 +1,288 @@
+#offcanvas-menu {
+	overflow: visible;
+
+	.content {
+		height: 100%;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	// Offcanvas menu toggle button
+	#btn-toggle-map-menu {
+		visibility: visible;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 50px;
+		height: 50px;
+		margin: 0;
+		padding: 0;
+
+		&[aria-expanded="true"] {
+			&::before {
+				content: get-icon('icon_arrow_left');
+			}
+		}
+		&[aria-expanded="false"] {
+			&::before {
+				content: get-icon('icon_arrow_right');
+			}
+		}
+	}
+
+	// Brand arrows pattern
+	// &::after {
+	// 	@include repeated-brand-arrow-pattern($lightgrey);
+	// 	content: '';
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 300px;
+	// 	z-index: -1;
+	// } 
+
+	a.logo-link {
+		display: block;
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	// (Header search)
+	.search-container {
+		margin: 1rem;
+		.input-group {
+			margin-bottom: 0;
+		}
+	}
+
+	// Campus navigation buttons
+	.campus-buttons {
+		margin: 0.5rem 1rem;
+
+		.button-group {
+			margin-bottom: 0;
+		}
+		.button {
+			white-space: nowrap;
+		}
+
+		.btn-legend {
+			flex: 0 0 auto;
+		}
+
+		@at-root .v1#offcanvas-menu  .campus-buttons {
+			margin: 0;
+			border-bottom: 8px solid $darkblue;
+		}
+	}
+
+	// General layout - tabs
+	.tabs-title {
+		text-align: center;
+		margin-right: 3px;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+
+		> a {
+			@include breakpoint(medium down) {
+				padding: 0.75rem;
+			}
+		}
+	}
+	.tabs-content {
+		flex: 1 0 auto;
+		position: relative;
+		margin-bottom: 0;
+	}
+	#tab-locations,
+	#tab-search {
+		padding: 0;
+	}
+	// General layout - accordions
+	.accordion {
+		margin-bottom: 0;
+	}
+	.accordion-item:first-child .accordion-title {
+		border-top: 0
+	}
+	.accordion-title {
+		box-shadow: none;
+		padding: $accordion-item-padding;
+	}
+	.accordion-content {
+		border-bottom: 1px solid $accordion-item-color;
+	}
+
+	// Settings panel
+	#settings-panel {
+		background: $lightgrey;
+		height: 100vh;
+		overflow-y: auto;
+		transform: translateX(-100%);
+		transition: transform .4s ease;
+
+		&.active {
+			transform: translateX(0);
+		}
+		
+		h2 {
+			margin: 1rem;
+			color: $darkblue;
+		}
+
+		button.close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 1rem;
+			color: $grey;
+
+			&:hover, &:active, &:focus {
+				cursor: pointer;
+				color: $darkblue;
+			}
+		}
+	}
+	.legend-item {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+
+	// Locations button list
+	.button-list {
+		.button {
+			text-align: left;
+			text-transform: none;
+			font-weight: normal;
+			margin-bottom: 1px;
+
+			@include button-style(
+				$background: $bluegrey10,
+				$background-hover: auto,
+				$color: $darkblue,
+				$background-hover-lightness: -10%
+			);
+		}
+	}
+
+	// Detail flip panel
+	.detail-panel {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100%;
+		transform: rotateY(180deg);
+		backface-visibility: hidden;
+		will-change: transform;
+		transition: transform .6s ease;
+		background: $darkblue;
+		z-index: $offcanvas-overlap-zindex;
+
+		&.active {
+			transform: rotateY(0deg);
+		}
+
+		.button.back {
+			@include button-style($background: $darkblue, $background-hover: auto, $color: $white);
+			text-align: left;
+			padding-left: 2.25em;
+			margin: 0.5rem;
+
+			&::before {
+				font-size: 1rem;
+			}
+		}
+
+		.button-group .button:not(:last-child) {
+			margin-right: 2px;
+		}
+
+		h2 {
+			@extend .h4;
+			margin: 0.25rem 1rem 1rem;
+			color: $white;
+		}
+		p {
+			color: $white;
+		}
+
+		.description {
+			margin: 1rem;
+		}
+
+		.accordion-content {
+			padding: $accordion-item-padding;
+		}
+	}
+
+	// .accordion-menu {
+	// 	// Top level
+	// 	> li {
+	// 		> a {
+	// 			font-weight: bold;
+	// 			font-family: $heading-font;
+	// 		}
+	// 		// Active link
+	// 		&[aria-expanded='true'] > a,
+	// 		> a:hover, > a:active, > a:focus {
+	// 			background: $lightgrey;
+	// 			color: $darkblue;
+	// 		}
+	// 		// Accordion icon
+	// 		&[aria-expanded='true'] .accordion-title::after {
+	// 			transform: translateY(-50%) rotate(180deg);
+	// 		}
+	// 	}
+
+	// 	.nested.is-accordion-submenu {
+	// 		margin: 0;
+	// 	}
+	// }
+	
+
+
+	// Search
+	#tab-search {
+		.search-container {
+			margin: 1rem;
+		}
+	}
+	.search-results {
+		.resultListItem {
+			padding: $accordion-item-padding;
+			border-top: 1px solid $mediumgrey;
+
+			p {
+				margin-bottom: .15rem;
+
+				&.name {
+					color: $darkblue;
+					font-family: $heading-font;
+				}
+			}
+
+			.button {
+				// @include button-style($background: $mediumgrey, $background-hover: auto, $color: $black);
+				margin-top: 0.25rem;
+			}
+		}
+	}
+
+	// Directions
+	#directionsContainer {
+		select, input {
+			margin-bottom: .5rem;
+		}
+		button {
+			margin-top: .5rem;
+			margin-bottom: 0;
+		}
+	}
+
+}

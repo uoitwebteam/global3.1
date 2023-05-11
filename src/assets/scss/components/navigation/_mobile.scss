@@ -4,6 +4,15 @@
 $menu-item-border-color: scale-color($blue, $lightness: -25%);
 $menu-item-border-style: 1px solid;
 
+.off-canvas.position-left[data-transition="overlap"] {
+	.btn-toggle-offcanvas {
+		display: block;
+		position: fixed;
+		z-index: $offcanvas-overlap-zindex;
+		visibility: visible;
+	}
+}
+
 #offcanvas-menu,
 #nav-mobile {
 	/* // Brand arrows pattern

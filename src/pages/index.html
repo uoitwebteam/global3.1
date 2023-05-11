@@ -266,7 +266,9 @@ console.log('Hello, world!');</code></pre>
 				<button class="button expanded primary">Dark blue button</button>
 				<button class="button expanded blue">Medium blue button</button>
 				<button class="button expanded secondary">Light blue button</button>
-				<button class="button expanded grey">Grey/Blue-grey button</button>
+				<button class="button expanded grey">Grey button</button>
+				<button class="button expanded mediumgrey">Medium grey button</button>
+				<button class="button expanded lightgrey">Light grey button</button>
 				<button class="button expanded spiritblue">Spirit blue button</button>
 				<button class="button expanded orange">Orange button *</button>
 				* Dark orange override
@@ -279,21 +281,24 @@ console.log('Hello, world!');</code></pre>
 				<button class="button expanded hollow darkblue">Dark blue hollow button</button>
 				<button class="button expanded hollow blue">Medium blue hollow button</button>
 				<button class="button expanded hollow lightblue">Light blue hollow button</button>
-				<button class="button expanded hollow grey">Grey/Blue-grey hollow button</button>
+				<button class="button expanded hollow grey">Grey hollow button</button>
 				<button class="button expanded hollow spiritblue">Spirit blue hollow button</button>
 				<button class="button expanded hollow orange">Orange hollow button *</button>
+			</p>
+			<p class="bgcolor grey padding">
+				<button class="button expanded hollow white">White hollow button</button>
 			</p>
 		</div>
 
 		<div class="column">
 			<p class="padding bgcolor grey">
-				<button class="button expanded white darkerblue">White+darker blue button</button>
-				<button class="button expanded white darkblue">White+Dark blue button</button>
-				<button class="button expanded white blue">White+Medium blue button</button>
-				<button class="button expanded white lightblue">White+Light blue button</button>
-				<button class="button expanded white grey">White+Grey/Blue-grey button</button>
-				<button class="button expanded white spiritblue">White+Spirit blue button</button>
-				<button class="button expanded white orange">White+Orange button *</button>
+				<button class="button expanded white darkerblue">White + darker blue button</button>
+				<button class="button expanded white darkblue">White + Dark blue button</button>
+				<button class="button expanded white blue">White + Medium blue button</button>
+				<button class="button expanded white lightblue">White + Light blue button</button>
+				<button class="button expanded white grey">White + Grey button</button>
+				<button class="button expanded white spiritblue">White + Spirit blue button</button>
+				<button class="button expanded white orange">White + Orange button *</button>
 			</p>
 		</div>
 		
@@ -540,7 +545,96 @@ console.log('Hello, world!');</code></pre>
 				</div>
 			</section> -->
 			<p><span class="label alert">PHP component: HTML is temporarily hard-coded for v3.1 Phase 1 development</span></p>
-			<section class="events   mediumblue">
+			<section class="events   mediumblue          ">
+				<div class="feature-module home-module">
+					<div class="heading">
+						<h2>Events</h2>
+						<a class="see_all" href="https://events.ontariotechu.ca"
+							onclick="ga('send', 'event', 'button', 'click', 'allEvents');" title="See all events">All
+							events<span></span></a>
+					</div>
+					<div class="content">
+						<div class="swiper-container" id="events-slider">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6488" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "CPR Recertification");'>
+										<p class="event_date">May <span>11</span></p>
+										<p class="event_info"><span class="event_title">CPR Recertification</span><span class="event_time">North
+												Oshawa Location, SHA038<br>6 p.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6484" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Healthcare Providers CPR Recertification");'>
+										<p class="event_date">May <span>16</span></p>
+										<p class="event_info"><span class="event_title">Healthcare Providers CPR Recertification</span><span
+												class="event_time">North Oshawa Location, 038<br>1 p.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6502" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Dungeons and Dragons Employment Workshop");'>
+										<p class="event_date">May <span>16</span></p>
+										<p class="event_info"><span class="event_title">Dungeons and Dragons Employment Workshop</span><span
+												class="event_time">North Oshawa Location, 2230<br>1 p.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6485" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Healthcare Providers CPR Recertification ");'>
+										<p class="event_date">May <span>18</span></p>
+										<p class="event_info"><span class="event_title">Healthcare Providers CPR Recertification </span><span
+												class="event_time">North Oshawa Location, 038<br>6 p.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6501" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Managing Anxiety and Stress Workshop");'>
+										<p class="event_date">May <span>23</span></p>
+										<p class="event_info"><span class="event_title">Managing Anxiety and Stress Workshop</span><span
+												class="event_time">virtual<br>9 a.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6486" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Healthcare Providers CPR Recertification ");'>
+										<p class="event_date">May <span>23</span></p>
+										<p class="event_info"><span class="event_title">Healthcare Providers CPR Recertification </span><span
+												class="event_time">North Oshawa Location, 038<br>1 p.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6503" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Dungeons and Dragons Employment Workshop");'>
+										<p class="event_date">May <span>23</span></p>
+										<p class="event_info"><span class="event_title">Dungeons and Dragons Employment Workshop</span><span
+												class="event_time">North Oshawa Location, 2230<br>1 p.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6504" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Dungeons and Dragons Employment Workshop ");'>
+										<p class="event_date">May <span>30</span></p>
+										<p class="event_info"><span class="event_title">Dungeons and Dragons Employment Workshop </span><span
+												class="event_time">North Oshawa Location, 2230<br>1 p.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6490" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Wellness Walks ");'>
+										<p class="event_date">Jun <span>6</span></p>
+										<p class="event_info"><span class="event_title">Wellness Walks </span><span class="event_time">North
+												Oshawa Location, Front desk <br>Noon</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6505" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Dungeons and Dragons Employment Workshop");'>
+										<p class="event_date">Jun <span>6</span></p>
+										<p class="event_info"><span class="event_title">Dungeons and Dragons Employment Workshop</span><span
+												class="event_time">North Oshawa Location, 2230<br>1 p.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6473" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Convocation - Education");'>
+										<p class="event_date">Jun <span>7</span></p>
+										<p class="event_info"><span class="event_title">Convocation - Education</span><span
+												class="event_time">Polonsky Commons<br>9:30 a.m.</span></p>
+									</a></div>
+								<div class='swiper-slide'><a href="https://events.ontariotechu.ca/event/6475" target="_blank"
+										onclick='ga("send", "event", "eventfeed", "click", "Convocation - Science");'>
+										<p class="event_date">Jun <span>8</span></p>
+										<p class="event_info"><span class="event_title">Convocation - Science</span><span
+												class="event_time">Polonsky Commons<br>9:30 a.m.</span></p>
+									</a></div>
+							</div>
+							<div class="swiper-scrollbar"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- <section class="events   mediumblue">
 				<div class="feature-module home-module">
 					<div class="heading">
 						<h2>Events</h2>
@@ -648,7 +742,7 @@ console.log('Hello, world!');</code></pre>
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> -->
 		</div>
 	</div> 
 

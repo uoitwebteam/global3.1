@@ -16,7 +16,7 @@
 	// Specified background colour and associated text colours
 	@include feature-module-colors;
 	@each $color,
-	$value in $official-palette {
+	$value in $main-palette {
 		&.#{$color} {
 			.news_text,
 			.content p {
@@ -56,7 +56,7 @@
 		}
 
 		// Flex grid (stacked)
-		@include breakpoint(xsmall down) {
+		@include breakpoint(xxsmall only) {
 			@include flex-grid-row;
 			@include flex-grid-layout(1, 'article');
 

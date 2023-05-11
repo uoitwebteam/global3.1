@@ -2,18 +2,18 @@ $cta-text-styles: (
 	xxsmall: (
 		'font-size':rem-calc(24)
 	),
-	xsmall: (
-		'font-size':rem-calc(19),
-		'font-weight': bold
-	),
+	// xsmall: (
+	// 	'font-size':rem-calc(19),
+	// 	'font-weight': bold
+	// ),
 	small: (
 		'font-size':rem-calc(19),
 		'font-weight': bold
 	),
-	large: (
-		'font-size':rem-calc(19),
-		'font-weight': bold
-	),
+	// large: (
+	// 	'font-size':rem-calc(19),
+	// 	'font-weight': bold
+	// ),
 	xlarge: (
 		'font-size':rem-calc(20),
 		'font-weight': bold
@@ -85,7 +85,7 @@ $cta-text-styles: (
 
 		// specified background colour
 		@each $color,
-		$value in $foundation-palette {
+		$value in $basic-palette {
 			&.#{$color} {
 				background: rgba($value, .85);
 			}
@@ -254,7 +254,7 @@ $cta-text-styles: (
 .banner-small+.cta-thumbnails {
 	display: flex;
 	flex-flow: row wrap;
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		@include flex-grid-layout(1);
 	}
 	@include breakpoint(small only) {
@@ -326,7 +326,7 @@ $cta-text-styles: (
 		}
 	}
 
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		.column {
 			@include flex-grid-column(12);
 		}

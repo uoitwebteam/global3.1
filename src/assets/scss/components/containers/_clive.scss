@@ -120,7 +120,7 @@ $clive-field-height: 2rem;
 		background-color: $button-background-hover !important;
 	}
 }
-@each $name, $color in $foundation-palette { 
+@each $name, $color in $main-palette { 
 	&.#{$name} {
 		.clive-submit {
 			background-color: color-pick-contrast($color, ($primary-color, $secondary-color)) !important;

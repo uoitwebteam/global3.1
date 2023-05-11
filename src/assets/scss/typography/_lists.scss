@@ -118,7 +118,7 @@
 	}
 
 	// Icon colours
-	@each $color, $value in $official-palette {
+	@each $color, $value in $main-palette {
 		&.#{$color} li span[class*="icon_"] {
 			color: $value
 		}

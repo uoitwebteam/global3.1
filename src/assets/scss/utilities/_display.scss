@@ -23,7 +23,8 @@
 
 
 // Display
-.flex {
+.flex,
+.flex-container {
 	display: flex;
 }
 .row-wrap {
@@ -37,6 +38,9 @@
 }
 .align-evenly {
 	justify-content: space-evenly;
+}
+.flex-child-auto {
+	flex: 1 1 auto;
 }
 // Flex align-self
 @each $size in $breakpoint-classes {

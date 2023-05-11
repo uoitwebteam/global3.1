@@ -2,7 +2,7 @@
 	padding: 30px 15px;
 	text-align: center;
 
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		.column, .columns {
 			margin-top: 1.25rem;
 			margin-bottom: 1.25rem;
@@ -33,7 +33,7 @@
 
 	// Specified background colour and associated text colours
 	@each $color,
-	$value in $official-palette {
+	$value in $main-palette {
 		@at-root {
 			$temp-color: color-pick-contrast($value, ($white, $darkblue));
 			

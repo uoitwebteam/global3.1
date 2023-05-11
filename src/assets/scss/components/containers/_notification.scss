@@ -14,10 +14,6 @@ $callout-notification-small-font-scale: 80%;
   width: 100%;
   padding: 1rem;
 
-  @include breakpoint(xsmall) {
-    width: 70%;
-  }
-
   @include breakpoint(small) {
     width: 50%;
   }
@@ -57,7 +53,7 @@ $callout-notification-small-font-scale: 80%;
     margin-bottom: 0;
   }
 
-	@each $name, $color in $foundation-palette {
+	@each $name, $color in $main-palette {
 	  &.#{$name} {
       background: $lightgrey;
       color: $grey;

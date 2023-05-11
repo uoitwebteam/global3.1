@@ -156,7 +156,7 @@ header .google-search {
 	}
 }
 .top-nav-search .google-search {
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		// @include grid-column(12);
 		
 		.gsc-search-box .gsc-input {

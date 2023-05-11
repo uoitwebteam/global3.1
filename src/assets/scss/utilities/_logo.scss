@@ -141,7 +141,7 @@ $supasmooth: cubic-bezier(.75,0,.25,1);
 	}
 
 	// Specified colours (CSS class)
-	@each $color, $value in $foundation-palette {
+	@each $color, $value in $basic-palette {
 		.university.#{$color} .text,
 		.tech.#{$color} .text,
 		.ontario.#{$color} .text,
@@ -150,7 +150,7 @@ $supasmooth: cubic-bezier(.75,0,.25,1);
 			fill: $value;
 		}
 	}
-	@each $color, $value in $foundation-palette {
+	@each $color, $value in $basic-palette {
 		.arc.#{$color} {
 			stroke: $value;
 		}

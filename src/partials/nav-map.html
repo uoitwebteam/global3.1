@@ -1,0 +1,255 @@
+
+	<div class="off-canvas-absolute position-left" id="offcanvas-menu" data-off-canvas data-close-on-click="false" data-content-overlay="false" data-off-canvas data-transition="overlap">
+		<button type="button" class="btn-toggle-offcanvas button icon_" data-toggle="offcanvas-menu" id="btn-toggle-map-menu" title="Menu"><span class="show-for-sr">Menu</span></button>
+
+		<div class="content">
+			
+			<a class="header-link" href="https://ontariotechu.ca/map" title="Ontario Tech Campus Map">
+					<img src="https://cdn.bfldr.com/FE9E4T46/at/pwc45g-7qxa40-f0jtmi/OntarioTechUniversity_Primary_Colour_RGB_150ppi.png?auto=webp&format=png" alt="Ontario Tech logo"/>
+			</a>
+	
+			<div class="button-group small expanded campus-buttons">
+					<button class="button lightgrey" id="goNorthButton">Go north</button>
+					<button class="button lightgrey" id="goDowntownButton">Go downtown</button>
+			</div>
+	
+			<ul class="accordion" data-accordion data-multi-open="false" id="drillDownMenu">
+				<li class="accordion-item" data-accordion-item>
+						<a href="#" class="accordion-title" id="buildings">Buildings</a>
+						
+							<div id="buildingsContainer" class="accordion-content" data-tab-content>
+								<button class="button expanded" id="building-ACE">ACE</button>
+							
+								<button class="button expanded" id="building-Business and IT Building">Business and IT Building</button>
+							
+								<button class="button expanded" id="building-Campus Corners">Campus Corners</button>
+							
+								<button class="button expanded" id="building-Campus Fieldhouse">Campus Fieldhouse</button>
+							
+								<button class="button expanded" id="building-Campus Ice Centre">Campus Ice Centre</button>
+							
+								<button class="button expanded" id="building-Clean Energy Research Lab">Clean Energy Research Lab</button>
+							
+								<button class="button expanded" id="building-Crime Scene House">Crime Scene House</button>
+							
+								<button class="button expanded" id="building-Energy Research Centre">Energy Research Centre</button>
+							
+								<button class="button expanded" id="building-Library">Library</button>
+							
+								<button class="button expanded" id="building-Library Portable">Library Portable</button>
+							
+								<button class="button expanded" id="building-OPG Engineering Building">OPG Engineering Building</button>
+							
+								<button class="button expanded" id="building-Science Building">Science Building</button>
+							
+								<button class="button expanded" id="building-Shawenjigewining Hall">Shawenjigewining Hall</button>
+							
+								<button class="button expanded" id="building-Software and Informatics Research Centre">Software and Informatics Research Centre</button>
+							
+								<button class="button expanded" id="building-University Pavilion">University Pavilion</button>
+							</div>
+						
+				</li>
+				<li class="accordion-item" data-accordion-item id="searchContainer">
+						<a href="#" class="accordion-title">Search</a>
+						<div class="accordion-content padding" data-tab-content="">
+								
+								<label>Find a location
+									<input type="text" id="searchInput" placeholder="Search"/>
+								</label>
+	
+								<div id="searchResults" class="searchResults">
+									<div class="resultListItem" data-external-id="LIB136F">
+										<p class="name"><strong>Library</strong></p>
+										<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										<p class="building"><strong>Building: </strong>Library</p>
+										<p class="floor"><strong>Floor: </strong>1</p>
+										<p class="room"><strong>Room number: </strong>LIB136F</p>
+										<button class="button small">Get directions</button>
+									</div>
+	
+									<div class="resultListItem" data-external-id="LIB220D">
+										<p class="name"><strong>Library</strong></p>
+										<p class="building"><strong>Building: </strong>Library</p>
+										<p class="floor"><strong>Floor: </strong>1</p>
+										<p class="room"><strong>Room number: </strong>LIB220D</p>
+										<button class="button small">Get directions</button>
+									</div>
+								</div>
+							
+								
+						</div>
+				</li>
+				<li class="accordion-item" data-accordion-item id="directionsContainer">
+						<a href="#" class="accordion-title">Directions</a>
+						<div class="accordion-content padding" data-tab-content="">
+								
+									
+								<label for="directionsTravelModeSelector">
+										Mode of transportation
+								</label>
+								<select id="directionsTravelModeSelector" name="directionsTravelModeSelector">
+										<option value="WALKING" selected>Walking</option>
+										<option value="BICYCLING">Bicycling</option>
+										<option value="DRIVING">Driving</option>
+										<option value="TRANSIT">Transit</option>
+								</select>
+
+								<input type="checkbox" id="avoid__stairs"/>
+								<label for="avoid__stairs">Avoid stairs</label>
+
+										<button type="button" class="button small expanded mediumgrey" id="routeUserLocation">Start from your location</button>
+
+								<div>
+										<input type="text" id="directionsOriginInput" name="directionsOriginInput" placeholder="Or enter a starting point"/>
+								</div>
+								<div>
+										<input type="text" id="directionsDestinationInput" name="directionsDestinationInput" placeholder="Enter a destination"/>
+								</div>
+
+								<button type="button" id="directionsCreateRoute" class="button directionsCreateRouteButton icon_direction" data-toggle="directionsRouteResults">Get directions</button>
+								
+								<div id="directionsSearchResults" class="searchResults"></div>
+											
+											
+							
+						</div>
+				</li>
+				<li class="accordion-item" data-accordion-item>
+						<a href="#" class="accordion-title" id="legend">Legend</a>
+						<div class="accordion-content padding" data-tab-content="">
+								
+									<div class="" id="legendContainer"></div>
+								
+						</div>
+				</li>
+			</ul>
+	
+	
+			<ul class="vertical menu accordion-menu hide" data-accordion-menu data-multi-open="false" id="drillDownMenu">
+					<li>
+							<a href="#" id="buildings">Buildings</a>
+							<ul class="menu vertical nested">
+								<li id="buildingsContainer" class="button-group stacked is-submenu-item is-drilldown-submenu-item" role="none">
+									<!-- <h3>Buildings</h3> -->
+									<button class="button expanded" id="building-ACE">ACE</button>
+								
+									<button class="button expanded" id="building-Business and IT Building">Business and IT Building</button>
+								
+									<button class="button expanded" id="building-Campus Corners">Campus Corners</button>
+								
+									<button class="button expanded" id="building-Campus Fieldhouse">Campus Fieldhouse</button>
+								
+									<button class="button expanded" id="building-Campus Ice Centre">Campus Ice Centre</button>
+								
+									<button class="button expanded" id="building-Clean Energy Research Lab">Clean Energy Research Lab</button>
+								
+									<button class="button expanded" id="building-Crime Scene House">Crime Scene House</button>
+								
+									<button class="button expanded" id="building-Energy Research Centre">Energy Research Centre</button>
+								
+									<button class="button expanded" id="building-Library">Library</button>
+								
+									<button class="button expanded" id="building-Library Portable">Library Portable</button>
+								
+									<button class="button expanded" id="building-OPG Engineering Building">OPG Engineering Building</button>
+								
+									<button class="button expanded" id="building-Science Building">Science Building</button>
+								
+									<button class="button expanded" id="building-Shawenjigewining Hall">Shawenjigewining Hall</button>
+								
+									<button class="button expanded" id="building-Software and Informatics Research Centre">Software and Informatics Research Centre</button>
+								
+									<button class="button expanded" id="building-University Pavilion">University Pavilion</button>
+								</li>
+							</ul>
+					</li>
+					<li id="searchContainer">
+							<a href="#">Search</a>
+							<ul class="menu vertical nested">
+									<li>
+											<div class="padding">
+												<label>Find a location
+													<input type="text" id="searchInput" placeholder="Search"/>
+												</label>
+	
+												<div id="searchResults" class="searchResults">
+													<div class="resultListItem" data-external-id="LIB136F">
+														<p class="name"><strong>Library</strong></p>
+														<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+														<p class="building"><strong>Building: </strong>Library</p>
+														<p class="floor"><strong>Floor: </strong>1</p>
+														<p class="room"><strong>Room number: </strong>LIB136F</p>
+														<button class="button small">Get directions</button>
+													</div>
+					
+													<div class="resultListItem" data-external-id="LIB220D">
+														<p class="name"><strong>Library</strong></p>
+														<p class="building"><strong>Building: </strong>Library</p>
+														<p class="floor"><strong>Floor: </strong>1</p>
+														<p class="room"><strong>Room number: </strong>LIB220D</p>
+														<button class="button small">Get directions</button>
+													</div>
+	
+												</div>
+											</div>
+									</li>
+							</ul>
+					</li>
+					<li id="directionsContainer">
+							<a href="#">Directions</a>
+							<ul class="menu vertical nested" >
+									<li >
+											<div class="padding">
+												<label for="directionsTravelModeSelector">
+														Mode of transportation
+												</label>
+												<select id="directionsTravelModeSelector" name="directionsTravelModeSelector">
+														<option value="WALKING" selected>Walking</option>
+														<option value="BICYCLING">Bicycling</option>
+														<option value="DRIVING">Driving</option>
+														<option value="TRANSIT">Transit</option>
+												</select>
+	
+												<input type="checkbox" id="avoid__stairs"/>
+												<label for="avoid__stairs">Avoid stairs</label>
+	
+														<button type="button" class="button small expanded mediumgrey" id="routeUserLocation">Start from your location</button>
+	
+												<div>
+														<input type="text" id="directionsOriginInput" name="directionsOriginInput" placeholder="Enter a starting point"/>
+												</div>
+												<div>
+														<input type="text" id="directionsDestinationInput" name="directionsDestinationInput" placeholder="Enter a destination"/>
+												</div>
+	
+												<button type="button" id="directionsCreateRoute" class="button directionsCreateRouteButton icon_direction" data-toggle="directionsRouteResults">
+													<!-- NB. data-toggle="directionsRouteResults" is for demo purposes only -->
+														Get directions
+												</button>
+												<div id="directionsSearchResults"></div>
+												
+											</div>
+									</li>
+							</ul>
+					</li>
+					<li>
+							<a href="#" id="legend">Legend</a>
+							<ul class="menu vertical nested">
+									<li>
+										<div class="padding" id="legendContainer"></div>
+									</li>
+							</ul>
+					</li>
+			</ul>
+	
+			<div id="directionsRouteResults" data-toggler=".active">
+				<button data-toggle="directionsRouteResults" class="button expanded icon-left icon_arrow_left">Back</button>
+				<h2 class="h3">Directions</h2>
+				
+				<ul id="directionsContainer" class="accordion" data-accordion="l1l4o4-accordion" data-allow-all-closed="true"><li id="step-1" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 1" href="#" aria-controls="g0e4j0-accordion" id="step-1-label" aria-expanded="false">Step 1</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-1-label" aria-hidden="true" id="g0e4j0-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: straight and walk for 6 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn slight-right and walk for 1 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn left and walk for 15 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn left and walk for 55 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn left and walk for 4 m.</li></ol></div></li><li id="step-1" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 1" href="#" aria-controls="56b9gm-accordion" id="step-1-label" aria-expanded="false">Step 1</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-1-label" aria-hidden="true" id="56b9gm-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: uturn left and walk for 1 m.</li><li id="subStep-2" class="subStepListItem">Step 2: straight and walk for 3 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn slight-left and walk for 2 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn left and walk for 5 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn left and walk for 1 m.</li><li id="subStep-6" class="subStepListItem">Step 6: turn slight-right and walk for 5 m.</li><li id="subStep-7" class="subStepListItem">Step 7: turn slight-right and walk for 17 m.</li><li id="subStep-8" class="subStepListItem">Step 8: turn slight-right and walk for 2 m.</li><li id="subStep-9" class="subStepListItem">Step 9: turn slight-right and walk for 1 m.</li></ol></div></li><li id="step-2" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 2" href="#" aria-controls="1igd4g-accordion" id="step-2-label" aria-expanded="false">Step 2</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-2-label" aria-hidden="true" id="1igd4g-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: straight and walk for 24 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn left and walk for 4 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn right and walk for 122 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn right and walk for 31 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn left and walk for 2 m.</li></ol></div></li><li id="step-3" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 3" href="#" aria-controls="gvfo0i-accordion" id="step-3-label" aria-expanded="false">Step 3</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-3-label" aria-hidden="true" id="gvfo0i-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: straight and walk for 5 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn slight-right and walk for 6 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn slight-left and walk for 11 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn left and walk for 1 m.</li></ol></div></li><li id="step-1" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 1" href="#" aria-controls="wmb2bx-accordion" id="step-1-label" aria-expanded="false">Step 1</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-1-label" aria-hidden="true" id="wmb2bx-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: turn right and walk for 1 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn right and walk for 2 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn left and walk for 2 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn left and walk for 4 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn slight-left and walk for 2 m.</li></ol></div></li><li id="step-1" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 1" href="#" aria-controls="8dgl8p-accordion" id="step-1-label" aria-expanded="false">Step 1</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-1-label" aria-hidden="true" id="8dgl8p-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: uturn left and walk for 1 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn slight-left and walk for 3 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn left and walk for 1 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn slight-right and walk for 2 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn left and walk for 9 m.</li><li id="subStep-6" class="subStepListItem">Step 6: turn right and walk for 3 m.</li><li id="subStep-7" class="subStepListItem">Step 7: turn right and walk for 2 m.</li></ol></div></li></ul>
+			</div>
+	
+		</div>
+	</div>
+

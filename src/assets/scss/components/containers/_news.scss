@@ -58,7 +58,7 @@
 
 	// Grid
 	.article-preview {		
-		@include breakpoint(xsmall) { 
+		@include breakpoint(small) { 
 			@include grid-column(6);
 
 			&:nth-child(2n+1) {
@@ -121,7 +121,7 @@
 
 	.article-preview {
 		@include grid-row();  
-		@include breakpoint(xsmall) { 
+		@include breakpoint(small) { 
 			margin: 0 (-(use_gutter(.5))) (use_gutter()); 
 		}
 		margin-bottom: use_gutter();
@@ -133,7 +133,7 @@
 	}
 	
 	.article-thumb {
-		@include breakpoint(xsmall) {
+		@include breakpoint(small) {
 			@include grid-column(4);
 			margin-right: use_gutter(.5);
 		}
@@ -182,7 +182,7 @@
 	
 	// for old articles with small floated thumbnail
 	figure.float-left {
-		@include breakpoint(xsmall) {
+		@include breakpoint(small) {
 			max-width: 400px;
 		}
 	}

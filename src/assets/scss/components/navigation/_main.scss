@@ -61,7 +61,7 @@
 // 		@include flex-align(justify, bottom);
 // 	}
 
-// 	@include breakpoint(xsmall down) {
+// 	@include breakpoint(xxsmall only) {
 // 		@include flex-align(center, null);
 // 	}
 // }
@@ -266,9 +266,9 @@ li.is-submenu-parent-item>a {
 			opacity: 1;
 		}
 
-		@include breakpoint(medium up) {
-			width: map-get($offcanvas-sizes, small) + 50;
-		}
+		// @include breakpoint(medium up) {
+			width: map-get($offcanvas-sizes, large) + 50;
+		// }
 	}
 
 	.is-standard-menu {

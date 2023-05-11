@@ -11,12 +11,18 @@ import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
 import autoprefixer  from 'autoprefixer';
-import imagemin      from 'gulp-imagemin';
+import merge         from 'merge-stream';
+import imagemin, { gifsicle }      from 'gulp-imagemin';
 
 
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const uncss = require('postcss-uncss');
+const sassBuilds = {
+	sassdefault: ['global3.1'], // 'map'
+	sassall: ['global3.1', 'map', 'uoit'],
+};
+const sassTasks = ['sassdefault', 'sasscustom', 'sassdev'];
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -45,6 +51,7 @@ gulp.task('build',
 gulp.task('default',
   gulp.series('build', server, watch)
 );
+
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -88,27 +95,80 @@ function styleGuide(done) {
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
-function sassBuild() {
-
+function sassBuild(done) {
   const postCssPlugins = [
     // Autoprefixer
     autoprefixer(),
     // UnCSS - Uncomment to remove unused styles in production
     // PRODUCTION && uncss(UNCSS_OPTIONS),
-  ].filter(Boolean);
+	].filter(Boolean);
 
-  return gulp.src('src/assets/scss/global3.1.scss')
-    .pipe($.sourcemaps.init())
-    .pipe(sass({
-      includePaths: PATHS.sass
-    })
-    .on('error', $.sass.logError))
-    .pipe(postcss(postCssPlugins))
-    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie11' })))
-    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
-    .pipe(browser.reload({ stream: true }));
+	// In production, compile all Sass builds, otherwise only build default
+	const whichBuilds = (PRODUCTION) ? sassBuilds['sassall'] : sassBuilds['sassdefault'];
+	console.log(whichBuilds);
+
+	let builds = whichBuilds.map(file => {
+		console.log(file);
+		return gulp.src(PATHS.sassbuilds + file + '.scss') 
+			.pipe($.sourcemaps.init())
+			.pipe(sass({
+				includePaths: PATHS.sass
+			})
+			.on('error', $.sass.logError))
+			.pipe(postcss(postCssPlugins))
+			.pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie11' })))
+			.pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+			.pipe(gulp.dest(PATHS.dist + '/assets/css'))
+			.pipe(browser.reload({ stream: true }));
+	});
+	return merge(builds);
+
+	
+
+
+	// whichBuilds.forEach(buildName => {
+	// 	return gulp.src(PATHS.sassbuilds + buildName + '.scss') //'src/assets/scss/global3.1.scss'
+	// 		.pipe($.sourcemaps.init())
+	// 		.pipe(sass({
+	// 			includePaths: PATHS.sass
+	// 		})
+	// 		.on('error', $.sass.logError))
+	// 		.pipe(postcss(postCssPlugins))
+	// 		.pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie11' })))
+	// 		.pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+	// 		.pipe(gulp.dest(PATHS.dist + '/assets/css'))
+	// 		.pipe(browser.reload({ stream: true }));		
+	// }, done);
 }
+
+
+/* 
+// Individual Sass builds (quick one-off builds)
+const postCssPlugins = [
+	// Autoprefixer
+	autoprefixer(),
+	// UnCSS - Uncomment to remove unused styles in production
+	// PRODUCTION && uncss(UNCSS_OPTIONS),
+].filter(Boolean);
+
+// Define individual Sass tasks (for quick, one-off builds)
+const sassTaskFactory = taskName => () => gulp.src(PATHS.sassbuilds + sassBuilds[taskName] + '.scss') 
+			.pipe($.sourcemaps.init())
+			.pipe(sass({
+				includePaths: PATHS.sass
+			})
+			.on('error', $.sass.logError))
+			.pipe(postcss(postCssPlugins))
+			.pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie11' })))
+			.pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+			.pipe(gulp.dest(PATHS.dist + '/assets/css'))
+			.pipe(browser.reload({ stream: true }));
+
+sassTasks.forEach(taskName => {
+	const task = sassTaskFactory(taskName);
+	gulp.task(taskName, task);
+}); */
+
 
 let webpackConfig = {
   mode: (PRODUCTION ? 'production' : 'development'),

@@ -68,14 +68,12 @@
 $global-font-size: 112.5%;
 $global-width: rem-calc(1400);
 $global-lineheight: 1.5;
+// See also: $basic and $main-palette in _global-settings.scss
 $foundation-palette: (
   primary: $darkblue,
   secondary: $lightblue,
-	tertiary: $mediumgrey,
 	accent: $orange,
-	darkaccent: $darkorange,
 
-	lighterblue: $lighterblue,
 	lightblue: $lightblue,
 	blue: $blue,
 	mediumblue: $blue,
@@ -83,6 +81,7 @@ $foundation-palette: (
 	darkerblue: $darkerblue,
 	spiritblue: $spiritblue,
 	orange: $orange,
+	darkorange: $darkorange,
 	black: $black,
 	white: $white,
 
@@ -91,50 +90,24 @@ $foundation-palette: (
 	coolgrey: $coolgrey,
 	lightcoolgrey: $lightcoolgrey,
 	mediumcoolgrey: $mediumcoolgrey,
-	coolgrey10: $coolgrey10,
-	coolgrey20: $coolgrey20,
-	coolgrey30: $coolgrey30,
-	coolgrey40: $coolgrey40,
-	coolgrey50: $coolgrey50,
-	coolgrey60: $coolgrey60,
-	coolgrey70: $coolgrey70,
-	coolgrey80: $coolgrey80,
-	coolgrey90: $coolgrey90,
 
 	warmgrey: $warmgrey,
 	lightwarmgrey: $lightwarmgrey,
 	mediumwarmgrey: $mediumwarmgrey,
-	warmgrey10: $warmgrey10,
-	warmgrey20: $warmgrey20,
-	warmgrey30: $warmgrey30,
-	warmgrey40: $warmgrey40,
-	warmgrey50: $warmgrey50,
-	warmgrey60: $warmgrey60,
-	warmgrey70: $warmgrey70,
-	warmgrey80: $warmgrey80,
-	warmgrey90: $warmgrey90,
 
 	grey: $grey,
 	bluegrey: $grey,
 	lightbluegrey: $lightbluegrey,
 	mediumbluegrey: $mediumbluegrey,
-	bluegrey10: $bluegrey10,
-	bluegrey20: $bluegrey20,
-	bluegrey30: $bluegrey30,
-	bluegrey40: $bluegrey40,
-	bluegrey50: $bluegrey50,
-	bluegrey60: $bluegrey60,
-	bluegrey70: $bluegrey70,
-	bluegrey80: $bluegrey80,
-	bluegrey90: $bluegrey90,
 
   success: $success,
   warning: $warning,
   alert: $alert,
-);
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+) !default;
+
+$light-gray: $lightgrey;
+$medium-gray: $mediumgrey;
+$dark-gray: $darkgrey;
 // $black: #151515;
 // $white: #ffffff;
 $body-background: $white;
@@ -165,7 +138,6 @@ $print-hrefs: true;
 
 $breakpoints: (
   xxsmall: 0,
-	xsmall: 0,
 	small: 800px,
   medium: 1000px,
   large: 1200px,
@@ -179,7 +151,7 @@ $breakpoints-hidpi: (
   hidpi-3: 3
 );
 $print-breakpoint: large;
-$breakpoint-classes: (xxsmall xsmall small medium large xlarge);
+$breakpoint-classes: (xxsmall small medium large xlarge);
 
 // 3. The Grid
 // -----------
@@ -314,26 +286,27 @@ $accordion-plusminus: false;
 $accordion-plus-content: '\002B';
 $accordion-minus-content: '\2013';
 $accordion-title-font-size: rem-calc(16);
-$accordion-item-color: $darkblue;
-$accordion-item-background-hover: $mediumblue;
-$accordion-item-padding: .75rem 2.5rem .75rem 1rem;
-$accordion-content-background: $white;
-$accordion-content-border: 1px solid $mediumgrey;
+$accordion-item-color: $darkblue !default;
+$accordion-item-background-hover: $mediumblue !default;
+$accordion-item-hover-color: $white !default;
+$accordion-item-padding: .75rem 2.5rem .75rem 1rem !default;
+$accordion-content-background: $white !default;
+$accordion-content-border: 1px solid $mediumgrey !default;
 $accordion-content-color: $body-font-color;
-$accordion-content-padding: 1rem;
+$accordion-content-padding: 1rem !default;
 
 // 8. Accordion Menu
 // -----------------
 
-$accordionmenu-padding: $global-menu-padding;
-$accordionmenu-nested-margin: $global-menu-nested-margin;
-$accordionmenu-submenu-padding: $accordionmenu-padding;
-$accordionmenu-arrows: true;
-$accordionmenu-arrow-color: $primary-color;
+$accordionmenu-padding: $global-menu-padding !default;
+$accordionmenu-nested-margin: $global-menu-nested-margin !default;
+$accordionmenu-submenu-padding: $accordionmenu-padding !default;
+$accordionmenu-arrows: true !default;
+$accordionmenu-arrow-color: $primary-color !default;
 $accordionmenu-item-background: null;
-$accordionmenu-border: null;
+$accordionmenu-border: null !default;
 $accordionmenu-submenu-toggle-background: null;
-$accordion-submenu-toggle-border: $accordionmenu-border;
+$accordion-submenu-toggle-border: $accordionmenu-border !default;
 $accordionmenu-submenu-toggle-width: 40px;
 $accordionmenu-submenu-toggle-height: $accordionmenu-submenu-toggle-width;
 $accordionmenu-arrow-size: 6px;
@@ -373,9 +346,9 @@ $button-padding: 0.85em 1em;
 $button-margin: 0 0 4px 0;
 $button-fill: solid;
 $button-background: $secondary-color;
-$button-background-hover: scale-color($button-background, $lightness: -10%);
+$button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
-$button-color-alt: $black;
+$button-color-alt: $spiritblue;
 $button-radius: $global-radius;
 $button-border: 1px solid transparent;
 $button-hollow-border-width: 1px;
@@ -462,7 +435,7 @@ $drilldown-nested-margin: 0;
 $drilldown-background: $blue;
 $drilldown-submenu-padding: $drilldown-padding;
 $drilldown-submenu-background: $blue;
-$drilldown-arrow-color: get-color(accent);
+$drilldown-arrow-color: $orange;
 $drilldown-arrow-size: 8px;
 
 // 17. Dropdown
@@ -519,7 +492,7 @@ $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
 $form-label-color: $darkblue;
-$form-label-font-size: rem-calc(14);
+$form-label-font-size: rem-calc(16);
 $form-label-font-weight: $global-weight-bold;
 $form-label-line-height: 1.8;
 $select-background: $white;
@@ -593,20 +566,16 @@ $meter-fill-bad: $alert-color;
 
 $offcanvas-sizes: (
 	xxsmall: 300px,
-	xsmall: 300px,
-  small: 300px,
-	medium: 300px
-);
+	large: 350px
+) !default;
 $offcanvas-vertical-sizes: (
 	xxsmall: 300px,
-	xsmall: 300px,
-  small: 300px,
-	medium: 300px
-);
-$offcanvas-background: $blue;
-$offcanvas-shadow: 1px 0 0 rgba($black, 0.7);
-$offcanvas-inner-shadow-size: 1px;
-$offcanvas-inner-shadow-color: rgba($darkblue, 1);
+	large: 350px
+) !default;
+$offcanvas-background: $blue !default;
+$offcanvas-shadow: 0px 0 0 rgba($black, 0.7) !default;
+$offcanvas-inner-shadow-size: 1px !default;
+$offcanvas-inner-shadow-color: rgba($darkblue, 1) !default;
 $offcanvas-overlay-zindex: 11;
 $offcanvas-push-zindex: 12;
 $offcanvas-overlap-zindex: 13;
@@ -614,7 +583,7 @@ $offcanvas-reveal-zindex: 12;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
-$offcanvas-exit-background: rgba($white, 0.25);
+$offcanvas-exit-background: rgba($white, 0.25) !default;
 $maincontent-class: 'off-canvas-content';
 
 // 26. Orbit

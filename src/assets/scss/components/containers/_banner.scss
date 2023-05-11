@@ -81,7 +81,7 @@
 
 		// specified background colour
 		@each $color,
-		$value in $foundation-palette {
+		$value in $basic-palette {
 			&.#{$color} {
 				&:not(.button-only) {
 					background: $value;
@@ -581,7 +581,7 @@
 			max-width: none; 
 
 			// specified background colour (white text must be accessible against chosen colour)
-			@each $color, $value in $foundation-palette {
+			@each $color, $value in $basic-palette {
 				&.#{$color} {
 					&:not(.button-only) {
 						background: rgba($value, .9);
@@ -639,7 +639,7 @@
 
 	// Custom colour classes
 	@each $color,
-	$value in $official-palette {
+	$value in $basic-palette {
 		&.bg-#{$color} #background,
 		&.shield-#{$color} #shield,
 		&.arc-#{$color} #arc {

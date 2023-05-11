@@ -1,0 +1,412 @@
+---
+title: Map menu - proposed changes
+map: true
+---
+
+<div class="off-canvas-wrapper" style="height: 100vh">
+
+	<!-- Offcanvas menu -->
+	<div class="off-canvas-absolute position-left" id="offcanvas-menu" data-off-canvas data-close-on-click="false" data-content-overlay="false" data-off-canvas data-transition="overlap">
+		<button type="button" class="btn-toggle-offcanvas button icon_" data-toggle="offcanvas-menu" id="btn-toggle-map-menu" title="Menu"><span class="show-for-sr">Menu</span></button>
+
+		<div class="content">
+			
+			<!-- Logo link -->
+			<a class="logo-link" href="https://ontariotechu.ca/map" title="Ontario Tech Campus Map">
+				<img src="https://cdn.bfldr.com/FE9E4T46/at/pwc45g-7qxa40-f0jtmi/OntarioTechUniversity_Primary_Colour_RGB_150ppi.png?auto=webp&format=png" alt="Ontario Tech logo"/>
+			</a>
+
+			<!-- <div class="search-container">
+				<label for="searchInput" class="show-for-sr">Search Ontario Tech</label>
+				<div class="input-group">
+					<input type="text" id="searchInput" placeholder="Search Ontario Tech" class="input-group-field"/>
+					
+					<div class="input-group-button">
+						<button class="button mediumgrey icon_search icon-center tiny"><span class="show-for-sr">Search</span></button>
+					</div>
+				</div>
+			</div> -->
+	
+			<!-- Nav buttons -->
+			<div class="campus-buttons">
+				<div class="button-group tiny expanded">
+					<button class="button white lightblue tiny icon_menu icon-center btn-legend" data-toggle="settings-panel" title="Map settings"><span class="show-for-sr">Map settings</span></button>
+					<button class="button white lightblue" id="goNorthButton">Go north</button>
+					<button class="button white lightblue" id="goDowntownButton">Go downtown</button>
+				</div>
+			</div>
+			
+			<!-- Settings/legend panel -->
+			<div id="settings-panel" class="detail-panel" data-toggler=".active">
+				<h2>Map settings</h2>
+				<button data-toggle="settings-panel" class="close" title="Close"><span class="icon_close"></span><span class="show-for-sr">Close</span></button>
+				<hr>
+				<div class="padding-left padding-right" id="legendContainer">
+					<div class="legend-item">
+						<span class="name">Classroom</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendClassroomSwitch" type="checkbox" name="legendClassroomSwitch"
+								data-switch="Classroom" checked="">
+							<label class="switch-paddle" for="legendClassroomSwitch">
+								<span class="show-for-sr">Classroom</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Elevator</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendElevatorSwitch" type="checkbox" name="legendElevatorSwitch"
+								data-switch="Elevator" checked="">
+							<label class="switch-paddle" for="legendElevatorSwitch">
+								<span class="show-for-sr">Elevator</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Food and Beverages</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendFood and BeveragesSwitch" type="checkbox"
+								name="legendFood and BeveragesSwitch" data-switch="Food and Beverages" checked="">
+							<label class="switch-paddle" for="legendFood and BeveragesSwitch">
+								<span class="show-for-sr">Food and Beverages</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Laboratory</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendLaboratorySwitch" type="checkbox" name="legendLaboratorySwitch"
+								data-switch="Laboratory" checked="">
+							<label class="switch-paddle" for="legendLaboratorySwitch">
+								<span class="show-for-sr">Laboratory</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Library</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendLibrarySwitch" type="checkbox" name="legendLibrarySwitch"
+								data-switch="Library" checked="">
+							<label class="switch-paddle" for="legendLibrarySwitch">
+								<span class="show-for-sr">Library</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Office Accommodation</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendOffice AccommodationSwitch" type="checkbox"
+								name="legendOffice AccommodationSwitch" data-switch="Office Accommodation" checked="">
+							<label class="switch-paddle" for="legendOffice AccommodationSwitch">
+								<span class="show-for-sr">Office Accommodation</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Parking</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendParkingSwitch" type="checkbox" name="legendParkingSwitch"
+								data-switch="Parking" checked="">
+							<label class="switch-paddle" for="legendParkingSwitch">
+								<span class="show-for-sr">Parking</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Research Centres</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendResearch CentresSwitch" type="checkbox"
+								name="legendResearch CentresSwitch" data-switch="Research Centres" checked="">
+							<label class="switch-paddle" for="legendResearch CentresSwitch">
+								<span class="show-for-sr">Research Centres</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Residence</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendResidenceSwitch" type="checkbox" name="legendResidenceSwitch"
+								data-switch="Residence" checked="">
+							<label class="switch-paddle" for="legendResidenceSwitch">
+								<span class="show-for-sr">Residence</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Restroom</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendRestroomSwitch" type="checkbox" name="legendRestroomSwitch"
+								data-switch="Restroom" checked="">
+							<label class="switch-paddle" for="legendRestroomSwitch">
+								<span class="show-for-sr">Restroom</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Safety Zone</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendSafety ZoneSwitch" type="checkbox" name="legendSafety ZoneSwitch"
+								data-switch="Safety Zone" checked="">
+							<label class="switch-paddle" for="legendSafety ZoneSwitch">
+								<span class="show-for-sr">Safety Zone</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">SportsFacility</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendSportsFacilitySwitch" type="checkbox" name="legendSportsFacilitySwitch"
+								data-switch="SportsFacility" checked="">
+							<label class="switch-paddle" for="legendSportsFacilitySwitch">
+								<span class="show-for-sr">SportsFacility</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Stairs</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendStairsSwitch" type="checkbox" name="legendStairsSwitch"
+								data-switch="Stairs" checked="">
+							<label class="switch-paddle" for="legendStairsSwitch">
+								<span class="show-for-sr">Stairs</span>
+							</label>
+						</div>
+					</div>
+		
+					<div class="legend-item">
+						<span class="name">Student Activity Space</span>
+						<div class="switch tiny">
+							<input class="switch-input" id="legendStudent Activity SpaceSwitch" type="checkbox"
+								name="legendStudent Activity SpaceSwitch" data-switch="Student Activity Space" checked="">
+							<label class="switch-paddle" for="legendStudent Activity SpaceSwitch">
+								<span class="show-for-sr">Student Activity Space</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<!-- Main tabs -->
+			<ul class="tabs flex-container" data-tabs>
+				<li class="tabs-title flex-child-auto is-active"><a href="#tab-locations">Locations</a></li>
+				<li class="tabs-title flex-child-auto"><a href="#tab-search">Search</a></li>
+				<li class="tabs-title flex-child-auto"><a href="#tab-directions">Directions</a></li>
+			</ul>
+			<div class="tabs-content" data-tabs-content>
+
+				<!-- Locations tab -->
+				<div class="tabs-panel is-active" id="tab-locations">
+					<ul class="accordion" data-accordion data-multi-open="false">
+						<!-- Buildings -->
+						<li class="accordion-item" data-accordion-item="">
+							<a href="#" class="accordion-title" id="buildings">Buildings</a>
+							<div class="accordion-content button-list" data-tab-content id="buildingsContainer">
+									<button class="button expanded" id="building-ACE" data-toggle="building-detail-ACE">ACE [Click me for detail panel demo; future add]</button>
+								
+									<button class="button expanded" id="building-Business and IT Building">Business and IT Building</button>
+								
+									<button class="button expanded" id="building-Campus Corners">Campus Corners</button>
+								
+									<button class="button expanded" id="building-Campus Fieldhouse">Campus Fieldhouse</button>
+								
+									<button class="button expanded" id="building-Campus Ice Centre">Campus Ice Centre</button>
+								
+									<button class="button expanded" id="building-Clean Energy Research Lab">Clean Energy Research Lab</button>
+								
+									<button class="button expanded" id="building-Crime Scene House">Crime Scene House</button>
+								
+									<button class="button expanded" id="building-Energy Research Centre">Energy Research Centre</button>
+								
+									<button class="button expanded" id="building-Library">Library</button>
+								
+									<button class="button expanded" id="building-Library Portable">Library Portable</button>
+								
+									<button class="button expanded" id="building-OPG Engineering Building">OPG Engineering Building</button>
+								
+									<button class="button expanded" id="building-Science Building">Science Building</button>
+								
+									<button class="button expanded" id="building-Shawenjigewining Hall">Shawenjigewining Hall</button>
+								
+									<button class="button expanded" id="building-Software and Informatics Research Centre">Software and Informatics Research Centre</button>
+								
+									<button class="button expanded" id="building-University Pavilion">University Pavilion</button>
+								
+							</div>
+							<!-- Building detail panel - ACE -->
+							<div id="building-detail-ACE" class="detail-panel" data-toggler=".active">
+								<button data-toggle="building-detail-ACE" class="button back small icon-left icon_arrow_left">Back</button>
+								<h2>ACE</h2>
+								<img src="https://cdn.brandfolder.io/FE9E4T46/as/q2glkf-aeufds-bi1ma7/190930-279.jpg?width=640&height=427" alt="">
+
+								<div class="description">
+									<div class="button-group expanded">
+										<button class="button tiny lightblue white icon_direction">Get directions</button>
+										<button class="button tiny lightblue white icon_link">Share link</button>
+									</div>
+
+									<p>ACE is the first commercial automotive research, development and innovation centre of its kind in the world. This is a place where industry, researchers and students collaborate to create, test and validate paradigm-shifting innovations with a focus on bringing them to market as rapidly as possible. ACE has an array of testing equipment, including one of the largest and most sophisticated climatic wind tunnels on the planet.</p>
+				
+									<p>ACE enables knowledge and practical experience to combine more effectively and to create synergies across disciplines and skill sets, leading to a stronger manufacturing economy in Canada. At the same time, it helps educate and train the skilled personnel needed to take the automotive industry and manufacturing to a new level of competitiveness and success.</p>
+
+									<p><a href="" class="button icon_map">Take a virtual tour</a></p>
+								</div>
+
+							</div>
+						</li>
+						<!-- Campus services -->
+						<li class="accordion-item" data-accordion-item="">
+							<a href="#" class="accordion-title" id="campus-services">Campus services</a>
+							<div class="accordion-content button-list" data-tab-content>
+								
+									<button class="button expanded">Campus Bookstore</button>
+									<button class="button expanded">Campus Health Centre</button>
+									<button class="button expanded">Shipping and Receiving</button>
+									<button class="button expanded">Shop61</button>
+									<button class="button expanded">Shop SIRC</button>
+								
+							</div>
+						</li>
+						<!-- Emergency services -->
+						<li class="accordion-item" data-accordion-item>
+							<a href="#" class="accordion-title" id="emergency-services">Emergency services</a>
+							<div class="accordion-content button-list" data-tab-content>
+									<button class="button expanded">Emergency services list here</button>								
+							</div>
+						</li>
+						<!-- Food -->
+						<li class="accordion-item" data-accordion-item>
+							<a href="#" class="accordion-title" id="food">Food and beverage</a>
+							<div class="accordion-content button-list" data-tab-content>
+									<button class="button expanded">Food and beverage list here</button>								
+							</div>
+						</li>
+						<!-- Parking -->
+						<li class="accordion-item" data-accordion-item>
+							<a href="#" class="accordion-title" id="parking">Parking</a>
+							<div class="accordion-content button-list" data-tab-content>
+									<button class="button expanded">Parking list here</button>
+							</div>
+						</li>
+						<!-- Residence -->
+						<li class="accordion-item" data-accordion-item>
+							<a href="#" class="accordion-title" id="residences">Residences</a>
+							<div class="accordion-content button-list" data-tab-content>
+									<button class="button expanded">Residences list here</button>
+							</div>
+						</li>
+						<!-- Study spaces -->
+						<li class="accordion-item" data-accordion-item>
+							<a href="#" class="accordion-title" id="study-spaces">Study spaces</a>
+							<div class="accordion-content button-list" data-tab-content>
+									<button class="button expanded">Study spaces list here [Future add]</button>
+							</div>
+						</li>
+					</ul>
+
+
+				</div>
+
+				<!-- Search tab -->
+				<div class="tabs-panel" id="tab-search">
+					<div class="search-container">
+						<label for="searchInput" class="show-for-sr">Search Ontario Tech</label>
+						<div class="input-group">
+							<input type="text" id="searchInput" placeholder="Search Ontario Tech" class="input-group-field"/>
+							
+							<div class="input-group-button">
+								<button class="button icon_search icon-center tiny"><span class="show-for-sr">Search</span></button>
+							</div>
+						</div>
+					</div>
+
+					<div id="searchResults" class="search-results">
+						<div class="resultListItem" data-external-id="LIB136F">
+							<p class="name"><strong>Library</strong></p>
+							<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							<p class="building"><strong>Building: </strong>Library</p>
+							<p class="floor"><strong>Floor: </strong>1</p>
+							<p class="room"><strong>Room number: </strong>LIB136F</p>
+							<button class="button tiny icon_direction">Get directions</button>
+						</div>
+
+						<div class="resultListItem" data-external-id="LIB220D">
+							<p class="name"><strong>Library</strong></p>
+							<p class="building"><strong>Building: </strong>Library</p>
+							<p class="floor"><strong>Floor: </strong>1</p>
+							<p class="room"><strong>Room number: </strong>LIB220D</p>
+							<button class="button tiny icon_direction">Get directions</button>
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- Directions tab -->
+				<div class="tabs-panel" id="tab-directions">
+					<div id="directionsContainer">
+						<label for="directionsTravelModeSelector">
+							Mode of transportation
+						</label>
+						<select id="directionsTravelModeSelector" name="directionsTravelModeSelector">
+								<option value="WALKING" selected>Walking</option>
+								<option value="BICYCLING">Bicycling</option>
+								<option value="DRIVING">Driving</option>
+								<option value="TRANSIT">Transit</option>
+						</select>
+	
+						<input type="checkbox" id="avoid__stairs"/>
+						<label for="avoid__stairs">Avoid stairs</label>
+	
+								<button type="button" class="button small expanded mediumgrey" id="routeUserLocation">Start from your location</button>
+	
+						<div>
+								<input type="text" id="directionsOriginInput" name="directionsOriginInput" placeholder="Or enter a starting point"/>
+						</div>
+						<div>
+								<input type="text" id="directionsDestinationInput" name="directionsDestinationInput" placeholder="Enter a destination"/>
+						</div>
+	
+						<button type="button" id="directionsCreateRoute" class="button directionsCreateRouteButton icon_direction" data-toggle="directionsRouteResults">Get directions</button>
+					</div>
+					
+					<div id="directionsSearchResults" class="searchResults"></div>
+
+
+					<!-- Directions detail panel -->
+					<div id="directionsRouteResults" class="detail-panel" data-toggler=".active">
+						<button data-toggle="directionsRouteResults" class="button back small icon-left icon_arrow_left">Back</button>
+						<h2>Directions</h2>
+						
+						<ul id="directionsContainer" class="accordion" data-accordion="l1l4o4-accordion" data-allow-all-closed="true"><li id="step-1" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 1" href="#" aria-controls="g0e4j0-accordion" id="step-1-label" aria-expanded="false">Step 1</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-1-label" aria-hidden="true" id="g0e4j0-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: straight and walk for 6 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn slight-right and walk for 1 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn left and walk for 15 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn left and walk for 55 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn left and walk for 4 m.</li></ol></div></li><li id="step-1" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 1" href="#" aria-controls="56b9gm-accordion" id="step-1-label" aria-expanded="false">Step 1</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-1-label" aria-hidden="true" id="56b9gm-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: uturn left and walk for 1 m.</li><li id="subStep-2" class="subStepListItem">Step 2: straight and walk for 3 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn slight-left and walk for 2 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn left and walk for 5 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn left and walk for 1 m.</li><li id="subStep-6" class="subStepListItem">Step 6: turn slight-right and walk for 5 m.</li><li id="subStep-7" class="subStepListItem">Step 7: turn slight-right and walk for 17 m.</li><li id="subStep-8" class="subStepListItem">Step 8: turn slight-right and walk for 2 m.</li><li id="subStep-9" class="subStepListItem">Step 9: turn slight-right and walk for 1 m.</li></ol></div></li><li id="step-2" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 2" href="#" aria-controls="1igd4g-accordion" id="step-2-label" aria-expanded="false">Step 2</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-2-label" aria-hidden="true" id="1igd4g-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: straight and walk for 24 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn left and walk for 4 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn right and walk for 122 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn right and walk for 31 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn left and walk for 2 m.</li></ol></div></li><li id="step-3" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 3" href="#" aria-controls="gvfo0i-accordion" id="step-3-label" aria-expanded="false">Step 3</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-3-label" aria-hidden="true" id="gvfo0i-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: straight and walk for 5 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn slight-right and walk for 6 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn slight-left and walk for 11 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn left and walk for 1 m.</li></ol></div></li><li id="step-1" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 1" href="#" aria-controls="wmb2bx-accordion" id="step-1-label" aria-expanded="false">Step 1</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-1-label" aria-hidden="true" id="wmb2bx-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: turn right and walk for 1 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn right and walk for 2 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn left and walk for 2 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn left and walk for 4 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn slight-left and walk for 2 m.</li></ol></div></li><li id="step-1" class="accordion-item stepAccordion" data-accordion-item=""><a class="accordion-title" title="Step 1" href="#" aria-controls="8dgl8p-accordion" id="step-1-label" aria-expanded="false">Step 1</a><div class="accordion-content" data-tab-content="" role="region" aria-labelledby="step-1-label" aria-hidden="true" id="8dgl8p-accordion"><ol class="subStepList"><li id="subStep-1" class="subStepListItem">Step 1: uturn left and walk for 1 m.</li><li id="subStep-2" class="subStepListItem">Step 2: turn slight-left and walk for 3 m.</li><li id="subStep-3" class="subStepListItem">Step 3: turn left and walk for 1 m.</li><li id="subStep-4" class="subStepListItem">Step 4: turn slight-right and walk for 2 m.</li><li id="subStep-5" class="subStepListItem">Step 5: turn left and walk for 9 m.</li><li id="subStep-6" class="subStepListItem">Step 6: turn right and walk for 3 m.</li><li id="subStep-7" class="subStepListItem">Step 7: turn right and walk for 2 m.</li></ol></div></li></ul>
+					</div>
+
+				</div>
+
+			</div> <!-- /.tabs-content -->
+	
+		</div> <!-- /.content -->
+	</div> <!-- /.off-canvas -->
+
+
+
+	<!-- Page content -->
+	<div class="off-canvas-content" data-off-canvas-content>	
+		<img src="https://picsum.photos/1920/1000?random" alt="">
+	</div>
+
+</div>
+
+<script src="{{root}}assets/js/map.js"></script>

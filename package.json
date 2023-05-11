@@ -5,7 +5,9 @@
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build --production"
+    "build": "gulp build --production",
+    "sassdev": "gulp sassdev",
+    "sasscustom": "gulp sasscustom"
   },
   "author": "OT Web Team <webteam@ontariotechu.ca>",
   "license": "MIT",
@@ -44,6 +46,7 @@
     "gulp-terser": "^2.0.1",
     "js-yaml": "^4.1.0",
     "js-yaml-js-types": "^1.0.0",
+    "merge-stream": "^2.0.0",
     "node-sass": "^7.0.0",
     "panini": "latest",
     "postcss": "^8.3.11",

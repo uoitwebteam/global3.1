@@ -7,13 +7,23 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+		{{#unlesspage 'devcampusmap' 'devcampusmap2'}}
     <link rel="stylesheet" type="text/css" href="{{root}}assets/css/global3.1.css">
+		{{/unlesspage}}
+
+		{{#ifpage 'devcampusmap' 'devcampusmap2'}}
+    <link rel="stylesheet" type="text/css" href="{{root}}assets/css/map.css">
+		{{/ifpage}}
+		<script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
   </head>
 <body>
 
 {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
 {{> body}}
 
+{{#unlesspage 'devcampusmap' 'devcampusmap2'}}
 <script src="{{root}}assets/js/global3.1.js"></script>
+{{/unlesspage}}
+
 </body>
 </html>

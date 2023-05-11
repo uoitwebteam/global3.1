@@ -99,7 +99,7 @@
 		}
 
 		// auto adjust colours based on contrast (colour class must also be placed on ".block")
-		@each $color, $value in $foundation-palette { 
+		@each $color, $value in $main-palette { 
 		  .#{$color}.block {
 		  	[class*="icon_"],
 		  	.header,

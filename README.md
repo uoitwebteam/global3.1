@@ -7,7 +7,7 @@
 Download 
 
 ```bash
-git clone https://github.com/uoitwebteam/global3.1 global3.1
+git clone https://github.com/uoitwebteam/global3.1
 ```
 
 Then open the folder in your command line, and install the needed dependencies:

@@ -1,0 +1,23 @@
+.accordion-menu {
+	
+	.is-accordion-submenu-parent:not(.has-submenu-toggle) {
+		> a {
+			// font-family: $heading-font;
+
+			// &::after {
+			// 	@include icon;
+			// 	content: get-icon('icon_arrow_down');
+			// 	position: absolute; 
+			// 	top: 50%;
+			// 	right: 20px;
+			// 	transform: translateY(-50%);
+			// 	font-family: $icon-font;
+			// 	color: $orange;
+			// 	transition: .2s ease;
+			// }
+		}
+		// &[aria-expanded="true"] > a::after {
+		// 	transform: translateY(-50%) rotate(-180deg);
+		// }
+	}
+} 

@@ -60,12 +60,12 @@
 	// Override black text on white button
 	// (set text color to specified color class)
 	// 2 color classes set on element: white + text-color class
-	@each $color, $value in $foundation-palette { 
+	@each $color, $value in $main-palette { 
 		@if $color != white {
 			&.white.#{$color}:not(.hollow) {
 				@include button-style(
 					$background: $white,
-					$background-hover: rgba($white, .9),
+					$background-hover: lighten($value, 55%),
 					$color: $value
 				);
 				// @include button-style($white, rgba($white, .9), $value);
@@ -75,7 +75,7 @@
 			&.white.orange:not(.hollow) {
 				@include button-style(
 					$background: $white,
-					$background-hover: rgba($white, .9),
+					$background-hover: lighten($darkorange, 55%),
 					$color: $darkorange
 				);
 			}

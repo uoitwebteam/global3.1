@@ -7,7 +7,7 @@
 	z-index: 10;
 
 	> .row {
-		@include breakpoint(xsmall) {
+		@include breakpoint(small) {
 			padding-left: 1rem;
 		}
 	}
@@ -20,7 +20,7 @@
 	height: 110px;
 	perspective: 200px;
 
-	@include breakpoint(xsmall down) {
+	@include breakpoint(xxsmall only) {
 		width: 100%;
 		justify-content: center;
 	}
@@ -30,7 +30,7 @@
 		height: 80px;
 		margin-top: rem-calc(30);
 
-		// @include breakpoint(xsmall down) {
+		// @include breakpoint(xxsmall only) {
 		// 	.logo {
 		// 		height: auto;
 		// 	}
@@ -104,7 +104,7 @@
 		// border settings for second logo
 		&.border {	
 			border: 0; // override default (global) .border style  
-			@include breakpoint(xsmall down) {
+			@include breakpoint(xxsmall only) {
 				margin-top: rem-calc(15);
 				padding-top: rem-calc(15);
 				border-top: 1px solid $darkblue;
@@ -122,7 +122,7 @@
 	.title {
 		display: flex;		 
 
-		@include breakpoint(xsmall down) { 
+		@include breakpoint(xxsmall only) { 
 			margin-top: rem-calc(15);
 			padding-top: rem-calc(15);
 			border-top: 1px solid $darkblue;

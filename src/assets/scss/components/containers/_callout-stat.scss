@@ -193,7 +193,7 @@
 	}
 	
 	&-bg {
-		@each $color, $value in $official-palette {
+		@each $color, $value in $main-palette {
 			&.#{$color} {
 				@include stat-style-bg(
 					$font-color: color-pick-contrast($value, ($white, $darkblue)),
@@ -211,7 +211,7 @@
 		@include stat-style-large(true);
 	}
 	&s-bg {
-		@each $color, $value in $official-palette { 
+		@each $color, $value in $main-palette { 
 			&.#{$color} .callout-stat {
 				@include stat-style-bg(
 					$font-color: color-pick-contrast($value, ($white, $darkblue)),

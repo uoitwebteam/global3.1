@@ -1,0 +1,101 @@
+/**
+ * Build: map.css
+ */
+
+@charset 'utf-8';
+
+// Global settings overrides
+// -------------------------
+
+// [Define any global-settings variable overrides here]
+
+
+// Global settings and base styles
+// -------------------------------
+@import 'settings/global-settings';
+
+// Foundation settings overrides
+// -----------------------------
+$offcanvas-sizes: (
+	xxsmall: 300px,
+	large: 350px,
+);
+// xsmall: 300px,
+// small: 300px,
+// medium: 300px,
+// xlarge: 350px
+$offcanvas-background: $white;
+$accordion-item-padding: 0.85rem 2.5rem 0.85rem 1rem;
+$accordion-content-border: 1px solid $lightgrey;
+$accordion-content-padding: 0;
+// $accordion-item-background-hover: $darkblue;
+
+$accordionmenu-padding: 0.7rem 1rem;
+$accordionmenu-border: 1px solid $lightgrey;
+$accordionmenu-arrows: false;
+$accordionmenu-arrow-color: $orange;
+$accordion-submenu-toggle-border: null;
+
+// Selected Foundation components
+// ------------------------------
+@import 'settings/foundation-settings';
+@import 'foundation';
+@import 'motion-ui';
+// Global styles
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+// Grids
+@include foundation-flex-grid;
+// Generic components
+@include foundation-button;
+@include foundation-button-group;
+@include foundation-close-button;
+@include foundation-label;
+@include foundation-switch;
+@include foundation-dropdown;
+// Containers
+@include foundation-accordion;
+@include foundation-responsive-embed;
+@include foundation-tabs;
+@include foundation-thumbnail;
+// Menu-based containers
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-accordion-menu;
+@include foundation-drilldown-menu;
+@include foundation-dropdown-menu;
+// Layout components
+@include foundation-off-canvas;
+@include foundation-reveal;
+@include foundation-sticky;
+// Helpers
+@include foundation-float-classes;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
+// Motion UI
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+@import 'typography/typography';
+@import 'utilities/utilities';
+// -------------------------------|
+
+
+// Build components
+// ----------------
+ 
+// Controls
+@import 'components/controls/button';
+
+// Navigation
+@import 'components/navigation/accordion-menu';
+
+// Containers
+@import 'components/containers/campus-map';
+@import 'components/containers/accordion';
+@import 'components/containers/off-canvas';
+@import 'components/containers/tabs';
+
+// Media
+@import 'components/media/images';
