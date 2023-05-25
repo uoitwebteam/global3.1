@@ -369,14 +369,26 @@ map: true
 	
 						<input type="checkbox" id="avoid__stairs"/>
 						<label for="avoid__stairs">Avoid stairs</label>
-	
-								<button type="button" class="button small expanded mediumgrey" id="routeUserLocation">Start from your location</button>
+							
+						<!-- <button type="button" class="button small expanded mediumgrey icon_location_dot icon-left" id="routeUserLocation">Start from your location</button>
 	
 						<div>
-								<input type="text" id="directionsOriginInput" name="directionsOriginInput" placeholder="Or enter a starting point"/>
+								<input type="text" id="directionsOriginInput" name="directionsOriginInput" placeholder="Or enter a starting point on campus"/>
 						</div>
 						<div>
 								<input type="text" id="directionsDestinationInput" name="directionsDestinationInput" placeholder="Enter a destination"/>
+						</div> -->
+	
+						<div class="input-group margin-top">
+							<span class="input-group-label" title="From"><span class="icon_target"></span><span class="show-for-sr">From</span></span> 
+							<div class="input-group-field">
+								<button type="button" class="button small lightbluegrey icon_location_dot expanded" id="routeUserLocation"><span class="show-for-large">Start from </span>your location</button>
+								<input type="text" id="directionsOriginInput" name="directionsOriginInput" class="input-group-field" placeholder="Or start from point on campus"/>
+							</div>
+						</div>
+						<div class="input-group">
+							<span class="input-group-label" title="To"><span class="icon_mapmarker"></span><span class="show-for-sr">To</span></span>
+							<input type="text" id="directionsDestinationInput" name="directionsDestinationInput" class="input-group-field" placeholder="Choose destination"/>
 						</div>
 	
 						<button type="button" id="directionsCreateRoute" class="button directionsCreateRouteButton icon_direction" data-toggle="directionsRouteResults">Get directions</button>

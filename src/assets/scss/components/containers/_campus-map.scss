@@ -276,12 +276,24 @@
 
 	// Directions
 	#directionsContainer {
-		select, input {
+		> select, > input {
 			margin-bottom: .5rem;
 		}
-		button {
+		> button {
 			margin-top: .5rem;
 			margin-bottom: 0;
+		}
+
+		.input-group {
+			margin-bottom: .5rem;
+
+			.input-group-label {
+				padding: 0;
+				width: 1.75rem;
+				justify-content: center;
+				color: $coolgrey;
+				border: 0;
+			}
 		}
 	}
 
