@@ -1,3 +1,6 @@
+$menu-item-font-size: rem-calc(16);
+$menu-item-border: 1px solid $lightgrey;
+
 #offcanvas-menu {
 	overflow: visible;
 
@@ -43,6 +46,22 @@
 	// 	z-index: -1;
 	// } 
 
+	// Header
+	// ------
+
+	// Menu header section (for temporary content)
+	.menu-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.85rem 0.85rem 0.25rem;
+
+		> * {
+			margin-bottom: 0;
+		}
+	}
+
+	// Menu header logo
 	a.logo-link {
 		display: block;
 		width: 70%;
@@ -54,6 +73,49 @@
 		margin: 1rem;
 		.input-group {
 			margin-bottom: 0;
+		}
+	}
+
+	// Settings panel
+	#settings-panel {
+		background: $lightgrey;
+		height: 100vh;
+		overflow-y: auto;
+		transform: translateX(-100%);
+		transition: transform .4s ease;
+
+		&.active {
+			transform: translateX(0);
+		}
+		
+		h2, h3 {
+			margin: 1rem;
+			color: $darkblue;
+		}
+
+		button.close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 1rem;
+			color: $grey;
+
+			&:hover, &:active, &:focus {
+				cursor: pointer;
+				color: $darkblue;
+			}
+		}
+	}
+	.legend-item {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		font-family: $heading-font;
+		font-size: rem-calc(16);
+
+		img {
+			width: rem-calc(25px);
+			margin-right: .75rem;
 		}
 	}
 
@@ -78,7 +140,7 @@
 		}
 	}
 
-	// General layout - tabs
+	// Tabs menu
 	.tabs-title {
 		text-align: center;
 		margin-right: 3px;
@@ -102,6 +164,11 @@
 	#tab-search {
 		padding: 0;
 	}
+
+
+	// Locations tab
+	// -------------
+
 	// General layout - accordions
 	.accordion {
 		margin-bottom: 0;
@@ -117,40 +184,82 @@
 		border-bottom: 1px solid $accordion-item-color;
 	}
 
-	// Settings panel
-	#settings-panel {
-		background: $lightgrey;
-		height: 100vh;
-		overflow-y: auto;
-		transform: translateX(-100%);
-		transition: transform .4s ease;
-
-		&.active {
-			transform: translateX(0);
-		}
-		
-		h2 {
-			margin: 1rem;
+	// General layout - accordion-menu
+	.accordion-menu {		
+		a {
+			font-family: $heading-font;
+			font-size: $menu-item-font-size;
+			font-weight: bold;
 			color: $darkblue;
 		}
 
-		button.close {
-			position: absolute;
-			top: 0;
-			right: 0;
-			padding: 1rem;
-			color: $grey;
+		// Active link - top level only
+		.is-accordion-submenu-parent:not(.is-accordion-submenu-item) {
+			&[aria-expanded='true'] > a,
+			> a:hover, > a:focus {
+				background: $blue;
+				color: $white;
 
-			&:hover, &:active, &:focus {
-				cursor: pointer;
-				color: $darkblue;
+				&::after {
+					color: $white;
+				}
 			}
 		}
+
+		// Nested menus
+		.nested.is-accordion-submenu {
+			// Submenu link
+			a {
+				background: $bluegrey20;
+				padding-left: 1.5rem;
+			}
+			// Active submenu link
+			.is-accordion-submenu-parent[aria-expanded='true'] > a,
+			a:hover {
+				background: $bluegrey30;
+			}
+
+			// Button list in nested menu
+			.button-list .button {
+				padding-left: 2.25rem;
+			}
+		}
+
+		.button-list .button {
+			padding: $drilldown-padding;
+		}
 	}
-	.legend-item {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-between;
+
+	// General layout - drilldown
+	.menu.drilldown {
+		font-family: $heading-font;
+		
+		li > a {
+			border-bottom: $menu-item-border;
+			font-weight: bold;
+			font-size: $menu-item-font-size;
+			color: $darkblue;
+
+			&:hover, &:active, &:focus {
+				background: $bluegrey10;
+				// background: $blue;
+				// color: $white;
+			}
+		}
+		
+		.button-list .button {
+			margin-bottom: 0;
+			padding: $drilldown-padding;
+			border-bottom: $menu-item-border;
+
+			@include button-style(
+				$background: $white,
+				$background-hover: $bluegrey10,
+				$color: $darkblue,
+				$background-hover-lightness: -10%
+			);
+
+		}
 	}
 
 	// Locations button list
@@ -208,6 +317,11 @@
 			margin: 0.25rem 1rem 1rem;
 			color: $white;
 		}
+		h3 {
+			@extend .h5;
+			margin: 0.25rem 1rem 1rem;
+			color: $white;
+		}
 		p {
 			color: $white;
 		}
@@ -221,33 +335,10 @@
 		}
 	}
 
-	// .accordion-menu {
-	// 	// Top level
-	// 	> li {
-	// 		> a {
-	// 			font-weight: bold;
-	// 			font-family: $heading-font;
-	// 		}
-	// 		// Active link
-	// 		&[aria-expanded='true'] > a,
-	// 		> a:hover, > a:active, > a:focus {
-	// 			background: $lightgrey;
-	// 			color: $darkblue;
-	// 		}
-	// 		// Accordion icon
-	// 		&[aria-expanded='true'] .accordion-title::after {
-	// 			transform: translateY(-50%) rotate(180deg);
-	// 		}
-	// 	}
-
-	// 	.nested.is-accordion-submenu {
-	// 		margin: 0;
-	// 	}
-	// }
 	
+	// Search tab
+	// ----------
 
-
-	// Search
 	#tab-search {
 		.search-container {
 			margin: 1rem;
@@ -274,7 +365,9 @@
 		}
 	}
 
-	// Directions
+
+	// Directions tab
+	// --------------
 	#directionsContainer {
 		> select, > input {
 			margin-bottom: .5rem;

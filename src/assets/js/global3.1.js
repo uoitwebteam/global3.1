@@ -28,5 +28,6 @@ import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 
 import './components/animate-in-view';
 import './components/callout-stat';
+import './components/events-slider';
 import './media/photogallery';
 import './media/videos';

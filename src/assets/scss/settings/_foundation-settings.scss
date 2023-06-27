@@ -289,7 +289,7 @@ $accordion-title-font-size: rem-calc(16);
 $accordion-item-color: $darkblue !default;
 $accordion-item-background-hover: $mediumblue !default;
 $accordion-item-hover-color: $white !default;
-$accordion-item-padding: .75rem 2.5rem .75rem 1rem !default;
+$accordion-item-padding: 0.75rem 2.5rem 0.75rem 1rem !default;
 $accordion-content-background: $white !default;
 $accordion-content-border: 1px solid $mediumgrey !default;
 $accordion-content-color: $body-font-color;
@@ -303,13 +303,13 @@ $accordionmenu-nested-margin: $global-menu-nested-margin !default;
 $accordionmenu-submenu-padding: $accordionmenu-padding !default;
 $accordionmenu-arrows: true !default;
 $accordionmenu-arrow-color: $primary-color !default;
-$accordionmenu-item-background: null;
+$accordionmenu-item-background: null !default;
 $accordionmenu-border: null !default;
-$accordionmenu-submenu-toggle-background: null;
+$accordionmenu-submenu-toggle-background: null !default;
 $accordion-submenu-toggle-border: $accordionmenu-border !default;
-$accordionmenu-submenu-toggle-width: 40px;
-$accordionmenu-submenu-toggle-height: $accordionmenu-submenu-toggle-width;
-$accordionmenu-arrow-size: 6px;
+$accordionmenu-submenu-toggle-width: 40px !default;
+$accordionmenu-submenu-toggle-height: $accordionmenu-submenu-toggle-width !default;
+$accordionmenu-arrow-size: 6px !default;
 
 // 9. Badge
 // --------
@@ -428,15 +428,15 @@ $closebutton-color-hover: $black;
 // 16. Drilldown
 // -------------
 
-$drilldown-transition: transform 0.15s linear;
-$drilldown-arrows: true;
-$drilldown-padding: 0.7rem 1rem; //$global-menu-padding;
-$drilldown-nested-margin: 0;
-$drilldown-background: $blue;
-$drilldown-submenu-padding: $drilldown-padding;
-$drilldown-submenu-background: $blue;
-$drilldown-arrow-color: $orange;
-$drilldown-arrow-size: 8px;
+$drilldown-transition: transform 0.15s linear !default;
+$drilldown-arrows: true !default;
+$drilldown-padding: 0.7rem 1rem !default; //$global-menu-padding;
+$drilldown-nested-margin: 0 !default;
+$drilldown-background: $blue !default;
+$drilldown-submenu-padding: $drilldown-padding !default;
+$drilldown-submenu-background: $blue !default;
+$drilldown-arrow-color: $orange !default;
+$drilldown-arrow-size: 8px !default;
 
 // 17. Dropdown
 // ------------
