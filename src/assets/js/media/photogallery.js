@@ -11,6 +11,13 @@ const inlineGalleries = document.querySelectorAll('.gallery-inline, .gallery_row
 photoGalleries.forEach(function (el) {
 	console.log('Photo gallery:');
 	console.log(el);
+
+	// Set row height
+	let height = el.dataset.height ? el.dataset.height : 180;
+	console.log(el.dataset.height);
+
+	// Set margin size
+	let margin = el.dataset.margin ? el.dataset.margin : 5;
 	
 	// const gallery = new Masonry(el, {
 	// 	// initLayout: false,
@@ -28,8 +35,8 @@ photoGalleries.forEach(function (el) {
 	$(el).justifiedGallery({
 		captions: false,
 		lastRow: 'nojustify',
-		rowHeight: 180,
-		margins: 5
+		rowHeight: height,
+		margins: margin
 	})
 	.on("jg.complete", function () {
 		// Selector element (accounts for legacy HTML)
