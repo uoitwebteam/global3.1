@@ -1,0 +1,128 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#brand-arrow-divider">Brand arrow divider</a></li>
+				<li><a href="#more-bouncing-arrow">"More" bouncing arrow</a></li>
+				<li><a href="#arrow-clipping-mask">Arrow clipping mask</a>
+					<ul class="menu vertical nested">
+						<li><a href="#arrow-clip-reverse">Reverse</a></li>
+						<li><a href="#arrow-clip-diagonal">Diagonal</a></li>
+						<li><a href="#arrow-clip-combined">Combined with other elements</a></li>
+					</ul>
+				</li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10" style="overflow: hidden">
+{{/unlesspage}}
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Brand elements</h2>
+	</div>
+</div>
+
+<!-- Brand arrow divider -->
+<div class="row" id="brand-arrow-divider" data-magellan-target="brand-arrow-divider">
+	<div class="column">
+		<h3>Brand arrow divider</h3>
+		<p>Use the class <code>.brand-arrow-divider</code> to add three small brand arrows above an element as a section divider.</p>
+		<div class="code-example">
+			<div class="brand-arrow-divider">
+				<p class="border padding">Container with brand arrow divider above</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- More bouncing arrow -->
+<div class="row" id="more-bouncing-arrow" data-magellan-target="more-bouncing-arrow">
+	<div class="column">
+		<h3>"More" bouncing arrow</h3>
+		<p>Use the class <code>.more-bouncing-arrow</code> to display a downwards facing arrow that bounces, indicating to scroll down. Use {{> basic-palette}} to change the default orange colour of the arrow.</p>
+		<div class="code-example">
+			<div class="more-bouncing-arrow"></div>
+			<div class="more-bouncing-arrow lightblue"></div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Arrow clipping mask -->
+<div class="row" id="arrow-clipping-mask" data-magellan-target="arrow-clipping-mask">
+	<div class="column">
+		<h3>Arrow clipping mask</h3>
+		<p>An arrow clipping mask can be added to the left/right edge of an image or coloured div with the class <code>.arrow-clip</code>. This brand element works best on wide and short elements, such as banner-type images, testimonials, or short callouts.</p>
+
+		<div class="code-example">
+			<img class="arrow-clip" src="https://picsum.photos/1920/600">
+		</div>
+	</div>
+</div>
+<div class="code-example">
+	<div class="row expanded">
+		<div class="columns xxsmall-11 medium-9 arrow-clip bgcolor lightgrey animate-in-view slide-in-left">
+			<blockquote class="callout-quote xsmall animate-in-view">
+				Our professors were always there for guidance, advice and support, and their
+				course material was relevant. It prepared me for a smooth transition into the
+				workforce while ensuring I passed my professional exams the first time. 
+				<cite>
+					<span class="quote-name">Gregory Dionne</span>
+					<span class="quote-credential">Commerce (Honours) in Accounting, Class of 2008</span>
+					<span class="quote-title">Associate Director, Canadian Public Accountability Board, Toronto, Ontario</span>
+				</cite>
+			</blockquote>
+		</div>
+	</div>
+</div>
+		
+	
+<div class="row">
+	<div class="column">
+		<a id="arrow-clip-reverse" data-magellan-target="arrow-clip-reverse"></a>
+		<h4>Reverse arrow</h4>
+		<p>The arrow direction can be reversed with the <code>.arrow-clip-reverse</code> class. This works best when paired with the default, right-facing arrow clipping style.</p>
+		<div class="code-example">
+			<img class="arrow-clip" src="https://picsum.photos/1920/600?random=1">
+			<img class="arrow-clip-reverse" src="https://picsum.photos/1920/600?random=2">
+		</div>
+
+		<br>
+		<a id="arrow-clip-diagonal" data-magellan-target="arrow-clip-diagonal"></a>
+		<h4>Diagonal</h4>
+		<p>The element can be tilted with the <code>.arrow-clip-diagonal</code> class. This works best on full-page-width elements/images.</p>
+		<div class="code-example">
+			<img class="arrow-clip-diagonal" src="https://picsum.photos/1920/600?random=3">
+			<img class="arrow-clip-diagonal-reverse" src="https://picsum.photos/1920/600?random=4">
+		</div>
+
+		<br>
+		<a id="arrow-clip-combined" data-magellan-target="arrow-clip-combined"></a>
+		<h4>Combining with other brand elements</h4>
+		<p>Add a <a href="#patterns-repeated-row">brand arrow row pattern</a> to two arrow-clipped elements for a high impact visual break. This works best on full-page-width images.</p>
+		<div class="code-example">
+			<div class="row">
+				<div class="column xxsmall-12 repeated-brand-arrow-row white-arrow arrow-on-top overflow animate-in-view">
+					<img class="arrow-clip-diagonal" src="https://picsum.photos/1920/600?random=5">
+				</div>
+				<div class="column xxsmall-12">
+					<img class="arrow-clip-diagonal-reverse" src="https://picsum.photos/1920/600?random=6">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{#unlesspage 'index'}}
+</div>
+</div>
+{{/unlesspage}}

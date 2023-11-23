@@ -1,0 +1,56 @@
+---
+layout: kitchensink
+title: Kitchen Sink
+---
+
+<div class="row expanded">
+	<div class="column text-larger padding-top">
+		<p class="show-for-large h6 uppercase">Ontario Tech Sites Global Template v3.1</p>
+		<h1>Kitchen Sink</h1>
+		<p class="margin-top">The Kitchen Sink contains examples and documentation of brand elements, typography styles, individual components, and general helpers.</p>
+		<ul>
+			<li>"All the things" (this page) shows examples of styles and components. Jump to a section using the 
+				<span class="show-for-xlarge">"<span class="uppercase text-smaller"><strong>on this page</strong></span>" navigation menu on the right.</span>
+				<span class="hide-for-xlarge"><span class="icon_page"></span> navigation menu in the top right.</span>
+			</li>
+			<li>For full component documentation, see the component page link in the 
+				<span class="show-for-large">"<span class="uppercase text-smaller"><strong>Kitchen Sink</strong></span>" navigation menu on the left.</span>
+				<span class="hide-for-large"><span class="icon_menu"></span> hamburger navigation menu in the top left.</span>
+			</li> 
+			<li>For example component usage on a templated web page layout, see <a href="/home-page.php">home page layout</a> or <a href="/standard-page.php">standard page layout</a>. (These pages use PHP-based components. A PHP proxy server needs to be enabled; see the <a href="https://github.com/uoitwebteam/global3.1" target="_blank">README</a> file for instructions.)</li>
+			<li>All Foundation components (except for Orbit) are included in the Global 3.1 build, but not all are documented here. For Foundation components/additional styles and implementation documentation not listed here, see the <a href="https://get.foundation/sites/docs" target="_blank">Foundation docs</a>.</li>
+		</ul>
+		<p>You can also use the Kitchen Sink for development and testing when modifying the Global 3.1 codebase. See the <a href="https://github.com/uoitwebteam/global3.1" target="_blank">README</a> file for development notes.</p>
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1"><span class="darkblue">All the things!</span></h2>
+	</div>
+</div>
+
+<!-- Auto-generate component sections using data/kitchen-sink.yml -->
+{{#each kitchen-sink.nav}}
+	{{#each section}}
+		{{#if items}}
+			<div class="section-heading margin-bottom {{#unless @../first}} brand-arrow-divider orange {{/unless}}">
+				<h2 class="h1 uppercase">{{heading}}</h2>
+			</div>
+			{{#each items}}
+			<a id="{{page}}" data-magellan-target="{{page}}"></a>
+			{{#if partial}} {{> (lookup . 'partial')}} {{/if}}
+			<hr>
+				{{#if subitems}}
+					{{#each subitems}}
+						<a id="{{page}}" data-magellan-target="{{page}}"></a>
+						{{#if partial}} {{> (lookup . 'partial')}} {{/if}}
+						<hr>
+					{{/each}}
+				{{/if}}
+			{{/each}}
+		{{/if}}
+	{{/each}}
+{{/each}}
+

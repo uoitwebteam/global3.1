@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Logo and brand graphics</h2>
+		
+		<h3>Animated shield symbol</h3>
+		<p>Add an animated shield symbol using the <code>&lt;SVG></code> syntax below. Shield component colours can be adjusted by using the component prefix and {{> main-palette}}:</p>
+		<p>
+			<code>.bg-[colour]</code> (note that the shield's wrapping div will require the same background colour)<br>
+			<code>.shield-[colour]</code><br>
+			<code>.arc-[colour]</code><br>
+			<code>.arrow-[colour]</code>
+		</p>
+		<div class="code-example">
+			<div class="bgcolor blue padding-large">
+				<svg class="logo-shield animate-in-view bg-blue shield-white arc-lightblue arrow-orange" xmlns="http://www.w3.org/2000/svg" viewBox="45 0 75 90">
+					<path id="inner-bg" class="background" d="M108.1406,9.6463l.0025,44.5687a26.1444,26.1444,0,0,1-52.2887,0V9.6463h52.2862"/>
+					<ellipse id="circle-full" class="arc outline-stroke" cx="47.7553" cy="79.5506" rx="47.7553" ry="47.8031"/>
+					<path id="outer-bg" class="background" d="M-43-80V170H207V-80ZM117.7894,28.9375V54.215a35.7894,35.7894,0,0,1-71.5788,0V0h71.5788Z"/>
+					<path id="shield-full" class="shield outline-stroke"  d="M88.8594,4.8231H51.0338V54.1324c0,40.851,62.3113,40.851,62.3113,0V4.8231Z"/>
+					<path id="shield-notched" class="shield outline-stroke" d="M88.8594,4.8231H51.0338V54.1324c0,40.851,62.3113,40.851,62.3113,0V28.9375"/>
+					<path id="triangle" class="arrow outline-stroke" d="M113.3451,19.2913V4.8231H98.4931"/>
+				</svg>
+			</div>
+		</div>
+		<p>An example use case is in the header of an off-canvas menu. Click the button to toggle a demo off-canvas menu:</p>
+		<p><button class="button" data-toggle="shield-demo">Toggle off-canvas with shield</button></p>
+		<div class="code-example">
+			<div id="shield-demo" class="off-canvas position-right" data-off-canvas>
+				<div class="menu-header">
+					<svg class="logo-shield bg-lightgrey shield-darkblue arc-lightblue arrow-orange" xmlns="http://www.w3.org/2000/svg" viewBox="45 0 75 90">
+						<path id="inner-bg" class="background" d="M108.1406,9.6463l.0025,44.5687a26.1444,26.1444,0,0,1-52.2887,0V9.6463h52.2862"/>
+						<ellipse id="circle-full" class="arc outline-stroke" cx="47.7553" cy="79.5506" rx="47.7553" ry="47.8031"/>
+						<path id="outer-bg" class="background" d="M-43-80V170H207V-80ZM117.7894,28.9375V54.215a35.7894,35.7894,0,0,1-71.5788,0V0h71.5788Z"/>
+						<path id="shield-full" class="shield outline-stroke"  d="M88.8594,4.8231H51.0338V54.1324c0,40.851,62.3113,40.851,62.3113,0V4.8231Z"/>
+						<path id="shield-notched" class="shield outline-stroke" d="M88.8594,4.8231H51.0338V54.1324c0,40.851,62.3113,40.851,62.3113,0V28.9375"/>
+						<path id="triangle" class="arrow outline-stroke" d="M113.3451,19.2913V4.8231H98.4931"/>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

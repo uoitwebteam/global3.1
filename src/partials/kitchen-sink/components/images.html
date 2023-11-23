@@ -1,0 +1,173 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#image-sizes">Image sizes</a></li>
+				<li><a href="#image-utilities">Utility classes</a></li>
+				<li><a href="#image-caption">Image with caption</a></li>
+				<li><a href="#image-thumbnail">Thumbnail style</a></li>
+				<li><a href="#image-circle">Circle style</a></li>
+				<li><a href="#arrow-clipping-mask">Arrow clipping mask</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10">
+{{/unlesspage}}
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Images</h2>
+	</div>
+</div>
+
+<div class="row" id="image-sizes" data-magellan-target="image-sizes">
+	<div class="column">
+		<h3>Image sizes</h3>
+
+		[image size examples here]
+	</div>
+</div>
+
+<hr>
+
+<!-- Image utilities -->
+<div class="row" id="image-utilities" data-magellan-target="image-utilities">
+	<div class="column">
+		<h3>Image utilities</h3>
+
+		<h4>Float classes</h4>
+		<p>Image floats are enabled for small screen sizes and up.</p>
+		<code>float-left</code>
+		<div class="code-example scroll">
+			<img class="float-left" src="https://picsum.photos/500/334">
+			<p>Maiores convallis proin laboris? Sodales sem. Ipsam placerat proident pede quam ex sociis omnis. Diam deserunt, ultricies sem per rerum asperiores error sollicitudin eros phasellus luctus, hac lacinia reprehenderit nulla! Harum? Sequi quos, libero facilisi tempore. Sed maiores repellat ligula praesentium quaerat temporibus mi? Adipisicing aliqua neque, provident, assumenda gravida.</p>
+			<p>Rhoncus nihil laboriosam leo irure, nostrud optio repudiandae officiis, fugit expedita. A? Suspendisse donec, sunt ratione pharetra dignissim, semper aute, odio duis massa cras! Perferendis eligendi. Sapien vestibulum elementum iste laboris penatibus inceptos, cras volutpat elementum laoreet cillum, soluta, libero, nobis dicta mus sapien ex? Felis consequuntur ipsa a inventore.</p>
+			<p>Blandit fermentum magni odio aut conubia, tincidunt maiores voluptatibus class, cupiditate tortor? At nisl velit! Interdum architecto. Minima magnam facilisis. Elementum! Porro reprehenderit mi adipisicing vehicula velit! Incidunt bibendum maecenas parturient pede sodales asperiores feugiat habitant scelerisque eligendi nisi malesuada iure pellentesque rhoncus unde natus sem molestie proident! Gravida penatibus.</p>
+		</div>
+		<br>
+
+		<code>float-right</code> 
+		<div class="code-example scroll">
+			<img class="float-right" src="https://picsum.photos/500/334">
+			<p>Maiores convallis proin laboris? Sodales sem. Ipsam placerat proident pede quam ex sociis omnis. Diam deserunt, ultricies sem per rerum asperiores error sollicitudin eros phasellus luctus, hac lacinia reprehenderit nulla! Harum? Sequi quos, libero facilisi tempore. Sed maiores repellat ligula praesentium quaerat temporibus mi? Adipisicing aliqua neque, provident, assumenda gravida.</p>
+			<p>Rhoncus nihil laboriosam leo irure, nostrud optio repudiandae officiis, fugit expedita. A? Suspendisse donec, sunt ratione pharetra dignissim, semper aute, odio duis massa cras! Perferendis eligendi. Sapien vestibulum elementum iste laboris penatibus inceptos, cras volutpat elementum laoreet cillum, soluta, libero, nobis dicta mus sapien ex? Felis consequuntur ipsa a inventore.</p>
+			<p>Blandit fermentum magni odio aut conubia, tincidunt maiores voluptatibus class, cupiditate tortor? At nisl velit! Interdum architecto. Minima magnam facilisis. Elementum! Porro reprehenderit mi adipisicing vehicula velit! Incidunt bibendum maecenas parturient pede sodales asperiores feugiat habitant scelerisque eligendi nisi malesuada iure pellentesque rhoncus unde natus sem molestie proident! Gravida penatibus.</p>
+		</div>
+		
+		<hr>
+
+		<h4>Border class</h4>
+		<div class="code-example">
+			<img class="border" src="https://picsum.photos/500/334">
+		</div>
+
+		<hr> 
+
+		<h4>Individual pop-up image</h4>
+		<div class="code-example">
+			<img class="img-enlarge" src="https://picsum.photos/500/334">
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Image with caption -->
+<div class="row" id="image-caption" data-magellan-target="image-caption">
+	<div class="column">
+		<h3>Image with caption</h3>
+		<p>Use <code>&lt;figure></code> and <code>&lt;figcaption></code> elements to style an image with a caption.</p>
+		<div class="code-example">
+			<figure>
+				<img src="https://picsum.photos/500/334">
+				<figcaption>Figure and figcaption</figcaption>
+			</figure>
+		</div>
+
+		<br>
+		<p>Alternatively, use the <code>.caption</code> class on an <code>&lt;img></code> element to auto-format an image with caption (auto-generates <code>&lt;figure></code> and <code>&lt;figcaption></code> elements). The caption pulls from the "alt" attribute text.</p>
+		<div class="code-example">
+			<img class="caption" alt="Image caption" src="https://picsum.photos/500/334">
+		</div>
+
+		<br>
+		<p>Caption can be combined with the <code>thumbnail</code> style.</p>
+		<div class="code-example">
+			<figure>
+				<img src="https://picsum.photos/500/334" class="thumbnail">
+				<figcaption>Figure and figcaption</figcaption>
+			</figure>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Thumbnail -->
+<div class="row" id="image-thumbnail" data-magellan-target="image-thumbnail">
+	<div class="column">
+		<h3>Thumbnail style</h3>
+		<div class="code-example">
+			<img class="thumbnail" src="https://picsum.photos/500/334">
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Circle -->
+<div class="row" id="image-circle" data-magellan-target="image-circle">
+	<div class="column">
+		<h3>Circle style</h3>
+		<p>Use the <code>.circle</code> class to add a round crop to a square image. Can be combined with the thumbnail style or <code>.border</code> utility class.</p>
+		<div class="code-example">
+			<img class="circle" src="https://picsum.photos/300/300">
+	
+			<img class="circle thumbnail" src="https://picsum.photos/300/300">
+	
+			<img class="circle border" src="https://picsum.photos/300/300">
+		</div>
+	
+		<br>
+		<p>The <code>.circle</code> class can also be applied to a rectangular image. However, if the <code>.thumbnail</code> or <code>.border</code> styles are also used, the image <strong>must</strong> be wrapped in a <code>.has-circle-[thumbnail/border]</code> container.</p>
+		<p>Also note the centered alignment and default block-level div; the block-level wrapping div can be modified with <code>.inline-block</code>.</p>
+		<div class="code-example">
+			<img class="circle" src="https://picsum.photos/300/200">
+	
+			<!-- Inline-block level wrapping div -->
+			<div class="has-circle-thumbnail inline-block">
+				<img class="circle thumbnail" src="https://picsum.photos/300/200">
+			</div>
+			
+			<!-- Block level wrapping div, centered image alignment -->
+			<div class="has-circle-border">
+				<img class="circle border" src="https://picsum.photos/300/200">
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="arrow-clipping-mask" data-magellan-target="arrow-clipping-mask">
+	<div class="column">
+		<h4>Arrow clipping mask</h4>
+		<p>An arrow clipping mask can be added to the left/right edge of an image or coloured div with the class <code>.arrow-clip</code>. This brand element works best on wide and short images.</p>
+		<p>The arrow direction can be reversed with the <code>.arrow-clip-reverse</code> class. This works best when paired with the default, right-facing arrow clipping style.</p>
+		<p>See <a href="brand-elements.html#arrow-clipping-mask">brand elements</a> for further style variations and documentation.</p>
+		<div class="code-example">
+			<img class="arrow-clip" src="https://picsum.photos/1920/600?random=1">
+			<img class="arrow-clip-reverse" src="https://picsum.photos/1920/600?random=2">
+		</div>
+	</div>
+</div>
+
+		
+{{#unlesspage 'index'}}
+</div>
+</div>
+{{/unlesspage}}

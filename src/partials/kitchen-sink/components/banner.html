@@ -1,0 +1,213 @@
+
+<!-- data-interchange="[https://picsum.photos/1024/429?random, xxsmall], [https://picsum.photos/1440/603?random, screen and (min-width: 1024px)], [https://picsum.photos/1600/670?random, screen and (min-width: 1440px)]" -->
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Banner</h2>
+	</div>
+</div>
+
+
+<!-- Default layout -->
+<div class="row">
+	<div class="column">
+		<h3>Default banner (caption box)</h3>
+		<p><code>&lt;figcaption&gt;</code> background colour can be specified using {{> main-palette}}.</p>
+	</div>
+</div>
+<div class="code-example language-html">
+	<!-- Default layout -->
+	<div class="banner">
+		<figure>
+			<img data-interchange="[https://picsum.photos/1000/667?random, xxsmall], [https://picsum.photos/1920/600?random, medium]" src="https://picsum.photos/1920/600">
+			<figcaption class="orange">
+				<div class="contents">
+					<div class="header">
+						Default layout
+					</div>
+					<div class="description">
+						Description here.
+					</div>
+					<div class="cta">
+						<a href="">CTA link</a>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+</div>
+
+<hr>
+
+<!-- Text overlay -->
+<div class="row">
+	<div class="column">
+	<h3>Text overlay</h3>
+	<p><code>&lt;figcaption&gt;</code> element stacks below the banner image on mobile with a dark blue background.</p>
+	</div>
+</div>
+<div class="code-example language-html">
+	<!-- Text overlay -->
+	<div class="banner text-overlay">
+		<figure>
+			<img data-interchange="[https://picsum.photos/1000/667?random, xxsmall], [https://picsum.photos/1920/601?random, medium]" src="https://picsum.photos/1920/601">
+			<figcaption>
+				<div class="contents column">
+					<div class="header chevron-right">
+						Text overlay
+					</div>
+					<div class="description">
+						Description here.
+					</div>
+					<div class="cta">
+						<a href="">CTA link</a>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+</div>
+
+<hr>
+
+<!-- Text overlay, mobile -->
+<div class="row">
+	<div class="column">
+	<h3>Text overlay, mobile</h3>
+	<p><code>&lt;figcaption&gt;</code> element remains on top of the banner image on small screens. A minimum height can be set on the <code>&lt;figure&gt;</code> element, or a thumbnail-aspect-ratio image can be used for small screens.</p>
+	</div>
+</div>
+<div class="code-example language-html">
+	<!-- Text overlay, mobile -->
+	<div class="banner text-overlay mobile-text-overlay">
+		<figure>
+			<img data-interchange="[https://picsum.photos/1000/667?random, xxsmall], [https://picsum.photos/1920/601?random, medium]" src="https://picsum.photos/1920/601">
+			<figcaption>
+				<div class="contents column">
+					<div class="header">
+						Mobile text overlay
+					</div>
+					<div class="description">
+						Description here.
+					</div>
+					<div class="cta">
+						<a href="">CTA link</a>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+</div>
+
+<hr>
+
+<!-- Text overlay, centered -->
+<div class="row">
+	<div class="column">
+	<h3>Text overlay, centered</h3>
+	<p><code>&lt;figcaption&gt;</code> element and contents are vertically and horizontally centered over the banner image.</p>
+	</div>
+</div>
+<div class="code-example language-html">
+	<!-- Text overlay, centered -->
+	<div class="banner text-overlay center">
+		<figure>
+			<img data-interchange="[https://picsum.photos/1000/667?random, xxsmall], [https://picsum.photos/1920/601?random, medium]" src="https://picsum.photos/1920/601">
+			<figcaption>
+				<div class="contents column">
+					<div class="header chevron-left">
+						Text overlay, centered
+					</div>
+					<div class="description">
+						Description here
+					</div>
+					<div class="cta">
+						<a href="">CTA link</a>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+</div>
+
+<hr>
+
+<!-- Video -->
+<div class="row">
+	<div class="column">
+		<h3>Video</h3>
+		<p>See also: <a href="responsive-embed.html">Responsive embed</a></p>
+	</div>
+</div>
+<div class="code-example language-html">
+	<!-- Video banner, Vimeo embed -->
+	<div class="banner text-overlay">
+		<figure>
+			<div class="responsive-embed banner16x5">
+				<iframe class="non-responsive-embed" frameborder="0" height="200" src="https://player.vimeo.com/video/380758356?background=1" width="640"></iframe>
+			</div>
+			<figcaption>
+				<div class="contents">
+					<div class="header">
+						Video, with text overlay
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+</div>
+<div class="code-example language-html">
+	<!-- Video banner, HTML5 <video> element -->
+	<div class="banner">
+		<figure>
+			<div class="responsive-embed banner16x5">
+				<video autoplay="true" disablepictureinpicture="true" height="600" loop="true" muted="true" poster="https://ontariotechu.ca/_modules/banner/videos/happy-holidays-banner.jpg" width="1920"> 
+					<source src="https://ontariotechu.ca/_modules/banner/videos/holiday-video-banner-v3.webm" type="video/webm"/>
+					<source src="https://ontariotechu.ca/_modules/banner/videos/holiday-video-banner-v3.mp4" type="video/mp4"/>
+				</video>
+			</div>
+			<figcaption class="darkblue">
+				<div class="contents">
+					<div class="header">
+						Video, with caption box
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</div>
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="column">
+		<h3>Content overlap</h3>
+		<p>Page content overlaps banner image. Banner image fades out to white.</p>
+	</div>
+</div>
+<div class="code-example scroll">
+	<section id="main-content">
+		<!-- Content overlap -->
+		<div class="banner content-overlap">
+			<figure>
+				<img data-interchange="[https://picsum.photos/1000/667?random, xxsmall], [https://picsum.photos/1920/601?random, medium]" src="https://picsum.photos/1920/601">
+			</figure>
+		</div>
+		<div class="breadcrumbs">
+			<ul aria-label="Breadcrumbs" role="menubar">
+					<li role="menuitem"><a href="">Home</a></li>
+					<li role="menuitem"><a href="">Folder</a></li>
+					<li role="menuitem"><a href="">Folder</a></li>
+					<li class="current" role="menuitem">Current page</li>
+			</ul>
+		</div>
+		<div class="page-row">
+			<div class="page-content">
+				<h1>Page title</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsa nostrum ab itaque veritatis accusamus, distinctio porro nobis perferendis facilis iusto alias optio natus, fugiat incidunt assumenda sint. Minus, aliquam!</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quasi vero fuga eos aut dolorum ipsa nesciunt culpa deserunt consequatur laboriosam, molestiae fugiat. Illo quam voluptatibus libero iusto dignissimos architecto.</p>
+			</div>
+		</div>
+	</section>
+</div>
+

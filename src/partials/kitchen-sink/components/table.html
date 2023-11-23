@@ -1,0 +1,590 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#table-headings">Headings</a></li>
+				<li><a href="#table-layout">Layout and size</a></li>
+				<li><a href="#table-borders">Borders</a></li>
+				<li><a href="#table-vertical-alignment">Vertical alignment</a></li>
+				<li><a href="#table-colours">Colours</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10">
+{{/unlesspage}}
+
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Table</h2>
+	</div>
+</div>
+
+<div class="row" id="table-headings" data-magellan-target="table-headings">
+	<div class="column">
+		<h3>Table headings</h3>
+
+		Table with semantic table cell headings
+		<div class="code-example scroll">
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		Table with heading tags (not recommended) 
+		<div class="code-example scroll">
+			<table>
+				<tbody>
+					<tr>
+						<td></td>
+						<td><h3 class="text-smaller">Heading</h3></td>
+						<td><h3 class="text-smaller">Heading</h3></td>
+					</tr>
+					<tr>
+						<td><h4 class="text-smaller">Heading</h4></td>
+						<td>R2, C1</td>
+						<td>R2, C2</td>
+					</tr>
+					<tr>
+						<td><h4 class="text-smaller">Heading</h4></td>
+						<td>R3, C1</td>
+						<td>R3, C2</td>
+					</tr>
+					<tr>
+						<td><h4 class="text-smaller">Heading</h4></td>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+
+<div class="row" id="table-layout" data-magellan-target="table-layout">
+	<div class="column">
+		<h3>Table size and layout</h3>
+
+		Full width table
+		<div class="code-example scroll">
+			<table class="tbl-full-width">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+						<td>R2, C4</td>
+						<td>R2, C5</td>
+						<td>R2, C6</td>
+						<td>R2, C7</td>
+						<td>R2, C8</td>
+						<td>R2, C9</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+						<td>R3, C4</td>
+						<td>R3, C5</td>
+						<td>R3, C6</td>
+						<td>R3, C7</td>
+						<td>R3, C8</td>
+						<td>R3, C9</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+						<td>R4, C4</td>
+						<td>R4, C5</td>
+						<td>R4, C6</td>
+						<td>R4, C7</td>
+						<td>R4, C8</td>
+						<td>R4, C9</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		Horizontal scrolling (shown inside a <code>.medium-6</code> container)
+		<div class="code-example scroll">
+			<div class="medium-6">
+				<table class="scroll">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+							<th>Heading</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Heading</th>
+							<td>R2, C2</td>
+							<td>R2, C3</td>
+							<td>R2, C4</td>
+							<td>R2, C5</td>
+							<td>R2, C6</td>
+							<td>R2, C7</td>
+							<td>R2, C8</td>
+							<td>R2, C9</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R3, C2</td>
+							<td>R3, C3</td>
+							<td>R3, C4</td>
+							<td>R3, C5</td>
+							<td>R3, C6</td>
+							<td>R3, C7</td>
+							<td>R3, C8</td>
+							<td>R3, C9</td>
+						</tr>
+						<tr>
+							<th>Heading</th>
+							<td>R4, C2</td>
+							<td>R4, C3</td>
+							<td>R4, C4</td>
+							<td>R4, C5</td>
+							<td>R4, C6</td>
+							<td>R4, C7</td>
+							<td>R4, C8</td>
+							<td>R4, C9</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		Stacked table on small screens
+		<div class="code-example scroll">
+			<table class="stack">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+						<td>R2, C4</td>
+						<td>R2, C5</td>
+						<td>R2, C6</td>
+						<td>R2, C7</td>
+						<td>R2, C8</td>
+						<td>R2, C9</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+						<td>R3, C4</td>
+						<td>R3, C5</td>
+						<td>R3, C6</td>
+						<td>R3, C7</td>
+						<td>R3, C8</td>
+						<td>R3, C9</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+						<td>R4, C4</td>
+						<td>R4, C5</td>
+						<td>R4, C6</td>
+						<td>R4, C7</td>
+						<td>R4, C8</td>
+						<td>R4, C9</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+
+<div class="row" id="table-borders" data-magellan-target="table-borders">
+	<div class="column">
+		<h3>Table borders</h3>
+
+		Default borders (shown with <code>.tbl-white</code>)
+		<div class="code-example scroll">
+			<table class="tbl-white">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		Row and outside borders
+		<div class="code-example scroll">
+			<table class="tbl-white tbl-row-borders">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		Row borders only, no outside borders
+		<div class="code-example scroll">
+			<table class="tbl-white tbl-row-borders tbl-no-borders">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		No cell or row borders
+		<div class="code-example scroll">
+			<table class="tbl-white tbl-no-borders">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+
+<div class="row" id="table-vertical-alignment" data-magellan-target="table-vertical-alignment">
+	<div class="column xxsmall-12">
+		<h3>Text vertical alignment</h3>
+
+		Default (text aligned to middle of cells)
+		<div class="code-example scroll">
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2<br/>Multi-line text</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2<br/>Multi-line text</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2<br/>Multi-line text</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		Text aligned to top of cells
+		<div class="code-example scroll">
+			<table class="tbl-align-top">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2<br/>Multi-line text</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2<br/>Multi-line text</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2<br/>Multi-line text</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+
+<div class="row" id="table-colours" data-magellan-target="table-colours">
+	<div class="column xxsmall-12">
+		<h3>Table colours</h3>
+
+		Blue table heading cells
+		<div class="code-example scroll">
+			<table class="tbl-blue">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		White table body cells (no alternating row colours)
+		<div class="code-example scroll">
+			<table class="tbl-white">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		White table heading and body cells
+		<div class="code-example scroll">
+			<table class="tbl-all-white">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		Row background colour on hover
+		<div class="code-example scroll">
+			<table class="hover">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Heading</th>
+						<td>R2, C2</td>
+						<td>R2, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R3, C2</td>
+						<td>R3, C3</td>
+					</tr>
+					<tr>
+						<th>Heading</th>
+						<td>R4, C2</td>
+						<td>R4, C3</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{{#unlesspage 'index'}}
+</div>
+</div>
+{{/unlesspage}}
+
+<style>
+	table {
+		margin-bottom: 2rem;
+	}
+</style>

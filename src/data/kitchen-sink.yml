@@ -1,0 +1,144 @@
+nav:
+  - section:
+    - heading: Brand
+      items:
+        -
+          title: Colours
+          page: 'colours'
+          partial: colours
+        -
+          title: Icons
+          page: 'icons'
+          partial: icons
+        -
+          title: Logo and brand graphics
+          page: 'logo'
+          partial: logo
+        -
+          title: Brand elements
+          page: 'brand-elements'
+          partial: brand-elements
+        -
+          title: Patterns
+          page: 'patterns'
+          partial: patterns
+  - section:   
+    - heading: Typography
+      items:
+        -
+          title: 'Fonts'
+          page: 'fonts'
+          partial: fonts
+        -
+          title: 'Base typography styles'
+          page: 'typography'
+          partial: typography
+        -
+          title: Blockquote
+          page: 'blockquote'
+          partial: blockquote
+        -
+          title: 'Typography helpers'
+          page: 'typography-helpers'
+          partial: typography-helpers
+  - section:   
+    - heading: Utilities
+      items:
+        - 
+          title: Breakpoints
+          page: 'breakpoints'
+          partial: breakpoints
+        - 
+          title: Animations
+          page: 'animations'
+          # partial: animations
+  - section:
+    - heading: Components
+      items:
+        -
+          title: Accordion
+          page: 'accordion'
+          partial: accordion
+        -
+          title: Banner
+          page: 'banner'
+          partial: banner
+        -
+          title: Breadcrumbs
+          page: 'breadcrumbs'
+          partial: breadcrumbs
+        -
+          title: Buttons
+          page: 'buttons'
+          partial: buttons
+        -
+          title: Callout
+          page: 'callout'
+          partial: callout
+        -
+          title: Callout stat
+          page: 'callout-stat'
+          partial: callout-stat
+        -
+          title: Card grid
+          page: 'card-grid'
+          partial: card-grid
+        -
+          title: Clive forms
+          page: 'clive'
+          partial: clive
+        -
+          title: CTA thumbnails
+          page: 'cta-thumbnails'
+          partial: cta-thumbnails
+        -
+          title: Feature module
+          page: 'feature-module'
+          partial: feature-module
+          subitems:
+            -
+              title: Events
+              page: 'events'
+              extension: php
+              partial: events
+            -
+              title: News
+              page: 'news'
+              extension: php
+              partial: news
+            -
+              title: Social links
+              page: 'social-links'
+              partial: social-links
+            -
+              title: Spotlight
+              page: 'spotlight'
+              partial: spotlight
+            -
+              title: Quick links bar
+              page: 'quick-links-bar'
+              partial: quick-links-bar
+        -
+          title: Featured expert
+          page: 'featured-expert'
+          partial: featured-expert
+        -
+          title: Images
+          page: 'images'
+          partial: images
+        -
+          title: Photo gallery
+          page: 'photo-gallery'
+          partial: photo-gallery
+        -
+          title: Responsive embed
+          page: 'responsive-embed'
+          partial: responsive-embed
+        -
+          title: Table
+          page: 'table'
+          partial: table
+        -
+          title: Tabs
+          page: 'tabs'
+          partial: tabs

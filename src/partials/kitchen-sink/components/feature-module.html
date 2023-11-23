@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Feature module</h2>
+		<p>Feature modules are a set of templated page components, which include:
+		<ul>
+			<li><a href="news.html">news feed</a></li>
+			<li><a href="events.html">events feed</a></li>
+			<li><a href="quick-links-bar.html">quick links bar</a></li>
+			<li><a href="social-links.html">social media links</a></li>
+			<li><a href="spotlight.html">spotlight</a></li>
+		</ul> 
+		<p>Modules are typically full width (expanded page layout), but can also be set to the page content width. There is extra padding around the content.</p>
+
+		{{#unlesspage 'index'}}
+		<p>Component-specific classes are added to the <code>&lt;section></code> wrapper element.</p>
+
+		<h3>Basic HTML structure</h3>
+		<div class="code-example">
+			<!-- Replace the `spotlight` class with other component-specific classes as required -->
+			<section class="spotlight blue">
+				<div class="feature-module">
+					<div class="heading">
+						<h2>Heading</h2>
+					</div>
+					<div class="content">
+						<p>Module content here.</p>
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae voluptatem blanditiis aliquam numquam laboriosam vitae impedit sunt veritatis officia! Cumque necessitatibus eius, ad eligendi inventore sunt ut magnam molestiae voluptatum!</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		{{/unlesspage}}
+
+		<br>
+
+		<h3>CMS feature module block component</h3>
+		<p>In addition to the templated modules listed above, any free-form xHTML CMS block can be placed in a feature module block component. The xHTML block is wrapped in the templated feature-module wrapper (inherting templated styles like extra padding, background colours and heading styles).</p>
+		<p><img src="assets/feature-module-block-component.png" alt="Feature module CMS component - content type selector"></p>
+
+	</div>
+</div>

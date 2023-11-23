@@ -16,8 +16,8 @@ PATHS:
   dist: "dist"
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
-    - "src/assets/**/*"
-    - "!src/assets/{img,js,scss}/**/*"
+    - "src/files/**/*"
+    - "!src/files/{img,js,scss}/**/*"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "node_modules/foundation-sites/scss"
@@ -27,8 +27,8 @@ PATHS:
     - "node_modules/prismjs"
     - "node_modules/swiper/dist/css"
   sassbuilds:
-    - "src/assets/scss/"
+    - "src/files/scss/"
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:
-    - "src/assets/js/global3.1.js"
-    - "src/assets/js/map.js"
+    - "src/files/js/global3.1.js"
+    - "src/files/js/map.js"

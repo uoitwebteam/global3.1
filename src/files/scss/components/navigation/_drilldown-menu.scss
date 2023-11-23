@@ -1,0 +1,87 @@
+.is-drilldown-submenu {
+	z-index: 1;
+}
+
+// Drilldown parent (top level) 
+.is-drilldown {
+	li {
+		display: flex !important;
+		flex-flow: row nowrap;
+
+		a {
+			width: 100%;
+			align-items: center;
+		}
+	}
+}
+
+// Submenu index (parent) page link
+li.is-submenu-parent-item>a {
+	font-weight: bold;
+}
+
+// Submenu with separate clickable 'More' link
+.menu a.more {
+	display: flex;
+	justify-content: center;
+	align-items: center !important;
+	min-width: 45px; // IE fix
+	text-align: center;
+
+	@include breakpoint(small down) {
+		color: get-color(grey);
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		@include breakpoint(small down) {
+			color: get-color(grey);
+		}
+	}
+
+	// arrow icon
+	/* &::before {
+		@include icon;
+		content: get-icon(icon_arrow);
+		font-size: .85rem;
+		line-height: normal;
+		transform: rotate(180deg);
+	} */
+}
+
+// Back button
+/* .menu .js-drilldown-back>a::before {
+	@include icon;
+	content: get-icon(icon_arrow);
+	border: 0;
+	width: auto;
+	height: auto;
+	margin-right: .5rem;
+	font-size: .85rem;
+	line-height: normal;
+} */
+
+// Default submenu link (not separate clickable link)
+.drilldown[data-clickable-more="false"] {
+	.is-drilldown-submenu-parent>a {
+		position: relative;
+
+		&::after {
+			@include css-triangle($drilldown-arrow-size, $drilldown-arrow-color, $global-right);
+			position: absolute;
+			top: 50%;
+			margin-top: -1 * $drilldown-arrow-size;
+			#{$global-right}: 1rem;
+		}
+	}
+
+	.js-drilldown-back > a::before {
+		@include css-triangle($drilldown-arrow-size, $drilldown-arrow-color, $global-left);
+		border-#{$global-left}-width: 0;
+		display: inline-block;
+		vertical-align: middle;
+		margin-#{$global-right}: 0.75rem;
+		border-#{$global-left}-width: 0;
+	}
+}

@@ -43,7 +43,10 @@ map: true
 				<hr>
 				<div class="padding-left padding-right" id="legendContainer">
 					<div class="legend-item">
-						<span class="name">Classroom</span>
+						<div class="item">
+							<img src="https://app.mapsindoors.com/mapsindoors/cms/assets/icons/universities/library.png"><span class="name">Classroom</span>
+						</div>
+						
 						<div class="switch tiny">
 							<input class="switch-input" id="legendClassroomSwitch" type="checkbox" name="legendClassroomSwitch"
 								data-switch="Classroom" checked="">
@@ -209,113 +212,35 @@ map: true
 
 				<!-- Locations tab -->
 				<div class="tabs-panel is-active" id="tab-locations">
-					<ul class="accordion" data-accordion data-multi-open="false">
-						<!-- Buildings -->
-						<li class="accordion-item" data-accordion-item="">
-							<a href="#" class="accordion-title" id="buildings">Buildings</a>
-							<div class="accordion-content button-list" data-tab-content id="buildingsContainer">
-									<button class="button expanded" id="building-ACE" data-toggle="building-detail-ACE">ACE [Click me for detail panel demo; future add]</button>
-								
-									<button class="button expanded" id="building-Business and IT Building">Business and IT Building</button>
-								
-									<button class="button expanded" id="building-Campus Corners">Campus Corners</button>
-								
-									<button class="button expanded" id="building-Campus Fieldhouse">Campus Fieldhouse</button>
-								
-									<button class="button expanded" id="building-Campus Ice Centre">Campus Ice Centre</button>
-								
-									<button class="button expanded" id="building-Clean Energy Research Lab">Clean Energy Research Lab</button>
-								
-									<button class="button expanded" id="building-Crime Scene House">Crime Scene House</button>
-								
-									<button class="button expanded" id="building-Energy Research Centre">Energy Research Centre</button>
-								
-									<button class="button expanded" id="building-Library">Library</button>
-								
-									<button class="button expanded" id="building-Library Portable">Library Portable</button>
-								
-									<button class="button expanded" id="building-OPG Engineering Building">OPG Engineering Building</button>
-								
-									<button class="button expanded" id="building-Science Building">Science Building</button>
-								
-									<button class="button expanded" id="building-Shawenjigewining Hall">Shawenjigewining Hall</button>
-								
-									<button class="button expanded" id="building-Software and Informatics Research Centre">Software and Informatics Research Centre</button>
-								
-									<button class="button expanded" id="building-University Pavilion">University Pavilion</button>
-								
-							</div>
-							<!-- Building detail panel - ACE -->
-							<div id="building-detail-ACE" class="detail-panel" data-toggler=".active">
-								<button data-toggle="building-detail-ACE" class="button back small icon-left icon_arrow_left">Back</button>
-								<h2>ACE</h2>
-								<img src="https://cdn.brandfolder.io/FE9E4T46/as/q2glkf-aeufds-bi1ma7/190930-279.jpg?width=640&height=427" alt="">
+					
+					<!-- map-menu-accordion map-menu-drilldown map-menu-accordionmenu -->
+					accordion (current)
+					{{> map-menu-accordion}}
+					accordion-menu
+					{{> map-menu-accordionmenu}}
+					drilldown
+					{{> map-menu-drilldown}}
 
-								<div class="description">
-									<div class="button-group expanded">
-										<button class="button tiny lightblue white icon_direction">Get directions</button>
-										<button class="button tiny lightblue white icon_link">Share link</button>
-									</div>
+					<!-- Building detail panel - ACE -->
+					<div id="building-detail-ACE" class="detail-panel" data-toggler=".active">
+						<button data-toggle="building-detail-ACE" class="button back small icon-left icon_arrow_left">Back</button>
+						<h2>ACE</h2>
+						<img src="https://cdn.brandfolder.io/FE9E4T46/as/q2glkf-aeufds-bi1ma7/190930-279.jpg?width=640&height=427" alt="">
 
-									<p>ACE is the first commercial automotive research, development and innovation centre of its kind in the world. This is a place where industry, researchers and students collaborate to create, test and validate paradigm-shifting innovations with a focus on bringing them to market as rapidly as possible. ACE has an array of testing equipment, including one of the largest and most sophisticated climatic wind tunnels on the planet.</p>
-				
-									<p>ACE enables knowledge and practical experience to combine more effectively and to create synergies across disciplines and skill sets, leading to a stronger manufacturing economy in Canada. At the same time, it helps educate and train the skilled personnel needed to take the automotive industry and manufacturing to a new level of competitiveness and success.</p>
+						<div class="description">
+							<div class="button-group expanded">
+								<button class="button tiny lightblue white icon_direction">Get directions</button>
+								<button class="button tiny lightblue white icon_link">Share link</button>
+							</div>
 
-									<p><a href="" class="button icon_map">Take a virtual tour</a></p>
-								</div>
+							<p>ACE is the first commercial automotive research, development and innovation centre of its kind in the world. This is a place where industry, researchers and students collaborate to create, test and validate paradigm-shifting innovations with a focus on bringing them to market as rapidly as possible. ACE has an array of testing equipment, including one of the largest and most sophisticated climatic wind tunnels on the planet.</p>
+		
+							<p>ACE enables knowledge and practical experience to combine more effectively and to create synergies across disciplines and skill sets, leading to a stronger manufacturing economy in Canada. At the same time, it helps educate and train the skilled personnel needed to take the automotive industry and manufacturing to a new level of competitiveness and success.</p>
 
-							</div>
-						</li>
-						<!-- Campus services -->
-						<li class="accordion-item" data-accordion-item="">
-							<a href="#" class="accordion-title" id="campus-services">Campus services</a>
-							<div class="accordion-content button-list" data-tab-content>
-								
-									<button class="button expanded">Campus Bookstore</button>
-									<button class="button expanded">Campus Health Centre</button>
-									<button class="button expanded">Shipping and Receiving</button>
-									<button class="button expanded">Shop61</button>
-									<button class="button expanded">Shop SIRC</button>
-								
-							</div>
-						</li>
-						<!-- Emergency services -->
-						<li class="accordion-item" data-accordion-item>
-							<a href="#" class="accordion-title" id="emergency-services">Emergency services</a>
-							<div class="accordion-content button-list" data-tab-content>
-									<button class="button expanded">Emergency services list here</button>								
-							</div>
-						</li>
-						<!-- Food -->
-						<li class="accordion-item" data-accordion-item>
-							<a href="#" class="accordion-title" id="food">Food and beverage</a>
-							<div class="accordion-content button-list" data-tab-content>
-									<button class="button expanded">Food and beverage list here</button>								
-							</div>
-						</li>
-						<!-- Parking -->
-						<li class="accordion-item" data-accordion-item>
-							<a href="#" class="accordion-title" id="parking">Parking</a>
-							<div class="accordion-content button-list" data-tab-content>
-									<button class="button expanded">Parking list here</button>
-							</div>
-						</li>
-						<!-- Residence -->
-						<li class="accordion-item" data-accordion-item>
-							<a href="#" class="accordion-title" id="residences">Residences</a>
-							<div class="accordion-content button-list" data-tab-content>
-									<button class="button expanded">Residences list here</button>
-							</div>
-						</li>
-						<!-- Study spaces -->
-						<li class="accordion-item" data-accordion-item>
-							<a href="#" class="accordion-title" id="study-spaces">Study spaces</a>
-							<div class="accordion-content button-list" data-tab-content>
-									<button class="button expanded">Study spaces list here [Future add]</button>
-							</div>
-						</li>
-					</ul>
+							<p><a href="" class="button icon_map">Take a virtual tour</a></p>
+						</div>
 
+					</div>
 
 				</div>
 
@@ -421,4 +346,4 @@ map: true
 
 </div>
 
-<script src="{{root}}assets/js/map.js"></script>
+<script src="{{root}}files/js/map.js"></script>

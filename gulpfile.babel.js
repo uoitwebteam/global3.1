@@ -1,6 +1,7 @@
 import plugins       from 'gulp-load-plugins';
 import yargs         from 'yargs';
 import browser       from 'browser-sync';
+import php           from 'gulp-connect-php';
 import gulp          from 'gulp';
 import panini        from 'panini';
 import rimraf        from 'rimraf';
@@ -19,10 +20,10 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const uncss = require('postcss-uncss');
 const sassBuilds = {
-	sassdefault: ['global3.1'], // 'map'
-	sassall: ['global3.1', 'map', 'uoit'],
+	sassdefault: ['global3.1','docs'], // For faster development builds, change this default build task to your current needs
+	sassall: ['global3.1','docs','map',], 
 };
-const sassTasks = ['sassdefault', 'sasscustom', 'sassdev'];
+// const sassTasks = ['sassdefault', 'sasscustom', 'sassdocs'];
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -44,7 +45,7 @@ console.log(UNCSS_OPTIONS);
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(pages, javascript, images, copy), sassBuild, styleGuide)
+  gulp.series(clean, gulp.parallel(pages, javascript, images, docsImages, copy), sassBuild, styleGuide)
 );
 
 // Build the site, run the server, and watch for file changes
@@ -63,12 +64,12 @@ function clean(done) {
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
   return gulp.src(PATHS.assets)
-    .pipe(gulp.dest(PATHS.dist + '/assets'));
+    .pipe(gulp.dest(PATHS.dist + '/files'));
 }
 
 // Copy page templates into finished HTML files
 function pages() {
-  return gulp.src('src/pages/**/*.{html,hbs,handlebars}')
+  return gulp.src('src/pages/**/*.{html,hbs,handlebars,php}')
     .pipe(panini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
@@ -118,7 +119,7 @@ function sassBuild(done) {
 			.pipe(postcss(postCssPlugins))
 			.pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie11' })))
 			.pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-			.pipe(gulp.dest(PATHS.dist + '/assets/css'))
+			.pipe(gulp.dest(PATHS.dist + '/files/css'))
 			.pipe(browser.reload({ stream: true }));
 	});
 	return merge(builds);
@@ -127,7 +128,7 @@ function sassBuild(done) {
 
 
 	// whichBuilds.forEach(buildName => {
-	// 	return gulp.src(PATHS.sassbuilds + buildName + '.scss') //'src/assets/scss/global3.1.scss'
+	// 	return gulp.src(PATHS.sassbuilds + buildName + '.scss') //'src/files/scss/global3.1.scss'
 	// 		.pipe($.sourcemaps.init())
 	// 		.pipe(sass({
 	// 			includePaths: PATHS.sass
@@ -136,10 +137,15 @@ function sassBuild(done) {
 	// 		.pipe(postcss(postCssPlugins))
 	// 		.pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie11' })))
 	// 		.pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-	// 		.pipe(gulp.dest(PATHS.dist + '/assets/css'))
+	// 		.pipe(gulp.dest(PATHS.dist + '/files/css'))
 	// 		.pipe(browser.reload({ stream: true }));		
 	// }, done);
 }
+
+// Build Sass files only
+gulp.task('sass',
+  gulp.series(sassBuild)
+);
 
 
 /* 
@@ -161,7 +167,7 @@ const sassTaskFactory = taskName => () => gulp.src(PATHS.sassbuilds + sassBuilds
 			.pipe(postcss(postCssPlugins))
 			.pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie11' })))
 			.pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-			.pipe(gulp.dest(PATHS.dist + '/assets/css'))
+			.pipe(gulp.dest(PATHS.dist + '/files/css'))
 			.pipe(browser.reload({ stream: true }));
 
 sassTasks.forEach(taskName => {
@@ -200,13 +206,13 @@ function javascript() {
       .on('error', e => { console.log(e); })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/js'));
+    .pipe(gulp.dest(PATHS.dist + '/files/js'));
 }
 
 // Copy images to the "dist" folder
 // In production, the images are compressed
 function images() {
-  return gulp.src('src/assets/img/**/*')
+  return gulp.src('src/files/img/**/*')
     .pipe($.if(PRODUCTION, imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.mozjpeg({quality: 85, progressive: true}),
@@ -218,14 +224,68 @@ function images() {
         ]
       })
     ])))
-    .pipe(gulp.dest(PATHS.dist + '/assets/img'));
+    .pipe(gulp.dest(PATHS.dist + '/files/img'));
+}
+
+// Docs/Kitchen sink static assets
+function docsImages() {
+	return gulp.src('src/files/img/kitchen-sink/**/*')
+    .pipe($.if(PRODUCTION, imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 85, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+        ]
+      })
+    ])))
+    .pipe(gulp.dest(PATHS.dist + '/kitchen-sink/assets'));
 }
 
 // Start a server with BrowserSync to preview the site in
 function server(done) {
-  browser.init({
-    server: PATHS.dist, port: PORT
-  }, done);
+	/* php.server({
+		base: '.',
+		keepalive: true, 
+		port: 8888,
+	}); 
+	browser.init({
+		port: 8000,
+		proxy: "localhost:8888/global/global3.1/dist/",
+	}, done); */
+
+	/* php.server({
+		base: './global/global3.1/dist',
+		keepalive:true, 
+		hostname: 'localhost', 
+		port:8000, 
+		open: false
+	}, function() {
+			browser({
+					proxy:'localhost:8888'
+			});
+	}, done); */
+
+	php.server({
+		base: PATHS.dist,
+		port: PORT
+	}, function () {
+		browser.init({
+			proxy: `localhost:8888/global/global3.1/dist/`
+		}, done);
+	});
+	
+	/* browser.init({
+		port: PORT,
+
+		// Default web server 
+		server: PATHS.dist,
+		
+		// To enable PHP via your local MAMP server
+		// proxy: "localhost:8888/global/global3.1/dist/",
+  }, done); */
 }
 
 // Reload the browser with BrowserSync
@@ -237,12 +297,13 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
+  gulp.watch('src/pages/**/*.{html,php}').on('all', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/assets/scss/**/*.scss').on('all', sassBuild);
-  gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
-  gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
+  gulp.watch('src/files/scss/**/*.scss').on('all', sassBuild);
+  gulp.watch('src/files/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
+  gulp.watch('src/files/img/**/*').on('all', gulp.series(images, browser.reload));
+  gulp.watch('src/files/kitchen-sink/**').on('all', gulp.series(docsImages, browser.reload));
   gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, browser.reload));
 }

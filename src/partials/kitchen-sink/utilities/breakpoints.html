@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Breakpoints</h2>
+		<p>Breakpoints have been customized from default Foundation breakpoints. (In a future update, breakpoints may be simplified and consolidated.)</p>
+		<table class="tbl-cell-borders tbl-white tbl-align-top">
+			<tr>
+				<th>SASS variable/CSS class</th>
+				<th>Breakpoint</th>
+				<th>Device coverage</th>
+			</tr>
+			<tr>
+				<td>xxsmall</td>
+				<td>0 - 499 px <br>0 - 31.19 em</td>
+				<td>smartphone portrait (iPhone)</td>
+			</tr>
+			<tr>
+				<td>xsmall</td>
+				<td>500 - 799 px <br> 31.25 - 49.94 em</td>
+				<td>smartphone landscape (iPhone), <br>tablet portrait (iPad)</td>
+			</tr>
+			<tr>
+				<td>small</td>
+				<td>800 - 999 px <br>50 - 62.44 em</td>
+				<td>tablet portrait</td>
+			</tr>
+			<tr>
+				<td>medium</td>
+				<td>1000 - 1199 px <br>62.5 - 74.94 em</td>
+				<td>tablet landscape</td>
+			</tr>
+			<tr>
+				<td>large</td>
+				<td>1200 - 1399 px <br>75 to 87.44 em</td>
+				<td>lo-res laptop/desktop</td>
+			</tr>
+			<tr>
+				<td>xlarge</td>
+				<td>1400 - 1919 px <br>87.5 to 119.94 em</td>
+				<td>hi-res laptop/desktop</td>
+			</tr>
+			<!-- <tr>
+				<td>xxlarge</td>
+				<td>1920+ px <br>120+ em</td>
+				<td>large monitor/tv</td>
+			</tr> -->
+		</table>
+		<p><strong>Note:</strong> "Mobile" view (mobile navigation, sidebar stack) is from xxsmall to small. "Desktop" view is medium and up.</p>
+		<pre class="language-scss">
+			<code>
+			@include breakpoint(small) { ... } or @include breakpoint(small up) { ... }
+			@include breakpoint(xxsmall only) { ... }
+			@include breakpoint(medium down) { ... }
+			</code>
+		</pre>
+	</div>
+</div>

@@ -1,0 +1,174 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#patterns-framing-arrows">Framing arrows background pattern</a></li>
+				<li><a href="#patterns-repeated-arrows">Repeated arrows background pattern</a></li>
+				<li><a href="#patterns-repeated-arrows-row">Repeated arrows in a single row</a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10">
+{{/unlesspage}}
+
+<div class="row">
+	<div class="column xxsmall-12">
+		<h2 class="h1">Patterns</h2>
+	</div>
+</div>
+
+<div class="row" id="patterns-framing-arrows" data-magellan-target="patterns-framing-arrows">
+	<div class="column">
+		<h3>Framing arrows background pattern</h3>
+		<p>Use the class <code>.brand-arrow-pattern</code> and {{> main-palette}} to add a framing arrows pattern (white arrows at 10% opacity) to an element's background.</p>
+		<div class="code-example">
+			<div class="brand-arrow-pattern lightblue" style="display: inline-block; width: 200px; height: 200px"></div> 
+			<div class="brand-arrow-pattern darkblue" style="display: inline-block; width: 200px; height: 200px"></div> 
+			<div class="brand-arrow-pattern grey" style="display: inline-block; width: 200px; height: 200px"></div> 
+			<div class="brand-arrow-pattern orange" style="display: inline-block; width: 200px; height: 200px"></div> 
+		</div>
+		{{#unlesspage 'index'}}
+			<br>
+			<h4>SASS usage</h4>
+			<p>For SASS usage, background and arrow size can be controlled via the <code class="language-scss">brand-arrow-pattern()</code> mixin.</p>
+			<pre>
+				<code class="language-scss">
+					@include brand-arrow-pattern($bg: $darkblue, $size: 40px);
+				</code>
+			</pre>
+			<table class="variable-table">
+				<tr>
+					<th>Parameter</th>
+					<th>Value</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>$bg</code></td>
+					<td>color variable</td>
+					<td>Background color</td>
+				</tr>
+				<tr>
+					<td><code>$size</code></td>
+					<td>size in pixels</td>
+					<td>Repeat pattern size (the size of 1 large arrow and 1 small arrow)</td>
+				</tr>
+			</table>
+		{{/unlesspage}}
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="patterns-repeated-arrows" data-magellan-target="patterns-repeated-arrows">
+	<div class="column">
+		<h3>Repeated arrows background pattern</h3>
+		<p>Use the class <code>.repeated-brand-arrow-pattern</code> and {{> main-palette}} to add a repeated arrows pattern to an element's background. The arrow colour is scaled based on the background colour, either a lighter or darker version of the background colour. </p>
+
+		<div class="code-example">
+			<div class="repeated-brand-arrow-pattern lightblue" style="display: inline-block; width: 200px; height: 200px"></div> 
+			<div class="repeated-brand-arrow-pattern darkblue" style="display: inline-block; width: 200px; height: 200px"></div> 
+			<div class="repeated-brand-arrow-pattern grey" style="display: inline-block; width: 200px; height: 200px"></div> 
+			<div class="repeated-brand-arrow-pattern orange" style="display: inline-block; width: 200px; height: 200px"></div> 
+			<div class="repeated-brand-arrow-pattern white" style="display: inline-block; width: 200px; height: 200px"></div> 
+		</div>
+		{{#unlesspage 'index'}}
+			<br>
+			<h4>SASS usage</h4>
+			<p>For SASS usage, background and arrow size can be controlled via the <code class="language-scss">repeated-brand-arrow-pattern()</code> mixin.</p>
+			<pre>
+				<code class="language-scss">
+					@include repeated-brand-arrow-pattern($size: 150px, $repeat: repeat, $position: right bottom);
+				</code>
+			</pre>
+			<table class="variable-table">
+				<tr>
+					<th>Parameter</th>
+					<th>Value</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>$bg</code></td>
+					<td>color variable</td>
+					<td>Background color</td>
+				</tr>
+				<tr>
+					<td><code>$size</code></td>
+					<td>size in pixels</td>
+					<td>Repeat pattern size (the size of one arrow group)</td>
+				</tr>
+				<tr>
+					<td><code>$repeat</code></td>
+					<td>repeat property</td>
+					<td>CSS repeat property value</td>
+				</tr>
+				<tr>
+					<td><code>$position</code></td>
+					<td>position property</td>
+					<td>CSS position property value</td>
+				</tr>
+			</table>
+		{{/unlesspage}}
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="patterns-repeated-arrows-row" data-magellan-target="patterns-repeated-arrows-row">
+	<div class="column">
+		<h3>Repeated arrows in a single row</h3>
+		<p>Use the class <code>.repeated-brand-arrow-row</code> to add a row of overhanging repeated arrows to the bottom of an element. In some cases, the class <code>.arrow-on-top</code> (which controls z-indexes) may be necessary, depending on the child elements in the container (e.g. if there is only an image in the container).</p> 
+
+		<div class="code-example">
+			<div class="repeated-brand-arrow-row arrow-on-top">
+				<img src="https://picsum.photos/1920/600">
+			</div>
+		</div>
+	
+		<p>Arrow colour can be specified with the class <code>.{color}-arrow</code>, using {{> main-palette}}. If a colour is not specified, the default arrow color is white.</p> 
+		<div class="code-example">
+			<div class="repeated-brand-arrow-row lightblue-arrow" style="width: 100%; height: 400px"></div>
+		</div>
+	
+		<p>The pattern and arrow color class can be combined with the standard <code>.bgcolor</code> class; different colors can be specified for the background and the arrows.</p> 
+		<div class="code-example">
+			<div class="bgcolor darkerblue repeated-brand-arrow-row lightblue-arrow" style="width: 100%; height: 400px"></div>
+		</div>
+	
+		<p>By default, the row of arrows overhangs the bottom of the element and is cut off. To show the full arrows, add the class <code>.overflow</code> to allow element overflow visibility.</p>
+		<div class="code-example">
+			<div class="repeated-brand-arrow-row orange-arrow arrow-on-top overflow">
+				<img src="https://picsum.photos/1920/600">
+			</div>
+		</div>
+		<br>
+	
+		<p>The arrows can be animated when in view with the <code>.animate-in-view</code> utility class. The arrows slide in from the left edge.</p>
+		<div class="code-example">
+			<section class="spotlight darkblue repeated-brand-arrow-row orange-arrow animate-in-view">
+				<div class="feature-module home-module">
+					<div class="heading">
+						<h2>Connect with us</h2>
+					</div>
+					<div class="content">
+						<p>Our team is so excited to get to know you and help you prepare for your future at Ontario Tech.</p>
+						<p>We're ready to answer your questions and show you more about university life. We look forward to connecting with you in person on campus, or meeting you virtually.
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+	</div>
+</div>
+
+
+
+{{#unlesspage 'index'}}
+</div>
+</div>
+{{/unlesspage}}

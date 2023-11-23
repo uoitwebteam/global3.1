@@ -1,0 +1,39 @@
+<hr>
+
+{{#each icons.internal-icons}}
+<div class="row" id="{{id}}" data-magellan-target="{{id}}">
+	<div class="column">
+		<h2>{{title}}</h2>
+		<p>These following are for Web Team use only; these icons are not publicly available.</p>
+	
+		<div class="row collapse xxsmall-up-2 small-up-3 medium-up-5 text-center icon-list">
+			{{#each icons}}
+			<div class="column">
+				<span class="{{name}}"></span><br>
+				{{name}}
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{/each}}
+
+<hr>
+
+{{#each icons.legacy-icons}}
+<div class="row" id="{{id}}" data-magellan-target="{{id}}">
+	<div class="column">
+		<h2>{{title}}</h2>
+		<p>The following are legacy icon class names. DO NOT USE THESE CLASS NAMES; replace them with the updated icon name above.</p>
+
+		<div class="row collapse xxsmall-up-2 small-up-3 medium-up-5 text-center icon-list">
+			{{#each icons}}
+			<div class="column">
+				<span class="{{name}}"></span><br>
+				{{name}}
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{/each}}

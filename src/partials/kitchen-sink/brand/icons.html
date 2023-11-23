@@ -1,0 +1,58 @@
+{{#ifpage 'index'}}
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Icons</h2>
+		<!-- Data list in a partial doesn't work when pulled in as a partial??? -->
+		<p>See: <a href="icons.html" >Icons</a></p>
+	</div>
+</div>
+{{/ifpage}}
+
+{{#unlesspage 'index'}}
+<div class="row" id="global-icons">
+	<div class="column">
+		<h2>Categories</h2>
+		<ul class="list-columns-3" data-magellan>
+			{{#each icons.icons}}
+			<li><a href="#{{id}}">{{title}}</a></li>
+			{{/each}}
+		</ul>
+	</div>
+</div>
+<hr>
+
+{{#each icons.icons}}
+<div class="row" id="{{id}}" data-magellan-target="{{id}}">
+	<div class="column">
+		<h3>{{title}}</h3>
+	
+		<div class="row collapse xxsmall-up-2 small-up-3 medium-up-5 text-center icon-list">
+			{{#each icons}}
+			<div class="column">
+				<span class="{{name}}"></span><br>
+				{{name}}
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{/each}}
+
+
+<style>
+	.icon-list {
+		margin-bottom: 2rem;
+	}
+	.icon-list .column {
+		border: 1px solid #ccc;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		margin-right: -1px;
+		margin-bottom: -1px;
+	}
+	.icon-list [class*="icon_"] {
+		font-size: 2.5rem;
+	}
+</style>
+
+{{/unlesspage}}

@@ -1,0 +1,181 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#standard-button">Standard button</a></li>
+				<li><a href="#button-sizing">Button sizing</a></li>
+				<li><a href="#button-colours">Button colours</a></li>
+				<li><a href="#hollow-button">Hollow button</a></li>
+				<li><a href="#colour-on-white">Coloured on white</a></li>
+				<li><a href="#icon-buttons">Icon buttons</a></li>
+				<li><a href="#context-specific">Context-specific</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10">
+{{/unlesspage}}
+
+<div class="row" id="standard-button" data-magellan-target="standard-button">
+	<div class="column">
+		<h2 class="h1">Buttons</h2>
+
+		<!-- Standard button -->
+		<p>Use the <code>.button</code> class for a standard button.</p>		
+		<div class="code-example">
+			<a class="button">Button</a>
+		</div>
+		<br>
+
+		<p>When used in the CMS, users frequently incorrectly add the <code>.button</code> class to the link's parent <code>p</code> element. There is a built-in correction for this:</p>
+		<div class="code-example">
+			<p class="button hollow"><a href="">Incorrect button class placement on &lt;p></a></p>
+		</div>
+
+	</div>
+</div>
+
+<hr>
+
+<!-- Button sizing -->
+<div class="row" id="button-sizing" data-magellan-target="button-sizing">
+	<div class="column">
+		<h3>Sizing</h3>
+		<div class="code-example">
+			<a class="button tiny">Tiny</a>
+			<a class="button small" href="#">Small</a>
+			<a class="button" href="#">Medium (default)</a>
+			<a class="button large" href="#">Large</a>
+			<a class="button expanded" href="#">Expanded</a>
+			<a class="button expanded large" href="#">Large expanded</a>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Colours -->
+<div class="row" id="button-colours" data-magellan-target="button-colours">
+	<div class="column xxsmall-12">
+		<h3>Colours</h3>
+		<p>Use {{> main-palette}} to change the button colour. Note that orange buttons have an automatic <code>$darkorange</code> override for accessibility.</p>
+	</div>
+
+	<div class="column">
+		<div class="code-example scroll">
+			<div class="row">
+				<div class="column">
+					<p class="padding-top">
+						<button class="button expanded darkerblue">Darker blue button</button>
+						<button class="button expanded primary">Dark blue button</button>
+						<button class="button expanded blue">Medium blue button</button>
+						<button class="button expanded secondary">Light blue button</button>
+						<button class="button expanded grey">Grey button</button>
+						<button class="button expanded mediumgrey">Medium grey button</button>
+						<button class="button expanded lightgrey">Light grey button</button>
+						<button class="button expanded spiritblue">Spirit blue button</button>
+						<button class="button expanded orange">Orange button *</button>
+						* Dark orange override
+					</p>
+				</div>
+			
+				<div class="column">
+					<p class="padding-top">
+						<button class="button expanded hollow darkerblue">Darker blue hollow button</button>
+						<button class="button expanded hollow darkblue">Dark blue hollow button</button>
+						<button class="button expanded hollow blue">Medium blue hollow button</button>
+						<button class="button expanded hollow lightblue">Light blue hollow button</button>
+						<button class="button expanded hollow grey">Grey hollow button</button>
+						<button class="button expanded hollow spiritblue">Spirit blue hollow button</button>
+						<button class="button expanded hollow orange">Orange hollow button *</button>
+					</p>
+					<p class="bgcolor grey padding">
+						<button class="button expanded hollow white">White hollow button</button>
+					</p>
+				</div>
+			
+				<div class="column">
+					<p class="padding bgcolor grey">
+						<button class="button expanded white darkerblue">Darker blue on white</button>
+						<button class="button expanded white darkblue">Dark blue on white</button>
+						<button class="button expanded white blue">Medium blue on white</button>
+						<button class="button expanded white lightblue">Light blue on white</button>
+						<button class="button expanded white grey">Grey on white</button>
+						<button class="button expanded white spiritblue">Spirit blue on white</button>
+						<button class="button expanded white orange">Orange on white *</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Hollow -->
+<div class="row" id="hollow-button" data-magellan-target="hollow-button">
+	<div class="column">
+		<h3>Hollow</h3>
+		<p>Use the class <code>.hollow</code> and {{> main-palette}} for a hollow (inverted) button.</p> 
+
+		<div class="code-example">
+			<a class="button darkblue hollow">Dark blue</a> 
+			<a class="button lightblue hollow">Light blue</a>
+			<a class="button grey hollow">Grey</a>
+			<a class="button accent hollow">Accent</a>
+			<div class="bgcolor darkerblue padding">
+				<a class="button accent hollow">Accent on dark background</a>
+			</div>
+		</div> 
+		<br>
+		
+		<h4>SASS usage</h4>
+		<p>For a hollow button on a coloured background, use the mixin <code class="language-scss">hollow-button-on-color()</code> (e.g. white hollow button on orange background)</p>
+		<pre class="language-html">
+			<code>
+				&lt;button class="my-button">Button&lt;/button>
+			</code>
+		</pre>
+		<pre>
+			<code class="language-scss"> 
+				.my-button { 
+					/// button-hollow-style() Foundation mixin 
+					/// @param $color - color (default: $primary-color)
+					/// @param $hover-lightness - percentage lightness of $color to be applied to border color on hover (default: $button-hollow-hover-lightness)
+					@include button-hollow-style($white, 0);
+					
+					/// hollow-button-on-color() mixin
+					/// @param $background-hover - background hover color; 80% transparency of specified color
+					@include hollow-button-on-color($background-hover: $white) 
+				}
+			</code>
+		</pre>
+	</div>
+</div>
+
+<hr>
+
+<!-- Coloured on white -->
+<div class="row" id="colour-on-white" data-magellan-target="colour-on-white">
+	<div class="column">
+		<h3>Coloured on white button</h3>
+		<p>Use the class <code>.white</code> and {{> main-palette}} for a button with coloured text on a white background. For use on coloured backgrounds.</p> 
+		<div class="code-example">
+			<div class="callout grey bold">
+				<a class="button white">White (default)</a> 
+				<a class="button white darkblue">Dark blue on white</a> 
+				<a class="button white lightblue">Light blue on white</a>
+				<a class="button white grey">Grey on white</a> 
+				<a class="button white accent">Accent on white</a>
+			</div>
+		</div> 
+	</div>
+</div>
+
+
+{{#unlesspage 'index'}}
+</div>
+</div>
+{{/unlesspage}}

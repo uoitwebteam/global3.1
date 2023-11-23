@@ -1,0 +1,159 @@
+/// Brand arrows as background pattern
+/// (white framing chevrons at 10% opacity)
+@mixin brand-arrow-pattern($bg: $darkblue, $size: 40px) {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAADCCAYAAAD6ighgAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTlEMUIwMDdBMDIwMTFFOThEOEQ5MzIyRDdDMkVFRUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTlEMUIwMDhBMDIwMTFFOThEOEQ5MzIyRDdDMkVFRUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBOUQxQjAwNUEwMjAxMUU5OEQ4RDkzMjJEN0MyRUVFRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBOUQxQjAwNkEwMjAxMUU5OEQ4RDkzMjJEN0MyRUVFRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpJVqQIAAAIiSURBVHja7NpREQAgCERBqWH/bNbAGMzpvgYwyx/V3Ut6tQJcgEuAS4BLgEuAS4ALcMAFuAS4BLgEuAS4BLgABzy4/eHMB3DAAQcccMAFOOACHHABDrgAB1yAAw444IADDrgAB1yAAy7AARfggAtwwAEHHHDAARfggAtwwAU44AIccAEOOOCAAw444AIccAEOuAAHXIADLsABBxxwwBV4XIALcMAFuAS4AAdcgAMuwAEX4IALcMAFuAS4AAdcgAMuwAEX4IALcMAFuAS4AAdcgAMuwAEX4IALcMAFuAS4AAdcgAMuwAEX4IALcMAFuJQc4AJcAlwCXAJcAlwCXIADLsAlwCXAJcClSeARX2QS4AIccAEOuAAHXIADLsAlwCXABTjgAhxwAQ64AAdcgEuAS4ALcMAFOOACHHABDrgAlwCXABfggAtwwAU44AIccAEuAS4BLsABF+CAC3DABTjgAlwCXIADLsABF+CAC3DABTjgAlwCXIADLsABF+CAC3DABTjgAlwCXIADLsABF+CAC3DABTjgAlwCXIADLsABF+CAC3A5aMAFOOCAC3DAAQcccMABBxxwAQ64AAdcgAMOuAAHHHDAAQcccMABF+CAC3DABTjggAtwwAEHHHDAAQcccAEOuAAHHHArABxwAQ444IADDjjggAMuwAEX4IADrhHgEuAS4BLgEuAS4AJcAlwCXAJcAlwCXAJcgEuASyFdAQYApaLbmxh7wS8AAAAASUVORK5CYII=');
+	background-color: $bg;
+	background-size: $size;
+}
+.brand-arrow-pattern {
+	@each $color, $value in $main-palette { 
+		&.#{$color} {
+			@include brand-arrow-pattern($bg: $value);
+		}
+	}
+}
+
+
+/// Repeated brand arrows pattern SVG mask
+/// (repeated right-facing arrows)
+@mixin repeated-brand-arrow-pattern($size: 150px, $repeat: repeat, $position: top left) {
+	mask-image: url($global-files-path + 'img/patterns/repeated-arrows-pattern.svg');
+	mask-size: $size;
+	mask-repeat: $repeat;
+	mask-position: $position;
+}
+
+// Repeated brand arrows as background pattern
+// (arrow colour = scaled background colour)
+.repeated-brand-arrow-pattern {
+	position: relative;
+	z-index: 0;
+
+	&::after {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		@include repeated-brand-arrow-pattern();
+	}
+
+	// With a specified background colour
+	@each $color, $value in $main-palette { 
+		// $arrow-color: scale-color($value, $lightness: -10%, $saturation: -10%);
+		$arrow-color: color-pick-contrast($value, (scale-color($value, $lightness: -10%), scale-color($value, $lightness: 10%)));
+		&.#{$color} {
+			background-color: $value;
+			&::after {
+				background-color: $arrow-color;
+			}
+		}
+	}
+}
+
+@keyframes overlay-arrows-slide-in {
+  from {
+    transform: translate(-100%, 50px) skewX(20deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(50px) skewX(5deg);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translate(0, 50px) skewX(0deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(0, 50px);
+    opacity: 1;
+  }
+}
+@keyframes overlay-arrows-slide-in-small {
+  from {
+    transform: translate(-100%, 30px) skewX(20deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(30px) skewX(5deg);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translate(0, 30px) skewX(0deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(0, 30px);
+    opacity: 1;
+  }
+}
+
+// Single row of repeated brand arrows (bottom overhang)
+.repeated-brand-arrow-row {
+	position: relative;
+	z-index: 1;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		mask-image: url($global-files-path + 'img/patterns/repeated-arrows-single-simple.svg');
+		mask-size: 150px;
+		mask-repeat: repeat-x;
+		mask-position: right bottom;
+		transform: translateY(50px);
+		z-index: -1;	
+
+		// Default colour
+		background-color: $white;
+
+		@include breakpoint(small down) {
+			mask-size: 80px;
+			transform: translateY(30px);
+		}
+	}
+
+	// Arrow on top
+	&.arrow-on-top {
+		&::after {
+			z-index: 1;
+		}
+	}
+
+	// Arrow color
+	@each $name, $color in $main-palette {
+		&.#{$name}-arrow::after {
+			background-color: $color;
+		}
+	}
+
+	// Animation
+	&.animate-in-view::after {
+		opacity: 0;
+	}
+	&.animate::after {
+		animation: 1.2s cubic-bezier(0.1, 0.5, 1, 1) 500ms forwards overlay-arrows-slide-in;
+	}
+	@include breakpoint(small down) {
+		&.animate::after {
+			animation-name: overlay-arrows-slide-in-small;
+		}
+	}
+
+	// Arrow overflow visibility
+	overflow: hidden;
+	&.overflow {
+		overflow: visible;
+	}
+}

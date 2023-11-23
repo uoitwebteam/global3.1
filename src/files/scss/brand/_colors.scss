@@ -1,0 +1,33 @@
+// Text colours
+span {
+	@each $name, $color in $main-palette {
+	  &.#{$name} {
+	    color: $color;
+			&.important {
+				color: $color !important;
+			}
+	  }
+	}
+}
+
+// Background colours
+// (supports legacy class names)
+.bgcolor {
+	@each $name, $color in $foundation-palette {
+	  &.#{$name} {
+	    background-color: $color;
+	    color: color-pick-contrast($color, ($white, $black));
+	  }
+	}
+
+	// OT-DC
+	&.uoitdcgrey,
+	&.otdcgrey {
+		background-color: $otdcgrey;
+		color: color-pick-contrast($otdcgrey, ($white, $black));
+	}
+	&.dcgreen {
+		background-color: $dcgreen;
+		color: color-pick-contrast($dcgreen, ($white, $black));
+	}
+}

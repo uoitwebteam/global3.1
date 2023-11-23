@@ -1,0 +1,12 @@
+.title-bar {
+	font-family: $heading-font;
+
+	.title-bar-title {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.button {
+		margin-bottom: 0;
+	}
+}

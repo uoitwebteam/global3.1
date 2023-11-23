@@ -1,0 +1,192 @@
+/**
+ * Build: docs.css
+ */
+
+@charset 'utf-8';
+
+// Global settings overrides
+// -------------------------
+
+$offcanvas-sizes: (
+	xxsmall: 280px,
+	large: 280px
+);
+$offcanvas-background: #edeeee; 
+
+
+// Global settings and base styles
+// -------------------------------
+
+// NB. @import order matters here:
+@import 'settings/global-settings';
+@import 'settings/foundation-settings';
+// @import 'typography/links';
+
+@import 'foundation-components';
+@import 'typography/typography';
+@import 'utilities/utilities';
+@import 'brand/brand';
+// -------------------------------|
+
+
+// Build components
+// ----------------
+
+// [Import individual global components as required (most are dependent on
+// Foundation base styles), or import _global-components for a full build]
+
+@import 'global-components';
+
+
+// Custom styles
+// -------------
+
+.menu-heading {
+	padding: $menu-items-padding;
+	border-top: 1px solid rgba(grey, .3);
+	font-weight: 900;
+	font-size: .9rem;
+	text-transform: uppercase;
+	color: $grey;
+}
+
+pre.scroll {
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+a code {
+	@include link-style;
+}
+
+.kitchen-sink {
+
+	.section-heading {
+		max-width: $global-width;
+		@each $size, $padding in $grid-column-gutter {
+			@include breakpoint($size) {
+				padding: $padding/2;
+			}
+		}
+	
+		h2 {
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+	}
+	
+	h2.h1 {
+		color: #e75d2a;
+		margin-top: 1rem;
+	}
+
+	hr:not([class]) {
+		max-width: none;
+		margin: 2rem 0;
+	}
+	hr.dotted {
+		max-width: 80%;
+		margin: 1.75rem auto;
+		border-style: dotted;
+	}
+
+	.code-example {
+		margin-bottom: 2rem;
+
+		.banner {
+			margin-top: 0
+		}
+	}
+
+	span.menu-flag {
+		font-size: 70%;
+		font-weight: bold;
+		color: grey;
+		text-transform: uppercase;
+		vertical-align: middle;
+	}
+
+	// "Kitchen Sink" main menu
+	#kitchen-sink-menu {
+		/* background: $lightgrey;
+		width: 280px;
+
+		@at-root .position-left.reveal-for-large ~ .off-canvas-content {
+			@include breakpoint(large) {
+				margin-left: 280px;
+			}
+		}
+		@at-root .off-canvas-content.is-open-left.has-transition-push {
+			transform: translateX(280px);
+		} */
+
+		a[href]:hover, a[href]:focus,
+		button:hover {
+			background: $menu-item-background-active;
+		}
+
+		.submenu-toggle {
+			border-top: 1px solid rgba(grey, .3);
+			height: 2rem;
+		}
+
+		> ul > li > ul {
+			margin-left: 0;
+		}
+	}
+
+	// "On this page" menu
+	.row.has-on-page-menu {
+		max-width: none;
+	}
+	.on-this-page {
+		padding-top: 0;
+
+		.menu .is-active,
+		a:hover, a:focus {
+			background: scale-color($lightblue, $lightness: 70%);
+		}
+
+		// Sticky version (component pages)
+		@include breakpoint(medium down) {
+			.sticky-container {
+				height: auto !important;
+			}
+			.sticky {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+			}
+
+			ul.menu:first-child {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+
+			ul.menu:not(:first-child) {
+				flex: 1 1 0;
+			}
+		}
+		@include breakpoint(medium only) {
+			.sticky.is-stuck {
+				padding-top: rem-calc(63);
+			}
+		}
+		
+		// Off canvas version (home page)
+		&.off-canvas {
+			background: scale-color($lightblue, $lightness: 90%);
+			width: 240px;
+		}
+		@at-root .off-canvas-content.has-reveal-right {
+			margin-right: 240px;
+		}
+		@at-root .off-canvas-content.is-open-right.has-transition-push {
+			transform: translateX(-240px);
+		}
+	}
+
+	.kitchen-sink-content > .row {
+		margin-left: 0;
+	}
+}

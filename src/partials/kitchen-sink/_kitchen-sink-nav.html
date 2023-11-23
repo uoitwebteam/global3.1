@@ -1,0 +1,27 @@
+<div id="kitchen-sink-menu" class="off-canvas position-left reveal-for-large" data-off-canvas>
+	<ul class="vertical menu accordion-menu" data-accordion-menu data-submenu-toggle="false">
+		<li class="menu-heading heading-font border-bottom">v3.1 Kitchen Sink</li>
+		<li><a href="index.html" class="menu-heading">All the things</a></li>
+{{#each kitchen-sink.nav}}
+	{{#each section}}
+		<li><a class="menu-heading">{{heading}}</a>
+			<ul class="menu vertical nested is-active">
+				{{#each items}}
+				<li class="{{#ifpage page}}active{{/ifpage}}">
+					<a href="{{page}}{{#if extension}}.{{extension}}{{/if}}{{#unless extension}}.html{{/unless}}">{{title}}{{#if extension}} <span class="menu-flag">(PHP component)</span>{{/if}}</a>
+					{{#if subitems}}
+					<ul class="menu vertical nested">
+						{{#if partial}}<li><a href="{{page}}.html">{{title}}</a>{{/if}}
+						{{#each subitems}}
+						<li class="{{#ifpage page}}active{{/ifpage}}"><a href="{{page}}{{#if extension}}.{{extension}}{{/if}}{{#unless extension}}.html{{/unless}}">{{title}}{{#if extension}} <span class="menu-flag">(PHP component)</span>{{/if}}</a></li>
+						{{/each}}
+					</ul>
+					{{/if}}
+				</li>
+				{{/each}}
+			</ul>
+		</li>
+	{{/each}}
+{{/each}}
+	</ul>
+</div>

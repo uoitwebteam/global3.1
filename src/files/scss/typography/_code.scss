@@ -1,0 +1,35 @@
+// @import 'themes/prism-okaidia';
+@import 'themes/prism';
+@import 'plugins/toolbar/prism-toolbar';
+@import 'plugins/line-numbers/prism-line-numbers';
+@import 'plugins/line-highlight/prism-line-highlight';
+
+// Code block
+pre[class*="language-"],
+code[class*="language-"] {
+	tab-size: 2;
+	white-space: pre-wrap;
+}
+
+// Code block without `language-xxxx` class
+:not([class*="language-"]) pre:not([class*="language-"]) > code:not([class*="language-"]) {
+	background: $code-background;
+	display: block;
+	padding: $code-block-padding;
+	white-space: pre-wrap;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	tab-size: 2;
+}
+
+// Inline code
+:not(pre) > code[class*="language-"] {
+	border-radius: 0;
+	padding: $code-padding;
+}
+
+// Line highlight
+.line-highlight {
+	background: linear-gradient(to right, rgba($lightblue,.2) 70%, rgba($lightblue,0))
+}

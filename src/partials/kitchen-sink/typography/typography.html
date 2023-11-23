@@ -1,0 +1,314 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#typography-headings">Headings</a>
+					<ul class="menu vertical nested">
+						<li><a href="#headings-subheadings">Subheadings</a></li>
+						<li><a href="#headings-styles-body">Heading styles on body text</a></li>
+					</ul>
+				</li>
+				<li><a href="#typography-paragraphs">Paragraphs</a></li>
+				<li><a href="#typography-links">Links</a>
+					<ul class="menu vertical nested">
+						<li><a href="#links-feature-text">Feature text link</a></li>
+					</ul>
+				</li>
+				<li><a href="#typography-lists">Lists</a>
+					<ul class="menu vertial nested">
+						<li><a href="#list-brand-arrows">Brand arrow bullets</a></li>
+						<li><a href="#list-icons">Icon bullets</a></li>
+						<li><a href="#list-animated">Animated</a></li>
+						<li><a href="#list-columns">List columns</a></li>
+						<li><a href="#list-headings">Ordered list headings</a></li>
+					</ul>
+				</li>
+				<li><a href="#typography-blockquote">Blockquotes</a></li>
+				<li><a href="#typography-code">Code</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10">
+{{/unlesspage}}
+
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Base typography styles</h2>
+		<p>Default styles for basic typographical elements are outlined here.</p>
+	</div>
+</div>
+
+<div class="row" id="typography-headings" data-magellan-target="typography-headings">
+	<div class="column">
+		<h3>Headings</h3>
+			
+		<h1>h1. This is a Heading 1</h1>
+		<h2>h2. This is a Heading 2</h2>
+		<h3>h3. This is a Heading 3</h3>
+		<h4>h4. This is a Heading 4</h4>
+		<h5>h5. This is a Heading 5</h5>
+		<h6>h6. This is a Heading 6</h6>	
+		
+		<hr class="dotted">
+
+		<h4 id="headings-subheadings" data-magellan-target="headings-subheadings">Subheadings</h4>
+		<p>Add the class <code>.subheader</code> to headings for a subdued heading.</p>
+		<div class="code-example">
+			<h1>h1 heading with a <span class="subheader">subheader inside</span></h1>
+			<h2 class="subheader">h2.subheader</h2>
+			<h3 class="subheader">h3.subheader</h3>
+			<h4 class="subheader">h4.subheader</h4>
+			<h5 class="subheader">h5.subheader</h5>
+			<h6 class="subheader">h6.subheader</h6>
+		</div>
+		
+		<hr class="dotted">
+
+		<h4 id="headings-styles-body" data-magellan-target="headings-styles-body">Heading styles on body text</h4>
+		<p>Heading styles, including specific heading sizes, can be applied to body text or headings using either the heading tag as a class (e.g. <code>class="h3"</code>) or the <code>.heading-font</code> class.</p> 
+		<div class="code-example">
+			<h2>Standard h2 heading</h2>
+
+			<h2 class="h3">h2 heading with h3 styles</h2>
+
+			<p>Default paragraph. <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore similique molestias ut facilis natus adipisci laudantium quaerat illo maxime esse blanditiis incidunt magnam quisquam ea, itaque aspernatur, repudiandae nostrum. Similique?</p> 
+		
+			<p class="heading-font">Paragraph using the heading font. <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate numquam, deleniti nulla dolorum ipsa sunt ad explicabo eum, quis iure id eaque. Atque quas, adipisci incidunt. Corporis magnam voluptatem deleniti!</p>
+
+			<p class="h5">Paragraph styled with h5 styles. <br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores voluptas sunt, nostrum ex provident rem et reiciendis, error quis tempora maxime praesentium. Illum veritatis optio pariatur deserunt sequi autem voluptatem.</p>
+		
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="typography-paragraphs" data-magellan-target="typography-paragraphs">
+	<div class="column">
+		<h3>Paragraphs</h3>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur laudantium, et nulla aperiam, sunt atque perspiciatis unde alias perferendis delectus placeat, ex ad libero sapiente. Voluptatem repudiandae neque qui eaque.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, earum molestiae. Asperiores id natus odio necessitatibus esse consequuntur accusamus voluptatem iusto pariatur consequatur, repellendus et magnam libero adipisci beatae perferendis!</p>
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="typography-links" data-magellan-target="typography-links">
+	<div class="column">
+		<h3>Links</h3>
+
+		<p>Links inside the main content area of a page (inside <code>.[landing-]page-content</code>) are underlined for accessibility. (Excludes links in buttons, menu lists, accordions, etc.)</p>
+
+		<div class="code-example">
+			<div class="page-content">
+				<p><a href="">Link</a> in a paragraph. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod iusto minus quasi unde provident nihil? Quas illum minima aspernatur, et culpa ullam minus dicta vero nam tenetur quibusdam neque!</p>
+				<ul>
+					<li>Item</li>
+					<li><a href="">Link</a></li>
+					<li>Item</li>
+				</ul> 
+			</div>
+		</div>
+
+		<h4>SASS usage</h4>
+		<p>If necessary, the default link style can be removed using the <code class="language-scss">remove-link-style()</code> mixin.</p>
+		<pre><code class="language-scss">
+		selector {
+			@include remove-link-style();
+		}
+		</code></pre>
+		
+		<hr class="dotted">
+
+		<h4 id="links-feature-text" data-magellan-target="links-feature-text">Feature text links</h4>
+		<p>Add the class <code>.feature-link</code> to create a feature text link.</p>
+		<div class="code-example">
+			<a class="feature-link">Feature link</a>
+		</div>
+		
+		<h5>SASS usage</h5>
+		<p>Text and underline colors can be controlled via the <code class="language-scss">feature-text-link()</code> or <code class="language-scss">feature-text-link-style()</code> mixins.</p>
+		<pre class="language-scss">
+			<code>
+				// Basic styling (text color) with default orange underline
+				@include feature-text-link($color: $lightblue);
+	
+				// Full styling
+				@include feature-text-link-style($color: $lightblue, $hover: $accent, $size: rem-calc(16))
+			</code>
+		</pre>
+		<table class="variable-table tbl-full-width">
+			<tr>
+				<th>Parameter</th>
+				<th>Value</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><code>$color</code></td>
+				<td>colour variable</td>
+				<td>Text colour</td>
+			</tr>
+			<tr>
+				<td><code>$hover</code></td>
+				<td>colour variable</td>
+				<td>Underline and chevron hover colour</td>
+			</tr>
+			<tr>
+				<td><code>$size</code></td>
+				<td>font-size</td>
+				<td>Font size in pixels</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="typography-lists" data-magellan-target="typography-lists">
+	<div class="column">
+		<h3>Lists</h3>
+
+		<p>Standard list</p>
+		<ul>
+			<li>List item</li>
+			<li>List item</li>
+			<li>List item</li>
+			<li>List item</li>
+			<li>List item</li>
+		</ul>
+	
+		<hr class="dotted">
+
+		<h4 id="list-brand-arrows" data-magellan-target="list-brand-arrows">List with brand arrow bullets</h4>
+		<p>Use the class <code>.list-brand-arrows</code> to display a list with brand arrows as the bullets.</p>
+		<div class="code-example">
+			<ul class="list-brand-arrows">
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+			</ul>
+		</div>
+	
+		<hr class="dotted">
+
+		<h4 id="list-icons" data-magellan-target="list-icons">List with icon bullets</h4>
+		<p>Use the class <code>.list-icons</code> to display a list with inline icons as the bullets. Use {{> main-palette}} to change the icon colours.</p>
+		<div class="code-example">
+			<ul class="list-icons accent">
+				<li><span class="icon_cursor"></span>List item</li>
+				<li><span class="icon_computer"></span>List item</li>
+				<li><span class="icon_pencil"></span>List item</li>
+				<li><span class="icon_checkbox"></span>List item</li>
+				<li><span class="icon_mapmarker"></span>List item</li>
+			</ul>
+		</div>
+
+		<hr class="dotted">
+
+		<h4 id="list-animated" data-magellan-target="list-animated">Animated bullets</h4>
+		<p>Add the utility class <code>.animate-in-view</code> to animate the list items as they are scrolled into view.</p>
+		<div class="code-example">
+			<ul class="list-brand-arrows animate-in-view">
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+			</ul>
+
+			<ul class="list-icons lightblue animate-in-view">
+				<li><span class="icon_cursor"></span>List item</li>
+				<li><span class="icon_computer"></span>List item</li>
+				<li><span class="icon_pencil"></span>List item</li>
+				<li><span class="icon_checkbox"></span>List item</li>
+				<li><span class="icon_mapmarker"></span>List item</li>
+			</ul>
+		</div>
+	
+		<hr class="dotted">
+
+		<h4 id="list-columns" data-magellan-target="list-columns">List columns</h4>
+		<p>Use the class <code>.list-columns-[x]</code> to display a long list as evenly distributed columns, replacing [x] with a number from 1 through 12. This can be used on either unordered or ordered lists.</p>
+		<div class="code-example">
+			<ol class="list-columns-3">
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+			</ol>
+		</div>
+
+		<hr class="dotted">
+
+		<h4 id="list-headings" data-magellan-target="list-headings">Ordered list with heading styles</h4>
+		<p>Use the class <code>.list-headings</code> to display an ordered list with heading styles at the top of each list item.</p>
+		<div class="code-example">
+			<ol class="list-headings">
+				<li>Heading
+					<ul>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto libero nobis pariatur possimus ex debitis iure, voluptate commodi. Sequi, aliquid nobis animi ut, exercitationem fugiat veritatis dolorum possimus rem doloribus!</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In aut eligendi nam molestias, soluta, cum tempore aperiam, porro similique iste amet odio voluptates alias quod, tenetur hic. Nisi, veritatis, aliquid!</li>
+					</ul>
+				</li>
+				<li>Heading
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis autem quae nostrum porro voluptas quo minima eligendi, nisi, at voluptatem eos, placeat, consequuntur libero saepe quam! Dolorem molestias consectetur sequi.</p>
+				</li>
+			</ol>
+		</div>
+
+	</div>
+</div>
+
+<hr>
+{{#unlesspage 'index'}}
+<div class="row" id="typography-blockquote" data-magellan-target="typography-blockquote">
+	<div class="column">
+		<h3>Blockquote</h3>
+		<p>See: <a href="blockquote.html">Blockquote</a></p>
+	</div>
+</div>
+
+<hr>
+{{/unlesspage}}
+
+<div class="row" id="typography-code" data-magellan-target="typography-code">
+	<div class="column">
+		<h3>Code</h3>
+		<p>Code snippets and blocks use the <a href="https://prismjs.com/index.html" target="_blank">PrismJS library</a> for syntax highlighting. Code snippets/blocks inside <code>&lt;code></code> elements automatically have syntax highlighting applied. To define the code language for a snippet/block, use the <code>language-xxxx</code> class. See the PrismJS docs for supported languages, and the note below on adding the appropriate language plugin.</p>
+
+		<p>Inline code snippets:</p>
+		<pre><code class="language-html">&lt;code class="language-css">p { color: red }&lt;code></code></pre>
+
+		<p>Code blocks should be placed inside a <code>&lt;pre></code> element:</p>
+		<pre><code class="language-html">&lt;pre>&lt;code class="language-css">p { color: red }&lt;/code>&lt;/pre></code></pre>
+
+		{{#unlesspage 'index'}}
+		<p>If syntax highlighting isn't being applied for a specific language, you may need to edit the <code>src/files/js/lib/prism.js</code> file and import the language plugin. For example:</p>
+		<code class="language-js">import 'prismjs/components/prism-scss';</code>
+		{{/unlesspage}}
+	</div>
+</div>
+<br>
+
+{{#unlesspage 'index'}}
+</div>
+</div>
+{{/unlesspage}}

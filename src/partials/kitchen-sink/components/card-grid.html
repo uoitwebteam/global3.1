@@ -1,0 +1,448 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#card-grid-base">Base markup</a></li>
+				<li><a href="#card-grid-bgcolor">Background colour</a></li>
+				<li><a href="#card-grid-link">Link options</a></li>
+				<li><a href="#card-grid-icon">Icon</a></li>
+				<li><a href="#card-grid-bgicon">Background icon</a></li>
+				<li><a href="#card-grid-center">Centered text</a></li>
+				<li><a href="#card-grid-justify">Vertically justified</a></li>
+				<li><a href="#card-grid-center-vertical">Vertically centered</a></li>
+				<li><a href="#card-grid-animate-text">Animated text</a></li>
+				<li><a href="#card-grid-image">Background image</a></li>
+				<li><a href="#card-grid-full-image">Full image</a></li>
+				<li><a href="#card-grid-half-image">Half image</a></li>
+				<li><a href="#card-grid-gradient">Background gradient</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10">
+{{/unlesspage}}
+
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Card grid</h2>
+		<p>Common card grid implementation styles and elements are shown here. {{#unlesspage 'index'}}For each example, the required element/class name is listed and highlighted in the markup. Other displayed classes and elements are also listed.{{/unlesspage}}</p>
+		
+		{{#unlesspage 'index'}}
+		<!-- Default -->
+		<div class="row" id="card-grid-base" data-magellan-target="card-grid-base">
+			<div class="column">
+				<h3>Base card grid markup</h3>
+			</div>
+		</div>
+		<div class="code-example">
+			<div class="row small-up-2 card-grid">
+				{{> card-grid-block emptycolor=true}}
+			</div>
+		</div>
+
+		<hr>
+		{{/unlesspage}}
+
+		<!-- Background colour -->
+		<div class="row" id="card-grid-bgcolor" data-magellan-target="card-grid-bgcolor">
+			<div class="column">
+				<h3>Background colour</h3>
+				<p>Use {{> main-palette}} to change the card background colour.</p> 
+				{{#unlesspage 'index'}}
+				<p>Note that the colour class is added to two elements.</p>			
+				<strong>Required classes/elements:</strong>
+				<ul>
+					<li><code>.card-grid-bgcolor</code></li>
+					<li><code>.block [colour-class]</code> - controls the text colours (auto-chosen text colour based on contrast ratios)</li>
+					<li><code>.bgcolor [colour-class]</code> - outputs the actual background colour</li>
+				</ul> 
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1,3,11,16,23">
+			<div class="row small-up-2 card-grid card-grid-bgcolor">
+				{{> card-grid-block color='lightblue' color2='darkblue'}}
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Links -->
+		<div class="row" id="card-grid-link" data-magellan-target="card-grid-link">
+			<div class="column">
+				<h3>Link options</h3>
+				<p>Links can be added as an inline button element, or the entire card can be a block-level link.</p>
+				{{#unlesspage 'index'}}
+				<strong>Required classes/elements:</strong>
+				<ul>
+					<li><code>&lt;a class="button"></code> link element, or</li>
+					<li>Block-level card <code>&lt;a></code> link element</li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code> </li>
+				</ul>
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="10,18">
+			<div class="row small-up-2 card-grid card-grid-bgcolor">
+				<section class="column">
+					<div class="block grey">
+						<div class="contents">
+							<h2 class="header">Heading</h2>
+							<div class="description">
+								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo atque maxime tempora aspernatur. Optio excepturi similique at, blanditiis, dicta praesentium eaque quod quas voluptate odio perspiciatis dolores amet, delectus!</p>
+								<p>Laborum distinctio neque quaerat quisquam nobis maxime consectetur vero asperiores. Maiores illo repudiandae, accusamus tenetur aperiam error quo quas nihil libero quam.</p>
+							</div>
+							<a href="" class="button">Button</a>
+						</div>
+						<div class="bgcolor grey"></div>
+					</div>
+				</section>
+			
+				<section class="column">
+					<div class="block darkerblue">
+						<a href=""><span class="show-for-sr">Heading</span></a>
+						<div class="contents">
+							<h2 class="header">Heading</h2>
+							<div class="description">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum incidunt qui minima reprehenderit sint, commodi delectus sequi doloribus velit quia dicta veritatis illum beatae laboriosam cumque, quisquam fugit possimus?</p>
+							</div>
+						</div>
+						<div class="bgcolor darkerblue"></div>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Icon -->
+		<div class="row" id="card-grid-icon" data-magellan-target="card-grid-icon">
+			<div class="column">
+				<h3>Icon</h3>
+				{{#unlesspage 'index'}}
+				<strong>Required classes/elements:</strong>
+				<ul>
+					<li><code>.icon</code> element</li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code></li>
+					<li>Block-level card <code>&lt;a></code> link element</li>
+				</ul> 
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="5,20">
+			<div class="row small-up-2 card-grid card-grid-bgcolor">
+				{{> card-grid-block color='blue' color2='mediumgrey' blocklink=true icon=true}}
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Background icon -->
+		<div class="row" id="card-grid-bgicon" data-magellan-target="card-grid-bgicon">
+			<div class="column">
+				<h3>Background icon</h3>
+				{{#unlesspage 'index'}}
+				<strong>Required classes/elements:</strong>
+				<ul>
+					<li><code>.card-grid-bgicon</code></li>
+					<li><code>.bgicon</code> element</li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code> </li>
+					<li>Block-level card <code>&lt;a></code> link element</li>
+				</ul> 
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1,13,27">
+			<div class="row small-up-2 card-grid card-grid-bgcolor card-grid-bgicon">
+				{{> card-grid-block color='coolgrey' color2='warmgrey' blocklink=true bgicon=true}}
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Centered text -->
+		<div class="row" id="card-grid-center" data-magellan-target="card-grid-center">
+			<div class="column">
+				<h3>Centered text</h3>
+				{{#unlesspage 'index'}}
+				<strong>Required card-grid classes/elements:</strong>
+				<ul>
+					<li><code>card-grid-center</code></li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code> </li>
+					<li><code>&lt;a class="button"></code> link element</li>
+				</ul>
+				{{/unlesspage}}
+
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1">
+			<div class="row small-up-2 card-grid card-grid-bgcolor card-grid-center">
+				{{> card-grid-block color='lightgrey' color2='mediumgrey' icon=true button=true}}
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Vertically justified -->
+		<div class="row" id="card-grid-justify" data-magellan-target="card-grid-justify">
+			<div class="column">
+				<h3>Vertically justified content</h3>
+				{{#unlesspage 'index'}}
+				<strong>Required card-grid classes/elements:</strong>
+				<ul>
+					<li><code>card-grid-justify</code></li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code> </li>
+					<li><code>&lt;a class="button"></code> link element</li>
+				</ul>
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1">
+			<div class="row small-up-2 card-grid card-grid-bgcolor align-justify">
+				{{> card-grid-block color='grey' color2='orange' icon=true button=true}}
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Vertically centered -->
+		<div id="card-grid-center-vertical" data-magellan-target="card-grid-center-vertical">
+			<div class="column">
+				<h3>Vertically centered content</h3>
+				{{#unlesspage 'index'}}
+				<strong>Required card-grid classes/elements:</strong>
+				<ul>
+					<li><code>card-grid-center-vertical</code></li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code> </li>
+					<li><code>.icon</code> element</li>
+					<li>Block-level card <code>&lt;a></code> link element</li>
+				</ul>
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1">
+			<div class="row small-up-2 card-grid card-grid-bgcolor card-grid-center-vertical">
+				{{> card-grid-block color='lightblue' color2='grey' icon=true blocklink=true}}
+			</div>
+		</div>
+
+		<h4>Vertically and horizontally centered text</h4>
+		{{#unlesspage 'index'}}
+		<strong>Required card-grid classes/elements:</strong>
+		<ul>
+			<li><code>card-grid-center-vertical</code></li>
+			<li><code>card-grid-center</code></li>
+		</ul>
+		Additional card-grid classes/elements shown:
+		<ul>
+			<li><code>.card-grid-bgcolor</code> </li>
+			<li><code>.icon</code> element</li>
+			<li>Block-level card <code>&lt;a></code> link element</li>
+		</ul>
+		{{/unlesspage}}
+		<div class="code-example scroll line-numbers" data-line="1">
+			<div class="row small-up-2 card-grid card-grid-bgcolor card-grid-center-vertical card-grid-center">
+				{{> card-grid-block color='darkblue' color2='blue' icon=true blocklink=true}}
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Animate text -->
+		<div class="row" id="card-grid-animate-text" data-magellan-target="card-grid-animate-text">
+			<div class="column">
+				<h3>Animated text</h3>
+				<p>Animated text must be shown with an icon.</p>
+				{{#unlesspage 'index'}}
+				<strong>Required card-grid classes/elements:</strong>
+				<ul>
+					<li><code>card-grid-animate-text</code></li>
+					<li><code>.icon</code> element</li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code> </li>
+					<li>Block-level card <code>&lt;a></code> link element</li>
+				</ul>
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1,5,20">
+			<div class="row small-up-2 card-grid card-grid-bgcolor card-grid-animate-text">
+				{{> card-grid-block color='coolgrey' color2='warmgrey' icon=true blocklink=true}}
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Background image -->
+		<div class="row" id="card-grid-image" data-magellan-target="card-grid-image">
+			<div class="column">
+				<h3>Background image</h3>
+				<p>Images must be the same dimensions.</p>
+				{{#unlesspage 'index'}}
+				<strong>Required card-grid classes/elements:</strong>
+				<ul>
+					<li><code>.card-grid-image</code></li>
+					<li><code>.image</code> element (with CSS background-image property)</li>
+					<li>Note the omission of the <code>.bgcolor</code> element for a full opacity image.</li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.icon</code> element</li>
+					<li>Block-level card <code>&lt;a></code> link element</li>
+				</ul>
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1,14,29">
+			<div class="row small-up-2 card-grid card-grid-image">
+				{{> card-grid-block icon=true blocklink=true bgimage=true}}
+			</div>
+		</div>
+
+		<!-- Full image, background colour, centered -->
+		<div class="row" id="card-grid-full-image" data-magellan-target="card-grid-full-image">
+			<div class="column">
+				<h3>Full image</h3>
+				<p>Images must be the same dimensions.</p>
+				{{#unlesspage 'index'}}
+				<strong>Required card-grid classes/elements:</strong>
+				<ul>
+					<li><code>.card-grid-image</code></li>
+					<li><code>.card-grid-image-full</code></li>
+					<li><code>.image</code> element</li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code> </li>
+					<li><code>.icon</code> element</li>
+					<li><code>.bgcolor</code> element</li>
+					<li>Block-level card <code>&lt;a></code> link element</li>
+				</ul>
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1,5,21">
+			<div class="row small-up-2 card-grid card-grid-bgcolor card-grid-image card-grid-image-full">
+				{{> card-grid-block color='lightblue' color2='darkblue' icon=true blocklink=true image=true}}
+			</div>
+		</div>
+
+		<!-- Half image, background colour -->
+		<div class="row" id="card-grid-half-image" data-magellan-target="card-grid-half-image">
+			<div class="column">
+				<h3>Half image</h3>
+				<p>Images must be the same dimensions.</p>
+				{{#unlesspage 'index'}}
+				<strong>Required card-grid classes/elements:</strong>
+				<ul>
+					<li><code>.card-grid-image</code></li>
+					<li><code>.card-grid-image-half</code></li>
+					<li><code>.image</code> element</li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-bgcolor</code> </li>
+					<li><code>.icon</code> element</li>
+					<li><code>.bgcolor</code> element</li>
+					<li>Block-level card <code>&lt;a></code> link element</li>
+				</ul>
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1,14,29">
+			<div class="row small-up-2 card-grid card-grid-bgcolor card-grid-image card-grid-image-half">
+				{{> card-grid-block color='lightgrey' color2='mediumgrey' icon=true blocklink=true bgimage=true}}
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- Background gradient -->
+		<div class="row" id="card-grid-gradient" data-magellan-target="card-grid-gradient">
+			<div class="column">
+				<h3>Background gradient</h3>
+				<p>This style works especially well with lists of links.</p>
+				{{#unlesspage 'index'}}
+				<strong>Required card-grid classes/elements:</strong>
+				<ul>
+					<li><code>.card-grid-gradient</code></li>
+					<li><code>.bgcolor</code> element (no colour class)</li>
+				</ul>
+				Additional card-grid classes/elements shown:
+				<ul>
+					<li><code>.card-grid-image</code></li>
+					<li><code>.card-grid-image-half</code></li>
+					<li><code>.image</code> element</li>
+				</ul>
+				{{/unlesspage}}
+			</div>
+		</div>
+		<div class="code-example scroll line-numbers" data-line="1,15,32">
+			<div class="row small-up-2 card-grid card-grid-gradient card-grid-image card-grid-image-half">
+				<section class="columns">
+					<div class="block lightgrey">
+						<div class="contents">
+							<h2 class="header">Heading</h2>
+							<div class="description">
+								<ul class="list-brand-arrows">
+									<li><a>Lorem ipsum dolor, sit amet</a></li>
+									<li><a>Consectetur adipisicing elit</a></li>
+									<li><a>Earum ex deleniti aspernatur</a></li>
+									<li><a>Fugiat quod omnis similique nisi autem</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="bgcolor"></div>
+						<div class="image" style="background-image:url('https://picsum.photos/1000/667?random=1');"></div>
+					</div>
+				</section>
+				<section class="columns">
+					<div class="block mediumgrey">
+						<div class="contents">
+							<h2 class="header">Heading</h2>
+							<div class="description">
+								<ul class="list-brand-arrows">
+									<li><a>Lorem ipsum dolor, sit amet</a></li>
+									<li><a>Consectetur adipisicing elit</a></li>
+									<li><a>Earum ex deleniti aspernatur</a></li>
+									<li><a>Fugiat quod omnis similique nisi autem</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="bgcolor"></div>
+						<div class="image" style="background-image:url('https://picsum.photos/1000/667?random=2');"></div>
+					</div>
+				</section>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{{#unlesspage 'index'}}
+</div>
+</div>
+{{/unlesspage}}

@@ -1,0 +1,52 @@
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Featured expert</h2>
+		<p>Display a featured expert profile from the <a href="https://ontariotechu.ca/expertcentre" target="_blank">Expert Centre</a>.</p>
+		<p>A specific expert can be displayed using the profile's CMS asset ID in the <code>data-id</code> attribute, or they can be randomized using <code>data-id="random"</code></p>
+		<p>Profile elements to show can be specified in the <code>data-display</code> attribute. If the specified element doesn't exist for a particular profile, the element won't be displayed.</p>
+		<p>Include a module heading with the <code>data-heading</code> attribute.</p>
+	</div>
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="column">
+		<h3>Featured expert</h3>
+		<p>Display a featured expert using the <a href="spotlight.html">spotlight</a> component as a general template.</p>
+		<div class="code-example">
+			<div class="featured-expert spotlight blue" data-id="random" data-display="firstname,lastname,position,faculty,summary,link,image" data-heading="Featured expert"></div>
+			<script src="https://shared.ontariotechu.ca/global/files/js/featured-expert.js" type="text/javascript"></script>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="column">
+		<h3>Featured expert with feature image</h3>
+		<p>Display a featured expert using the <a href="spotlight.html#spotlight-feature-image">feature image spotlight</a> component as a general template. Add <code>featureimage</code> as a <code>data-display</code> attribute option.</p>
+		<p>The <code>featureimage</code> display option can be included by default. If a profile image has a feature (banner) image, it will be displayed as shown below. If the profile doesn't have a feature image, the fallback will be the specified solid coloured background.</p>
+		<div class="code-example">
+			<div class="featured-expert spotlight darkblue" data-id="b75f17a8cdd3b4e41bf732dffec61c30" data-display="firstname,lastname,faculty,summary,link,image,featureimage" data-heading="Featured expert"></div>
+			<script src="https://shared.ontariotechu.ca/global/files/js/featured-expert.js" type="text/javascript"></script>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="column">
+		<h3>Inline featured expert</h3>
+		<p>Display a featured expert inline with body text by specifying a width in the <code>data-width</code> attribute and adding a <code>.float-[left/right]</code> utility class.</p>
+		<div class="code-example">
+			<div class="featured-expert spotlight blue float-left" data-width="500" data-id="c191ddebcdd3b4e41bf732df7859571a" data-display="designation,expertise,fields,firstname,id,image,lastname,link,position,summary,brandarrow"></div>
+			<script src="https://ontariotechu.ca/global/files/js/featured-expert.js" type="text/javascript"></script>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dolore ratione ipsa, provident assumenda commodi nemo minima neque molestiae obcaecati repellat quia rem velit praesentium in nostrum debitis aliquam et?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eius modi mollitia, iste laboriosam accusamus animi illo consectetur aut quibusdam cum quam ut illum numquam eos, fugiat dignissimos tempora doloremque!</p>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus quidem mollitia minus error ut obcaecati quos totam tempore aspernatur commodi. Reiciendis, eligendi quod ullam laborum numquam exercitationem nostrum accusantium voluptatibus.</p>
+		</div>
+	</div>
+</div>

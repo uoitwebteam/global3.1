@@ -1,0 +1,231 @@
+// Variable base styles
+@mixin stat-style-base (
+	$main-font-family: $heading-font,
+	$main-font-weight: bold,
+	$main-font-size: 3rem,
+	$main-font-color: $darkblue,
+	$caption-font-color: $darkblue) {
+	
+	// Main stat/text
+	.callout-stat-number,
+	.callout-stat-text {
+		font-family: $main-font-family;
+		font-weight: $main-font-weight;
+		color: $main-font-color;
+	}
+	.callout-stat-number {
+		font-size: $main-font-size;
+	}
+	.callout-stat-text {
+		font-size: 2.25rem;
+	}
+
+	// Text caption below main stat
+	.callout-stat-heading,
+	.callout-stat-caption {
+		color: $caption-font-color;
+	}
+
+	// Other elements
+	color: $caption-font-color;
+}
+
+// Individual styles - small
+@mixin stat-style-small($override-child-styles: false) {
+	// Reset styles
+	@if $override-child-styles {
+		background: none;
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	@include stat-style-base(
+		$main-font-family: $body-font,
+		$main-font-weight: normal,
+		$main-font-size: 3rem,
+		$main-font-color: $orange,
+		$caption-font-color: $darkblue
+	);
+}
+
+// Individual styles - large
+@mixin stat-style-large($override-child-styles: false) {
+	// Reset styles
+	@if $override-child-styles {
+		background: none;
+	}
+
+	@include stat-style-base(
+		$main-font-family: $heading-font,
+		$main-font-weight: bold,
+		$main-font-size: 4rem,
+		$main-font-color: $darkblue,
+		$caption-font-color: $darkblue
+	);
+	
+	&::before {
+		@include brand-arrow($size: 3rem);
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+	}
+	&.animate::before {
+		animation: 1s open-chevron-top-right backwards;
+	}
+
+	&::after {
+		@include brand-arrow();
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform: rotate(180deg);
+		z-index: 1;
+	}
+	&.animate::after {
+		animation: 1s open-chevron-bottom-left .2s backwards;
+	}
+}
+
+// Individual styles - background
+@mixin stat-style-bg($font-color, $background-color, $override-child-styles: false) {
+	// Reset styles
+	@if $override-child-styles {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	@include stat-style-base(
+		$main-font-family: $heading-font,
+		$main-font-weight: bold,
+		$main-font-size: 5rem,
+		$main-font-color: $font-color,
+		$caption-font-color: $font-color
+	);
+
+	@include brand-arrow-pattern($background-color);
+
+	.button {
+		@include button-hollow-style($color: $font-color);
+	}
+}
+
+.callout-stat {
+	font-family: $heading-font;
+	color: $darkblue;
+	text-align: center;
+	margin-bottom: 2rem;
+	padding: 2rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	&:not(:last-of-type) {
+		margin-bottom: 3rem;
+	}
+
+	// Main stat/text
+	.callout-stat-number,
+	.callout-stat-text {
+		line-height: 1.1;
+		margin-bottom: 1rem;
+		position: relative;
+	}
+	&.animate &-number,
+	&.animate &-text {
+		animation: 0.75s fade-in .2s backwards;
+	}
+
+	// Text caption below main stat
+	&-caption {
+		transform-origin: 50% 0;
+		line-height: 1.5;
+	}
+	&-caption-heading,
+	&-heading {
+		font-weight: bold;
+		font-size: 1.5rem;
+		line-height: 1.1;
+		margin-bottom: .5rem;
+	}
+	&.animate &-caption,
+	&.animate &-caption-heading,
+	&.animate &-heading {
+		animation: 1.25s flip-in-x .2s backwards;
+	}
+	
+	// Main stat number suffix
+	&-suffix {
+		display: inline-block;
+		transform-origin: 50% 100%;
+	}
+	&.animate &-suffix {
+		animation: 0.3s flip-in-x .2s forwards;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in-out;
+	}
+
+	// CTA
+	.button {
+		@extend .button.small;
+		@include button-hollow;
+    @include button-hollow-style($color: $darkblue);
+		margin-top: 1rem;
+	}
+
+	// Default style
+	@include stat-style-base;
+
+
+	// Individual styles
+	// -----------------
+	&-small {
+		@include stat-style-small;
+	}
+	
+	&-large {
+		@include stat-style-large;
+	}
+	
+	&-bg {
+		@each $color, $value in $main-palette {
+			&.#{$color} {
+				@include stat-style-bg(
+					$font-color: color-pick-contrast($value, ($white, $darkblue)),
+					$background-color: $value
+				);
+			}
+		}
+	}
+
+	// Override individual child styles from parent
+	&s-small .callout-stat {
+		@include stat-style-small(true);
+	}
+	&s-large .callout-stat {
+		@include stat-style-large(true);
+	}
+	&s-bg {
+		@each $color, $value in $main-palette { 
+			&.#{$color} .callout-stat {
+				@include stat-style-bg(
+					$font-color: color-pick-contrast($value, ($white, $darkblue)),
+					$background-color: $value,
+					$override-child-styles: true
+				);
+			}
+		}
+	}
+}
+
+// Vertical stretch and center
+.align-stretch.callout-stats-bg .callout-stat,
+.align-stretch .callout-stat-bg {
+	height: 90%;
+	justify-content: center;
+}

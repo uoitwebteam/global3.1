@@ -1,0 +1,250 @@
+/// Brand arrow icon 
+/// (right facing arrow)
+// @mixin brand-arrow() {
+// 	content: get-icon('icon_chevron_right');//'\e997';
+// 	font-family: $icon-font;
+// }
+
+/// Brand arrow displayed inline with parent element
+/// (right facing arrow)
+///
+/// Example usage: 
+///	<element> {
+///		&::after { 
+///			@include absolute-brand-arrow;
+///		}
+///	}
+@mixin inline-brand-arrow($color: $orange, $size: 60px) {
+	// @include brand-arrow;
+	display: inline-block;
+	font-family: $icon-font;
+	font-size: $size;
+	color: $color;
+	content: get-icon('icon_chevron_right');
+}
+
+/// Absolutely-positioned brand arrow
+/// (right facing arrow)
+/// (default: vertically centered)
+///
+/// Example:
+/// <element> {
+///		position: relative;
+///		&::after { 
+///			@include absolute-brand-arrow;
+///		}
+///	}
+@mixin absolute-brand-arrow($top: 50%, $right: 5%, $bottom: auto, $left: auto, $size: 1.25rem, $color: $orange, $transform: translateY(-50%)) {
+	// @include brand-arrow;
+	display: block;
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	font-family: $icon-font;
+	font-size: $size;
+	color: $color;
+	line-height: $size;
+	transform: $transform;
+	content: get-icon('icon_chevron_right');
+}
+
+/// Brand arrow block
+/// (upwards right facing arrow)
+@mixin brand-arrow($size: 2rem, $color: $orange, $thickness: 1rem) {
+  border-style: solid;
+  border-width: $thickness $thickness 0 0;
+  border-color: $color;
+  content: '';
+  height: $size;
+  width: $size;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+// Brand arrow divider
+// (series of 3 brand arrows as a page divider) 
+.brand-arrow-divider {
+	&::before {
+		display: block;
+		width: 100%;
+		margin: 30px 0;
+		font-family: $icon-font;
+		color: $mediumgrey;
+		text-align: center;
+		content: get-icon('icon_chevron_right') get-icon('icon_chevron_right') get-icon('icon_chevron_right');
+	}
+	@each $color, $value in $main-palette { 
+		&.#{$color} {
+			&::before {
+				color: $value;
+			}
+		}
+	}
+
+	// &.animate {
+
+	// }
+}
+
+// Downwards bouncing arrow - indicates to scroll more
+// (add .bounce.animate classes to element)
+.arrow-bounce-more,
+.more-bouncing-arrow {
+	&::after {
+		display: block;
+		font-family: $icon-font;
+		font-size: 3rem;
+		text-align: center;
+		color: $orange;
+		content: get-icon('icon_chevron_down');
+		@extend .bounce;
+	}
+
+	@each $color, $value in $basic-palette { 
+		&.#{$color}::after {
+			color: $value;
+		}
+	}
+}
+
+// Large background arrow that slides in from left when in view
+.large-arrow-slide-in {
+	position: relative;
+	overflow: hidden;
+
+	@each $color, $value in $main-palette { 
+		&.#{$color} {
+			$arrow-color: rgba($value,.5);
+
+			// Default position: bottom right, offset from edge
+			&::after,
+			&.bottom::after {
+				@include absolute-brand-arrow($top: auto, $right: 0.5rem, $bottom: -1.5rem, $left: auto, $size: 6rem, $color: $arrow-color, $transform: translateY(-50%));
+			}
+			// Position: middle right
+			&.middle::after {
+				@include absolute-brand-arrow($top: calc(50% - 3rem), $right: 0.5rem, $bottom: auto, $left: auto, $size: 6rem, $color: $arrow-color, $transform: translateY(-50%));
+			}
+		}
+	}
+
+	&.animate-in-view::after {
+		opacity: 0
+	}
+	&.animate::after {
+		animation: 1s ease-out 300ms forwards arrow-slide-in;
+	}
+
+	// Context specific styles
+	@at-root .card-grid .large-arrow-slide-in::after {
+		z-index: 5;
+	}
+}
+
+
+// Brand arrow clipped/masked image
+.brand-arrow-clip {
+	mask-image: url($global-files-path + 'img/patterns/brand-arrow.svg');
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center center;
+
+	// Right-facing arrow
+	&-right {
+		mask-image: url($global-files-path + 'img/patterns/brand-arrow-right.svg');
+	}
+
+	// Exclusion/cutout mask
+	&.cutout {
+		mask-image: url($global-files-path + 'img/patterns/brand-arrow.svg'), linear-gradient(#fff 0 0);
+		mask-composite: exclude;
+		-webkit-mask-composite: destination-out;
+	}
+}
+
+//  Arrow clipping path on an image's left/right edge
+img.arrow-clip {
+	// Right arrow
+	clip-path: polygon(0% 0%, 80% 0%, 99% 50%, 80% 100%, 0% 100%);
+
+	// Left arrow
+	&-reverse {
+		clip-path: polygon(1% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%);
+		// clip-path: polygon(1% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%);
+	}
+
+	// Tilted right arrow
+	&-diagonal {
+		clip-path: polygon(0% 0%, 80% 0%, 99% 50%, 80% 100%, 0% 100%);
+		transform: translateX(-1%) rotate(-2deg) scale(102%);
+	}
+	// Tilted left arrow
+	&-diagonal-reverse {
+		clip-path: polygon(1% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%);
+		transform: translateX(1%) rotate(-2deg) scale(102%);
+
+		// clip-path: polygon(1% 60%, 15% 10%, 100% 0%, 100% 90%, 20% 100%);
+	}
+
+	&-double {
+		clip-path: polygon(0% 50%, 20% 50%, 0% 0%, 80% 0%, 99% 50%, 80% 100%, 0% 100%, 20% 50%);
+	}
+}
+
+// Arrow clipping path on a div element's left/right edge 
+// (text can overflow clipping mask)
+:not(img).arrow-clip,
+:not(img).arrow-clip-reverse,
+:not(img).arrow-clip-diagonal,
+:not(img).arrow-clip-diagonal-reverse {
+	position: relative;
+
+	&::after {
+		content:'';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 110%;
+		height: 100%;
+	}
+
+	@each $name, $color in $main-palette {
+		&.#{$name} {
+			background-color: transparent;
+			
+			&::after {
+				background-color: $color;
+				z-index: -1;
+			}
+		}
+	}
+}
+:not(img).arrow-clip {
+	// Right arrow
+	&::after {
+		clip-path: polygon(0% 0%, 90% 0%, 99% 50%, 90% 100%, 0% 100%);
+	}
+	// Left arrow
+	&-reverse::after {
+		clip-path: polygon(1% 50%, 10% 0%, 100% 0%, 100% 100%, 10% 100%);
+		transform: translateX(-5%);
+	}
+
+	// Tilted right arrow
+	&-diagonal {
+		&::after {
+			clip-path: polygon(0% 0%, 90% 0%, 99% 50%, 90% 100%, 0% 100%);
+			transform: translateX(-5%) rotate(-1deg);
+		}
+	}
+	// Tilted left arrow
+	&-diagonal-reverse {
+		&::after {
+			clip-path: polygon(1% 50%, 10% 0%, 100% 0%, 100% 100%, 10% 100%);
+			transform: translateX(-5%) rotate(-1deg);
+		}
+	}
+}

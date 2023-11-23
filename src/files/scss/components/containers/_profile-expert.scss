@@ -1,0 +1,634 @@
+// This file is temporary until the full 2019 rebrand launch;
+// The expert profile (aka faculty profile v3) will be live while faculty profile pages (v2) are still active
+// This css file will eventually replace _profile.scss 
+
+/**
+ *
+ *  TABLE OF CONTENTS
+ *  
+ * - PROFILES INDEX
+ *
+ * - PROFILE PAGE
+ *   1. Header
+ *    	 a. Photo
+ *   		 b. General info
+ *   		 c. Contact
+ *   2.	Research keywords
+ *   3.	Videos/photos
+ *   5.	Education
+ *   6.	Media appaearances
+ *   7.	Other elements
+ *
+ * - FEATURED PROFILE EMBED
+ *
+ */
+
+
+
+/**
+ * PROFILES INDEX
+ */
+
+ .page_profile_index {
+	img {
+		@extend .float_left;
+		@include breakpoint(xsmall) {
+			//@extend .float_left;
+			max-width: 100px;
+			margin-right: use_gutter();
+		}
+	}
+}
+
+.profileIndex {
+	@extend %clear;
+
+	.profileIndex_content {
+		@include breakpoint(xsmall) {
+			display: table;
+		}
+	}
+
+	.profileIndex_heading {
+		margin-bottom: 0;
+		text-transform: none;
+	}
+
+	.profileIndex_general {
+		margin-bottom: .5rem;
+
+		.profileIndex_position {
+			margin-bottom: 0;
+			font-family: $heading-font;
+			font-weight: bold;
+			font-size: 1.1rem;
+			color: $darkblue;	
+		}
+
+		.profileIndex_department {
+			@extend .profileIndex_position;
+			font-family: $heading-font;
+			color: $darkblue;
+		}	
+
+		.profileIndex_summary {
+			margin-bottom: 0;
+		}
+	}
+
+	.profileIndex_keywords {
+		margin-bottom: .5rem;
+
+		> p {
+			margin-bottom: .15rem;
+			color: $darkblue;
+		}
+
+		ul {
+			margin-left: 0;
+			margin-bottom: 0;
+		}
+		li {
+			@extend .label;
+			background-color: $mediumgrey;
+			list-style: none;
+			font-size: 1em;
+			color: $body-font-color;
+			white-space: normal;
+		}	
+	}
+
+	.profileIndex_contact {
+		@include clear;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+
+/**
+ * PROFILE PAGE
+ */
+
+.profile_page {
+	@include breakpoint(medium) {
+		.vertical-tabs > .tabs {
+			min-width: 20%;
+		}
+	}
+}
+
+// 1.a Photo
+// ---------	
+
+.profile_photo {
+	@include flex-grid-column(3);
+	max-width: 200px;
+}	
+
+
+// 1.b. General info
+// -----------------
+
+.profile_general {
+	@include flex-grid-column();	
+
+	.profile_heading {
+		text-transform: none;
+		// span {
+		// 	@include serif;
+		// }
+	}
+
+	.profile_position {
+		// @include serif;
+		margin-bottom: 0;
+		font-weight: bold;
+		font-size: 1.2rem;
+		color: $darkblue;
+	} 
+	.profile_department,
+	.profile_faculty {
+		// @include serif(italic);
+		color: $darkblue;
+	}
+
+	.profile_summary {
+		margin-top: 1.25rem;
+	}
+}
+
+// 1.c. Contact info
+// -----------------
+
+.profile_contact {	
+	@include flex-grid-column(shrink); 
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+// 2. Research keywords
+// --------------------
+
+.profile_keywords {
+	@include flex-grid-column(); 
+
+	ul {
+		margin-left: 0;
+	}
+	li {
+		@extend .label;
+		background-color: $lightgrey;
+		margin-bottom: .25rem;
+		list-style: none;
+		font-size: 1em;
+		color: $body-font-color;
+		text-align: left;
+		white-space: normal;
+	}
+	a {
+		border-bottom: none !important;
+		background: none !important;
+	}
+}
+
+
+// 3. Videos
+// ---------
+
+.profile_videos {
+	position: relative;
+	background: $lightgrey;
+	margin-bottom: 1rem;
+	padding: use_gutter(1.5) use_gutter() use_gutter();
+
+	figure {
+		@include flex-grid-row();
+		.profile_video {
+			@include flex-grid-column();   
+			@include breakpoint(xxsmall only) {
+				padding-left: 1px;
+				padding-right: 1px;
+			}
+		}		
+	}
+	figcaption {	
+		// font-family: $font-body;
+		// font-weight: normal;		
+		// h3, h4 {		
+  	// 	@include text-smaller;
+		// }
+		@include flex-grid-column(12);
+		@include breakpoint(small) {
+			@include flex-grid-column(4);
+		}	
+		@include breakpoint(xxsmall only) {
+			padding: 0;
+		}		
+	}
+	
+	.swiper-pagination {
+		position: static;
+	}
+	.swiper-pagination-bullet {
+		margin: 0 5px;
+	}
+}
+
+
+// 5. Education
+// ------------
+
+.profile_education,
+.profile_courses {
+	@include flex-grid-column();
+}
+.profile_educationList {
+	margin-left: 0;
+
+	li {
+		padding: use_gutter()/2 0;
+		border-bottom: 1px solid $lightgrey;
+		list-style: none;
+		color: $darkblue;
+	}
+	.profile_education_degree {
+		display: block;
+		font-weight: bold;
+		@include breakpoint(small) {
+			font-size: 1.4em;
+		}
+	}
+	.profile_education_year {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+
+// 6. Media appearances
+// --------------------
+
+.profile_page {
+	article {
+		padding-bottom: .5rem;
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid $mediumgrey;
+
+		&:last-child {
+			border-bottom: 0;
+		} 
+
+		img {
+			@extend .float-left;
+			@include breakpoint(xsmall) {
+				max-width: 175px;
+			}
+		} 
+
+		> div {
+			display: table;
+		}
+		
+		h3 {
+			text-transform: none;
+		}
+
+		span {
+			display: inline-block;
+			margin-right: .5rem;
+			margin-bottom: .5rem;
+		}
+	} 
+}
+
+
+// 7. Other elements
+// ------------------
+
+.profile_page {
+	hr.accent {
+		border: 0;
+    height: 4px;
+    background: $orange;
+    transform: skew(-45deg);
+	}
+}
+
+
+/**
+ * FEATURED PROFILE EMBED 
+ * (2019-06-17; same styles also in profile.scss temporarily until full rebrand)
+ */
+
+.featured-expert {
+	position: relative;
+	font-family: $heading-font;
+
+	.content {
+		padding: rem-calc(30);
+	}
+	&.spotlight:not([data-width]) .content {
+		@extend .feature-module;
+		@extend .clear;
+	}
+
+	.feature-subheading {
+		padding-bottom: 1rem;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color: $darkblue;
+		font-size: 1rem;
+		text-transform: uppercase;
+	}
+
+	.image {
+		@include breakpoint(xxsmall only) {
+			max-width: 100%;
+			margin-bottom: 1rem;
+			margin-right: 0;
+			text-align: center;
+		}
+		@include breakpoint(xsmall) {
+			max-width: 25%;
+			margin-right: 30px;
+			margin-bottom: 20px;
+			float: left;
+		}
+		@include breakpoint(medium) {
+			img {
+				width: 200px;
+			}
+		}
+	}
+
+	.header p:last-child::after {
+		content: '';
+		display: block;
+		width: 20px;
+		height: 2px;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		background: $orange;
+	}
+
+	.name {
+		display: table;
+		margin-bottom: 0;
+		font-size: 1.75rem;
+		font-weight: 900;
+		color: $darkblue;
+		a {
+			color: $darkblue;
+			&:hover,
+			&:focus,
+			&:active {
+				color: $lightblue;
+			}
+		}
+	}
+
+	.position {
+		display: table;
+		margin-bottom: 0;
+		margin-left: 0;
+		list-style-type: none;
+		line-height: 1.1;
+		font-size: 1.4rem;
+		font-weight: 900;
+		color: $darkblue;
+
+		li {
+			margin-bottom: 5px;
+		}
+	}
+
+	.faculty {
+		display: table;
+		margin-bottom: 0;
+		line-height: 1.1;
+		font-size: 1.4rem;
+		color: $darkblue;
+	}
+
+	.body {
+		display: table;
+		
+		:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+	.is-expert-in {
+		margin-bottom: 0;
+	}
+
+	.keywords {
+		list-style: none;
+		margin-left: 0;
+		color: $darkblue;
+
+		li {
+			display: inline-block;
+
+			&::after {
+				content: ', ';
+			}
+			&:last-child::after {
+				content: '';
+			}
+		}
+	}
+
+	// Specified width
+	&[data-width] {
+		background: $lightgrey;
+
+		.body {
+			clear: left;
+		}
+
+		@include breakpoint(small down) {
+			width: 100% !important;
+
+			&[class*=float] {
+				margin-bottom: 1rem;
+			}
+		}
+
+		@include breakpoint(medium) {
+			.name {
+				font-size: 1.5rem;
+			}
+			.position {
+				font-size: 1.25rem;
+			}
+
+			&.float-left, &.float_left {
+				margin-right: rem-calc(30);
+				margin-bottom: rem-calc(15);
+			}
+			&.float-right, &.float_right {
+				margin-left: rem-calc(30);
+				margin-bottom: rem-calc(15);
+			}
+		}
+	}
+
+	// Brand arrow {
+	&[data-display*=brandarrow] {
+		&::after {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 30px;
+			height: 30px;
+			border-style: solid;
+			border-color: $orange;
+			border-width: 15px 15px 0 0;
+			content: ' ';
+		}
+	}
+}
+
+// Profile displayed as a feature-image spotlight module
+.featured-expert .feature-image,
+.feature-image .featured-expert {
+	display: block;
+
+	.header p:last-child::after {
+		display: none;
+	}
+
+	p.name {
+		margin-bottom: .2rem;
+		line-height: 1;
+	}
+
+	.body {
+		margin-top: 1rem;
+	}
+
+	.feature-link {
+		@include feature-text-link-style($white, $darkblue);
+	}
+}
+// feature-image inside a CMS spotlight
+.feature-module .featured-expert .content {
+	padding: 0;
+}
+// Profile in a CMS spotlight (not feature-image)
+.spotlight {
+	@each $color, $value in $main-palette {
+		&.#{$color}.featured-expert .content {
+			* {
+				color: color-pick-contrast($value, ($white, $darkblue));
+			}
+		}
+	}
+}
+
+// Experts search/list
+// -------------------
+$image-size: 200px;
+$image-border: 2px;
+$image-margin: 30px;
+
+#expert-search-form {
+	.input-group-field {
+		height: 100%;
+	}
+
+	.awesomplete {
+		width: 100%;
+	}
+}
+
+experts-results .featured-expert {
+	@extend .clear;
+	border-top: 1px solid $lightgrey;
+	margin: 1rem 0;
+	padding: 1.5rem 0;
+
+	> a {
+		* {
+			transition: all .3s ease;
+		}
+
+		&:hover, &:focus, &:active {
+			.name, 
+			.position {
+				color: $lightblue;
+			}
+
+			img {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	// Rounded image for consistency across portrait/landscape images
+	.image, img {
+		width: $image-size;
+		height: $image-size;
+
+		@include breakpoint(small down) {
+			width: $image-size/2;
+			height: $image-size/2;
+		}
+	}
+	.image {
+		overflow: hidden;
+		margin-right: $image-margin;
+		margin-bottom: 0;
+		border: $image-border solid $darkblue;
+		border-radius: 50%;
+
+		@include breakpoint(small down) {
+			float: left;
+			margin-right: $image-margin/2;
+		}
+	}
+	img {
+		object-fit: cover;
+		object-position: center 40%;
+	}
+
+	.body {
+		@include breakpoint(small down) {
+			clear: left;
+		}
+	}
+
+	.summary {
+		color: $body-font-color;
+		margin-top: 1rem;
+	}
+
+	.links {
+		margin-top: 1rem;
+
+		&.has-image {
+			margin-left: $image-size + $image-border + $image-margin;
+			@include breakpoint(small down) {
+				margin-left: 0;
+			}
+		}
+
+		a {
+			@include link-style;
+		}
+	}
+
+}

@@ -1,0 +1,62 @@
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Responsive embed</h2>
+
+		<p>Wrap embedded content like <code>iframe</code>, <code>video</code>, <code>object</code>, or <code>embed </code> in a container with the class <code>.responsive-embed</code> to maintain the correct aspect ratio regardless of screen size. The embedded content will resize to fill the width of its container, while maintaining its original aspect ratio.</p>
+		<p><strong>Note:</strong> YouTube and Vimeo iFrames are automatically wrapped in a <code>.responsive-embed</code> container on page load; the container/class do not need to be manually added unless a specific <a href="#video-aspect-ratio">aspect ratio</a> is required (such as with video banners).</p>
+		
+		<p>Resize this window to see the video below auto-resize along with it.</p>
+		<pre><code class="language-html">
+			&lt;div class="responsive-embed">
+				&lt;iframe width="640" height="360" src="https://www.youtube.com/embed/HXz08CyFE7E?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>&lt;/iframe> 
+			&lt;/div>
+		</code></pre>
+		<iframe width="640" height="360" src="https://www.youtube.com/embed/HXz08CyFE7E?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>  		
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="video-disable-responsive">
+	<div class="column">
+		<h3>Disable responsive embeds</h3>
+		<p>To disable automatic responsive embeds on YouTube or Vimeo videos, add the class <code>.non-responsive-embed</code> OR an attribute of <code>data-responsive-embed="false"</code> to the embedded content.</p>
+		<p><strong>Note:</strong> The CMS editor removes iFrame classes; use the <code>data-responsive-embed="false"</code> attribute.</p>	
+		
+		<p>The video below is embedded at the specified width and height. Resize this window; the video will not auto-resize and you will see black bars above/below the video content area when the screen is smaller than the original width of the video.</p>
+		<div class="code-example">
+			<iframe data-responsive-embed="false" class="non-responsive-embed" width="640" height="360" src="https://www.youtube.com/embed/HXz08CyFE7E?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>  
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="video-aspect-ratio">
+	<div class="column">
+		<h3>Aspect ratios</h3>
+		<p>Add ratio classes to change the aspect ratio of responsive embeds. The default ratio is 4:3. The <code>.widescreen</code> class will change the container's aspect ratio to 16:9. The <code>.banner16x5</code> class will change the container's aspect ratio to 16:5, or the standard 1920x600 banner aspect ratio.</p>
+		<p><strong>Note:</strong> If embedding a YouTube or Vimeo video that requires a different aspect ratio than the default 4:3, the <code>non-responsive-embed</code> class or attribute will also be required.</p>
+
+		<div class="code-example">
+			<div class="responsive-embed banner16x5">
+				<iframe class="non-responsive-embed" frameborder="0" height="200" src="https://player.vimeo.com/video/380758356?background=1" width="640"></iframe>
+			</div>
+		</div>
+
+		<p>Available aspect ratios are specified in the <code class="language-scss">$responsive-embed-ratios</code> map in <code>scss/settings/_foundation-settings.scss</code>:
+		<pre><code class="language-scss">
+			$responsive-embed-ratios: (
+			default: 4 by 3,
+			widescreen: 16 by 9,
+			banner16x5: 16 by 5,
+			banner1920x600: 16 by 5,
+			banner1920x650: 14.75 by 5,
+			thumbnail3x2: 3 by 2
+		);
+		</code></pre>
+
+
+	</div>
+</div>
+

@@ -1,0 +1,453 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#official-primary-palette">Official primary palette</a></li>
+				<li><a href="#official-secondary-palette">Official secondary palette</a></li>
+				<li><a href="#web-palette">Web palette</a></li>
+				<li><a href="#other-colours">Other colours</a></li>
+				<li><a href="#text-colours">Text colour classes</a></li>
+				<li><a href="#background-colours">Background colour classes</a></li>
+				<li><a href="#sass-colours">SASS usage and HTML colour class names</a></li>
+				<li><a href="#legacy-colours">Support for v3.0 legacy colours</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10">
+{{/unlesspage}}
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Colours</h2>
+		<p><strong>Accessible contrast ratios:</strong><br>
+			WCAG AA = contrast ratio of 4.5:1 for normal text; 3:1 for large text<br>
+			WCAG AAA = contrast ratio of 7:1 for normal text; 4.5:1 for large text</p>
+		<p><strong>Where noted, some colour combinations must only be used if the text is large:</strong><br>
+			Large text = minimum 24px OR minimum 19px and bold</p>
+	</div>
+</div>
+<br>
+
+<!-- Primary -->
+<div class="row" id="official-primary-palette" data-magellan-target="official-primary-palette">
+	<div class="column">
+		<h3>Official primary palette</h3>
+	</div>
+</div>
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Dark blue</div>
+			<div class="card-section swatch bgcolor darkblue align-center">
+				<span>Accessible text</span>
+				<span class="orange" style="font-size: 24px">Accessible text</span>
+				<span class="orange" style="font-size: 19px"><strong>Accessible text</strong></span>
+			</div>
+			<div class="card-section">$darkblue ($primary)<br>#003C71<br>rgb(0, 60, 113)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Light blue</div>
+			<div class="card-section swatch bgcolor lightblue align-center">
+				<span>Accessible text</span>
+				<span class="black" style="font-size: 24px">Accessible text</span> 
+				<span class="black" style="font-size: 19px"><strong>Accessible text</strong></span>
+			</div>
+			<div class="card-section">$lightblue ($secondary)<br>#0077CA<br>rgb(0, 119, 202)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Orange</div>
+			<div class="swatch bgcolor accent align-center">
+				<span class="black">Accessible text</span>
+				<span class="white" style="font-size: 24px">Accessible text</span>
+				<span class="white" style="font-size: 19px"><strong>Accessible text</strong></span>
+			</div>
+			<div class="card-section">$orange ($accent)<br>#E75D2A<br>rgb(231, 93, 42)<br>
+				<a href="#dark-orange">See also: dark orange</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Secondary -->
+<div class="row" id="official-secondary-palette" data-magellan-target="official-secondary-palette">
+	<div class="column">
+	<h3>Official secondary palette</h3>
+	</div>
+</div>
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Warm grey</div>
+			<div class="card-section swatch bgcolor warmgrey align-center">Accessible text</div>
+			<div class="card-section">$warmgrey<br>#ACA39A<br>rgb(172, 163, 154)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Cool grey</div>
+			<div class="card-section swatch bgcolor coolgrey align-center">Accessible text</div>
+			<div class="card-section">$coolgrey<br>#A7A8AA<br>rgb(167, 168, 170)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Blue-grey</div>
+			<div class="card-section swatch bgcolor grey align-center">Accessible text</div>
+			<div class="card-section">$bluegrey / $grey<br>#5B6770<br>rgb(91, 103, 112)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Spirit blue</div>
+			<div class="card-section swatch bgcolor spiritblue align-center">Accessible text
+				<span class="orange" style="font-size: 24px">Accessible text</span>
+				<span class="orange" style="font-size: 19px"><strong>Accessible text</strong></span>
+			</div>
+			<div class="card-section">$spiritblue<br>#00283C<br>rgb(0, 40, 60)<br></div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Web -->
+<div class="row" id="web-palette" data-magellan-target="web-palette">
+	<div class="column">
+		<h3>Web palette - Shades of blue/orange/grey</h3>
+		<p>Additional shades of blue, orange, and grey can be used for web.</p>
+	</div>
+</div>
+<!-- Web - blue -->
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Light blue</div>
+			<div class="card-section swatch bgcolor lightblue align-center">Accessible text</div>
+			<div class="card-section">$lightblue<br>#0077CA<br>rgb(0, 119, 202)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Medium blue</div>
+			<div class="card-section swatch bgcolor mediumblue align-center">Accessible text</div>
+			<div class="card-section">$mediumblue<br>#005793<br>rgb(0, 87, 147)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Dark blue</div>
+			<div class="card-section swatch bgcolor darkblue align-center">Accessible text
+				<span class="orange" style="font-size: 24px">Accessible text</span>
+				<span class="orange" style="font-size: 19px"><strong>Accessible text</strong></span>
+			</div>
+			<div class="card-section">$darkblue<br>#003C71<br>rgb(0, 60, 113)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Darker blue</div>
+			<div class="card-section swatch bgcolor darkerblue align-center">Accessible text
+				<span class="orange" style="font-size: 24px">Accessible text</span>
+				<span class="orange" style="font-size: 19px"><strong>Accessible text</strong></span>
+			</div>
+			<div class="card-section">$darkerblue<br>#042A4B<br>rgb(4, 42, 75)</div>
+		</div>
+	</div>
+</div>
+<!-- Web - orange -->
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Orange</div>
+			<div class="card-section swatch bgcolor orange align-center">
+				<span class="">Accessible text</span>
+			</div>
+			<div class="card-section">$darkorange<br>#E75D2A<br>rgb(231, 93, 42)<br>
+				<small>NB. White text in standard size is not accessible against the default shade of orange.</small>
+			</div>
+		</div>
+	</div>
+	<div class="column" id="dark-orange">
+		<div class="card">
+			<div class="card-divider">Dark orange</div>
+			<div class="card-section swatch bgcolor darkorange align-center">
+				<span class="">Accessible text</span>
+			</div>
+			<div class="card-section">$darkorange<br>#CF4817<br>rgb(207, 72, 23)<br>
+				<small>Dark orange can be used with standard text size in select cases, where the "large" text size (24px) is not visually appealing or cannot be controlled. Built-in global components will automatically revert to displaying dark orange when the "orange" colour class is used.</small>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Web - cool grey -->
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Cool grey</div>
+			<div class="card-section swatch bgcolor coolgrey align-center">Accessible text</div>
+			<div class="card-section">$coolgrey<br>#A7A8AA<br>rgb(167, 168, 170)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Medium cool grey</div>
+			<div class="card-section swatch bgcolor mediumgrey align-center">Accessible text</div>
+			<div class="card-section">$mediumcoolgrey / $mediumgrey<br>#CACBCC<br>rgb(202, 203, 204)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Light cool grey</div>
+			<div class="card-section swatch bgcolor lightgrey align-center">Accessible text<br> 
+				<span class="orange" style="font-size: 24px">Accessible text</span>
+				<span class="orange" style="font-size: 19px"><strong>Accessible text</strong></span>
+			</div>
+			<div class="card-section">$lightcoolgrey / $lightgrey<br>#EDEEEE<br>rgb(237, 238, 238)</div>
+		</div>
+	</div>
+</div>
+<!-- Web - warm grey -->
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Warm grey</div>
+			<div class="card-section swatch bgcolor warmgrey align-center">Accessible text</div>
+			<div class="card-section">$warmgrey<br>#ACA39A<br>rgb(172, 163, 154)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Medium warm grey</div>
+			<div class="card-section swatch bgcolor mediumwarmgrey align-center">Accessible text</div>
+			<div class="card-section">$mediumwarmgrey<br>#CDC8C2<br>rgb(205, 200, 194)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Light warm grey</div>
+			<div class="card-section swatch bgcolor lightwarmgrey align-center">Accessible text</div>
+			<div class="card-section">$lightwarmgrey<br>#E6E3E1<br>rgb(230, 227, 225)</div>
+		</div>
+	</div>
+</div>
+<!-- Web - blue grey -->
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Blue-grey</div>
+			<div class="card-section swatch bgcolor grey align-center">Accessible text</div>
+			<div class="card-section">$bluegrey / $grey<br>#5B6770<br>rgb(91, 103, 112)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Medium blue-grey</div>
+			<div class="card-section swatch bgcolor mediumbluegrey align-center">Accessible text</div>
+			<div class="card-section">$mediumbluegrey<br>#778691<br>rgb(119, 134, 145)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Light blue-grey</div>
+			<div class="card-section swatch bgcolor lightbluegrey align-center">Accessible text</div>
+			<div class="card-section">$lightbluegrey<br>#AAB3BA<br>rgb(170, 179, 186)</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Other UI colours -->
+<div class="row" id="other-colours" data-magellan-target="other-colours">
+	<div class="column">
+		<h3>Other UI colours</h3>
+	</div>
+</div>
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Emergency</div>
+			<div class="swatch bgcolor emergency align-center">Accessible text</div>
+			<div class="card-section">$emergency<br>#A40B0B<br>rgb(164, 11, 11)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Success</div>
+			<div class="swatch bgcolor success align-center">Accessible text</div>
+			<div class="card-section">$success<br>#4E8200<br>rgb(78, 130, 0)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Warning</div>
+			<div class="swatch bgcolor warning align-center">Accessible text</div>
+			<div class="card-section">$warning<br>#FFAE00<br>rgb(255, 174, 0)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">Alert</div>
+			<div class="swatch bgcolor alert align-center">Accessible text</div>
+			<div class="card-section">$alert<br>#D00606<br>rgb(208, 6, 6)</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- DC-OT -->
+<div class="row">
+	<div class="column">
+		<h3>DC-OT colours</h3>
+	</div>
+</div>
+<div class="row xxsmall-up-1 xsmall-up-2 medium-up-4">
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">OT-DC grey</div>
+			<div class="swatch bgcolor otdcgrey align-center">Accessible text</div>
+			<div class="card-section">$otdcgrey<br>#414042<br>rgb(65, 64, 66)</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="card">
+			<div class="card-divider">DC green</div>
+			<div class="swatch bgcolor dcgreen align-center">Accessible text</div>
+			<div class="card-section">$dcgreen<br>#037C5A<br>rgb(3, 124, 90)</div>
+		</div>
+	</div>
+</div>
+
+{{#unlesspage 'index'}}
+<hr>
+
+<!-- Text colours -->
+<div class="row" id="text-colours" data-magellan-target="text-colours">
+	<div class="column">
+		<h3>Text colour classes</h3>
+		<p>Use {{> main-palette}} on a <code>span</code> element to change the text colour. Some components have automated text colours based on the background colour (e.g. <a href="spotlight.html">spotlight feature module</a>). Use the <code>.important</code> span colour class to override the default text colour.</p>
+		<div class="callout code-example">
+			<p><span class="lightblue">Paragraph with light blue text.</span></p>
+			<p>Paragraph with a <a href=""><span class="orange">link</span></a>, with the default light blue link color overridden.</p>
+			<h3><span class="grey">Heading with the default dark blue heading color overridden.</span></h3>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- Background colours -->
+<div class="row" id="background-colours" data-magellan-target="background-colours">
+	<div class="column">
+		<h3>Background colour classes</h3>
+		<p>Use the class <code>.bgcolor</code> and {{> main-palette}} to add a background colour to an element.</p>
+		<div class="code-example">
+			<span class="bgcolor lightblue">A span with a light blue background.</span>
+			<div class="bgcolor grey padding">A div with a grey background.</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<!-- SASS -->
+<div class="row" id="sass-colours" data-magellan-target="sass-colours">
+	<div class="column">
+		<h3>SASS usage and HTML colour class names</h3>
+		<p>For SASS usage, the various web shades are available in two different palette maps: <code>$basic-palette</code> and <code>$main-palette</code>. The colour key names can be used in HTML class names on various components. For simplicity and a slightly slimmer build file, certain components only allow colors from <code>$basic-palette</code> (such as <a href="banner.html">banner</a>), while others allow all colours from the <code>$main-palette</code> (such as <a href="colours-text.html">span text colour</a> or <a href="callout.html">bold callout</a>).</p>
+
+		<p>The <code>$basic-palette</code> map contains the <a href="https://brand.ontariotechu.ca/resources/colours-design-graphics-and-fonts/colours.php" target="_blank">university's official brand primary palette</a> and web shades at full strength.</p>
+		<div class="medium-4">
+			<pre class="language-scss"><code>
+			$basic-palette: (
+				lightblue: $lightblue,
+				darkblue: $darkblue,
+				blue: $blue,
+				mediumblue: $blue,
+				orange: $orange,
+				accent: $orange,
+				grey: $bluegrey,
+			);
+			</code></pre>
+		</div>
+		<br>
+
+		<p>The <code>$main-palette</code> map contains the colours from the basic palette,  shade variations, as well as UI element colours.</p>
+		<div class="medium-4">
+			<pre class="language-scss"><code>
+			$main-palette: (
+				lightblue: $lightblue,
+				darkblue: $darkblue,
+				blue: $blue,
+				mediumblue: $blue,
+				darkerblue: $darkerblue,
+				spiritblue: $spiritblue,
+				orange: $orange,
+				accent: $orange,
+				grey: $bluegrey,
+				lightgrey: $lightgrey,
+				mediumgrey: $mediumgrey,
+				coolgrey: $coolgrey,
+				warmgrey: $warmgrey,
+				bluegrey: $bluegrey,
+				white: $white,
+				emergency: $emergency,
+				alert: $alert,
+				success: $success,
+				warning: $warning,
+			);
+			</code></pre>
+		</div>
+		<br>
+
+		<p>There is also the <code>$foundation-palette</code> map, which contains all of the above colours, but also includes legacy variable/class names. In SASS usage, this palette should typically not be used unless legacy support is required for the component. The <a href="#background-colours">bgcolor</a> utility class uses this palette. See also: <a href="#legacy-colours">legacy colour support</a>. </p>
+	</div>
+</div>
+
+<hr>
+
+<!-- Legacy -->
+<div class="row" id="legacy-colours" data-magellan-target="legacy-colours">
+	<div class="column">
+		<h3>Support for Global v3.0 legacy colours</h3>
+		<p>Global 3.0 styles included support for several v2.1 legacy class names, as well as 10 different shades of the three grey brand colours.</p>
+		<p>In v3.1, v2.1 legacy class names are no longer supported (e.g. "pink", "green", "yellow").</p> 
+		<p>In v3.1, the extensive 10-shade variations have been removed (e.g. "coolgrey10",  "coolgrey20", "warmgrey30", etc). However, all former HTML colour class names have legacy support in v3.1 and will be rendered as a one of the light/medium/full strength versions in the <a href="#web-palette">web palette</a>. <strong>Where possible/as you come across them, the HTML class name should be updated to one of the fully supported light/medium/full strength shades instead.</strong></p>
+		<p><strong>cool/warm/bluegrey10 through 30</strong> will render as the <strong>light</strong> version of the grey. E.g. A class name of <code>.coolgrey20</code> will display the HEX colour code for <code>.lightcoolgrey</code>. A class name of <code>.warmgrey30</code> will display the HEX colour code for <code>.lightwarmgrey</code>.</p>
+		<p><strong>cool/warm/bluegrey40 through 70</strong> will render as the <strong>medium</strong> version of the grey. E.g. A class name of <code>.coolgrey40</code> will display the HEX colour code for <code>.mediumcoolgrey</code>. A class name of <code>.bluegrey50</code> will display the HEX colour code for <code>.mediumbluegrey</code>.</p>
+		<p><strong>cool/warm/bluegrey80 through 90</strong> will render as the <strong>full strength</strong> version of the grey. E.g. A class name of <code>.coolgrey80</code> will display the HEX colour code for <code>.coolgrey</code>. A class name of <code>.warmgrey90</code> will display the HEX colour code for <code>.warmgrey</code>.</p>
+	</div>
+</div>
+<div class="row xxsmall-up-1 large-up-2 xlarge-up-3">
+	<div class="column">
+		<img src="assets/v3.1coolgreytints.jpg" alt="Updated coolgrey classes">
+	</div>
+	<div class="column">
+		<img src="assets/v3.1warmgreytints.jpg" alt="Updated warmgrey classes">
+	</div>
+	<div class="column">
+		<img src="assets/v3.1bluegreytints.jpg" alt="Updated bluegrey classes">
+	</div>
+</div>
+
+
+	</div>
+</div>
+{{/unlesspage}}
+
+<style>
+	.swatch {
+		height: 150px;
+		display: flex;
+		align-items: center;
+		flex-flow: column;
+	}
+	</style>

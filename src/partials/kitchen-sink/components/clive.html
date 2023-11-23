@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Clive forms</h2>
+		<script async="true" data-clive-id="5792" data-clive-type="form" src="https://live.clive.cloud/forms/5792/embed"></script>
+		<style>
+			/* Hidden Clive fields */
+			.clive-field-wrapper[id$='-47573'],
+			.clive-field-wrapper[id$='-47574'],
+			.clive-field-wrapper[id$='-47575'],
+			.clive-field-wrapper[id$='-47576'],
+			.clive-field-wrapper[id$='-47577'],
+			.clive-field-wrapper[id$='-47578'] {
+				display: none;
+			}
+		</style>
+		<script>
+			// Set default values for hidden Clive form fields
+			document.addEventListener("DOMContentLoaded", function(event) { 
+				// Hubspot cookie; REQUIRED
+				setCliveCookieValue('field_47573', 'hubspotutk');
+
+				// Page name
+				setCliveFieldValue('field_47575', document.title);
+					
+				// URL tracking parameters
+				let paramsString = window.location.search;
+				if (paramsString) {
+					let searchParams = new URLSearchParams(paramsString);
+					if (searchParams.has("utm_source") === true) setCliveFieldValue('field_47576', searchParams.get("utm_source"));
+					if (searchParams.has("utm_campaign") === true) setCliveFieldValue('field_47577', searchParams.get("utm_campaign"));
+					if (searchParams.has("converted_from_a_digital_ad") === true) setCliveFieldValue('field_47578', searchParams.get("converted_from_a_digital_ad"));	
+				}
+			});
+			</script>
+	</div>
+</div>

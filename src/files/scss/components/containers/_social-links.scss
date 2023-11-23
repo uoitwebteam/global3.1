@@ -1,0 +1,36 @@
+/**
+ * Social channel links
+ * Related files: 
+ * - components/containers/feature-module
+ * - components/containers/spotlight
+ */
+
+.social-links {
+	@include flex-grid-row;
+
+	a {
+		@include remove-link-style();
+		font-family: $heading-font;
+		font-weight: bold;
+		margin: 1rem 5%;
+		
+		[class*="icon_"] {
+			font-size: 3.5rem;
+			color: $lightblue !important;
+			float: left;
+			transition: all ease .3s;
+		}
+
+		.channel-name {
+			margin-left: .5rem;
+			font-size: 1rem;
+			line-height: 3.5rem;
+		}
+
+		&:hover, &:active, &:focus {
+			[class*="icon_"] {
+				transform: scale(1.1);
+			}
+		}
+	}
+}

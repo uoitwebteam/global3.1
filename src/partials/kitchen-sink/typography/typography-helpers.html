@@ -1,0 +1,95 @@
+{{#unlesspage 'index'}}
+<div class="row collapse has-on-page-menu">
+	<div class="column xxsmall-12 medium-2 medium-order-2 on-this-page callout lightblue">
+		<div class="sticky" data-sticky data-margin-top="0" data-sticky-on="medium">
+			<ul class="menu vertical" data-magellan>
+				<li class="menu-heading heading-font border-bottom">On this page:</li>
+				<li><a href="#type-helper-alignment">Text alignment</a></li>
+				<li><a href="#ype-helper-sizing">Text sizing</a></li>
+				<li><a href="#type-helper-weight">Font weight</a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="column xxsmall-12 medium-10">
+{{/unlesspage}}
+
+<div class="row">
+	<div class="column">
+		<h2 class="h1">Typography helpers</h2>
+	</div>
+</div>
+
+<div class="row" id="type-helper-alignment" data-magellan-target="type-helper-alignment">
+	<div class="column">
+		<h3>Text alignment</h3>
+		<p>Use one of the classes <code>.text-left</code>, <code>.text-right</code>, <code>.text-center</code>, or <code>.text-justify</code> to change the alignment of a block of text.</p>
+		<div class="code-example">
+			<p class="text-left"><strong>Left-aligned.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem quaerat, odio accusamus officiis deserunt obcaecati. Provident accusamus et repellat architecto, labore! Accusantium harum similique autem, odio perspiciatis modi minima.</p>
+		
+			<p class="text-right"><strong>Right-aligned.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam aliquid libero maxime, dolorum commodi fugit perferendis eveniet maiores accusamus minus inventore magni dicta esse nihil consequatur animi quos! Atque, odit?</p>
+		
+			<p class="text-center"><strong>Center-aligned.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore iusto corporis, tenetur magni quas excepturi assumenda iure natus ex alias eaque impedit blanditiis tempore, dignissimos facilis porro sit! Reprehenderit, odit?</p>
+		
+			<p class="text-justify"><strong>Justified.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At facilis nobis, magni, nostrum nesciunt nulla, maiores atque officiis delectus facere laboriosam cum, natus qui enim aspernatur praesentium dignissimos architecto maxime.</p>
+		</div>
+		
+		<h4>Breakpoint-based alignment</h4>
+		<p>Add <a href="breakpoints.html">breakpoint size classes</a> to the front of the text alignment class to only apply the style on the specified size screen and larger. 
+		For example, <code>&lt;p class="medium-text-center"&gt;...&lt;/p&gt;</code> will be left-aligned until medium screen sizes and up, at which point it will switch to center-aligned.</p>
+		<div class="code-example">
+			<p class="medium-text-center"><strong>Center-aligned on medium and up only.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore iusto corporis, tenetur magni quas excepturi assumenda iure natus ex alias eaque impedit blanditiis tempore, dignissimos facilis porro sit! Reprehenderit, odit?</p>
+		</div>
+
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="type-helper-sizing" data-magellan-target="type-helper-sizing">
+	<div class="column">
+		<h3>Text sizing</h3>
+		<p>Text sizing classes can be applied to paragraph, span, and heading tags.</p> 
+		<div class="code-example">
+			<p>Default paragraph. <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore similique molestias ut facilis natus adipisci laudantium quaerat illo maxime esse blanditiis incidunt magnam quisquam ea, itaque aspernatur, repudiandae nostrum. Similique?</p> 
+		
+			<p class="text-larger">Paragraph with larger text. <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate numquam, deleniti nulla dolorum ipsa sunt ad explicabo eum, quis iure id eaque. Atque quas, adipisci incidunt. Corporis magnam voluptatem deleniti!</p>
+		
+			<p class="text-smaller">Paragraph with smaller text. <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ut, corporis amet animi at consequuntur quas necessitatibus soluta voluptates repudiandae, dicta perspiciatis quia iste laudantium, explicabo cupiditate rem ipsum distinctio.</p>
+		
+			<p>Some text with a <span class="text-smaller">smaller span</span>.</p>
+		
+			<p>Semantic use of the <small>small tag</small>.</p>
+			
+			<h3>Default h3</h3>
+			<h3 class="text-larger">Larger h3</h3>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="row" id="type-helper-weight" data-magellan-target="type-helper-weight">
+	<div class="column">
+		<h3>Font weight</h3>
+
+		<p>Override bold text with the <code>light</code> class.</p> 
+		<div class="callout code-example">
+			<blockquote class="callout-quote light" style="margin-top:2rem;">
+				The university's curriculum helped me achieve my career goals. The professors provide a comfortable learning environment and treat students with respect.
+				<cite>Danielle Kent Johnston</cite>
+			</blockquote>
+
+			<p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span class="light">Light text here</span> natus adipisci laudantium quaerat illo maxime esse blanditiis incidunt magnam quisquam ea, itaque aspernatur, repudiandae nostrum. Similique?</strong></p> 
+
+			<h2 class="light">Light heading</h2>
+		</div>
+	</div>
+</div>
+
+{{#unlesspage 'index'}}
+</div>
+</div>
+{{/unlesspage}}

@@ -1,12 +1,12 @@
 {
   "name": "ot-sites",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Ontario Tech Sites Global Template",
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production",
-    "sassdev": "gulp sassdev",
+    "sass": "gulp sass",
     "sasscustom": "gulp sasscustom"
   },
   "author": "OT Web Team <webteam@ontariotechu.ca>",
@@ -36,6 +36,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
     "gulp-extname": "^0.2.2",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.1.0",

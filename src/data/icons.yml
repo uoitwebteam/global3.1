@@ -1,0 +1,746 @@
+icons:
+  - title: UI icons
+    id: ui-icons
+    icons:
+      -
+        name: icon_accessibility
+      -
+        name: icon_universal-access
+      -
+        name: icon_arrow_up
+      -
+        name: icon_arrow_down
+      -
+        name: icon_arrow_left
+      -
+        name: icon_arrow_right
+      -
+        name: icon_emergency
+      -
+        name: icon_directory
+      -
+        name: icon_cross
+      -
+        name: icon_link
+      -
+        name: icon_medkit 
+      -
+        name: icon_home
+      -
+        name: icon_info 
+      -
+        name: icon_menu
+      -
+        name: icon_mouse_window
+      -
+        name: icon_question
+      -
+        name: icon_search
+      -
+        name: icon_settings
+      -
+        name: icon_spin
+      -
+        name: icon_warning
+
+  - title: Date/time icons
+    id: datetime-icons
+    icons:
+      -
+        name: icon_calendar
+      -
+        name: icon_calendardate
+      -
+        name: icon_clock
+      -
+        name: icon_watch
+
+  - title: Office/administrative icons
+    id: office-icons
+    icons:
+      -
+        name: icon_bell
+      -
+        name: icon_book
+      -
+        name: icon_books
+      -
+        name: icon_book_ot
+      -
+        name: icon_briefcase
+      -
+        name: icon_cc_visa 
+      -
+        name: icon_cc_mastercard 
+      -
+        name: icon_check
+      -
+        name: icon_checkbox
+      -
+        name: icon_close
+      -
+        name: icon_closebox
+      -
+        name: icon_clipboard
+      -
+        name: icon_clipboard-grad
+      -
+        name: icon_desk			
+      -
+        name: icon_envelope
+      -
+        name: icon_file 
+      -
+        name: icon_file_text
+      -
+        name: icon_file_image
+      -
+        name: icon_file_information
+      -
+        name: icon_file_css
+      -
+        name: icon_file_doc
+      -
+        name: icon_file_eps
+      -
+        name: icon_file_exe
+      -
+        name: icon_file_gif
+      -
+        name: icon_file_jpg
+      -
+        name: icon_file_pdf 
+      -
+        name: icon_file_png
+      -
+        name: icon_file_rss
+      -
+        name: icon_file_svg
+      -
+        name: icon_file_zip
+      -
+        name: icon_folder
+      -
+        name: icon_fontsize 
+      -
+        name: icon_key 
+      -
+        name: icon_list   
+      -
+        name: icon_lock
+      -
+        name: icon_magnifyingglass 
+      -
+        name: icon_mail 
+      -
+        name: icon_megaphone 
+      -
+        name: icon_microphone  
+      -
+        name: icon_palette 
+      -
+        name: icon_paper
+      -
+        name: icon_paperclip 
+      -
+        name: icon_pen    
+      -
+        name: icon_pencil
+      -
+        name: icon_pencilholder 
+      -
+        name: icon_pin-outline 
+      -
+        name: icon_recycle
+      -
+        name: icon_ticket
+      -
+        name: icon_trash
+      -
+        name: icon_working_from_home
+
+  - title: Graphs/measurement icons
+    id: graph-icons
+    icons: 
+      -
+        name: icon_chart
+      -
+        name: icon_chart2
+      -
+        name: icon_chart3
+      -
+        name: icon_piechart
+      -
+        name: icon_balancescale
+      -
+        name: icon_easel
+      -
+        name: icon_easel2 
+      -
+        name: icon_grid
+      -
+        name: icon_grid2
+      -
+        name: icon_grid3
+      -
+        name: icon_network
+      -
+        name: icon_network2
+      -
+        name: icon_ruler
+      -
+        name: icon_ruler2
+
+  - title: Travel/navigation icons
+    id: travel-nav-icons
+    icons:
+      -
+        name: icon_airplane
+      -
+        name: icon_bus
+      -
+        name: icon_car
+      -
+        name: icon_compass
+      -
+        name: icon_dashboard
+      -
+        name: icon_direction 
+      -
+        name: icon_elevator
+      -
+        name: icon_globe
+      -
+        name: icon_location-dot
+      -
+        name: icon_map
+      -
+        name: icon_mapmarker
+      -
+        name: icon_people_single
+      -
+        name: icon_target
+      -
+        name: icon_train
+
+  - title: Technology/media icons
+    id: tech-icons
+    icons: 
+      - 
+        name: icon_battery
+      - 
+        name: icon_camera 
+      - 
+        name: icon_chat
+      - 
+        name: icon_code
+      - 
+        name: icon_computer
+      - 
+        name: icon_computerchip
+      - 
+        name: icon_cursor
+      - 
+        name: icon_download
+      - 
+        name: icon_download_laptop
+      - 
+        name: icon_gamecontroller
+      - 
+        name: icon_globenetwork
+      - 
+        name: icon_play
+      - 
+        name: icon_pause
+      - 
+        name: icon_phone
+      - 
+        name: icon_smartphone
+      - 
+        name: icon_image
+      - 
+        name: icon_inbox_down
+      - 
+        name: icon_inbox_up
+      - 
+        name: icon_laptop
+      - 
+        name: icon_lock_laptop
+      - 
+        name: icon_lock_social_media
+      - 
+        name: icon_lockeddrive
+      - 
+        name: icon_message
+      - 
+        name: icon_message2
+      - 
+        name: icon_message3
+      - 
+        name: icon_message4
+      - 
+        name: icon_mouse
+      - 
+        name: icon_multifactor_authentication
+      - 
+        name: icon_network
+      - 
+        name: icon_network2
+      - 
+        name: icon_phishing
+      - 
+        name: icon_plug
+      - 
+        name: icon_printer
+      - 
+        name: icon_tablet
+      - 
+        name: icon_upload 
+      - 
+        name: icon_usbkey
+      - 
+        name: icon_videocamera
+      - 
+        name: icon_volume
+      - 
+        name: icon_volume_mute
+      - 
+        name: icon_wifi
+  
+  - title: Social media icons
+    id: social-icons
+    icons: 
+      - 
+        name: icon_sharelink
+      - 
+        name: icon_social_facebook
+      - 
+        name: icon_social_instagram
+      - 
+        name: icon_social_linkedin
+      - 
+        name: icon_social_tiktok
+      - 
+        name: icon_social_twitter
+      - 
+        name: icon_social_snapchat
+      - 
+        name: icon_social_youtube
+  
+  - title: People icons
+    id: people-icons
+    icons: 
+      - 
+        name: icon_audience
+      - 
+        name: icon_construction
+      - 
+        name: icon_emoji-smile
+      - 
+        name: icon_friends
+      - 
+        name: icon_graduate
+      - 
+        name: icon_handshake
+      - 
+        name: icon_idcard
+      - 
+        name: icon_people_profile
+      - 
+        name: icon_people_single
+      - 
+        name: icon_people_group
+      - 
+        name: icon_professor
+      - 
+        name: icon_professor2
+      - 
+        name: icon_reading
+      - 
+        name: icon_working_from_home
+  
+  - title: Science - biology/chemistry/health icons
+    id: bio-chem-icons
+    icons: 
+      - 
+        name: icon_brain
+      - 
+        name: icon_bunsenburner
+      - 
+        name: icon_dna
+      - 
+        name: icon_dropper
+      - 
+        name: icon_flask
+      - 
+        name: icon_heart
+      - 
+        name: icon_molecules
+      - 
+        name: icon_pill
+      - 
+        name: icon_skeletalhand
+      - 
+        name: icon_sling
+      - 
+        name: icon_stethoscope
+      - 
+        name: icon_testtube
+      - 
+        name: icon_testtubes
+  
+  - title: Science - math/engineering/nuclear icons
+    id: math-eng-icons
+    icons: 
+      -
+        name: icon_atom
+      -
+        name: icon_calculator
+      -
+        name: icon_energy
+      -
+        name: icon_engine
+      -
+        name: icon_gasmask
+      -
+        name: icon_gear
+      -
+        name: icon_gears
+      -
+        name: icon_hazard
+      -
+        name: icon_needle
+      -
+        name: icon_pi
+      -
+        name: icon_proton
+      -
+        name: icon_mathsymbols
+      -
+        name: icon_mechanicalarm
+      -
+        name: icon_microscope
+      -
+        name: icon_windmill
+      -
+        name: icon_relativity
+      -
+        name: icon_solarpanels
+      -
+        name: icon_tools
+  
+  - title: Education icons
+    id: edu-icons
+    icons: 
+      - 
+        name: apple
+      - 
+        name: award
+      - 
+        name: blackboard
+      - 
+        name: canvas
+      - 
+        name: diploma
+      - 
+        name: gradcap
+      - 
+        name: letters
+  
+  - title: Sports icons
+    id: sports-icons
+    icons: 
+      - 
+        name: curling
+      - 
+        name: dancer
+      -
+        name: icon_baseball
+      - 
+        name: icon_basketball
+      - 
+        name: golf
+      - 
+        name: hockey
+      - 
+        name: lacrosse
+      - 
+        name: oars
+      - 
+        name: soccer
+      - 
+        name: tennis
+ 
+  - title: Academic icons
+    id: academic-icons
+    icons: 
+      - 
+        name: backpack
+      - 
+        name: glasses
+      - 
+        name: locker
+      - 
+        name: tie
+  
+  - title: Justice icons
+    id: justice-icons
+    icons: 
+      - 
+        name: gavel
+      - 
+        name: handcuffs
+      - 
+        name: scales
+  
+  - title: Money-related icons
+    id: money-icons
+    icons: 
+      - 
+        name: icon_cart
+      - 
+        name: icon_basket 
+      - 
+        name: icon_money
+      - 
+        name: icon_piggybank 
+  
+  - title: Nature and weather icons
+    id: nature-icons
+    icons: 
+      - 
+        name: icon_leaf
+      - 
+        name: icon_flower
+      - 
+        name: icon_cloud
+      - 
+        name: icon_cloud_lightning
+      - 
+        name: icon_cloud_rain
+      - 
+        name: icon_cloud_sun
+      - 
+        name: icon_drop
+      - 
+        name: icon_lightning
+      - 
+        name: icon_sun
+      - 
+        name: icon_snowflake
+      - 
+        name: icon_turtle
+      - 
+        name: icon_water
+  
+  - title: Miscellaneous icons
+    id: misc-icons
+    icons: 
+      - 
+        name: icon_awareness
+      - 
+        name: icon_blocks
+      - 
+        name: icon_bricks
+      - 
+        name: icon_building
+      - 
+        name: icon_door
+      - 
+        name: icon_drink
+      - 
+        name: icon_lightbulb
+      - 
+        name: icon_music
+      - 
+        name: icon_networking
+      - 
+        name: icon_points
+      - 
+        name: icon_star
+      - 
+        name: icon_star-empty
+      - 
+        name: icon_star-half
+      - 
+        name: icon_star-half-alt
+      - 
+        name: icon_stein
+      - 
+        name: icon_trophy
+
+internal-icons: 
+  - title: Internal icons (not publicly available)
+    id: internal-icons
+    icons:
+      -
+        name: icon_otshield
+      -
+        name: icon_chevron_up
+      -
+        name: icon_chevron_down
+      -
+        name: icon_chevron_left
+      -
+        name: icon_chevron_right
+      -
+        name: icon_chevron_top_left
+      -
+        name: icon_chevron_top_right
+      -
+        name: icon_chevron_bottom_left
+      -
+        name: icon_chevron_bottom_right
+      -
+        name: icon_gonfalon_fsci
+      -
+        name: icon_gonfalon_fssh
+      -
+        name: icon_gonfalon_fesns
+      -
+        name: icon_gonfalon_fbit
+      -
+        name: icon_gonfalon_fhs
+      -
+        name: icon_gonfalon_fed
+      -
+        name: icon_gonfalon_feas
+      -
+        name: icon_iecs-bear
+      -
+        name: icon_paw
+  
+legacy-icons:
+  - title: Legacy class names
+    id: legacy-icons
+    icons:
+      - 
+        name: icon_alarmbell
+      - 
+        name: icon_bargraph
+      - 
+        name: icon_batterylevel
+      - 
+        name: icon_belloutline
+      - 
+        name: icon_camera-outline 
+      - 
+        name: icon_cancel
+      - 
+        name: icon_canceloutline
+      - 
+        name: icon_carside
+      - 
+        name: icon_cc-visa 
+      - 
+        name: icon_cc-mastercard  
+      - 
+        name: icon_chatbubbles
+      - 
+        name: icon_chattyping
+      - 
+        name: icon_checkoutline
+      - 
+        name: icon_church
+      - 
+        name: icon_clock2
+      - 
+        name: icon_codingbrackets
+      - 
+        name: icon_compass2
+      - 
+        name: icon_constructionworkers
+      - 
+        name: icon_directionalarrows
+      - 
+        name: icon_download-alt 
+      - 
+        name: icon_drive
+      - 
+        name: icon_folderwithprofilegear
+      - 
+        name: icon_flowchart
+      - 
+        name: icon_greenlightbulb
+      - 
+        name: icon_hunter
+      - 
+        name: icon_idandlaptop
+      - 
+        name: icon_idlock
+      - 
+        name: icon_infoclipboard
+      - 
+        name: icon_laptopsound
+      - 
+        name: icon_laptopcheckboxes
+      - 
+        name: icon_laptopgear
+      - 
+        name: icon_laptoptablet
+      - 
+        name: icon_laptoptools
+      - 
+        name: icon_linechart
+      - 
+        name: icon_linegraph
+      - 
+        name: icon_link-ext
+      - 
+        name: icon_list-bullet 
+      - 
+        name: icon_list-numbered
+      - 
+        name: icon_mail-outline
+      - 
+        name: icon_map-signs 
+      - 
+        name: icon_map-outline
+      - 
+        name: icon_measuringtape
+      - 
+        name: icon_mouse2
+      - 
+        name: icon_paper2 
+      - 
+        name: icon_penwriting 
+      - 
+        name: icon_pencil2
+      - 
+        name: icon_person
+      - 
+        name: icon_personchat
+      - 
+        name: icon_picture
+      - 
+        name: icon_profilesettings 
+      - 
+        name: icon_qa
+      - 
+        name: icon_quicklinks
+      - 
+        name: icon_readers
+      - 
+        name: icon_runner
+      - 
+        name: icon_runners
+      - 
+        name: icon_runners2
+      - 
+        name: icon_sound
+      - 
+        name: icon_speechbubble
+      - 
+        name: icon_stopwatch
+      - 
+        name: icon_table
+      - 
+        name: icon_thumbnails
+      - 
+        name: icon_transit
+      - 
+        name: icon_videocam
+      - 
+        name: icon_walk
+      - 
+        name:	icon_walking

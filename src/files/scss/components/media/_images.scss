@@ -1,0 +1,154 @@
+// Related files: components/multimedia/photogallery
+
+
+// Image floats 
+// ------------
+img.float-left,
+p.float-left img, 
+figure.float-left,
+.img_left, // legacy - v1 
+img.float_left, // legacy - v2.0
+p.float_left img // legacy - v2.0
+{  
+	float: left;
+	margin-bottom: .75rem;
+
+	@include breakpoint(699px down) {
+		float: none !important;
+		width: 100%;
+		margin-right: 0;
+	}
+	@include breakpoint(700px) {
+	  margin-right: 1.75rem;
+	}
+}
+
+img.float-right,
+p.float-right img, 
+figure.float-right,
+.img_right, // legacy - v1
+img.float_right, // legacy - v2.0
+p.float_right img // legacy - v2.0
+{
+	float: right;
+	margin-bottom: .75rem;
+
+	@include breakpoint(699px down) {
+		float: none !important;
+		width: 100%;
+		margin-left: 0;
+	}
+	@include breakpoint(700px) {
+	  margin-left: 1.75rem;
+	}
+}
+
+// Individual image (Light gallery - pop up)
+// ----------------
+.img-enlarge,
+.img-enlarge:hover {
+	cursor: pointer; 
+}
+
+// Image with caption
+// ------------------
+figure {
+	margin: 0;
+}
+
+figcaption {
+	margin-top: .25rem;
+	font-family: $heading-font;
+}
+// .landing-page-content figcaption,
+// .page-content figcaption,
+// .page-sidebar figcaption,
+// .kitchen-sink figcaption {
+// 	font-family: $heading-font;
+// }
+
+img.caption {
+	@extend figure;
+}
+
+// Thumbnail
+// ---------
+.th {
+	@extend .thumbnail;
+}
+
+// Circle crop
+// -----------
+$circle-border-width: 6px;
+$circle-border-color: $darkblue;
+img.circle {
+	border-radius: 50%;
+	clip-path: circle();
+
+	&.border {
+		border: $circle-border-width solid $circle-border-color;
+	}
+
+	&.thumbnail, &.th {
+		border-width: 2px;
+		border-color: rgba($black, 0.2);
+		padding: 4px;
+		box-shadow: none;
+	}
+}
+// Circle crop with border on a non-square image
+.has-circle-border {
+	position: relative;
+	text-align: center;
+	clip-path: circle();
+	padding: calc(#{$circle-border-width} - 1px);
+
+	img.border {
+		border: 0;
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: $circle-border-color;
+		mask: radial-gradient(
+			circle closest-side,
+			transparent calc(100% - #{$circle-border-width}),
+			#fff calc(100% - #{$circle-border-width} + 1px)
+		);
+	}
+}
+// Circle crop with thumbnail style on a non-square image
+.has-circle-thumbnail {
+	position: relative;
+	text-align: center;
+	clip-path: circle();
+	padding: 5px;
+
+	img.thumbnail {
+		border: 0;
+		padding: 0;
+		margin: 0;
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba($black, 0.2);
+		mask: radial-gradient(
+			circle closest-side,
+			transparent calc(100% - 2px),
+			#fff calc(100% - 2px + 1px)
+		);
+	}
+}

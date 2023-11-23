@@ -1,0 +1,122 @@
+{{!-- Documentation/Kitchen Sink layout --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+		<link rel="stylesheet" type="text/css" href="{{root}}files/css/docs.css">
+		<script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+		<link rel="shortcut icon" href="{{root}}files/img/favicon.ico" type="image/x-icon">
+  </head>
+<body class="kitchen-sink">
+
+{{> _kitchen-sink-nav}}
+
+<div class="off-canvas-content" data-off-canvas-content>
+	<div class="sticky hide-for-large" data-sticky data-margin-top="0">
+		<div class="title-bar">
+			<button type="button" class="button small icon_menu icon-center" data-toggle="kitchen-sink-menu"><span class="show-for-sr">Toggle menu</span></button>
+			<div class="title-bar-title">Ontario Tech Sites Global Template</div>
+			{{#ifpage 'index'}}
+			<div class="title-bar-right">
+				<button type="button" class="button small icon_page icon-center" data-toggle="all-on-page-menu"><span class="show-for-sr">On this page</span></button>
+			</div>
+			{{/ifpage}}
+		</div>
+		
+	</div>
+
+	{{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+	<div class="kitchen-sink-content">
+		{{> body}}
+	</div>
+</div>
+
+<!-- 'On this page' off-canvas menu for index page -->
+{{#ifpage 'index'}}
+<button type="button" id="floating-on-page-toggle" class="button small icon_page icon-center show-for-large-only" data-toggle="all-on-page-menu" style="position: fixed; top: 0; right: 0"><span class="show-for-sr">On this page</span></button>
+<div id="all-on-page-menu" class="off-canvas position-right reveal-for-xlarge on-this-page" data-off-canvas>
+	<!-- <div class="sticky" data-sticky data-top-anchor="main-content" data-sticky-on="medium"> -->
+		<ul class="menu vertical" data-magellan>
+			<li class="menu-heading heading-font border-bottom">On this page:</li>
+	<!-- Auto-generate component on-page nav using data/kitchen-sink.yml -->
+	{{#each kitchen-sink.nav}}
+		{{#each section}}
+		</ul>
+		<ul class="menu vertical" data-magellan>
+			{{#if items}}
+				<li class="menu-heading">{{heading}}</li>
+					{{#each items}}
+					<li><a href="#{{page}}">{{title}}</a></li>
+					{{#if subitems}}
+						<ul class="menu vertical nested">
+						{{#each subitems}}
+							<li><a href="#{{page}}">{{title}}</a></li>
+						{{/each}}
+						</ul>
+					{{/if}}
+					{{/each}}
+			{{/if}}
+		{{/each}}
+	{{/each}}
+		</ul>
+	<!-- </div>	 -->
+</div>
+{{/ifpage}}
+
+{{#unlesspage 'index'}}
+<script>
+	function numberOfTabs(text) {
+		var count = 0;
+		var index = 0;
+		while (text.charAt(index++) === "\t") {
+			count++;
+		}
+		return count;
+	}
+	// Output .code-example sections as code blocks above the example content
+	var examples = document.querySelectorAll('.code-example');
+	for (var i = 0; i < examples.length; i++) {
+		var string = examples[i].innerHTML;
+		// string = string.replace(/^\n|^\r|^\t+|^\s+|\s+$/gm,''); 
+		var row = document.createElement("div");
+		var col = document.createElement("div");
+		var pre = document.createElement("pre");
+		var code = document.createElement("code");
+		var content = document.createTextNode(string);
+		code.appendChild(content);
+		pre.appendChild(code); 
+		col.appendChild(pre);
+		row.appendChild(col);
+		examples[i].parentNode.insertBefore(row, examples[i]); 
+		row.classList.add('row');
+		col.classList.add('column');
+		
+		examples[i].classList.forEach(className => {
+			if (className.includes('language-')) pre.classList.add(className);
+			if (className.includes('scroll')) pre.classList.add(className);
+			if (className.includes('line-numbers')) pre.classList.add(className);
+			else pre.classList.add('language-html');
+		});
+
+		if (examples[i].getAttribute('data-line') != null) {
+			pre.setAttribute('data-line', examples[i].getAttribute('data-line'));
+		}
+	} 
+	</script>
+	{{/unlesspage}}
+	<script src="{{root}}files/js/global3.1.js"></script>
+
+	<!-- Testing -->
+	<!-- <script>
+		var $accordion = new Foundation.Accordion($('#accordion'), {
+			slideSpeed: 500,
+			multiExpand: true
+		});
+		console.log($accordion);
+	</script> -->
+</body>
+</html>

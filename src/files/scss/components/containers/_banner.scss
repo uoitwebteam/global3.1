@@ -1,0 +1,778 @@
+.banner {
+	position: relative;
+	margin-bottom: use_gutter();
+	// prevent oversized banner images from overlapping footer
+	max-height: 100%;
+	overflow: hidden;
+	// z-index: 0;
+
+	@include breakpoint(medium) {
+		// appear under navigation
+		margin-top: -2rem;
+	}
+
+	figure {
+		font-size: 0;
+	}
+
+	img,
+	video {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+	.responsive-embed,
+	.flex-video {
+		margin-bottom: 0;
+	}
+
+	figcaption {
+		width: 100%;
+		margin: 0;
+		display: block;
+		line-height: 1.1;
+		color: #fff;
+		z-index: 2;
+
+		&:not(.button-only) {
+			background: $darkblue;
+			padding: 1.5rem 1rem;
+
+			@include breakpoint(medium) {
+				padding: 1.5rem 2rem;
+			}
+		}
+
+		// caption position and corresponding styles
+		@include breakpoint(small down) {
+			&.button-only .button {
+				width: 100%;
+			}
+		}
+		@include breakpoint(medium) {
+			position: absolute;
+			bottom: 20%;
+			left: 50%;
+			width: 100%;
+			max-width: 90%;
+			display: flex;
+			flex-flow: row;
+			align-items: center;
+			justify-content: space-between;	
+			transform: translateX(-50%);		
+			color: $black;
+			&:not(.button-only) {
+				background: rgba(255, 255, 255, .9);
+			}
+
+			&.button-only {
+				justify-content: flex-end;
+				bottom: 15%;
+
+				.button {
+					margin: 0;
+					box-shadow: 1px 1px rgba(0, 0, 0, .4);
+				}
+			}
+		}
+		@include breakpoint(1440px) {
+			max-width: $global-width;
+		}
+
+		// specified background colour
+		@each $color,
+		$value in $basic-palette {
+			&.#{$color} {
+				&:not(.button-only) {
+					background: $value;
+					
+					@include breakpoint(medium) {
+						@at-root .banner:not(.caption-right) figcaption.#{$color} {
+							background: linear-gradient(-45deg, transparent 30px, rgba($value, .9) 30px);
+						}
+					}
+				}
+
+				color: color-pick-contrast($value, ($darkblue, $white));
+				
+				.header a {
+					color: color-pick-contrast($value, ($orange, $white));
+					&:hover, &:active, &:focus {
+						&::before {
+							background: color-pick-contrast($value, ($orange, $white));
+						}
+					}
+				}
+
+				.cta a, .cta button {
+					@include feature-text-link-style(
+						$color: color-pick-contrast($value, ($lightblue, $white)), 
+						$hover: $orange, 
+						$size: rem-calc(20));
+				}
+			}
+		}
+		&.accent, &.orange {
+			.cta a, .cta button {
+				@include feature-text-link-style($color: $white, $hover: $darkblue, $size: rem-calc(20));
+			}
+		}
+	}
+
+	.contents {
+		@include breakpoint(medium) {
+			padding-left: 0;
+		}
+	}
+
+	.header {
+		font-family: $heading-font;
+		font-size: rem-calc(30);
+		font-weight: 900;
+
+		a { 
+			position: relative;
+			display: inline-block;
+			margin-bottom: 1rem;
+			
+			// chevron
+			&::after {
+				content: '\203A';
+				margin-left: 5px;
+			}
+
+			// bottom border hover
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				transform: scaleX(0);
+				transform-origin: right center;
+				transition: transform 200ms ease-out;
+			}
+
+			// hover effects
+			&:hover,
+			&:active,
+			&:focus {
+				&::before {
+					transform: scaleX(1);
+					transform-origin: left center;
+				}
+			} 
+		}
+	}
+
+	[class*="icon_"] {
+		margin-right: 1rem;
+	}
+
+	.header+.description {
+		margin-top: .75rem;
+	}
+
+	.date {
+		font-family: $heading-font;
+		font-size: rem-calc(16);
+		font-weight: bold;
+		text-transform: uppercase;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+
+	.description {
+		font-family: $heading-font;
+		font-size: rem-calc(24);
+		line-height: 1.2;
+
+		@include breakpoint(small down) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.cta {
+		margin-top: 1rem;
+		a, button {
+			@include feature-text-link-style($color: $white, $hover: $darkblue, $size: rem-calc(20));
+			@include breakpoint(medium) {
+				@include feature-text-link-style($color: $lightblue, $hover: $orange, $size: rem-calc(20));
+			}
+		}
+	}
+}
+
+// Right-facing brand triangle on the left edge
+@mixin triangle($color, $width: 30px, $angle: 35px) {
+	&::before {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		content: '';
+		border-left: $width solid $color;
+		border-top: $angle solid transparent;
+		border-bottom: $angle solid transparent;
+		border-right: 0;
+	}
+}
+
+// Helper classes
+// --------------
+
+.banner {
+	// Display full image (no max-height)
+	&.full-height {
+		@include breakpoint(small down) {
+			margin-bottom: 30px;
+		}
+		
+		figure {
+			max-height: 100%;
+		}
+	}
+
+	// Remove bottom margin
+	&.disable-bottom-margin,
+	&.disable-margin {
+		margin-bottom: 0;
+	}
+
+	// Remove negative top margin
+	&.disable-top-margin {
+		margin-top: 0 !important;
+	}
+}
+
+
+/**
+ * Minimal content overlay, white fade
+ * 
+ * Content module overlaps banner small amount.
+ * Image fades to white.
+ */
+
+.banner.banner-fade {
+	@include breakpoint(medium) {
+		// page content overlay
+		margin-bottom: -50px;
+
+		// limit media height (i.e. video)
+		figure {
+			max-height: 800px;//670px;
+			overflow: hidden;
+		}
+
+		// white overlay
+		&::after {
+			position: absolute;
+			display: block;
+			content: '';
+			width: 200%;
+			height: 100%;
+			top: 0;
+			left: -50%;
+			z-index: 1;
+			box-shadow: 0 -120px 100px white inset;
+		}
+	}
+}
+
+
+/**
+ * Content overlay (internal pages)
+ * 
+ * Main page content overlaps banner.
+ * No <figcaption> should be displayed.
+ */
+
+.banner.content-overlay,
+.banner.content-overlap {
+	@extend .banner-fade;
+
+	figcaption {
+		display: none;
+	}
+	@include breakpoint(medium) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+
+		&+.breadcrumbs {
+			margin-top: rem-calc(150px);
+			ul {
+				max-width: $global-width;
+			}
+		}
+		&~.page-row {
+			background: #fff;
+		}
+		&+.page-row {
+			margin-top: rem-calc(150px);
+		}
+	}
+}
+
+
+/**
+ * Text-overlay banner (e.g. for internal landing pages)
+ *
+ * Features a transparent background and optional brand chevron
+ */
+
+.banner.text-overlay {
+	// black overlay
+	@include gradient-overlay($position: bottom, $colors: (transparent, rgba(#000, .4), rgba(#000, 0.4)));
+	@include breakpoint(small) {
+		@include gradient-overlay($position: bottom, $colors: (transparent, rgba(#000, .4), rgba(#000, 0.8)));
+	}
+	// disable black overlay 
+	&.disable-gradient {
+		&::after {
+			display: none;
+		}
+	}
+
+	&::after {
+		box-shadow: none;
+	}
+
+	img {
+		position: absolute;
+		object-fit: cover;
+		height: 100%;
+
+		@include breakpoint(small) {
+			position: relative;
+			object-fit: inherit;
+			height: auto;
+		}
+	}
+	// .responsive-embed, .flex-video {
+	// 	position: absolute;
+	// 	width: 100%;
+
+	// 	@include breakpoint(small) {
+	// 		position: relative;
+	// 	}
+	// }
+	.responsive-embed~figcaption {
+		background: $darkblue;
+	}
+
+	figcaption {
+		// @include breakpoint(small) {
+			display: flex;
+			flex-flow: row wrap;
+			position: relative;
+			// position: absolute;
+			// bottom: 10%;
+			// left: 50%;
+			max-width: $global-width;// - use_gutter();
+			background: transparent;
+			// transform: translateX(-50%);
+			z-index: 2;
+		// }		
+
+		@include breakpoint(small) {
+			position: absolute;
+			bottom: 10%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		@include breakpoint(large) {
+			// max-width: 90%
+		}
+
+		@include breakpoint(xlarge) {
+			bottom: 20%;
+			max-width: $global-width;
+		}
+
+		box-shadow: none;
+		color: #fff;
+	}
+
+	// centered caption
+	&.center,
+	&.centered {
+		// full black overlay
+		&::after {
+			background: rgba(#000, .4);
+		}
+
+		.header {
+			display: inline-block;
+		}
+
+		figcaption {
+			text-align: center;
+
+			@include breakpoint(small) {
+				bottom: 50%;
+				transform: translate(-50%, 50%);
+			}
+		}
+	}
+
+	// left-weighted caption
+	@include breakpoint(small) {
+		&.align-left {
+			figcaption .contents {
+				max-width: 70%;
+			}
+		}
+	}
+
+	// maintain text overlay styles for mobile
+	/* &.mobile-text-overlay {
+		// black overlay (full overlay on mobile)
+		@include gradient-overlay($position: bottom, $colors: (transparent, rgba(#000, .4), rgba(#000, 0.4)));
+		@include breakpoint(small) {
+			@include gradient-overlay($position: bottom, $colors: (transparent, rgba(#000, .2), rgba(#000, 0.8)));
+		}
+		// disable black overlay 
+		&.disable-gradient {
+			&::after {
+				display: none;
+			}
+		}
+
+		&::after {
+			box-shadow: none;
+		}
+
+		img {
+			position: absolute;
+			object-fit: cover;
+			height: 100%;
+
+			@include breakpoint(small) {
+				position: relative;
+				object-fit: inherit;
+				height: auto;
+			}
+		}
+
+		figcaption {
+			display: flex;
+			flex-flow: row wrap;
+			position: relative;
+			// position: absolute;
+			// bottom: 10%;
+			// left: 50%;
+			max-width: $global-width - use_gutter();
+			background: transparent;
+			// transform: translateX(-50%);
+			z-index: 2;
+
+			@include breakpoint(small) {
+				position: absolute;
+			}
+		}
+		
+		&.center,
+		&.centered {
+			// full black overlay
+			&::after {
+				background: rgba(#000, .4);
+			}
+
+			.header {
+				display: inline-block;
+			}
+
+			figcaption {
+				// bottom: 50%;
+				text-align: center;
+
+				@include breakpoint(small) {
+					position: absolute;
+					bottom: 50%;
+					left: 50%;
+					transform: translate(-50%, 50%);
+				}
+			}
+		}
+	} */
+
+	.column {
+		padding: 0;
+	}
+
+	.header {
+		font-size: 2rem;
+		text-shadow: 1px 1px rgba(0, 0, 0, .4);
+		
+		position: relative;
+		// chevron
+		&.chevron-right {
+			&::after {
+				@include inline-brand-arrow($size: 30px);
+				position: absolute;
+				margin-left: 10px;
+				text-shadow: none;
+
+				@include breakpoint(large) {
+					@include inline-brand-arrow($size: 60px);
+				}
+			}			
+		}
+		&.chevron-left {
+			&::before {
+				@include breakpoint(small) {
+					@include inline-brand-arrow($size: 30px);
+				}
+				@include breakpoint(large) {
+					@include absolute-brand-arrow($size: 50px, $top: auto, $right: auto, $left: -60px, $transform: none);
+				}
+				@include breakpoint(xlarge) {
+					@include absolute-brand-arrow($size: 60px, $top: auto, $right: auto, $left: -70px, $transform: none);
+				}
+				
+				text-shadow: none;
+			}
+		}
+
+		@include breakpoint(large) {
+			font-size: rem-calc(50);
+		}
+
+		@include breakpoint(xlarge) {
+			font-size: rem-calc(60);
+		}
+	}
+
+	.description {
+		font-size: 1.25rem;
+		text-shadow: 1px 1px rgba(0, 0, 0, .4);
+
+		@include breakpoint(large) {
+			font-size: 1.75rem;
+		}
+	}
+
+	@include breakpoint(small) {
+		.cta {
+			a, button {
+				@include feature-text-link-style($color: $white, $hover: $orange, $size: rem-calc(20));
+				text-shadow: 1px 1px rgba(0, 0, 0, .4);
+			}
+		}
+	}
+}
+
+
+/**
+ * Caption box on right side of image (e.g. for internal news site)
+ */
+
+.banner.caption-right {
+	margin-top: 0;
+	
+	figure {
+		max-height: 100%;
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	img, svg {
+		flex: 0 0 100%;
+		max-width: 100%;
+
+		@include breakpoint(medium) {
+			flex: 0 0 60%;
+			max-width: 60%;
+		}
+	}
+
+	figcaption {
+		position: initial;
+		transform: none;
+		flex: 1 1 0;
+	}
+
+	.description {
+		font-size: rem-calc(18);
+	}
+}
+
+/**
+ * Banner + CTA thumbnails (e.g. for faculty sites)
+ *
+ * Banner image + a column of CTA thumbnails next to it
+ */
+
+.banner-thumbnails {
+	display: flex;
+	flex-flow: row wrap;
+	@include breakpoint(1100px) {
+		margin-bottom: use_gutter();
+	}
+}
+
+.banner.banner-thumbs {
+	margin-top: 0;
+	margin-bottom: use_gutter();
+	@include breakpoint(1100px) {
+		@include flex-grid-column($gutters: 0);
+		margin-bottom: 0;
+		background-color: $darkblue; // interim workaround for IE11 flexbox issues; CTA thumbnails overflows the banner image height, leaving an empty space below the banner; background color looks less ugly
+	}
+
+	@include breakpoint(xlarge) {
+		figure {
+			max-height: none;
+		}
+	}
+
+	&:not(.text-overlay) {
+		&::after {
+			display: none;
+		}
+
+		figcaption {
+			bottom: 0;
+			max-width: none; 
+
+			// specified background colour (white text must be accessible against chosen colour)
+			@each $color, $value in $basic-palette {
+				&.#{$color} {
+					&:not(.button-only) {
+						background: rgba($value, .9);
+						
+						@include breakpoint(medium) {
+							@at-root .banner.banner-thumbs:not(.caption-right) figcaption.#{$color} {
+								background: rgba($value, .9);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.text-overlay {
+		@include breakpoint(small) {
+			figcaption {
+				bottom: auto;
+				top: 50px;
+				left: 50px;
+				transform: none;
+				width: 75%;
+			}
+
+			// black overlay
+			@include gradient-overlay($position: top, $colors: (transparent, rgba(#000, .2), rgba(#000, 0.8)));
+		}
+	}
+}
+
+
+/**
+ * Shield/symbol zoom SVG banner image
+ */
+
+#shield-banner {
+	#shield-group {
+		clip-path:url(#SVGID_2_);
+	}
+	
+	// Default colours
+	#background {
+		fill: $blue;
+	}
+	#shield {
+		fill: $darkblue;
+	}
+	#arc {
+		fill: $lightblue;
+	}
+	#arrow {
+		fill: $orange;
+	}
+
+	// Custom colour classes
+	@each $color,
+	$value in $basic-palette {
+		&.bg-#{$color} #background,
+		&.shield-#{$color} #shield,
+		&.arc-#{$color} #arc {
+			fill: $value;
+		}
+	}
+	// White
+	&.bg-white #background,
+	&.shield-white #shield,
+	&.arc-white #arc {
+		fill: $white;
+	}
+}
+
+
+
+
+
+.banner-module {
+	position: relative;
+}
+
+/**
+ * Small banner
+ * 
+ * Banner fits within the grid.
+ * CTA buttons/thumbnails to the right of the banner.
+ * <div.banner> needs to be in the page-row element instead of the <header> ....
+ */
+
+.banner.banner-small {
+	margin-bottom: use_gutter();
+
+	@include breakpoint(medium) {
+		@include flex-grid-column(9);
+		margin-top: use_gutter();
+	}
+
+	// remove white overlay
+	&::after {
+		display: none;
+	}
+
+	figure {
+		max-height: none;
+		position: relative;
+	}
+
+	figcaption {
+		width: 100%;
+		max-width: none;
+		left: 0;
+		bottom: 0;
+		transform: none;
+		box-shadow: none;
+
+		@include breakpoint(medium only) {
+			position: relative;
+			background: $orange;
+			color: #fff;
+		}
+	}
+	@include breakpoint(medium only) {
+		.button.hollow {
+			border-color: #fff;
+			@include button-style(transparent, rgba(#fff, .2), #fff);
+
+			&:hover,
+			&:active,
+			&:focus {
+				border-color: #fff;
+			}
+		}
+	}
+}
