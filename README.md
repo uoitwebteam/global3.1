@@ -2,7 +2,7 @@
 
 ## What's changed
 
-v3.1 uses the latest Foundation version, but still employs the [flex grid](https://get.foundation/sites/docs/flex-grid.html). 
+v3.1 uses the latest Foundation version (v6), but still employs the [flex grid](https://get.foundation/sites/docs/flex-grid.html). 
 
 Most component styles are visually the same as those in Global 3.0, but are streamlined in this codebase.
 
@@ -10,7 +10,9 @@ Javascript files are compiled using Webpack.
 
 ## Installation
 
-Download 
+Node version `14.17.3`
+
+Download the repo:
 
 ```bash
 git clone https://github.com/uoitwebteam/global3.1
@@ -23,15 +25,13 @@ cd global3.1
 yarn
 ```
 
-Run `yarn start` to run Gulp. Demo pages will be created in the `dist` folder, viewable at this URL:
+Run Gulp and start a Browersync web server:
 
+```bash
+yarn start
 ```
-http://localhost:8000
-```
 
-To create compressed, production-ready assets, run `yarn run build`.
-
-Upload the compiled CSS and JS files to all relevant servers.
+Demo pages will be created in the `dist` folder, viewable at [http://localhost:8000](http://localhost:8000).
 
 ## Development and testing
 
@@ -54,7 +54,7 @@ function server(done) {
 
 ### CSS build files and settings
 
-Multiple CSS files can be built; `.scss` files in the `src/files/scss` folder will be compiled into `.css` files in the `dist/files/css` folder. Add the name of the scss file to the `sassall` array in `gulpfile.babel.js` in order to compile it into CSS:
+Multiple CSS files can be built; `.scss` files in the `src/files/scss` folder will be compiled into separate `.css` files in the `dist/files/css` folder. Add the name of the scss file to the `sassall` array in `gulpfile.babel.js` in order to compile it into CSS:
 
 ```js
 const sassBuilds = {
@@ -65,11 +65,29 @@ const sassBuilds = {
 
 For faster builds during local development, the `sassdefault` build task array can be updated on your local machine. E.g., if you are working on `map` styles, you can put this file in `sassdefault` so your development build only compiles this CSS file. However, do not push this line change to GitHub. When you are ready for a production build, all scss files in the `sassall` array will be compiled.
 
-## Documentation
+## Deployment
+
+To create compressed, production-ready assets, run:
+
+```bash
+yarn run build
+```
+
+Update the version patch number in `package.json`:
+
+```bash
+"version": "3.1.x",
+```
+
+Upload the compiled CSS and JS files to the `/global/files` directory on all relevant servers.
+
+--- 
+
+# Documentation
 
 The Kitchen Sink contains examples and documentation of brand elements, typography styles, individual components, and general helpers for development and testing. All Foundation components (except for Orbit) are included in the Global 3.1 build, but not all are documented in the Kitchen Sink. Any Foundation components that are not listed in the Kitchen Sink can be found in the [Foundation docs](https://get.foundation/sites/docs).
 
-The Kitchen Sink is available locally at [http://localhost:8000](http://localhost:8000) and online at [shared.ontariotechu.ca/global/docs/v3.1/kitchen-sink](https://shared.ontariotechu.ca/global/docs/v3.1/kitchen-sink) (compiled pages should be uploaded here).
+The Kitchen Sink is available locally at [http://localhost:8000/kitchen-sink](http://localhost:8000/kitchen-sink) and online at [shared.ontariotechu.ca/global/docs/v3.1/kitchen-sink](https://shared.ontariotechu.ca/global/docs/v3.1/kitchen-sink) (compiled pages should be uploaded here).
 
 ### Adding/editing components and styles
 
@@ -98,5 +116,5 @@ Learn more about [Panini layouts, pages, and partials](https://zurb.com/universi
 
 ***data*** contains data files in either `.yml` or `.json` format. These files contain reusable data content that can be used to render dynamic data across several pages, such as the Kitchen Sink navigation menu, `kitchen-sink.yml`. When new pages/partials are added to the Kitchen Sink, create a new list item in the relevant list section in this file. Items added here will automatically be rendered in the off-canvas navigation menu and on the Kitchen Sink index page (`/pages/index.html`).
 
-Learn more about [Panini data and Handlebars helpers](https://zurb.com/university/lessons/158)
+Learn more about [Panini data and Handlebars helpers](https://zurb.com/university/lessons/158).
 
